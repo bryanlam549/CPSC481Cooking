@@ -1,0 +1,15 @@
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\bin\Debug\Cookbook.exe.config
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\bin\Debug\Cookbook.exe
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\bin\Debug\Cookbook.pdb
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook.csprojAssemblyReference.cache
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\MainWindow.g.cs
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\App.g.cs
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook_MarkupCompile.cache
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook_MarkupCompile.lref
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\MainWindow.baml
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook.g.resources
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook.Properties.Resources.resources
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook.csproj.GenerateResource.cache
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook.csproj.CoreCompileInputs.cache
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook.exe
+C:\Users\Aaron\Desktop\CPSC481Repo\Cookbook\Cookbook\obj\Debug\Cookbook.pdb
