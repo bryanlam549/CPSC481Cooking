@@ -560,18 +560,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="-4901.361"
+     inkscape:zoom="0.5"
+     inkscape:cx="-4359.9"
      inkscape:cy="2854.4153"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:pagecheckerboard="true"
      units="px"
-     inkscape:window-width="2160"
-     inkscape:window-height="1348"
-     inkscape:window-x="-12"
-     inkscape:window-y="-12"
+     inkscape:window-width="1920"
+     inkscape:window-height="1136"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-global="false"
      inkscape:snap-text-baseline="true"
@@ -2167,5 +2167,12 @@
          d="m -1095.6362,-411.61106 h 14.6958"
          style="fill:none;stroke:#000000;stroke-width:0.90460706;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
+    <rect
+       style="opacity:0.5;stroke-width:0.25672048"
+       id="rect892"
+       width="36.660801"
+       height="125.56075"
+       x="-1248.6669"
+       y="-445.50272" />
   </g>
 </svg>
