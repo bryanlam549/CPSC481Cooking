@@ -469,17 +469,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="-4440.994"
-     inkscape:cy="984.43945"
+     inkscape:cx="-4187.5739"
+     inkscape:cy="1436.9878"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:pagecheckerboard="true"
      units="px"
-     inkscape:window-width="2160"
-     inkscape:window-height="1348"
-     inkscape:window-x="-12"
-     inkscape:window-y="-12"
+     inkscape:window-width="1920"
+     inkscape:window-height="1136"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-global="false"
      inkscape:snap-text-baseline="true"
@@ -1394,7 +1394,9 @@
          style="stroke-width:0.26458332" /></text>
     <g
        id="g3125"
-       transform="translate(3.2127205e-4,-5.5108608e-5)">
+       transform="translate(3.2127205e-4,-5.5108608e-5)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g3052">
         <g
@@ -1916,5 +1918,12 @@
            y="111.40804"
            style="stroke-width:0.26458332">Back</tspan></text>
     </g>
+    <rect
+       style="opacity:0.5;stroke-width:0.25566426"
+       id="rect892"
+       width="36.532402"
+       height="124.96739"
+       x="-1248.5613"
+       y="62.581814" />
   </g>
 </svg>
