@@ -23,6 +23,17 @@ namespace Cookbook
         public MainWindow()
         {
             InitializeComponent();
+
+            this.Top = 0;
+            this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
+        }
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+
+            // Begin dragging the window
+            this.DragMove();
         }
     }
 }

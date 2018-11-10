@@ -97,5 +97,12 @@
   <ItemGroup>
     <Resource Include="Images\background1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background.png" />
+    <Resource Include="Images\cookbookButton.png" />
+    <Resource Include="Images\currentRecipeButton.png" />
+    <Resource Include="Images\profileButton.png" />
+    <Resource Include="Images\searchButton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

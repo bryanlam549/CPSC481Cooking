@@ -1,15 +1,41 @@
-﻿<Window x:Class="Cookbook.MainWindow"
+﻿<Window x:Name="SearchPageWindow" x:Class="Cookbook.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cookbook"
         mc:Ignorable="d"
-        Title="Cookbook" Height="1920" Width="1080">
+        Title="Cooking Instructor" WindowStyle="None" Foreground="{x:Null}" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    
     <Window.Background>
-        <ImageBrush ImageSource="Images/background1.png"/>
+        <ImageBrush ImageSource="Images/background.png"/>
     </Window.Background>
-    <Grid>
-        
+    <Grid Height="1024" Width="576">
+        <Button x:Name="SearchPageButton" Content="" HorizontalAlignment="Left" Margin="0,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/searchButton.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="CookbookPageButton" Content="" HorizontalAlignment="Left" Margin="144,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/cookbookButton.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="CurrentRecipePageButton" Content="" HorizontalAlignment="Left" Margin="288,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/currentRecipeButton.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="ProfilePageButton" Content="" HorizontalAlignment="Left" Margin="432,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/profileButton.png"/>
+            </Button.Background>
+        </Button>
+
+
+
     </Grid>
 </Window>
