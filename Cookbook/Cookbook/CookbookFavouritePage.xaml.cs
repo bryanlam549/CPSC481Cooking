@@ -24,13 +24,31 @@ namespace Cookbook
         {
             InitializeComponent();
 
-            //IF burger is favourited
-            CookbookRecipes burger = new CookbookRecipes();
-            burger.Number = 1.ToString();
-            burger.Title = "Burgers";
-            burger.Description = "This is the food description";
-            //burger.Image = new Uri("Images/editIcon.png");
-            this.Recipes.Children.Add(burger);
+            //We can have 5 recipes, meanining 5 of these.
+
+            if (MainWindow.burgerFave == true)
+            {
+                //IF burger is favourited
+                CookbookRecipes burger = new CookbookRecipes();
+                burger.Number = 1.ToString();
+                burger.Title = "Burgers";
+                burger.Description = "This is the food description";
+                burger.Dur = "30 min";
+
+                BitmapImage food = new BitmapImage();
+                food.BeginInit();
+                food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
+                food.EndInit();
+                burger.FoodImage = food;
+
+                BitmapImage diff = new BitmapImage();
+                diff.BeginInit();
+                diff.UriSource = new Uri("Images/medium.png", UriKind.Relative);
+                diff.EndInit();
+                burger.DiffImage = diff;
+                this.Recipes.Children.Add(burger);
+            }
+            
         }
     }
 }

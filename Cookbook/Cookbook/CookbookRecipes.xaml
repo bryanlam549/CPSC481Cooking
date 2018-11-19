@@ -7,17 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="251.83" d:DesignWidth="576">
     <Grid>
+        <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,5" BorderThickness="2" Opacity="0.10">
+        
+        </Border>
         <StackPanel Margin="0,0,525,0">
             <Label Name="NumberText" Content="1." FontSize="48"/>
             <Image Name="editIcon" VerticalAlignment="Bottom" Source="Images/editIcon.png"/>
         </StackPanel>
+        
 
-
-        <StackPanel Margin="50,0" Width="476.30">
+        <StackPanel Margin="50,0,0,0" Width="526.30">
             <Label Name="TitleText" HorizontalAlignment="Center" FontSize="48" Content="Hamburger"/>
             <StackPanel Orientation="Horizontal" Height="150">
                 <Image Name="foodPic" Width="246" Height="150" Source="Images/burger.jpg" Margin="0,0,0,-0.092"/>
-                <TextBlock Name="desc" FontSize="18" TextWrapping="Wrap">This is the food description...<LineBreak/> als</TextBlock>
+                <TextBlock x:Name="desc" FontSize="18" TextWrapping="Wrap" Margin="0,0,0,-0.092" Width="258"><Run Text="This is the food description....."/><LineBreak/><Run Text="blah."/></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Height="28">
                 <Image Name="difficulty" Source="Images/medIcon.png" />
@@ -27,10 +30,14 @@
                 <Image Name="rating4" Source="Images/unfillStar.png" />
                 <Image Name="rating5" Source="Images/unfillStar.png" />
                 <Image Name="duration" Source="Images/durationIcon.png"/>
-                <Image Name="share" Source="Images/shareIcon.png" Margin="165,0,0,0"/>
+                <Label Name="durationLabel" Content="25 min" FontSize="8" VerticalAlignment="Bottom"/>
+                <Image Name="share" Source="Images/shareIcon.png" Margin="185,0,0,0"/>
                 
+
             </StackPanel>
-            <Separator/>
+            <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" Margin="0,10,25,0"/>
+            
+            
         </StackPanel>
 
 
@@ -42,6 +49,6 @@
         <Label Name="TitleText" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="48" Content="Food Title" Margin="175,0,179,0" Height="70"/>
         <Label Name="desc" FontSize="24" Content="Food description!&#xD;&#xA;Blah blah blah!!!&#xD;&#xA;And Blah Blah!&#xD;&#xA;and blah&#xA;" Margin="290,82,82,24.815"/>
         <Image Name="shareIcon" Source="Images/shareIcon.png" Margin="499,186,10,19.815" /-->
-
+       
     </Grid>
 </UserControl>
