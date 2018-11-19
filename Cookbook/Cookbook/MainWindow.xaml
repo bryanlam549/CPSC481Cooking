@@ -5,37 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cookbook"
         mc:Ignorable="d"
-        Title="Cooking Instructor" WindowStyle="None" Foreground="{x:Null}" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+        Title="Cooking Instructor" WindowStyle="None" Foreground="{x:Null}" SizeToContent="WidthAndHeight">
 
     <Window.Background>
         <ImageBrush ImageSource="Images/background.png"/>
     </Window.Background>
     <Grid Height="1024" Width="576">
-        <Button x:Name="searchPageButton" Content="" HorizontalAlignment="Left" Margin="0,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="SearchPageButton_Click">
-            <Button.Background>
-                <ImageBrush x:Name="searchPageButtonImageBrush" ImageSource="Images/searchButtonDark.png"/>
-            </Button.Background>
-        </Button>
+        <StackPanel Orientation="Horizontal" Height="144" VerticalAlignment="Bottom">
+            <Button x:Name="searchPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="SearchPageButton_Click">
+                <Button.Background>
+                    <ImageBrush x:Name="searchPageButtonImageBrush" ImageSource="Images/searchButtonDark.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="CookbookPageButton_Click">
+                <Button.Background>
+                    <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="Images/cookbookButton.png"/>
+                </Button.Background>
+            </Button>
 
-        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="144,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="CookbookPageButton_Click">
-            <Button.Background>
-                <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="Images/cookbookButton.png"/>
-            </Button.Background>
-        </Button>
+            <Button x:Name="currentRecipePageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="CurrentRecipePageButton_Click">
+                <Button.Background>
+                    <ImageBrush x:Name="currentRecipePageButtonImageBrush" ImageSource="Images/currentRecipeButton.png"/>
+                </Button.Background>
+            </Button>
 
-        <Button x:Name="currentRecipePageButton" Content="" HorizontalAlignment="Left" Margin="288,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="CurrentRecipePageButton_Click">
-            <Button.Background>
-                <ImageBrush x:Name="currentRecipePageButtonImageBrush" ImageSource="Images/currentRecipeButton.png"/>
-            </Button.Background>
-        </Button>
+            <Button x:Name="profilePageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="ProfilePageButton_Click">
+                <Button.Background>
+                    <ImageBrush x:Name="profilePageButtonImageBrush" ImageSource="Images/profileButton.png"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
 
-        <Button x:Name="profilePageButton" Content="" HorizontalAlignment="Left" Margin="432,880,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="ProfilePageButton_Click">
-            <Button.Background>
-                <ImageBrush x:Name="profilePageButtonImageBrush" ImageSource="Images/profileButton.png"/>
-            </Button.Background>
-        </Button>
         <Frame x:Name="Main" HorizontalAlignment="Left" Height="880" VerticalAlignment="Top" Width="576" NavigationUIVisibility="Hidden"/>
-
 
     </Grid>
 </Window>

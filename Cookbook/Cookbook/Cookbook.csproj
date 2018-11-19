@@ -55,8 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CookbookFavouritePage.xaml.cs">
+      <DependentUpon>CookbookFavouritePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CookbookPage1.xaml.cs">
       <DependentUpon>CookbookPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CookbookPersonalPage.xaml.cs">
+      <DependentUpon>CookbookPersonalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CookbookRecentPage.xaml.cs">
+      <DependentUpon>CookbookRecentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CookbookRecipes.xaml.cs">
+      <DependentUpon>CookbookRecipes.xaml</DependentUpon>
     </Compile>
     <Compile Include="CurrentRecipePage1.xaml.cs">
       <DependentUpon>CurrentRecipePage1.xaml</DependentUpon>
@@ -67,7 +79,23 @@
     <Compile Include="SearchPage1.xaml.cs">
       <DependentUpon>SearchPage1.xaml</DependentUpon>
     </Compile>
+    <Page Include="CookbookFavouritePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CookbookPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CookbookPersonalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CookbookRecentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CookbookRecipes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,6 +165,32 @@
     <Resource Include="Images\currentRecipeButtonDark.png" />
     <Resource Include="Images\profileButtonDark.png" />
     <Resource Include="Images\searchButtonDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dark.png" />
+    <Resource Include="Images\favouriteButton.png" />
+    <Resource Include="Images\favouriteButtonDark.png" />
+    <Resource Include="Images\personalButton.png" />
+    <Resource Include="Images\personalButtonDark.png" />
+    <Resource Include="Images\recentButton.png" />
+    <Resource Include="Images\recentButtonDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\durationIcon.png" />
+    <Resource Include="Images\easyIcon.png" />
+    <Resource Include="Images\editIcon.png" />
+    <Resource Include="Images\hardIcon.png" />
+    <Resource Include="Images\medIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\shareIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\burger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fillStar.png" />
+    <Resource Include="Images\unfillStar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
