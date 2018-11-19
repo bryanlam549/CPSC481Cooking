@@ -39,6 +39,9 @@ namespace Cookbook
         private CookbookPage1 cookbookPage1 = new CookbookPage1();
         private CurrentRecipePage1 currentRecipePage1 = new CurrentRecipePage1();
         private ProfilePage1 profilePage1 = new ProfilePage1();
+
+        public static Boolean burgerFave = true;
+
         
         //Also initialize sub pages??
         //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
@@ -51,7 +54,6 @@ namespace Cookbook
             this.Left = SystemParameters.PrimaryScreenWidth - this.Width;
 
             Main.Content = searchPage1; // start app at search page 1
-
         }
 
 

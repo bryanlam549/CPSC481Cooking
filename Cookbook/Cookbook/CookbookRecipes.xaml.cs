@@ -20,16 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookRecipes : UserControl
     {
-        private string title;
-        public string Title
-        {
-            get { return title; }
-            set
-            {
-                title = value;
-                this.TitleText.Content = this.title;
-            }
-        }
+        //Number in list
         private string number;
         public string Number
         {
@@ -40,6 +31,20 @@ namespace Cookbook
                 this.NumberText.Content = this.number;
             }
         }
+
+        //Title of recipe
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set
+            {
+                title = value;
+                this.TitleText.Content = this.title;
+            }
+        }
+
+        //Food description
         private string description;
         public string Description
         {
@@ -50,16 +55,44 @@ namespace Cookbook
                 this.desc.Text= this.description;
             }
         }
-        private ImageSource image;
-        public ImageSource Image
+
+        //Duration time
+        private string dur;
+        public string Dur
         {
-            get { return image; }
+            get { return dur; }
             set
             {
-                image = value;
-                this.foodPic.Source = this.image;
+                dur = value;
+                this.durationLabel.Content = this.dur;
             }
         }
+
+        //Food image
+        private ImageSource foodimage;
+        public ImageSource FoodImage
+        {
+            get { return foodimage; }
+            set
+            {
+                foodimage = value;
+                this.foodPic.Source = this.foodimage;
+            }
+        }
+
+        //Difficulty image
+        private ImageSource diffimage;
+        public ImageSource DiffImage
+        {
+            get { return diffimage; }
+            set
+            {
+                diffimage = value;
+                this.difficulty.Source = this.diffimage;
+            }
+        }
+
+        //Need to do ratings too...
         public CookbookRecipes()
         {
             InitializeComponent();
