@@ -39,7 +39,9 @@ namespace Cookbook
         private CookbookPage1 cookbookPage1 = new CookbookPage1();
         private CurrentRecipePage1 currentRecipePage1 = new CurrentRecipePage1();
         private ProfilePage1 profilePage1 = new ProfilePage1();
-
+        
+        //Also initialize sub pages??
+        //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
 
         public MainWindow()
         {
@@ -53,11 +55,10 @@ namespace Cookbook
         }
 
 
-
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
-
+        
             // Begin dragging the window
             this.DragMove();
         }
@@ -105,5 +106,6 @@ namespace Cookbook
 
             Main.Content = profilePage1;
         }
+
     }
 }

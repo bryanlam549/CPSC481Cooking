@@ -8,7 +8,27 @@
       d:DesignHeight="880" d:DesignWidth="576"
       Title="CookbookPage1">
 
-    <Grid>
-        <TextBlock Text="PAGE2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72"/>
+    <Grid Width="576">
+        <StackPanel Orientation="Horizontal" Height="124.506" VerticalAlignment="Top">
+            <Button x:Name="favouritePageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="FavouriteButton_Click">
+                <Button.Background>
+                    <ImageBrush x:Name="FavouriteButtonImageBrush" ImageSource="Images/favouriteButtonDark.png" />
+                </Button.Background>
+            </Button>
+            <Button x:Name="personalPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="PersonalButton_Click">
+                <Button.Background>
+                    <ImageBrush x:Name="personaleButtonImageBrush" ImageSource="Images/personalButton.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="recentPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="recentButton_Click">
+                <Button.Background>
+                    <ImageBrush x:Name="recentButtonImageBrush" ImageSource="Images/recentButton.png"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <!--StackPanel Margin="0,124.506,0,0">
+            
+        </-->
+        <Frame x:Name="cookMain" Margin="0,124.506,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
