@@ -97,5 +97,10 @@ namespace Cookbook
         {
             InitializeComponent();
         }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

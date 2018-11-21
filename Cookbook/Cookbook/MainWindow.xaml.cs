@@ -36,7 +36,7 @@ namespace Cookbook
 
 
         private SearchPage1 searchPage1 = new SearchPage1(); // always use these instances if we want to remember the state
-        private CookbookPage1 cookbookPage1 = new CookbookPage1();
+        //private CookbookPage1 cookbookPage1 = new CookbookPage1();
         private CurrentRecipePage1 currentRecipePage1 = new CurrentRecipePage1();
         private ProfilePage1 profilePage1 = new ProfilePage1();
 
@@ -78,6 +78,7 @@ namespace Cookbook
 
         private void CookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
+            CookbookPage1 cookbookPage1 = new CookbookPage1();
             cookbookPageButtonImageBrush.ImageSource = cookbookButtonDarkImage; // dark
 
             searchPageButtonImageBrush.ImageSource = searchButtonImage; // light

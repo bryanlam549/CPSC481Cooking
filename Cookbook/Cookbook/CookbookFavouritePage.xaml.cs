@@ -30,7 +30,7 @@ namespace Cookbook
             {
                 //IF burger is favourited
                 CookbookRecipes burger = new CookbookRecipes();
-                burger.Number = 1.ToString();
+                burger.Number = 1.ToString() + ".";
                 burger.Title = "Burgers";
                 burger.Description = "This is the food description";
                 burger.Dur = "30 min";

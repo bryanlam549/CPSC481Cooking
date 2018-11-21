@@ -6,9 +6,12 @@
       xmlns:local="clr-namespace:Cookbook"
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="576"
-      Title="SearchPage1">
+      Title="SearchPage1" Background="white">
 
     <Grid>
-        <TextBlock Text="PAGE1" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Click="Button_Click">
+            <Image Name="fav" Stretch="Fill" Source="Images/unfillHeart.png" Height="90" Width="90"/>
+        </Button>
+        
     </Grid>
 </Page>

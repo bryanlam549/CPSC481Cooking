@@ -9,7 +9,7 @@
       Title="CookbookFavouritePage">
 
     <Grid>
-        <ScrollViewer Height="auto">
+        <ScrollViewer Name="scroller" Height="auto">
             <StackPanel Name="Recipes" Height="auto" Width="auto">
 
 
