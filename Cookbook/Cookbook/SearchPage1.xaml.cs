@@ -23,6 +23,27 @@ namespace Cookbook
         public SearchPage1()
         {
             InitializeComponent();
-        }
+        
+			// Creating the list of categories
+			var categories = new StackLayout()
+			{
+				Orientation = StackOrientation.Horizontal,
+				HorizontalOptions = LayoutOptions.Fill,
+				Children = {
+					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.White},
+					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.Red},
+					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.Blue},
+					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.Green}
+				}
+			};
+
+			Content = new ScrollView() {
+			HorizontalOptions = LayoutOptions.FillAndExpand,
+			Orientation = ScrollOrientation.Horizontal,
+			Content = categories,
+			};
+		}
+
+
     }
 }
