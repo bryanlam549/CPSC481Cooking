@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cookbook"
         mc:Ignorable="d"
-        Title="Cooking Instructor" WindowStyle="None" Foreground="{x:Null}" SizeToContent="WidthAndHeight">
+        Title="Cooking Instructor" WindowStyle="None" Foreground="{x:Null}" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
 
     <Window.Background>
         <ImageBrush ImageSource="Images/background.png"/>
