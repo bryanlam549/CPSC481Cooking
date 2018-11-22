@@ -79,8 +79,14 @@
     <Compile Include="ProfileInfoPage.xaml.cs">
       <DependentUpon>ProfileInfoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfileMainPage.xaml.cs">
+      <DependentUpon>ProfileMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage1.xaml.cs">
       <DependentUpon>ProfilePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePreferencesPage.xaml.cs">
+      <DependentUpon>ProfilePreferencesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProfileSignInPage.xaml.cs">
       <DependentUpon>ProfileSignInPage.xaml</DependentUpon>
@@ -138,7 +144,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ProfileMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProfilePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfilePreferencesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,6 +240,12 @@
   <ItemGroup>
     <Resource Include="Images\fillStar.png" />
     <Resource Include="Images\unfillStar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\InfoButton.png" />
+    <Resource Include="Images\InfoButtonDark.png" />
+    <Resource Include="Images\PreferencesButton.png" />
+    <Resource Include="Images\PreferencesButtonDark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace Cookbook
 {
     /// <summary>
-    /// Interaction logic for ProfileSignInPage.xaml
+    /// Interaction logic for ProfilePreferencesPage.xaml
     /// </summary>
-    public partial class ProfileSignInPage : Page
+    public partial class ProfilePreferencesPage : Page
     {
-        private ProfileMainPage profileInfoPage = new ProfileMainPage();
-
-        public ProfileSignInPage()
+        public ProfilePreferencesPage()
         {
             InitializeComponent();
-        }
-
-        private void SignIn_Click(object sender, RoutedEventArgs e)
-        {
-            signInMain.Content = profileInfoPage;
         }
     }
 }

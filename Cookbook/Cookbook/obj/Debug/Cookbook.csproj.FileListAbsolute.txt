@@ -199,5 +199,10 @@ C:\Users\Bryan_upag2k2\Desktop\481Repo\Cookbook\Cookbook\obj\Debug\Mod.baml
 \\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfileSignInPage.g.cs
 \\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfileSignUpPage.baml
 \\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfileSignInPage.baml
+\\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\Cookbook.csprojResolveAssemblyReference.cache
+\\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfilePreferencesPage.g.cs
+\\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfilePreferencesPage.baml
+\\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfileMainPage.g.cs
+\\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfileMainPage.baml
 \\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfileInfoPage.g.cs
 \\samba.cs.ucalgary.ca\cynguyen\Documents\GitHub\CPSC481Cooking\Cookbook\Cookbook\obj\Debug\ProfileInfoPage.baml
