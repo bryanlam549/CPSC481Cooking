@@ -76,8 +76,17 @@
     <Compile Include="Mod.xaml.cs">
       <DependentUpon>Mod.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfileInfoPage.xaml.cs">
+      <DependentUpon>ProfileInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage1.xaml.cs">
       <DependentUpon>ProfilePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSignInPage.xaml.cs">
+      <DependentUpon>ProfileSignInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSignUpPage.xaml.cs">
+      <DependentUpon>ProfileSignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="RecipeProfilePage.xaml.cs">
       <DependentUpon>RecipeProfilePage.xaml</DependentUpon>
@@ -125,7 +134,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ProfileInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProfilePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileSignInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileSignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
