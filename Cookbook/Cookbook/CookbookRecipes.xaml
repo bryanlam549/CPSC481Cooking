@@ -7,17 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="251.83" d:DesignWidth="576">
     <Grid>
-        <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,5" BorderThickness="2" Opacity="0.10">
-        
+        <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576">
+
         </Border>
         <StackPanel Margin="0,0,525,0">
             <Label Name="NumberText" Content="1." FontSize="48"/>
-            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="editButton_Click">
+            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClick">
                 <Image Name="editIcon" VerticalAlignment="Bottom" Source="Images/editIcon.png"/>
             </Button>
-            
+
         </StackPanel>
-        
+
 
         <StackPanel Margin="50,0,0,0" Width="526.30">
             <Label Name="TitleText" HorizontalAlignment="Center" FontSize="48" Content="Hamburger"/>
@@ -35,12 +35,12 @@
                 <Image Name="duration" Source="Images/durationIcon.png"/>
                 <Label Name="durationLabel" Content="25 min" FontSize="8" VerticalAlignment="Bottom"/>
                 <Image Name="share" Source="Images/shareIcon.png" Margin="185,0,0,0"/>
-                
+
 
             </StackPanel>
             <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" Margin="0,10,25,0"/>
-            
-            
+
+
         </StackPanel>
 
 
@@ -52,6 +52,6 @@
         <Label Name="TitleText" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="48" Content="Food Title" Margin="175,0,179,0" Height="70"/>
         <Label Name="desc" FontSize="24" Content="Food description!&#xD;&#xA;Blah blah blah!!!&#xD;&#xA;And Blah Blah!&#xD;&#xA;and blah&#xA;" Margin="290,82,82,24.815"/>
         <Image Name="shareIcon" Source="Images/shareIcon.png" Margin="499,186,10,19.815" /-->
-       
+
     </Grid>
 </UserControl>

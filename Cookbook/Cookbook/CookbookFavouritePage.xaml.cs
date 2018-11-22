@@ -43,12 +43,26 @@ namespace Cookbook
 
                 BitmapImage diff = new BitmapImage();
                 diff.BeginInit();
-                diff.UriSource = new Uri("Images/medium.png", UriKind.Relative);
+                diff.UriSource = new Uri("Images/medIcon.png", UriKind.Relative);
                 diff.EndInit();
                 burger.DiffImage = diff;
-                this.Recipes.Children.Add(burger);
+
+                burger.Click += editButton_Click;
+
+                Recipes.Children.Add(burger);
             }
-            
+        }
+        //public event RoutedEventHandler Click;
+        public void editButton_Click(object sender, RoutedEventArgs e)
+        {
+            //https://stackoverflow.com/questions/41333040/wpf-best-practice-to-get-current-mainwindow-instance
+            //burger.Title = "HOW DARE YOU!!!";
+            //blah.Content = "HOW DARE YOU!!!!";
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            Mod mod = new Mod();
+            ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+
+
         }
     }
 }

@@ -11,8 +11,7 @@
     <Grid>
         <ScrollViewer Name="scroller" Height="auto">
             <StackPanel Name="Recipes" Height="auto" Width="auto">
-
-
+                <!--local:CookbookRecipes Dur="10mins" DiffImage="Images/easyIcon.png" Title="blah"/-->
             </StackPanel>
         </ScrollViewer>
     </Grid>
