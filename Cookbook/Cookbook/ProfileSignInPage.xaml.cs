@@ -20,7 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class ProfileSignInPage : Page
     {
-        private ProfileMainPage profileInfoPage = new ProfileMainPage();
+        //private ProfileMainPage profileMainPage = new ProfileMainPage("", "", "");
 
         public ProfileSignInPage()
         {
@@ -29,7 +29,8 @@ namespace Cookbook
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            signInMain.Content = profileInfoPage;
+            ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, "", PasswordInput.Password);
+            signInMain.Content = profileMainPage;
         }
     }
 }

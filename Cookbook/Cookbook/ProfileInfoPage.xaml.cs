@@ -20,9 +20,12 @@ namespace Cookbook
     /// </summary>
     public partial class ProfileInfoPage : Page
     {
-        public ProfileInfoPage()
+        public ProfileInfoPage(string username, string email, string password)
         {
             InitializeComponent();
+            //UserNameInput.Text = username;
+            //EmailInput.Text = email;
+            //PasswordInput.Text = password;
         }
     }
 }

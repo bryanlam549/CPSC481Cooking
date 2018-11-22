@@ -8,11 +8,5 @@
       d:DesignHeight="880" d:DesignWidth="576"
       Title="ProfileInfoPage">
 
-    <Page.Background>
-        <ImageBrush ImageSource="Images/background.png"/>
-    </Page.Background>
-    <Grid>
-        <TextBlock Text="PROFILE INFO PAGE" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight ="Bold"/>
-        <TextBlock x:Name="UserNameInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="36" FontWeight ="Bold"/>
-    </Grid>
+
 </Page>

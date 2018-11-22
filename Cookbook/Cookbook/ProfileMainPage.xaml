@@ -24,8 +24,14 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <TextBlock Text="PROFILE INFO PAGE" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight ="Bold"/>
-        <TextBlock x:Name="UserNameInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="36" FontWeight ="Bold"/>
-        <Frame x:Name="profileMain" Margin="0,124.506,0,0" NavigationUIVisibility="Hidden"/>
+        <TextBlock Text="Information" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="116,125,124,0"/>
+        <TextBlock Text="Username:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="0,257,397,0"/>
+        <TextBlock Text="Email:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="0,305,474,0"/>
+        <TextBlock Text="Password:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="0,358,407,0"/>
+        <TextBlock x:Name="UserNameInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,257,10,575" Width="363" RenderTransformOrigin="0.129,-6.016"/>
+        <TextBlock x:Name="EmailInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,305,10,527" Width="363" RenderTransformOrigin="0.129,-6.016" TextWrapping="Wrap"/>
+        <TextBlock x:Name="PasswordInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,374,10,474" Width="363" RenderTransformOrigin="0.129,-6.016"/>
+
+        <Frame x:Name="profileMain" Margin="0,125,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
