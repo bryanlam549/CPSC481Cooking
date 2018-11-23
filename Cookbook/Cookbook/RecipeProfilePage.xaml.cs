@@ -20,9 +20,18 @@ namespace Cookbook
     /// </summary>
     public partial class RecipeProfilePage : Page
     {
+        //public Recipe _recipe;
+
+
+
         public RecipeProfilePage()
         {
             InitializeComponent();
+
+            // init components...
+            //_heartButton._recipe = ... set based
+
+
         }
     }
 }

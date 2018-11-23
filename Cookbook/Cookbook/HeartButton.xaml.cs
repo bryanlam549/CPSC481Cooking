@@ -25,6 +25,7 @@ namespace Cookbook
         private BitmapImage unfillHeartImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
         private BitmapImage heartImage = (BitmapImage)Application.Current.Resources["heartIcon"];
 
+        public Recipe _recipe;
 
 
         // ~~~~~~~LATER ON: have a Recipe (instance of Recipe class) field here (set by the page) so this button can be applied to a specific recipe

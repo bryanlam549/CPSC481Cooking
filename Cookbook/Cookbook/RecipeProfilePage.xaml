@@ -9,6 +9,8 @@
       Title="RecipeProfilePage">
 
     <Grid>
+        <local:HeartButton x:Name ="_heartButton" Margin="336,10,167,774" />
+        <local:TransitionPageButton x:Name ="_transitionPageButton" Margin="10,20,435,785" />
         <TextBlock Text="YUM!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72"/>        
     </Grid>
 </Page>
