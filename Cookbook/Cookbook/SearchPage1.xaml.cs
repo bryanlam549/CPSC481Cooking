@@ -24,26 +24,40 @@ namespace Cookbook
         {
             InitializeComponent();
         
+
+
 			// Creating the list of categories
-			var categories = new StackLayout()
+			var categories = new StackPanel()
 			{
-				Orientation = StackOrientation.Horizontal,
-				HorizontalOptions = LayoutOptions.Fill,
+				Orientation = Orientation.Horizontal,
+				//HorizontalOptions = LayoutOptions.Fill,
 				Children = {
-					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.White},
-					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.Red},
-					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.Blue},
-					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.Green}
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
+					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
 				}
 			};
 
-			Content = new ScrollView() {
-			HorizontalOptions = LayoutOptions.FillAndExpand,
-			Orientation = ScrollOrientation.Horizontal,
-			Content = categories,
-			};
+			//CategoryBar.SetValue();
+
+			scroll1.Content = categories;
+			
 		}
-
-
-    }
+		
+	}
 }
