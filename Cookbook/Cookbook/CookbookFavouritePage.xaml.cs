@@ -72,8 +72,11 @@ namespace Cookbook
             //burger.Title = "HOW DARE YOU!!!";
             //blah.Content = "HOW DARE YOU!!!!";
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            Recipe recipe = new Recipe();
+            StepPage stepsMain = new StepPage(recipe);
+
             RecipeProfilePage profile = new RecipeProfilePage();
-            //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
+            ((MainWindow)App.Current.MainWindow).Main.Content = stepsMain;
             
 
 

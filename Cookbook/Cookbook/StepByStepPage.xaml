@@ -1,0 +1,19 @@
+﻿<Page x:Class="Cookbook.StepByStepPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cookbook"
+      mc:Ignorable="d" 
+      d:DesignHeight="880" d:DesignWidth="576"
+      Title="StepByStepPage">
+
+    <Grid>
+        <Frame x:Name="stepsMain" Margin="0,115,0,10" NavigationUIVisibility="Hidden"/>
+        <TextBlock HorizontalAlignment="Left" Margin="234,74,0,0" TextWrapping="Wrap" Text="Step 1 of   10" VerticalAlignment="Top" Height="30" Width="88"/>
+        <TextBlock HorizontalAlignment="Left" Margin="234,53,0,0" TextWrapping="Wrap" Text="RecipeName" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907"/>
+        <Button Content="Back Button " Click ="Prev_Step_Click" HorizontalAlignment="Left" Margin="22,25,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="372" Margin="10,165,0,0" TextWrapping="Wrap" Text="Recipe Steps here " VerticalAlignment="Top" Width="556" RenderTransformOrigin="1.103,0.872" Background="{x:Null}"/>
+        <Button Content="Next Step" Click="Next_Step_Click" HorizontalAlignment="Left" Margin="472,706,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Page>

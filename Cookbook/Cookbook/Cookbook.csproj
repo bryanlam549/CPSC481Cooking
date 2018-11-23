@@ -105,6 +105,12 @@
     <Compile Include="SearchPage1.xaml.cs">
       <DependentUpon>SearchPage1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StepByStepPage.xaml.cs">
+      <DependentUpon>StepByStepPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StepMainPage.xaml.cs">
+      <DependentUpon>StepMainPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="CookbookFavouritePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,6 +188,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StepByStepPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StepMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
