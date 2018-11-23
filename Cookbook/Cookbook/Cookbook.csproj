@@ -76,6 +76,7 @@
     <Compile Include="HeartButton.xaml.cs">
       <DependentUpon>HeartButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ingredient.cs" />
     <Compile Include="Mod.xaml.cs">
       <DependentUpon>Mod.xaml</DependentUpon>
     </Compile>
@@ -97,6 +98,7 @@
     <Compile Include="ProfileSignUpPage.xaml.cs">
       <DependentUpon>ProfileSignUpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Recipe.cs" />
     <Compile Include="RecipeProfilePage.xaml.cs">
       <DependentUpon>RecipeProfilePage.xaml</DependentUpon>
     </Compile>
