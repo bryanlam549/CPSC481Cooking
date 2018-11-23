@@ -20,8 +20,8 @@ namespace Cookbook
     /// </summary>
     public partial class SearchPage1 : Page
     {
-        public BitmapImage fillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/heart.png"));
-        public BitmapImage unfillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/unfillHeart.png"));
+        //public BitmapImage fillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/heart.png"));
+        //public BitmapImage unfillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/unfillHeart.png"));
         public SearchPage1()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Cookbook
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (this.fav.Source == fillHeart)
+            /*if (this.fav.Source == fillHeart)
             {
                 this.fav.Source = unfillHeart;
                 MainWindow.burgerFave = false;
@@ -41,7 +41,7 @@ namespace Cookbook
             {
                 this.fav.Source = fillHeart;
                 MainWindow.burgerFave = true;
-            }
+            }*/
         }
     }
 }

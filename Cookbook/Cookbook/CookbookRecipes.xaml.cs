@@ -98,9 +98,14 @@ namespace Cookbook
             InitializeComponent();
         }
 
-        private void editButton_Click(object sender, RoutedEventArgs e)
+        public event RoutedEventHandler Click;
+        private void onButtonClick(object sender, RoutedEventArgs e)
         {
-
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            if (this.Click != null)
+            {
+                this.Click(this, e);
+            }
         }
     }
 }

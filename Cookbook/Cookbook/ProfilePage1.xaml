@@ -9,6 +9,14 @@
       Title="ProfilePage1">
 
     <Grid>
-        <TextBlock Text="PAGE4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72"/>
+        <TextBlock Text="Create a profile page" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold"/>
+        <TextBlock Text="Already have an account?" HorizontalAlignment="Center" Height ="300" FontSize="36" FontWeight ="Bold"/>
+        <StackPanel>
+            <Button Content="SIGN UP WITH EMAIL" FontWeight ="Bold" Height="75" Width="375" Background="White" Margin ="100" HorizontalAlignment="Center" Click="ProfileSignUp_Click"/>
+            <Button Content="SIGN IN" FontWeight ="Bold" Height="75" Width="375" Background="White" Margin="100" HorizontalAlignment="Center" Click="ProfileSignIn_Click"/>
+        </StackPanel>
+        <Frame x:Name="profileMain" HorizontalAlignment="Left" Height="880" VerticalAlignment="Top" Width="576" NavigationUIVisibility="Hidden"/>
     </Grid>
+
+
 </Page>

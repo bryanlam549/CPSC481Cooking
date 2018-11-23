@@ -76,8 +76,26 @@
     <Compile Include="HeartButton.xaml.cs">
       <DependentUpon>HeartButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mod.xaml.cs">
+      <DependentUpon>Mod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileInfoPage.xaml.cs">
+      <DependentUpon>ProfileInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileMainPage.xaml.cs">
+      <DependentUpon>ProfileMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage1.xaml.cs">
       <DependentUpon>ProfilePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePreferencesPage.xaml.cs">
+      <DependentUpon>ProfilePreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSignInPage.xaml.cs">
+      <DependentUpon>ProfileSignInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSignUpPage.xaml.cs">
+      <DependentUpon>ProfileSignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="RecipeProfilePage.xaml.cs">
       <DependentUpon>RecipeProfilePage.xaml</DependentUpon>
@@ -129,7 +147,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Mod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProfilePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfilePreferencesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileSignInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileSignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,6 +257,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\unfillHeart.png" />
+    <Resource Include="Images\InfoButton.png" />
+    <Resource Include="Images\InfoButtonDark.png" />
+    <Resource Include="Images\PreferencesButton.png" />
+    <Resource Include="Images\PreferencesButtonDark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
