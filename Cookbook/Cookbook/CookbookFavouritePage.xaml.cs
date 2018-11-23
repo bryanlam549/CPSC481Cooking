@@ -73,7 +73,8 @@ namespace Cookbook
             //blah.Content = "HOW DARE YOU!!!!";
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
             RecipeProfilePage profile = new RecipeProfilePage();
-            ((MainWindow)App.Current.MainWindow).Main.Content = profile;
+            //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
+            
 
 
         }

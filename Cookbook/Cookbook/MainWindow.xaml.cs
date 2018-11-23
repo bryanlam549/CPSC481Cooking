@@ -35,7 +35,7 @@ namespace Cookbook
         private BitmapImage profileButtonDarkImage = (BitmapImage)Application.Current.Resources["profileButtonDarkIcon"];
 
 
-        private SearchPage1 searchPage1 = new SearchPage1(); // always use these instances if we want to remember the state
+        public SearchPage1 searchPage1 = new SearchPage1(); // always use these instances if we want to remember the state
         //private CookbookPage1 cookbookPage1 = new CookbookPage1();
         private CurrentRecipePage1 currentRecipePage1 = new CurrentRecipePage1();
         private ProfilePage1 profilePage1 = new ProfilePage1();
