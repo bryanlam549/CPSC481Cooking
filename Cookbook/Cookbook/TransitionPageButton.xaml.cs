@@ -22,14 +22,17 @@ namespace Cookbook
     {
 
         // cache global resources...
-        //private BitmapImage unfillHeartImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
-        //private BitmapImage heartImage = (BitmapImage)Application.Current.Resources["heartIcon"];
+        private BitmapImage backImage = (BitmapImage)Application.Current.Resources["backIcon"];
+        private BitmapImage forwardImage = (BitmapImage)Application.Current.Resources["forwardIcon"];
+
 
         public Page _page; // page to transition to...
 
         public TransitionPageButton()
         {
             InitializeComponent();
+
+            // init the proper icon here...
         }
 
 

@@ -22,6 +22,7 @@
     <BitmapImage x:Key="favouriteButtonIcon" UriSource="Images/favouriteButton.png" />
     <BitmapImage x:Key="favouriteButtonDarkIcon" UriSource="Images/favouriteButtonDark.png" />
     <BitmapImage x:Key="fillStarIcon" UriSource="Images/fillStar.png" />
+    <BitmapImage x:Key="forwardIcon" UriSource="Images/forward.png" />
     <BitmapImage x:Key="hardIconIcon" UriSource="Images/hardIcon.png" />
     <BitmapImage x:Key="heartIcon" UriSource="Images/heart.png" />
     <BitmapImage x:Key="infoButtonIcon" UriSource="Images/infoButton.png" />
