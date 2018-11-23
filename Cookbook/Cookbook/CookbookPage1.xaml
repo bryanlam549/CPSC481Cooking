@@ -10,6 +10,9 @@
 
     <Grid Width="576">
         <StackPanel Orientation="Horizontal" Height="124.506" VerticalAlignment="Top">
+            <!--Button Content="Hello" Height="124.506" FontSize="36" Background="#9c3828"  
+                Foreground="#c29a3a" BorderBrush="#c29a3a" BorderThickness="3"
+                Margin="0,378,192,377.246" HorizontalAlignment="Right" Width="192"/-->
             <Button x:Name="favouritePageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="FavouriteButton_Click">
                 <Button.Background>
                     <ImageBrush x:Name="FavouriteButtonImageBrush" ImageSource="Images/favouriteButtonDark.png" />
@@ -26,6 +29,7 @@
                 </Button.Background>
             </Button>
         </StackPanel>
+        
         <!--StackPanel Margin="0,124.506,0,0">
             
         </-->

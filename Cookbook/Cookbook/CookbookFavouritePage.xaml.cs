@@ -47,7 +47,9 @@ namespace Cookbook
                 diff.EndInit();
                 burger.DiffImage = diff;
 
-                burger.Click += editButton_Click;
+                //burger.Click += editButton_Click;
+                burger.editButton.Click += editButton_Click;
+                burger.foodProfileButton.Click += foodProfileButton_Click;
 
                 Recipes.Children.Add(burger);
             }
@@ -61,6 +63,17 @@ namespace Cookbook
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
             Mod mod = new Mod();
             ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+
+
+        }
+        public void foodProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            //https://stackoverflow.com/questions/41333040/wpf-best-practice-to-get-current-mainwindow-instance
+            //burger.Title = "HOW DARE YOU!!!";
+            //blah.Content = "HOW DARE YOU!!!!";
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            RecipeProfilePage profile = new RecipeProfilePage();
+            ((MainWindow)App.Current.MainWindow).Main.Content = profile;
 
 
         }

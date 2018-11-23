@@ -99,7 +99,16 @@ namespace Cookbook
         }
 
         public event RoutedEventHandler Click;
-        private void onButtonClick(object sender, RoutedEventArgs e)
+        private void onButtonClickEdit(object sender, RoutedEventArgs e)
+        {
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            if (this.Click != null)
+            {
+                this.Click(this, e);
+            }
+        }
+
+        private void onButtonClickProfile(object sender, RoutedEventArgs e)
         {
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
             if (this.Click != null)
@@ -108,4 +117,5 @@ namespace Cookbook
             }
         }
     }
+
 }

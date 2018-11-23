@@ -39,5 +39,6 @@
     <BitmapImage x:Key="shareIconIcon" UriSource="Images/shareIcon.png" />
     <BitmapImage x:Key="unfillHeartIcon" UriSource="Images/unfillHeart.png" />
     <BitmapImage x:Key="unfillStarIcon" UriSource="Images/unfillStar.png" />
+    <BitmapImage x:Key="backButton" UriSource="Images/back.png" />
 
 </ResourceDictionary>
