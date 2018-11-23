@@ -71,10 +71,11 @@ namespace Cookbook
 
             cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage; // light
             currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonImage;
-            profilePageButtonImageBrush.ImageSource = profileButtonImage; 
+            profilePageButtonImageBrush.ImageSource = profileButtonImage;
 
 
 
+            //Main.Content = GlobalData.Instance.search;
             Main.Content = searchPage1;
         }
 
