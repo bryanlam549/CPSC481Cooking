@@ -25,7 +25,16 @@ namespace Cookbook
             InitializeComponent();
 
             //We can have 5 recipes, meanining 5 of these.
+            for(int i = 0; i < 10; i++)
+            {
 
+                CookbookRecipes burger = new CookbookRecipes();
+                
+                burger.editButton.Click += editButton_Click;
+                burger.foodProfileButton.Click += foodProfileButton_Click;
+                Recipes.Children.Add(burger);
+            }
+            /*
             if (MainWindow.burgerFave == true)
             {
                 //IF burger is favourited
@@ -52,7 +61,7 @@ namespace Cookbook
                 burger.foodProfileButton.Click += foodProfileButton_Click;
 
                 Recipes.Children.Add(burger);
-            }
+            }*/
         }
         //public event RoutedEventHandler Click;
         public void editButton_Click(object sender, RoutedEventArgs e)
@@ -74,7 +83,11 @@ namespace Cookbook
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
             RecipeProfilePage profile = new RecipeProfilePage();
             //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
-            
+            //((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.search;
+            ((MainWindow)App.Current.MainWindow).Main.Content = profile;
+
+
+
 
 
         }

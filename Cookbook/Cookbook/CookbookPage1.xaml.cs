@@ -34,10 +34,12 @@ namespace Cookbook
         private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
         private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
 
+        
         public CookbookPage1()
         {
             InitializeComponent();
             cookMain.Content = cookbookfavouritePage; // start cookbook at favourite page all the time
+            
         }
 
         private void FavouriteButton_Click(object sender, RoutedEventArgs e)
