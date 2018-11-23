@@ -19,6 +19,7 @@
         <PasswordBox x:Name ="PasswordInput" HorizontalAlignment="Center" Height="39" Margin="28,322,42,0" VerticalAlignment="Top" Width="506" FontSize="28" PasswordChar="*"/>
         <Button Content="SIGN IN" FontWeight ="Bold" Height="75" Width="375" Background="White" Margin="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SignIn_Click"/>
         <TextBlock Text="Forgot Password?" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="28,374,305,0" Width="243"/>
+        <TextBlock x:Name="invalidInput" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="28,445,21,0" Width="527"/>
         <Frame x:Name="signInMain" HorizontalAlignment="Left" Height="880" VerticalAlignment="Top" Width="576" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
