@@ -76,6 +76,7 @@
     <Compile Include="HeartButton.xaml.cs">
       <DependentUpon>HeartButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ingredient.cs" />
     <Compile Include="Mod.xaml.cs">
       <DependentUpon>Mod.xaml</DependentUpon>
     </Compile>

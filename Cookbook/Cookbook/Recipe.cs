@@ -40,7 +40,7 @@ namespace Cookbook
 
         private Categories _category; // ~~~~~~~~~~~NOTE: maybe we want to have a list of categories (e.g. a dish can have multiple categories?)
 
-        //private List<Ingredient> _ingredients = new List<Ingredient>(); // each ingredient will have text, current unit, possible units, substitutions..., _isChecked, etc.
+        private List<Ingredient> _ingredients = new List<Ingredient>(); // each ingredient will have text, current unit, possible units, substitutions..., _isChecked, etc.
 
         private List<string> _equipment = new List<string>();
 
@@ -49,6 +49,7 @@ namespace Cookbook
 
         public Recipe()
         {
+            //_ingredientCount = _ingredients.Count; but make sure this happens after we initialize the list
         }
 
 
