@@ -8,30 +8,30 @@
         Title="Cooking Instructor" WindowStyle="None" Foreground="{x:Null}" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
 
     <Window.Background>
-        <ImageBrush ImageSource="Images/background.png"/>
+        <ImageBrush ImageSource="{StaticResource backgroundIcon}"/>
     </Window.Background>
     <Grid Height="1024" Width="576">
         <StackPanel Orientation="Horizontal" Height="144" VerticalAlignment="Bottom">
             <Button x:Name="searchPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="SearchPageButton_Click">
                 <Button.Background>
-                    <ImageBrush x:Name="searchPageButtonImageBrush" ImageSource="Images/searchButtonDark.png"/>
+                    <ImageBrush x:Name="searchPageButtonImageBrush" ImageSource="{StaticResource searchButtonDarkIcon}"/>
                 </Button.Background>
             </Button>
             <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="CookbookPageButton_Click">
                 <Button.Background>
-                    <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="Images/cookbookButton.png"/>
+                    <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource cookbookButtonIcon}"/>
                 </Button.Background>
             </Button>
 
             <Button x:Name="currentRecipePageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="CurrentRecipePageButton_Click">
                 <Button.Background>
-                    <ImageBrush x:Name="currentRecipePageButtonImageBrush" ImageSource="Images/currentRecipeButton.png"/>
+                    <ImageBrush x:Name="currentRecipePageButtonImageBrush" ImageSource="{StaticResource currentRecipeButtonIcon}"/>
                 </Button.Background>
             </Button>
 
             <Button x:Name="profilePageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="144" BorderThickness="0" Click="ProfilePageButton_Click">
                 <Button.Background>
-                    <ImageBrush x:Name="profilePageButtonImageBrush" ImageSource="Images/profileButton.png"/>
+                    <ImageBrush x:Name="profilePageButtonImageBrush" ImageSource="{StaticResource profileButtonIcon}"/>
                 </Button.Background>
             </Button>
 

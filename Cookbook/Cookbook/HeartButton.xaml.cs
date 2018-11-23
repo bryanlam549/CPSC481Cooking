@@ -21,6 +21,11 @@ namespace Cookbook
     public partial class HeartButton : UserControl
     {
 
+        // cache global resources...
+        private BitmapImage unfillHeartImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+        private BitmapImage heartImage = (BitmapImage)Application.Current.Resources["heartIcon"];
+
+
 
         // ~~~~~~~LATER ON: have a Recipe (instance of Recipe class) field here (set by the page) so this button can be applied to a specific recipe
 
@@ -41,12 +46,12 @@ namespace Cookbook
 
             if (_isFilled)
             {
-                heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["fillHeartIcon"]; // change icon
+                heartButtonImageBrush.ImageSource = heartImage; // change icon
                 // ~~~~~~~LATER ON: set the recipe to favorited
             }
             else
             {
-                heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"]; // change icon
+                heartButtonImageBrush.ImageSource = unfillHeartImage; // change icon
                 // ~~~~~~~LATER ON: set the recipe to unfavorited
             }
             

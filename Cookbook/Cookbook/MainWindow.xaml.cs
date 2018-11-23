@@ -21,18 +21,18 @@ namespace Cookbook
     public partial class MainWindow : Window
     {
 
+        // cache global resources here...
+        private BitmapImage searchButtonImage = (BitmapImage)Application.Current.Resources["searchButtonIcon"];
+        private BitmapImage searchButtonDarkImage = (BitmapImage)Application.Current.Resources["searchButtonDarkIcon"];
 
-        public BitmapImage searchButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/searchButton.png")); // only need to load the images once
-        public BitmapImage searchButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/searchButtonDark.png"));
+        private BitmapImage cookbookButtonImage = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
+        private BitmapImage cookbookButtonDarkImage = (BitmapImage)Application.Current.Resources["cookbookButtonDarkIcon"];
 
-        public BitmapImage cookbookButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/cookbookButton.png")); 
-        public BitmapImage cookbookButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/cookbookButtonDark.png"));
+        private BitmapImage currentRecipeButtonImage = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+        private BitmapImage currentRecipeButtonDarkImage = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
 
-        public BitmapImage currentRecipeButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/currentRecipeButton.png")); 
-        public BitmapImage currentRecipeButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/currentRecipeButtonDark.png"));
-
-        public BitmapImage profileButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/profileButton.png")); 
-        public BitmapImage profileButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/profileButtonDark.png"));
+        private BitmapImage profileButtonImage = (BitmapImage)Application.Current.Resources["profileButtonIcon"];
+        private BitmapImage profileButtonDarkImage = (BitmapImage)Application.Current.Resources["profileButtonDarkIcon"];
 
 
         private SearchPage1 searchPage1 = new SearchPage1(); // always use these instances if we want to remember the state
@@ -72,6 +72,8 @@ namespace Cookbook
             cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage; // light
             currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonImage;
             profilePageButtonImageBrush.ImageSource = profileButtonImage; 
+
+
 
             Main.Content = searchPage1;
         }
