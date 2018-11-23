@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Cookbook"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Images.xaml" /> <!-- combine this dictionary into global dictionary-->
+      
     </Application.Resources>
 </Application>

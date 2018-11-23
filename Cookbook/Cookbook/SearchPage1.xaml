@@ -9,9 +9,14 @@
       Title="SearchPage1" Background="white">
 
     <Grid>
-        <Button Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Click="Button_Click">
+        
+        <Button Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Click="Button_Click" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
             <Image Name="fav" Stretch="Fill" Source="Images/unfillHeart.png" Height="90" Width="90"/>
         </Button>
-        
+        <Button Content="Button" HorizontalAlignment="Left" Margin="238,203,0,0" VerticalAlignment="Top" Width="75" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
+
+
+        <local:HeartButton Margin="405,518,117,307" />
+
     </Grid>
 </Page>

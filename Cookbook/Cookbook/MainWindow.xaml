@@ -34,6 +34,7 @@
                     <ImageBrush x:Name="profilePageButtonImageBrush" ImageSource="Images/profileButton.png"/>
                 </Button.Background>
             </Button>
+
         </StackPanel>
 
         <Frame x:Name="Main" HorizontalAlignment="Left" Height="880" VerticalAlignment="Top" Width="576" NavigationUIVisibility="Hidden"/>

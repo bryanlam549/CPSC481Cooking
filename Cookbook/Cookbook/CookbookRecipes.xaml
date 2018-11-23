@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Cookbook"
              mc:Ignorable="d" 
              d:DesignHeight="251.83" d:DesignWidth="576">
-    <Grid>
+    <Grid Height="251.83" Width="576">
         <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,5" BorderThickness="2" Opacity="0.10">
         
         </Border>

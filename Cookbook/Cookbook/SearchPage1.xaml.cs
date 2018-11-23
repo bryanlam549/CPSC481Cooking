@@ -26,6 +26,8 @@ namespace Cookbook
         {
             InitializeComponent();
 
+            HeartButton hb = new HeartButton();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
