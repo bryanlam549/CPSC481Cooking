@@ -41,7 +41,7 @@ namespace Cookbook
                 CookbookRecipes burger = new CookbookRecipes();
                 burger.Number = 1.ToString() + ".";
                 burger.Title = GlobalData.Instance._burger._name;
-                burger.Description = GlobalData.Instance._burger._description;
+                //burger.Description = GlobalData.Instance._burger._description;
                 burger.Dur = GlobalData.Instance._burger._duration.ToString() + " min";
 
                 

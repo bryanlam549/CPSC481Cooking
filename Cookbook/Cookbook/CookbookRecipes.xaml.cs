@@ -40,13 +40,13 @@ namespace Cookbook
             set
             {
                 title = value;
-                this.TitleText.Content = this.title;
+                this.TitleText.Text = this.title;
             }
         }
 
         //Food description
         private string description;
-        public string Description
+        /*public string Description
         {
             get { return description; }
             set
@@ -54,7 +54,7 @@ namespace Cookbook
                 description = value;
                 this.desc.Text= this.description;
             }
-        }
+        }*/
 
         //Duration time
         private string dur;
