@@ -33,22 +33,89 @@ namespace Cookbook
                 recipe.foodProfileButton.Click += foodProfileButton_Click;
                 Recipes.Children.Add(recipe);
             }*/
-         
+
             //If buger is favourited, then display it.
+            
+            if (MainWindow.burgerFave)
+            {
+                CookbookRecipes burger = new CookbookRecipes();
+                burger.Number = 1.ToString() + ".";
+                burger.Title = GlobalData.Instance._burger._name;
+                burger.Description = GlobalData.Instance._burger._description;
+                burger.Dur = GlobalData.Instance._burger._duration.ToString() + " min";
+
+                
+                //BitmapImage food = new BitmapImage();
+                //food.BeginInit();
+                //food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
+                //food.EndInit();
+
+                burger.FoodImage = GlobalData.Instance._burger._image;
+
+                //IF recipe difficulty = medium
+                burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+
+                if (GlobalData.Instance._burger._difficulty == Recipe.Difficulties.EASY)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+                else if (GlobalData.Instance._burger._difficulty == Recipe.Difficulties.MEDIUM)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+                else if (GlobalData.Instance._burger._difficulty == Recipe.Difficulties.HARD)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["hardIconIcon"];
+
+                //burger.Click += editButton_Click;
+                burger.editButton.Click += editButton_Click;
+                burger.foodProfileButton.Click += foodProfileButton_Click;
+
+                Recipes.Children.Add(burger);
+            }
+
+            /*This is with Global data in main...
+            if (MainWindow.burgerFave)
+            {
+                //IF burger is favourited
+                CookbookRecipes burger = new CookbookRecipes();
+                burger.Number = 1.ToString() + ".";
+                burger.Title = MainWindow.burgerProperties._name;
+                burger.Description = MainWindow.burgerProperties._description;
+                burger.Dur = MainWindow.burgerProperties._duration.ToString() + " min";
+
+
+                burger.FoodImage = MainWindow.burgerProperties._image;
+
+                //IF recipe difficulty = medium
+                burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+
+                if (MainWindow.burgerProperties._difficulty == Recipe.Difficulties.EASY)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+                else if (MainWindow.burgerProperties._difficulty == Recipe.Difficulties.MEDIUM)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+                else if (MainWindow.burgerProperties._difficulty == Recipe.Difficulties.HARD)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["hardIconIcon"];
+
+                //burger.Click += editButton_Click;
+                burger.editButton.Click += editButton_Click;
+                burger.foodProfileButton.Click += foodProfileButton_Click;
+
+                Recipes.Children.Add(burger);
+            }
+            */
+
+            /* OG
             if (MainWindow.burgerFave == true)
             {
                 //IF burger is favourited
                 CookbookRecipes burger = new CookbookRecipes();
-                burger.Number = 1.ToString() + "."; 
-                burger.Title = "Burgers";
+                burger.Number = 1.ToString() + ".";
+                burger.Title = GlobalData.Instance._burger._name;
+                //burger.Title = GlobalData.Instance.burger._name;
                 burger.Description = "This is the food description";
                 burger.Dur = "30 min";
 
-                /*
-                BitmapImage food = new BitmapImage();
-                food.BeginInit();
-                food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
-                food.EndInit();*/
+
+                //BitmapImage food = new BitmapImage();
+                //food.BeginInit();
+                //food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
+                //food.EndInit();
 
                 burger.FoodImage = (BitmapImage)Application.Current.Resources["burgerIcon"];
 
@@ -60,7 +127,9 @@ namespace Cookbook
                 burger.foodProfileButton.Click += foodProfileButton_Click;
 
                 Recipes.Children.Add(burger);
+
             }
+            */
         }
         //public event RoutedEventHandler Click;
         public void editButton_Click(object sender, RoutedEventArgs e)

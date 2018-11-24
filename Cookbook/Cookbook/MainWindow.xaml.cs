@@ -33,19 +33,17 @@ namespace Cookbook
 
         private BitmapImage profileButtonImage = (BitmapImage)Application.Current.Resources["profileButtonIcon"];
         private BitmapImage profileButtonDarkImage = (BitmapImage)Application.Current.Resources["profileButtonDarkIcon"];
+
         
+
         //Main pages
         private SearchPage1 searchPage1 = GlobalData.Instance.search; // always use these instances if we want to remember the state
         //private CookbookPage1 cookbookPage1 = new CookbookPage1();
         private CurrentRecipePage1 currentRecipePage1 = GlobalData.Instance.currentRecipePage;
         private ProfilePage1 profilePage1 = GlobalData.Instance.profilePage;
 
-
-        public static Boolean burgerFave = true;
-
-        
-        //Also initialize sub pages??
-        //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
+        public static Recipe burgerProperties = GlobalData.Instance._burger; //Doesn't work unless I call this in main?!
+        public static Boolean burgerFave = GlobalData.Instance._burger._isFavourite;
 
         public MainWindow()
         {
