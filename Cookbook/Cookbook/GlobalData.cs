@@ -19,11 +19,11 @@ namespace Cookbook
             get { return instance; }
         }
 
-        public Recipe recipe1 = new Recipe(); // something like this, then each component like a HeartButton could have a field set to 1 recipe.
-        public Recipe recipe2 = new Recipe();
+        //public Recipe recipe1 = new Recipe(); // something like this, then each component like a HeartButton could have a field set to 1 recipe.
+        //public Recipe recipe2 = new Recipe();
 
-        public Page page1 = new Page();
-        public SearchPage1 search;
+        //public Page page1 = new Page();
+        //public SearchPage1 search;
 
         
         
@@ -34,8 +34,8 @@ namespace Cookbook
 
             
             
-            Page page = GlobalData.Instance.page1;
-            search = new SearchPage1();
+            //Page page = GlobalData.Instance.page1;
+            //search = new SearchPage1();
             
             //Console.Write("TEST");
         }

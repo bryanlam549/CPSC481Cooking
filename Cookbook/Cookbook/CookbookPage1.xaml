@@ -14,17 +14,17 @@
                 Foreground="#c29a3a" BorderBrush="#c29a3a" BorderThickness="3"
                 Margin="0,378,192,377.246" HorizontalAlignment="Right" Width="192"/-->
             <Button x:Name="favouritePageButton" Content="" HorizontalAlignment="Left" 
-                    Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="FavouriteButton_Click">
+                    Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="FavouriteButton_Click" Style="{StaticResource CustomButtonStyle}">
                 <Button.Background>
                     <ImageBrush x:Name="FavouriteButtonImageBrush" ImageSource="{StaticResource favouriteButtonDarkIcon}"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="personalPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="PersonalButton_Click">
+            <Button x:Name="personalPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="PersonalButton_Click" Style="{StaticResource CustomButtonStyle}">
                 <Button.Background>
                     <ImageBrush x:Name="personaleButtonImageBrush" ImageSource="{StaticResource personalButtonIcon}"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="recentPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="recentButton_Click">
+            <Button x:Name="recentPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="192" Height="124.506" BorderThickness="0" Click="recentButton_Click" Style="{StaticResource CustomButtonStyle}">
                 <Button.Background>
                     <ImageBrush x:Name="recentButtonImageBrush" ImageSource="{StaticResource recentButtonIcon}"/>
                 </Button.Background>

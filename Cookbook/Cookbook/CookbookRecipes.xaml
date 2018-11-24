@@ -14,7 +14,7 @@
         
 
         <Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815" 
-                 HorizontalAlignment="Right" Width="576">
+                 HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}">
             <StackPanel Margin="50,0,0,0" Width="526.30">
                 <Label Name="TitleText" HorizontalAlignment="Center" FontSize="48" Content="Hamburger"/>
                 <StackPanel Orientation="Horizontal" Height="150">
@@ -40,7 +40,7 @@
         </Button>
         <StackPanel Margin="0,0,525,0">
             <Label Name="NumberText" Content="1." FontSize="48"/>
-            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit">
+            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit" Style="{StaticResource CustomButtonStyle}">
                 <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
             </Button>
         </StackPanel>

@@ -19,7 +19,7 @@
         <TextBox x:Name="nameInput" HorizontalAlignment="Center" Height="39" Margin="28,164,42,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" FontSize="28" MaxLength="12"/>
         <TextBox x:Name="emailInput" HorizontalAlignment="Center" Height="39" Margin="28,322,42,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" FontSize="28"/>
         <PasswordBox x:Name="passwordInput" HorizontalAlignment="Center" Height="39" Margin="28,468,42,0" VerticalAlignment="Top" Width="506" FontSize="28" PasswordChar="*"/>
-        <Button Content="SIGN UP" FontWeight ="Bold" Height="75" Width="375" Background="White" Margin="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SignUp_Click"/>
+        <Button Content="SIGN UP" FontWeight ="Bold" Height="75" Width="375" Background="White" Margin="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SignUp_Click" Style="{StaticResource CustomButtonStyle}"/>
         <TextBlock Text="* password must contain at least 8 characters" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="28,512,42,0" Width="506"/>
         <TextBlock Text="* password must contain at least 1 digit" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="28,550,42,0" Width="506"/>
         <Frame x:Name="signUpMain" HorizontalAlignment="Left" Height="880" VerticalAlignment="Top" Width="576" NavigationUIVisibility="Hidden"/>

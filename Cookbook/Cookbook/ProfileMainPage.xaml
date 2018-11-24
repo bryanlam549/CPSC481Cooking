@@ -13,12 +13,12 @@
     </Page.Background>
     <Grid>
         <StackPanel Orientation="Horizontal" Height="124.506" VerticalAlignment="Top">
-            <Button x:Name="InfoPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="288" Height="124.506" BorderThickness="0" Click="ProfileInfoButton_Click">
+            <Button x:Name="InfoPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="288" Height="124.506" BorderThickness="0" Click="ProfileInfoButton_Click" Style="{StaticResource CustomButtonStyle}">
                 <Button.Background>
                     <ImageBrush x:Name="InfoButtonImageBrush" ImageSource="Images/InfoButtonDark.png" />
                 </Button.Background>
             </Button>
-            <Button x:Name="PreferencesPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="288" Height="124.506" BorderThickness="0" Click="ProfilePreferencesButton_Click">
+            <Button x:Name="PreferencesPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="288" Height="124.506" BorderThickness="0" Click="ProfilePreferencesButton_Click" Style="{StaticResource CustomButtonStyle}">
                 <Button.Background>
                     <ImageBrush x:Name="PreferencesButtonImageBrush" ImageSource="Images/PreferencesButton.png"/>
                 </Button.Background>

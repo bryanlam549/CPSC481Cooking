@@ -9,23 +9,23 @@
       Title="Mod">
 
     <Grid>
-        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0">
+        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" Style="{StaticResource CustomButtonStyle}">
             <Button.Background>
                 <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
             </Button.Background>
         </Button>
         <Label Content="Change?" FontSize="72" HorizontalAlignment="Center" Margin="150,100,141,655.246"/>
         <Button Content="Ingredients" FontWeight ="Bold" Height="75" Width="375"
-                Background="White" Margin="101,270,100,535.246" HorizontalAlignment="Center"/>
+                Background="White" Margin="101,270,100,535.246" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}"/>
         <Button Content="Equipment" FontWeight ="Bold" Height="75" Width="375"
-                Background="White" Margin="101,440,100,365.246" HorizontalAlignment="Center"/>
+                Background="White" Margin="101,440,100,365.246" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}"/>
         <Button Content="Steps" FontWeight ="Bold" Height="75" Width="376"
-                Background="White" Margin="100,605,100,200.246" HorizontalAlignment="Center"/>
+                Background="White" Margin="100,605,100,200.246" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}"/>
         
         <Button Content="Save" FontWeight ="Bold" Width="180"
-                Background="LightGreen" Margin="330,765,66,80.246" HorizontalAlignment="Center" RenderTransformOrigin="1.749,1.579"/>
+                Background="LightGreen" Margin="330,765,66,80.246" HorizontalAlignment="Center" RenderTransformOrigin="1.749,1.579" Style="{StaticResource CustomButtonStyle}"/>
         <Button Content="Cancel" FontWeight ="Bold" Width="180"
-                Background="Red" Margin="75,765,321,80.246" HorizontalAlignment="Center"/>
+                Background="Red" Margin="75,765,321,80.246" HorizontalAlignment="Center" Style="{StaticResource CustomButtonStyle}"/>
 
         <!--Label Content="MODIFICATION" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center"/-->
     </Grid>
