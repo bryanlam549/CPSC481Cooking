@@ -115,5 +115,12 @@ namespace Cookbook
             Main.Content = profilePage1;
         }
 
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
+            }
+        }
     }
 }
