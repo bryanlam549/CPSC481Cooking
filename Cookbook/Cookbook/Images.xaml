@@ -10,7 +10,7 @@
     <BitmapImage x:Key="backIcon" UriSource="Images/back.png" />
     <BitmapImage x:Key="backgroundIcon" UriSource="Images/background.png" />
     <BitmapImage x:Key="background1Icon" UriSource="Images/background1.png" />
-    <BitmapImage x:Key="burgerIcon" UriSource="Images/burger.png" />
+    <BitmapImage x:Key="burgerIcon" UriSource="Images/burger.jpg" />
     <BitmapImage x:Key="cookbookButtonIcon" UriSource="Images/cookbookButton.png" />
     <BitmapImage x:Key="cookbookButtonDarkIcon" UriSource="Images/cookbookButtonDark.png" />
     <BitmapImage x:Key="currentRecipeButtonIcon" UriSource="Images/currentRecipeButton.png" />

@@ -34,10 +34,10 @@ namespace Cookbook
 
             
             
-            //Page page = GlobalData.Instance.page1;
+            Page page = GlobalData.Instance.page1;
             search = new SearchPage1();
-
-            Console.Write("TEST");
+            
+            //Console.Write("TEST");
         }
 
 

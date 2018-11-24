@@ -23,45 +23,43 @@ namespace Cookbook
         public CookbookFavouritePage()
         {
             InitializeComponent();
-
-            //We can have 5 recipes, meanining 5 of these.
-            for(int i = 0; i < 10; i++)
+            /*for(int i = 0; i < 10; i++)
             {
 
-                CookbookRecipes burger = new CookbookRecipes();
+                CookbookRecipes recipe = new CookbookRecipes();
                 
-                burger.editButton.Click += editButton_Click;
-                burger.foodProfileButton.Click += foodProfileButton_Click;
-                Recipes.Children.Add(burger);
-            }
-            /*
+                recipe.editButton.Click += editButton_Click;
+                recipe.foodProfileButton.Click += foodProfileButton_Click;
+                Recipes.Children.Add(recipe);
+            }*/
+         
+            //If buger is favourited, then display it.
             if (MainWindow.burgerFave == true)
             {
                 //IF burger is favourited
                 CookbookRecipes burger = new CookbookRecipes();
-                burger.Number = 1.ToString() + ".";
+                burger.Number = 1.ToString() + "."; 
                 burger.Title = "Burgers";
                 burger.Description = "This is the food description";
                 burger.Dur = "30 min";
 
+                /*
                 BitmapImage food = new BitmapImage();
                 food.BeginInit();
                 food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
-                food.EndInit();
-                burger.FoodImage = food;
+                food.EndInit();*/
 
-                BitmapImage diff = new BitmapImage();
-                diff.BeginInit();
-                diff.UriSource = new Uri("Images/medIcon.png", UriKind.Relative);
-                diff.EndInit();
-                burger.DiffImage = diff;
+                burger.FoodImage = (BitmapImage)Application.Current.Resources["burgerIcon"];
+
+                //IF recipe difficulty = medium
+                burger.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
 
                 //burger.Click += editButton_Click;
                 burger.editButton.Click += editButton_Click;
                 burger.foodProfileButton.Click += foodProfileButton_Click;
 
                 Recipes.Children.Add(burger);
-            }*/
+            }
         }
         //public event RoutedEventHandler Click;
         public void editButton_Click(object sender, RoutedEventArgs e)
@@ -85,11 +83,6 @@ namespace Cookbook
             //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
             //((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.search;
             ((MainWindow)App.Current.MainWindow).Main.Content = profile;
-
-
-
-
-
         }
     }
 }

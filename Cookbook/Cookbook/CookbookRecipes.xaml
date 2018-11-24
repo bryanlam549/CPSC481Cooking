@@ -23,15 +23,15 @@
                     Text="This is the food description....."/><LineBreak/><Run Text="blah."/></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Height="28">
-                    <Image Name="difficulty" Source="Images/medIcon.png" />
-                    <Image Name="rating1" Source="Images/fillStar.png"/>
-                    <Image Name="rating2" Source="Images/fillStar.png"/>
-                    <Image Name="rating3" Source="Images/unfillStar.png" />
-                    <Image Name="rating4" Source="Images/unfillStar.png" />
-                    <Image Name="rating5" Source="Images/unfillStar.png" />
-                    <Image Name="duration" Source="Images/durationIcon.png"/>
+                    <Image Name="difficulty" Source="{StaticResource medIconIcon}" />
+                    <Image Name="rating1" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating2" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating3" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating4" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating5" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="duration" Source="{StaticResource durationIconIcon}"/>
                     <Label Name="durationLabel" Content="25 min" FontSize="8" VerticalAlignment="Bottom"/>
-                    <Image Name="share" Source="Images/shareIcon.png" Margin="185,0,0,0"/>
+                    <Image Name="share" Source="{StaticResource shareIconIcon}" Margin="185,0,0,0"/>
 
 
                 </StackPanel>
@@ -41,7 +41,7 @@
         <StackPanel Margin="0,0,525,0">
             <Label Name="NumberText" Content="1." FontSize="48"/>
             <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit">
-                <Image Name="editIcon" VerticalAlignment="Bottom" Source="Images/editIcon.png"/>
+                <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
             </Button>
         </StackPanel>
 

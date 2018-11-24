@@ -20,6 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookPage1 : Page
     {
+        /*
         public BitmapImage favouriteButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/favouriteButton.png")); // only need to load the images once
         public BitmapImage favouriteButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/favouriteButtonDark.png"));
 
@@ -28,7 +29,7 @@ namespace Cookbook
 
         public BitmapImage recentRecipeButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/recentButton.png"));
         public BitmapImage recentRecipeButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/recentButtonDark.png"));
-
+        */
 
         private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage();
         private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
@@ -41,14 +42,14 @@ namespace Cookbook
             cookMain.Content = cookbookfavouritePage; // start cookbook at favourite page all the time
             
         }
-
+        //heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
         private void FavouriteButton_Click(object sender, RoutedEventArgs e)
         {
             //Selected
-            FavouriteButtonImageBrush.ImageSource = favouriteButtonDarkImage;
+            FavouriteButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["favouriteButtonDarkIcon"];
             //Unselected
-            personaleButtonImageBrush.ImageSource = personalButtonImage;
-            recentButtonImageBrush.ImageSource = recentRecipeButtonImage;
+            personaleButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["personalButtonIcon"];
+            recentButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["recentButtonIcon"];
             //Switch content
             cookMain.Content = cookbookfavouritePage;
         }
@@ -56,10 +57,10 @@ namespace Cookbook
         private void PersonalButton_Click(object sender, RoutedEventArgs e)
         {
             //Selected
-            personaleButtonImageBrush.ImageSource = personalButtonDarkImage;
+            personaleButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["personalButtonDarkIcon"];
             //Unselected
-            FavouriteButtonImageBrush.ImageSource = favouriteButtonImage;
-            recentButtonImageBrush.ImageSource = recentRecipeButtonImage;
+            FavouriteButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["favouriteButtonIcon"];
+            recentButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["recentButtonIcon"];
             //Switch content
             cookMain.Content = cookbookPersonalPage;
         }
@@ -67,10 +68,10 @@ namespace Cookbook
         private void recentButton_Click(object sender, RoutedEventArgs e)
         {
             //Selected
-            recentButtonImageBrush.ImageSource = recentRecipeButtonDarkImage;
+            recentButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["recentButtonDarkIcon"];
             //Unselected
-            FavouriteButtonImageBrush.ImageSource = favouriteButtonImage;
-            personaleButtonImageBrush.ImageSource = personalButtonImage;
+            FavouriteButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["favouriteButtonIcon"];
+            personaleButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["personalButtonIcon"];
             //Switch Content
             cookMain.Content = cookbookRecentPage;
         }
