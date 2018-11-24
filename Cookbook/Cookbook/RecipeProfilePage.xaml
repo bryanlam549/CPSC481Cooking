@@ -9,8 +9,13 @@
       Title="RecipeProfilePage">
 
     <Grid>
-        <local:HeartButton x:Name ="_heartButton" Margin="336,10,167,774" />
+        <local:HeartButton x:Name ="_heartButton" Margin="309,10,194,774" />
         <local:TransitionPageButton x:Name ="_transitionPageButton" Margin="10,20,435,785" />
-        <TextBlock Text="YUM!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72"/>        
+        <Rectangle Height="280" Margin="83,160,87,440" Stroke="Black" Width="406" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="3">
+            <Rectangle.Fill>
+                <ImageBrush x:Name="_recipeImageBrush" ImageSource="{StaticResource burgerIcon}"/> <!-- just a placeholder image (will be overwritten)-->
+            </Rectangle.Fill>
+        </Rectangle>
+
     </Grid>
 </Page>

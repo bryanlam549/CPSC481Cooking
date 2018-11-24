@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace Cookbook
 {
@@ -25,7 +26,7 @@ namespace Cookbook
         private BitmapImage unfillHeartImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
         private BitmapImage heartImage = (BitmapImage)Application.Current.Resources["heartIcon"];
 
-        public Recipe _recipe;
+        public Recipe _recipe; // ~~~~~~~~~~~~~~gets set by page
 
 
         // ~~~~~~~LATER ON: have a Recipe (instance of Recipe class) field here (set by the page) so this button can be applied to a specific recipe
@@ -48,12 +49,28 @@ namespace Cookbook
             if (_isFilled)
             {
                 heartButtonImageBrush.ImageSource = heartImage; // change icon
-                // ~~~~~~~LATER ON: set the recipe to favorited
+                // set the recipe to favorited
+                if (_recipe != null)
+                {
+                    _recipe._isFavourite = true;
+                }
+                else
+                {
+                    Debug.WriteLine("ERROR: HeartButton.xaml.cs | NULL RECIPE");
+                }
             }
             else
             {
                 heartButtonImageBrush.ImageSource = unfillHeartImage; // change icon
-                // ~~~~~~~LATER ON: set the recipe to unfavorited
+                // set the recipe to unfavorited
+                if (_recipe != null)
+                {
+                    _recipe._isFavourite = false;
+                }
+                else
+                {
+                    Debug.WriteLine("ERROR: HeartButton.xaml.cs | NULL RECIPE");
+                }
             }
             
         }

@@ -6,45 +6,46 @@ using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
 
+
 namespace Cookbook
 {
     public class Recipe
     {
 
-        private enum Difficulties {
+        public enum Difficulties {
             EASY, MEDIUM, HARD
         }
 
-        private enum Categories // ~~~~~KEEP ADDING MORE WHEN NEEDED
+        public enum Categories // ~~~~~KEEP ADDING MORE WHEN NEEDED
         {
-            BEEF, CHICKEN, FISH, PASTA
+            BEEF, CHICKEN, FISH, PASTA, CHINESE
         }
 
-        private bool _isFavourite = false;
+        public bool _isFavourite;
 
-        private string _name;
+        public string _name;
 
-        private BitmapImage _image;
+        public BitmapImage _image;
 
-        private Difficulties _difficulty;
+        public Difficulties _difficulty;
 
-        private int _rating;
+        public int _rating; // 0 rating is unrated
 
-        private int _duration; // in minutes?
+        public int _duration; // in minutes?
 
-        private string _description;
+        public string _description;
 
-        private int _servings;
+        public int _servings;
 
-        private int _ingredientCount; // init based on ingredients list size
+        public int _ingredientCount; // init based on ingredients list size
 
-        private Categories _category; // ~~~~~~~~~~~NOTE: maybe we want to have a list of categories (e.g. a dish can have multiple categories?)
+        public Categories _category; // ~~~~~~~~~~~NOTE: maybe we want to have a list of categories (e.g. a dish can have multiple categories?)
 
-        private List<Ingredient> _ingredients = new List<Ingredient>(); // each ingredient will have text, current unit, possible units, substitutions..., _isChecked, etc.
+        public List<Ingredient> _ingredients = new List<Ingredient>(); // each ingredient will have text, current unit, possible units, substitutions..., _isChecked, etc.
 
-        private List<string> _equipment = new List<string>();
+        public List<string> _equipment;
 
-        private List<string> _steps = new List<string>();
+        public List<string> _steps;
 
 
         public Recipe()
@@ -53,11 +54,13 @@ namespace Cookbook
         }
 
 
+        /*
         public void ToggleFavourite()
         {
             _isFavourite = !_isFavourite;
             // update other stuff in future
         }
+        */
 
 
     }

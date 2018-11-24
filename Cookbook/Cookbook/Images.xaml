@@ -38,6 +38,7 @@
     <BitmapImage x:Key="recentButtonDarkIcon" UriSource="Images/recentButtonDark.png" />
     <BitmapImage x:Key="searchButtonIcon" UriSource="Images/searchButton.png" />
     <BitmapImage x:Key="searchButtonDarkIcon" UriSource="Images/searchButtonDark.png" />
+    <BitmapImage x:Key="shanghaiNoodlesIcon" UriSource="Images/shanghaiNoodles.png" />
     <BitmapImage x:Key="shareIconIcon" UriSource="Images/shareIcon.png" />
     <BitmapImage x:Key="unfillHeartIcon" UriSource="Images/unfillHeart.png" />
     <BitmapImage x:Key="unfillStarIcon" UriSource="Images/unfillStar.png" />

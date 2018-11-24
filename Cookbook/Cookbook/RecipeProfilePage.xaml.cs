@@ -20,9 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class RecipeProfilePage : Page
     {
-        //public Recipe _recipe;
-
-
+        public Recipe _recipe;
 
         public RecipeProfilePage()
         {
@@ -31,6 +29,11 @@ namespace Cookbook
             // init components...
             //_heartButton._recipe = ... set based
 
+            _recipe = GlobalData.Instance._shanghaiNoodlesRecipe; // ~~~~NOTE: set to proper recipe later on based on recipe clicked on, but hard coded this for testing
+
+            _heartButton._recipe = _recipe;
+
+            _recipeImageBrush.ImageSource = _recipe._image;
 
         }
     }
