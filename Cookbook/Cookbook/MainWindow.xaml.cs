@@ -20,7 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        /*
         // cache global resources here...
         private BitmapImage searchButtonImage = (BitmapImage)Application.Current.Resources["searchButtonIcon"];
         private BitmapImage searchButtonDarkImage = (BitmapImage)Application.Current.Resources["searchButtonDarkIcon"];
@@ -33,7 +33,7 @@ namespace Cookbook
 
         private BitmapImage profileButtonImage = (BitmapImage)Application.Current.Resources["profileButtonIcon"];
         private BitmapImage profileButtonDarkImage = (BitmapImage)Application.Current.Resources["profileButtonDarkIcon"];
-
+        */
 
         public SearchPage1 searchPage1 = new SearchPage1(); // always use these instances if we want to remember the state
         //private CookbookPage1 cookbookPage1 = new CookbookPage1();
@@ -65,13 +65,15 @@ namespace Cookbook
             this.DragMove();
         }
 
+        //heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
         private void SearchPageButton_Click(object sender, RoutedEventArgs e)
         {
-            searchPageButtonImageBrush.ImageSource = searchButtonDarkImage; // dark
 
-            cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage; // light
-            currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonImage;
-            profilePageButtonImageBrush.ImageSource = profileButtonImage;
+            searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["searchButtonDarkIcon"]; // dark
+
+            cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"]; // light
+            currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+            profilePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["profileButtonIcon"];
 
 
 
@@ -82,33 +84,33 @@ namespace Cookbook
         private void CookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
             CookbookPage1 cookbookPage1 = new CookbookPage1();
-            cookbookPageButtonImageBrush.ImageSource = cookbookButtonDarkImage; // dark
+            cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonDarkIcon"]; // dark
 
-            searchPageButtonImageBrush.ImageSource = searchButtonImage; // light
-            currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonImage;
-            profilePageButtonImageBrush.ImageSource = profileButtonImage;
+            searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["searchButtonIcon"]; // light
+            currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+            profilePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["profileButtonIcon"];
 
             Main.Content = cookbookPage1;
         }
 
         private void CurrentRecipePageButton_Click(object sender, RoutedEventArgs e)
         {
-            currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonDarkImage; // dark
+            currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"]; // dark
 
-            searchPageButtonImageBrush.ImageSource = searchButtonImage; // light
-            cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage;
-            profilePageButtonImageBrush.ImageSource = profileButtonImage;
+            searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["searchButtonIcon"]; // light
+            cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
+            profilePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["profileButtonIcon"];
 
             Main.Content = currentRecipePage1;
         }
 
         private void ProfilePageButton_Click(object sender, RoutedEventArgs e)
         {
-            profilePageButtonImageBrush.ImageSource = profileButtonDarkImage; // dark
+            profilePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["profileButtonDarkIcon"]; // dark
 
-            searchPageButtonImageBrush.ImageSource = searchButtonImage; // light
-            cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage;
-            currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonImage;
+            currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"]; // ligh
+            searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["searchButtonIcon"];
+            cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
 
             Main.Content = profilePage1;
         }
