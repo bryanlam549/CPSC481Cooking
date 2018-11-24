@@ -37,6 +37,12 @@ namespace Cookbook
         public CookbookRecentPage ckbkPersonal = new CookbookRecentPage();
         public CookbookPersonalPage ckbkRecent = new CookbookPersonalPage();
 
+        //Edit subpage
+        public Mod modification = new Mod();
+
+        //Profile subpages
+
+
         private GlobalData()
         {
             // init fields of each recipe here

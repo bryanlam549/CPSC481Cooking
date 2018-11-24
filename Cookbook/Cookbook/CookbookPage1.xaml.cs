@@ -40,10 +40,12 @@ namespace Cookbook
         private BitmapImage recentRecipeButtonImage = (BitmapImage)Application.Current.Resources["recentButtonIcon"];
         private BitmapImage recentRecipeButtonDarkImage = (BitmapImage)Application.Current.Resources["recentButtonDarkIcon"];
 
+        //private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage();
+        //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
+        //private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
         private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage();
         private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
         private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
-
 
         public CookbookPage1()
         {

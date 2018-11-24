@@ -34,11 +34,12 @@ namespace Cookbook
         private BitmapImage profileButtonImage = (BitmapImage)Application.Current.Resources["profileButtonIcon"];
         private BitmapImage profileButtonDarkImage = (BitmapImage)Application.Current.Resources["profileButtonDarkIcon"];
         
-
-        public SearchPage1 searchPage1 = new SearchPage1(); // always use these instances if we want to remember the state
+        //Main pages
+        private SearchPage1 searchPage1 = GlobalData.Instance.search; // always use these instances if we want to remember the state
         //private CookbookPage1 cookbookPage1 = new CookbookPage1();
-        private CurrentRecipePage1 currentRecipePage1 = new CurrentRecipePage1();
-        private ProfilePage1 profilePage1 = new ProfilePage1();
+        private CurrentRecipePage1 currentRecipePage1 = GlobalData.Instance.currentRecipePage;
+        private ProfilePage1 profilePage1 = GlobalData.Instance.profilePage;
+
 
         public static Boolean burgerFave = true;
 

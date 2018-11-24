@@ -20,6 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookFavouritePage : Page
     {
+        
         public CookbookFavouritePage()
         {
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace Cookbook
                 burger.FoodImage = (BitmapImage)Application.Current.Resources["burgerIcon"];
 
                 //IF recipe difficulty = medium
-                burger.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+                burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
 
                 //burger.Click += editButton_Click;
                 burger.editButton.Click += editButton_Click;
@@ -68,7 +69,8 @@ namespace Cookbook
             //burger.Title = "HOW DARE YOU!!!";
             //blah.Content = "HOW DARE YOU!!!!";
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-            Mod mod = new Mod();
+            //Mod mod = new Mod();
+            Mod mod = GlobalData.Instance.modification;
             ((MainWindow)App.Current.MainWindow).Main.Content = mod;
 
 
@@ -82,6 +84,7 @@ namespace Cookbook
             RecipeProfilePage profile = new RecipeProfilePage();
             //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
             //((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.search;
+            
             ((MainWindow)App.Current.MainWindow).Main.Content = profile;
         }
     }
