@@ -99,6 +99,9 @@
     <Compile Include="ProfileSignUpPage.xaml.cs">
       <DependentUpon>ProfileSignUpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RatingControl.xaml.cs">
+      <DependentUpon>RatingControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Recipe.cs" />
     <Compile Include="RecipeProfilePage.xaml.cs">
       <DependentUpon>RecipeProfilePage.xaml</DependentUpon>
@@ -178,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProfileSignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RatingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -5,12 +5,97 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cookbook"
              mc:Ignorable="d" 
-             d:DesignHeight="128" d:DesignWidth="128">
+             d:DesignHeight="160" d:DesignWidth="160">
+
     <Grid>
-        <Button x:Name="transitionPageButton" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="TransitionPageButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="transitionPageButton" Click="TransitionPageButton_Click" Style="{StaticResource CustomButtonStyle}">
             <Button.Background>
                 <ImageBrush x:Name="transitionPageButtonImageBrush" ImageSource="{StaticResource backIcon}" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Viewbox StretchDirection="DownOnly" Stretch="Uniform" Grid.Row="1">
+            <ContentControl Content="BACK" FontSize="22"/>
+        </Viewbox>
     </Grid>
+
+    
+    
+
+        <!--
+        <Button x:Name="transitionPageButton" Click="TransitionPageButton_Click" Style="{StaticResource CustomButtonStyle}">
+            <Button.Background>
+                <ImageBrush x:Name="transitionPageButtonImageBrush" ImageSource="{StaticResource backIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        -->
+        
+
+
+    
+
+
+    <!--
+        <Button x:Name="transitionPageButton" Content ="" BorderThickness="0" Click="TransitionPageButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Margin="0,0,0,32">
+            <Button.Background>
+                <ImageBrush x:Name="transitionPageButtonImageBrush" ImageSource="{StaticResource backIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock Text="BACK" FontSize="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,110,0,0"/>
+        
+        -->
+    <!--
+        <Label Content="BACK" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,116,0,0"/>
+        -->
+
+
+
+    <!--
+        <Button x:Name="transitionPageButton" Content ="" BorderThickness="0" Click="TransitionPageButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}">
+            <Button.Background>
+                <ImageBrush x:Name="transitionPageButtonImageBrush" ImageSource="{StaticResource backIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        -->
+
+
+
+    <!--
+        <TextBlock Text="BACK" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50"/>
+        -->
+
+
+    <!--
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="transitionPageButton" Content ="" BorderThickness="0" Click="TransitionPageButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Height="128" Width="160" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button.Background>
+                <ImageBrush x:Name="transitionPageButtonImageBrush" ImageSource="{StaticResource backIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <TextBlock Text="BACK" Grid.Row="1" FontSize="24" Height="32" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        -->
+
+
+    <!--
+        <StackPanel>
+            <Button x:Name="transitionPageButton" Content ="" BorderThickness="0" Click="TransitionPageButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}">
+                <Button.Background>
+                    <ImageBrush x:Name="transitionPageButtonImageBrush" ImageSource="{StaticResource backIcon}" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Label Content="BACK" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        -->
+
+
+
 </UserControl>
