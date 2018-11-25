@@ -25,10 +25,9 @@ namespace Cookbook
             InitializeComponent();
         
 			// Creating the list of categories
-			var categories = new StackLayout()
+			var categories = new StackPanel()
 			{
-				Orientation = StackOrientation.Horizontal,
-				HorizontalOptions = LayoutOptions.Fill,
+				Orientation = Orientation.Horizontal,
 				Children = {
 					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.White},
 					new BoxView(){HeightRequest=40, WidthRequest=40, BackgroundColor = Color.Red},
