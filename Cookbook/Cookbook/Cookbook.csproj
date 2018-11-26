@@ -103,6 +103,9 @@
       <DependentUpon>RatingControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeCompletionPage.xaml.cs">
+      <DependentUpon>RecipeCompletionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecipeProfilePage.xaml.cs">
       <DependentUpon>RecipeProfilePage.xaml</DependentUpon>
     </Compile>
@@ -185,6 +188,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RatingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecipeCompletionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
