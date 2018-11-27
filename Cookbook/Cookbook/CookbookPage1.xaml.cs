@@ -20,6 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookPage1 : Page
     {
+        /*
         public BitmapImage favouriteButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/favouriteButton.png")); // only need to load the images once
         public BitmapImage favouriteButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/favouriteButtonDark.png"));
 
@@ -28,8 +29,20 @@ namespace Cookbook
 
         public BitmapImage recentRecipeButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/recentButton.png"));
         public BitmapImage recentRecipeButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/recentButtonDark.png"));
+        */
 
+        private BitmapImage favouriteButtonImage = (BitmapImage)Application.Current.Resources["favouriteButtonIcon"]; // only need to load the images once
+        private BitmapImage favouriteButtonDarkImage = (BitmapImage)Application.Current.Resources["favouriteButtonDarkIcon"];
 
+        private BitmapImage personalButtonImage = (BitmapImage)Application.Current.Resources["personalButtonIcon"];
+        private BitmapImage personalButtonDarkImage = (BitmapImage)Application.Current.Resources["personalButtonDarkIcon"];
+
+        private BitmapImage recentRecipeButtonImage = (BitmapImage)Application.Current.Resources["recentButtonIcon"];
+        private BitmapImage recentRecipeButtonDarkImage = (BitmapImage)Application.Current.Resources["recentButtonDarkIcon"];
+
+        //private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage();
+        //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
+        //private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
         private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage();
         private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
         private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
@@ -38,8 +51,9 @@ namespace Cookbook
         {
             InitializeComponent();
             cookMain.Content = cookbookfavouritePage; // start cookbook at favourite page all the time
-        }
 
+        }
+        //heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
         private void FavouriteButton_Click(object sender, RoutedEventArgs e)
         {
             //Selected

@@ -1,0 +1,38 @@
+﻿<Page x:Class="Cookbook.RecipeCompletionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cookbook"
+      mc:Ignorable="d" 
+      d:DesignHeight="880" d:DesignWidth="576"
+      Title="RecipeCompletionPage">
+
+    <Page.Background>
+        <ImageBrush ImageSource="Images/background.png"/>
+    </Page.Background>
+    <Grid>
+        <TextBlock Text="-Recipe Name-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold"/>
+        <TextBlock Text="Recipe Complete!" HorizontalAlignment="Center" Height="200" FontSize="36" FontWeight ="Bold" Margin="140,252,140,428"/>
+        <TextBlock Text="Rate" HorizontalAlignment="Center" Height="100" FontSize="36" FontWeight ="Bold" Margin="250,368,250,412"/>
+        <StackPanel Orientation="Horizontal" Height="28" Margin="220,436,206,416">
+            <Image Name="rating1" Source="{StaticResource unfillStarIcon}"/>
+            <Image Name="rating2" Source="{StaticResource unfillStarIcon}"/>
+            <Image Name="rating3" Source="{StaticResource unfillStarIcon}"/>
+            <Image Name="rating4" Source="{StaticResource unfillStarIcon}"/>
+            <Image Name="rating5" Source="{StaticResource unfillStarIcon}"/>
+        </StackPanel>
+        <TextBlock Text="Favourite" HorizontalAlignment="Center" Height ="100" FontSize="36" FontWeight ="Bold" Margin="209,478,206,302" Width="161"/>
+        <StackPanel Orientation="Horizontal" Height="28" Margin="277,542,-263,310">
+            <Image Name="heart" Source="{StaticResource unfillHeartIcon}"/>
+
+        </StackPanel>
+        <TextBlock Text="Share" HorizontalAlignment="Center" Height="100" FontSize="36" FontWeight ="Bold" Margin="240,575,236,205" Width="100"/>
+        <TextBlock Text="Recipe Page" HorizontalAlignment="Center" Height="100" FontSize="30" FontWeight ="Bold" Margin="398,824,-28,-44" Width="206"/>
+        <TextBlock Text="Previous Step" HorizontalAlignment="Center" Height="100" FontSize="30" FontWeight ="Bold" Margin="10,824,374,-44" Width="192"/>
+        <StackPanel Orientation="Horizontal" Height="28">
+            <Image Name="backButton" Source="{StaticResource backIcon}" Margin="0,301,0,-370" Width="209"/>
+            <Image x:Name="forwardButton" Source="{StaticResource forwardIcon}" Margin="0,301,0,-370" Width="543"/>
+        </StackPanel>
+    </Grid>
+</Page>

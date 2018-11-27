@@ -9,6 +9,52 @@
       Title="RecipeProfilePage">
 
     <Grid>
-        <TextBlock Text="YUM!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72"/>        
+        <Grid.RowDefinitions >
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+            <RowDefinition Height="110" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="96" />
+            <ColumnDefinition Width="96" />
+            <ColumnDefinition Width="96" />
+            <ColumnDefinition Width="96" />
+            <ColumnDefinition Width="96" />
+            <ColumnDefinition Width="96" />
+        </Grid.ColumnDefinitions>
+
+        <local:TransitionPageButton x:Name="_backButton" Width="90" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,23,66,0" Height="90" />
+        <local:HeartButton x:Name="_heartButton" Grid.Column="3" Height="64" Width="64" />
+
+
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" Margin="0,20,0,0" RadiusX="10" RadiusY="10" />
+
+        <TextBlock x:Name="_recipeNameTextBlock" Text="RECIPENAME" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" FontSize="48" TextDecorations="{x:Null}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <Rectangle Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Stroke="Black" StrokeThickness="3">
+            <Rectangle.Fill>
+                <ImageBrush x:Name="_recipeImageBrush" ImageSource="{StaticResource burgerIcon}"/>
+                <!-- just a placeholder image (will be overwritten)-->
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Image Source="{StaticResource medIconIcon}" Grid.Row="4" HorizontalAlignment="Center" Margin="0,20,0,0" Width="96" Height="64" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+        <local:RatingControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,-30,0,0" Grid.RowSpan="2" Height="128" Width="256" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <Image Source="{StaticResource durationIconIcon}" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Width="48" Margin="0,10,0,0"/>
+
+        <Label Content="15m" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Margin="0,0,0,10"/>
+
+        <Rectangle Grid.Row="6" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="500" Height="10" Margin="0,0,0,20" RadiusX="10" RadiusY="10" />
+
+        <local:TransitionPageButton x:Name="_startButton" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" />
+
     </Grid>
 </Page>

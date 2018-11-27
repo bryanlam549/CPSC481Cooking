@@ -31,6 +31,10 @@ namespace Cookbook
         {
             ProfileMainPage profileMainPage = new ProfileMainPage(nameInput.Text, emailInput.Text, passwordInput.Password);
             signUpMain.Content = profileMainPage;
+
+            //removing later
+            //RecipeCompletionPage rcpage = new RecipeCompletionPage();
+            //signUpMain.Content = rcpage;
         }
     }
 }

@@ -20,32 +20,47 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookFavouritePage : Page
     {
+        
         public CookbookFavouritePage()
         {
             InitializeComponent();
-
-            //We can have 5 recipes, meanining 5 of these.
-
-            if (MainWindow.burgerFave == true)
+            /*for(int i = 0; i < 10; i++)
             {
-                //IF burger is favourited
+
+                CookbookRecipes recipe = new CookbookRecipes();
+                
+                recipe.editButton.Click += editButton_Click;
+                recipe.foodProfileButton.Click += foodProfileButton_Click;
+                Recipes.Children.Add(recipe);
+            }*/
+
+            //If buger is favourited, then display it.
+            
+            if (MainWindow.burgerFave)
+            {
                 CookbookRecipes burger = new CookbookRecipes();
                 burger.Number = 1.ToString() + ".";
-                burger.Title = "Burgers";
-                burger.Description = "This is the food description";
-                burger.Dur = "30 min";
+                burger.Title = GlobalData.Instance._burger._name;
+                //burger.Description = GlobalData.Instance._burger._description;
+                burger.Dur = GlobalData.Instance._burger._duration.ToString() + " min";
 
-                BitmapImage food = new BitmapImage();
-                food.BeginInit();
-                food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
-                food.EndInit();
-                burger.FoodImage = food;
+                
+                //BitmapImage food = new BitmapImage();
+                //food.BeginInit();
+                //food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
+                //food.EndInit();
 
-                BitmapImage diff = new BitmapImage();
-                diff.BeginInit();
-                diff.UriSource = new Uri("Images/medIcon.png", UriKind.Relative);
-                diff.EndInit();
-                burger.DiffImage = diff;
+                burger.FoodImage = GlobalData.Instance._burger._image;
+
+                //IF recipe difficulty = medium
+                burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+
+                if (GlobalData.Instance._burger._difficulty == Recipe.Difficulties.EASY)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+                else if (GlobalData.Instance._burger._difficulty == Recipe.Difficulties.MEDIUM)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+                else if (GlobalData.Instance._burger._difficulty == Recipe.Difficulties.HARD)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["hardIconIcon"];
 
                 //burger.Click += editButton_Click;
                 burger.editButton.Click += editButton_Click;
@@ -53,6 +68,68 @@ namespace Cookbook
 
                 Recipes.Children.Add(burger);
             }
+
+            /*This is with Global data in main...
+            if (MainWindow.burgerFave)
+            {
+                //IF burger is favourited
+                CookbookRecipes burger = new CookbookRecipes();
+                burger.Number = 1.ToString() + ".";
+                burger.Title = MainWindow.burgerProperties._name;
+                burger.Description = MainWindow.burgerProperties._description;
+                burger.Dur = MainWindow.burgerProperties._duration.ToString() + " min";
+
+
+                burger.FoodImage = MainWindow.burgerProperties._image;
+
+                //IF recipe difficulty = medium
+                burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+
+                if (MainWindow.burgerProperties._difficulty == Recipe.Difficulties.EASY)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+                else if (MainWindow.burgerProperties._difficulty == Recipe.Difficulties.MEDIUM)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+                else if (MainWindow.burgerProperties._difficulty == Recipe.Difficulties.HARD)
+                    burger.DiffImage = (BitmapImage)Application.Current.Resources["hardIconIcon"];
+
+                //burger.Click += editButton_Click;
+                burger.editButton.Click += editButton_Click;
+                burger.foodProfileButton.Click += foodProfileButton_Click;
+
+                Recipes.Children.Add(burger);
+            }
+            */
+
+            /* OG
+            if (MainWindow.burgerFave == true)
+            {
+                //IF burger is favourited
+                CookbookRecipes burger = new CookbookRecipes();
+                burger.Number = 1.ToString() + ".";
+                burger.Title = GlobalData.Instance._burger._name;
+                //burger.Title = GlobalData.Instance.burger._name;
+                burger.Description = "This is the food description";
+                burger.Dur = "30 min";
+
+
+                //BitmapImage food = new BitmapImage();
+                //food.BeginInit();
+                //food.UriSource = new Uri("Images/burger.jpg", UriKind.Relative);
+                //food.EndInit();
+
+                burger.FoodImage = (BitmapImage)Application.Current.Resources["burgerIcon"];
+
+                //IF recipe difficulty = medium
+                burger.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+
+                //burger.Click += editButton_Click;
+                burger.editButton.Click += editButton_Click;
+                burger.foodProfileButton.Click += foodProfileButton_Click;
+
+                Recipes.Children.Add(burger);
+
+            }
+            */
         }
         //public event RoutedEventHandler Click;
         public void editButton_Click(object sender, RoutedEventArgs e)
@@ -61,7 +138,8 @@ namespace Cookbook
             //burger.Title = "HOW DARE YOU!!!";
             //blah.Content = "HOW DARE YOU!!!!";
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-            Mod mod = new Mod();
+            //Mod mod = new Mod();
+            Mod mod = GlobalData.Instance.modification;
             ((MainWindow)App.Current.MainWindow).Main.Content = mod;
 
 
@@ -80,6 +158,10 @@ namespace Cookbook
             
 
 
+            //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
+            //((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.search;
+            
+            ((MainWindow)App.Current.MainWindow).Main.Content = profile;
         }
     }
 }

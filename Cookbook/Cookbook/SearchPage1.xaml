@@ -6,10 +6,13 @@
       xmlns:local="clr-namespace:Cookbook"
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="576"
-      Title="SearchPage1" Background="white">
+      Title="SearchPage1">
 
     <Grid>
+
         
+
+        <!--
         <Button Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Click="Button_Click" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
             <Image Name="fav" Stretch="Fill" Source="Images/unfillHeart.png" Height="90" Width="90"/>
         </Button>
@@ -18,5 +21,7 @@
 
         <local:HeartButton Margin="405,518,117,307" />
 
+        -->
+        
     </Grid>
 </Page>
