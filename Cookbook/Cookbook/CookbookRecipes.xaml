@@ -7,24 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="251.83" d:DesignWidth="576">
     <Grid>
-
+        <Label Name="NumberText" Content="1." FontSize="48"/>
+        
         <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"/>
         <Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815"
             HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}">
             <StackPanel Orientation="Horizontal">
                 <Grid Name="imageGrid" Background="Transparent" Width="350" Height="251.83">
-                    
-                    <Label Name="NumberText" Content="1." FontSize="48"/>
-                    <Button Name="editButton" Background="Transparent" HorizontalAlignment="Left" 
-                            Height="50" Click="onButtonClickEdit" Margin="0,75" VerticalAlignment="Top"
-                            Style="{StaticResource CustomButtonStyle}">
-                        <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
-                    </Button>
+
+
                     <Image Name="foodPic" Source="{StaticResource burgerIcon}" HorizontalAlignment="Right" MaxWidth="280" Margin="0,0,10,-0.17"/>
                 </Grid>
-                
+
                 <Grid Name="infoGrid" Background="Transparent" Width="226" Height="251.83" HorizontalAlignment="Left">
-                    
+
                     <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="10,30">
                         <TextBlock Name="TitleText" TextWrapping="Wrap">Food title</TextBlock>
                     </Viewbox>
@@ -46,11 +42,15 @@
                     </StackPanel>
 
                 </Grid>
-                
-            </StackPanel>
 
-           
+            </StackPanel>
         </Button>
+        <Button Name="editButton" Background="Transparent" HorizontalAlignment="Left" 
+                            Height="50" Click="onButtonClickEdit" Margin="10,75" VerticalAlignment="Top"
+                            Style="{StaticResource CustomButtonStyle}">
+            <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
+        </Button>
+        <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" VerticalAlignment="Bottom" Margin="0,5"/>
         <!--Button Name="foodProfileButton" BorderBrush="Black" Background="#FFBF8130" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"
                 Click="onButtonClickProfile"/-->
 
