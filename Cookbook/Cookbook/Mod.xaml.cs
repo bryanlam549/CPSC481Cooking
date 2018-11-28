@@ -29,5 +29,23 @@ namespace Cookbook
         {
             this.NavigationService.GoBack();
         }
+
+        private void ingButton_Click(object sender, RoutedEventArgs e)
+        {
+            ModIngredients modIngPg = new ModIngredients();
+            ((MainWindow)App.Current.MainWindow).Main.Content = modIngPg;
+        }
+
+        private void equipButton_Click(object sender, RoutedEventArgs e)
+        {
+            ModEquipments modEquipPg = new ModEquipments();
+            ((MainWindow)App.Current.MainWindow).Main.Content = modEquipPg;
+        }
+
+        private void stepsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ModSteps modStepsPg = new ModSteps();
+            ((MainWindow)App.Current.MainWindow).Main.Content = modStepsPg;
+        }
     }
 }

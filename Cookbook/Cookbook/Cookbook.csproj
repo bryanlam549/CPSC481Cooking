@@ -81,6 +81,15 @@
     <Compile Include="Mod.xaml.cs">
       <DependentUpon>Mod.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModEquipments.xaml.cs">
+      <DependentUpon>ModEquipments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModIngredients.xaml.cs">
+      <DependentUpon>ModIngredients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModSteps.xaml.cs">
+      <DependentUpon>ModSteps.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfileInfoPage.xaml.cs">
       <DependentUpon>ProfileInfoPage.xaml</DependentUpon>
     </Compile>
@@ -166,6 +175,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Mod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModEquipments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModIngredients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModSteps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

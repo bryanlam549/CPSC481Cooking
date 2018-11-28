@@ -31,21 +31,21 @@
         <Label Content="Change?" FontSize="56" FontWeight="Medium" HorizontalAlignment="Center" Margin="151.0988"/>
 
         <StackPanel Margin="0,230,0,0" Height="604">
-            <Button Content="Ingredients" FontWeight ="Medium" Height="75" Width="375" FontSize="32"
+            <Button Name="ingButton" Content="Ingredients" FontWeight ="Medium" Height="75" Width="375" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,50,0,80"
-                    Style="{StaticResource CustomButtonStyle}"/>
+                    Style="{StaticResource CustomButtonStyle}" Click="ingButton_Click"/>
 
-            <Button Content="Equipment" FontWeight ="DemiBold" Height="75" Width="375" FontSize="32"
+            <Button Name="equipButton" Content="Equipment" FontWeight ="DemiBold" Height="75" Width="375" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,0,0,80"
-                    Style="{StaticResource CustomButtonStyle}"/>
-            <Button Content="Steps" FontWeight ="DemiBold" Height="75" Width="376" FontSize="32"
+                    Style="{StaticResource CustomButtonStyle}" Click="equipButton_Click"/>
+            <Button Name="stepsButton" Content="Steps" FontWeight ="DemiBold" Height="75" Width="376" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,0,0,80"
-                    Style="{StaticResource CustomButtonStyle}"/>
+                    Style="{StaticResource CustomButtonStyle}" Click="stepsButton_Click"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="60" Margin="0,0">
-                <Button Content="Save" FontWeight ="DemiBold" Width="200" Margin="0,0,80,0" FontSize="32"
+                <Button Name="saveButton" Content="Save" FontWeight ="DemiBold" Width="200" Margin="0,0,80,0" FontSize="32"
                         Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
 
-                <Button Content="Cancel" FontWeight ="DemiBold" Width="200"
+                <Button Name="cancelButton" Content="Cancel" FontWeight ="DemiBold" Width="200"
                         Background="Red"  Margin="0,0,0,0" FontSize="32"
                         Style="{StaticResource CustomButtonStyle}"/>
             </StackPanel>
