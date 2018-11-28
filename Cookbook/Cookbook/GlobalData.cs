@@ -94,7 +94,6 @@ namespace Cookbook
         //Profile subpages
 
 
-
         private GlobalData()
         {
             // init fields of each recipe here

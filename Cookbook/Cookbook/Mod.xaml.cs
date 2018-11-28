@@ -24,5 +24,10 @@ namespace Cookbook
         {
             InitializeComponent();
         }
+
+        private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
     }
 }

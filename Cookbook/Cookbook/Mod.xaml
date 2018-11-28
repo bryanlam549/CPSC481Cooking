@@ -22,7 +22,8 @@
                 Margin="495,50,10,795.246" RenderTransformOrigin="0.427,0.708"/>
 
         <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,155,0,0" 
-                VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" Style="{StaticResource CustomButtonStyle}">
+                VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
+                Style="{StaticResource CustomButtonStyle}" Click="cookbookPageButton_Click" >
             <Button.Background>
                 <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
             </Button.Background>
