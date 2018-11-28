@@ -20,18 +20,43 @@ namespace Cookbook
     /// </summary>
     public partial class StepByStepPage : Page
     {
-        Recipe _currentRecipe;
-        int _currentStep; 
-        public StepByStepPage( Recipe recipe,int currentStep)
+        Recipe currentRecipe;
+        List<String> recipeSteps;
+        int currentStep;
+        public StepByStepPage(Recipe recipe, int currentStep)
         {
             InitializeComponent();
-            _currentRecipe = recipe;
-            _currentStep = currentStep;
+            this.currentRecipe = recipe;
+            this.currentStep = currentStep;
+            this.recipeSteps = currentRecipe.GetSteps();
+
+            _recipeName.Text = currentRecipe.getName();
+            _stepNumber.Text = "Step " + (currentStep + 1) + " of " + recipeSteps.Count();
+
+            if (currentStep < recipeSteps.Count)
+            {
+                _stepBody.Text = recipeSteps.ElementAt(currentStep);
+            }
+        
+
+            _nextStep.transitionPageButton.Click += Next_Step_Click;
+            _previousStep.transitionPageButton.Click += Prev_Step_Click;
+            _backButton.transitionPageButton.Click += Back_Button_Click;
+
+
+
         }
         private void Next_Step_Click(object sender, RoutedEventArgs e)
         {
-            StepByStepPage nextStep = new StepByStepPage(_currentRecipe, _currentStep + 1);
-            this.NavigationService.Navigate(nextStep);
+            if (currentStep  < recipeSteps.Count - 1)
+            {
+                StepByStepPage nextStep = new StepByStepPage(currentRecipe, currentStep + 1);
+                this.NavigationService.Navigate(nextStep);
+            }
+            else
+            {
+                //make the next button invisible
+            }
         }
 
         private void Prev_Step_Click(object sender, RoutedEventArgs e)
@@ -41,7 +66,14 @@ namespace Cookbook
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
+            RecipeProfilePage recipeProfile = new RecipeProfilePage(currentRecipe);
 
+        }
+
+        private void onButtonClickEdit(object sender, RoutedEventArgs e)
+        {
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+           
         }
     }
 

@@ -22,19 +22,28 @@ namespace Cookbook
     {
         public Recipe _recipe;
 
-        public RecipeProfilePage()
+        public RecipeProfilePage(Recipe recipe)
         {
             InitializeComponent();
 
             // init components...
             //_heartButton._recipe = ... set based
 
-            _recipe = GlobalData.Instance._shanghaiNoodlesRecipe; // ~~~~NOTE: set to proper recipe later on based on recipe clicked on, but hard coded this for testing
+            _recipe = recipe; // ~~~~NOTE: set to proper recipe later on based on recipe clicked on, but hard coded this for testing
 
             _heartButton._recipe = _recipe;
 
             _recipeImageBrush.ImageSource = _recipe._image;
 
+            _startButton.transitionPageButton.Click += StartButton_Click;
+
+        }
+
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            StepPage mainStep = new StepPage(_recipe);
+            this.NavigationService.Navigate(mainStep);
         }
     }
 }
