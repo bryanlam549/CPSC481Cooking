@@ -62,6 +62,14 @@ namespace Cookbook
         }
         */
 
+        public List<string> GetSteps()
+        {
+            return _steps;
+        }
 
+        public string getName()
+        {
+            return _name;
+        }
     }
 }
