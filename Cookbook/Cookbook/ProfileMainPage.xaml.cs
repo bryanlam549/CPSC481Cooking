@@ -67,5 +67,11 @@ namespace Cookbook
             //Switch content
             profileMain.Content = profilePreferencesPage;
         }
+
+        private void SignOut_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePage1 profilepage1 = new ProfilePage1();
+            this.NavigationService.Navigate(profilepage1);
+        }
     }
 }

@@ -31,7 +31,7 @@
         <TextBlock x:Name="UserNameInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,257,10,575" Width="363" RenderTransformOrigin="0.129,-6.016"/>
         <TextBlock x:Name="EmailInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,305,10,527" Width="363" RenderTransformOrigin="0.129,-6.016" TextWrapping="Wrap"/>
         <TextBlock x:Name="PasswordInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,374,10,474" Width="363" RenderTransformOrigin="0.129,-6.016"/>
-
+        <Button Content="SIGN OUT" FontWeight ="Bold" Height="75" Width="375" Background="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SignOut_Click" Style="{StaticResource CustomButtonStyle}"/>
         <Frame x:Name="profileMain" Margin="0,125,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

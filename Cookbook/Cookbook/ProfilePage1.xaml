@@ -7,7 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="576"
       Title="ProfilePage1">
-
+    <Page.Background>
+        <ImageBrush ImageSource="Images/background.png"/>
+    </Page.Background>
     <Grid>
         <TextBlock Text="Create a profile page" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold"/>
         <TextBlock Text="Already have an account?" HorizontalAlignment="Center" Height ="300" FontSize="36" FontWeight ="Bold"/>

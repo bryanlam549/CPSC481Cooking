@@ -26,6 +26,7 @@ namespace Cookbook
         public ProfileSignInPage()
         {
             InitializeComponent();
+            _back.transitionPageButton.Click += Back_Click;
 
             accountList.Add("foodluver123");
             accountList.Add("ilovefood456@food.com");
@@ -64,5 +65,14 @@ namespace Cookbook
         {
             invalidInput.Text = "";
         }
+
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePage1 profilepage1 = new ProfilePage1();
+            this.NavigationService.Navigate(profilepage1);
+
+        }
+
     }
 }

@@ -25,6 +25,7 @@ namespace Cookbook
         public ProfileSignUpPage()
         {
             InitializeComponent();
+            _back.transitionPageButton.Click += Back_Click;
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
@@ -35,6 +36,13 @@ namespace Cookbook
             //removing later
             //RecipeCompletionPage rcpage = new RecipeCompletionPage();
             //signUpMain.Content = rcpage;
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePage1 profilepage1 = new ProfilePage1();
+            this.NavigationService.Navigate(profilepage1);
+
         }
     }
 }
