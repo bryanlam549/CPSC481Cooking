@@ -56,6 +56,10 @@ namespace Cookbook
             else
             {
                 //make the next button invisible
+
+                // go to completion page
+                RecipeCompletionPage completionPage = new RecipeCompletionPage(currentRecipe);
+                this.NavigationService.Navigate(completionPage);
             }
         }
 
@@ -67,13 +71,11 @@ namespace Cookbook
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
             RecipeProfilePage recipeProfile = new RecipeProfilePage(currentRecipe);
-
         }
 
         private void onButtonClickEdit(object sender, RoutedEventArgs e)
         {
-            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-           
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";  
         }
     }
 

@@ -20,14 +20,33 @@ namespace Cookbook
     /// </summary>
     public partial class RecipeCompletionPage : Page
     {
-        public RecipeCompletionPage()
+        Recipe currentRecipe;
+        public RecipeCompletionPage(Recipe recipe)
         {
             InitializeComponent();
+            this.currentRecipe = recipe;
+            _back.transitionPageButton.Click += Back_Click;
+            _next.transitionPageButton.Click += Next_Click;
+            _recipeImageBrush.ImageSource = recipe._image;
+            _recipeName.Text = recipe._name;
         }
 
-        private void recipeCompleteMain_Navigated(object sender, NavigationEventArgs e)
+        private void Next_Click(object sender, RoutedEventArgs e)
         {
+            RecipeProfilePage recipeProfile = new RecipeProfilePage(currentRecipe);
+            this.NavigationService.Navigate(recipeProfile);
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
+        private void onButtonClickEdit(object sender, RoutedEventArgs e)
+        {
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
 
         }
+
     }
 }

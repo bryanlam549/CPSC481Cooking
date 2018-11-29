@@ -12,27 +12,56 @@
         <ImageBrush ImageSource="Images/background.png"/>
     </Page.Background>
     <Grid>
-        <TextBlock Text="-Recipe Name-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold"/>
-        <TextBlock Text="Recipe Complete!" HorizontalAlignment="Center" Height="200" FontSize="36" FontWeight ="Bold" Margin="140,252,140,428"/>
-        <TextBlock Text="Rate" HorizontalAlignment="Center" Height="100" FontSize="36" FontWeight ="Bold" Margin="250,368,250,412"/>
-        <StackPanel Orientation="Horizontal" Height="28" Margin="220,436,206,416">
-            <Image Name="rating1" Source="{StaticResource unfillStarIcon}"/>
-            <Image Name="rating2" Source="{StaticResource unfillStarIcon}"/>
-            <Image Name="rating3" Source="{StaticResource unfillStarIcon}"/>
-            <Image Name="rating4" Source="{StaticResource unfillStarIcon}"/>
-            <Image Name="rating5" Source="{StaticResource unfillStarIcon}"/>
-        </StackPanel>
-        <TextBlock Text="Favourite" HorizontalAlignment="Center" Height ="100" FontSize="36" FontWeight ="Bold" Margin="209,478,206,302" Width="161"/>
-        <StackPanel Orientation="Horizontal" Height="28" Margin="277,542,-263,310">
-            <Image Name="heart" Source="{StaticResource unfillHeartIcon}"/>
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+            </Grid.ColumnDefinitions>
 
-        </StackPanel>
-        <TextBlock Text="Share" HorizontalAlignment="Center" Height="100" FontSize="36" FontWeight ="Bold" Margin="240,575,236,205" Width="100"/>
-        <TextBlock Text="Recipe Page" HorizontalAlignment="Center" Height="100" FontSize="30" FontWeight ="Bold" Margin="398,824,-28,-44" Width="206"/>
-        <TextBlock Text="Previous Step" HorizontalAlignment="Center" Height="100" FontSize="30" FontWeight ="Bold" Margin="10,824,374,-44" Width="192"/>
-        <StackPanel Orientation="Horizontal" Height="28">
-            <Image x:Name="backButton" Source="{StaticResource backIcon}" Margin="0,301,0,-370" Width="188"/>
-            <Image x:Name="forwardButton" Source="{StaticResource forwardIcon}" Margin="0,301,0,-370" Width="583"/>
-        </StackPanel>
+
+            <Rectangle Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Stroke="Black" StrokeThickness="3" Margin="0,59,0,51">
+                <Rectangle.Fill>
+                    <ImageBrush x:Name="_recipeImageBrush"/>
+                    <!-- just a placeholder image (will be overwritten)-->
+                </Rectangle.Fill>
+            </Rectangle>
+
+        </Grid>
+        <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Right" 
+                            Height="50" Click="onButtonClickEdit" Margin="26,23,0,0" VerticalAlignment="Top"
+                            Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
+            <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
+        </Button>
+
+        <TextBlock x:Name="_recipeName" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold"/>
+        <TextBlock Text="Recipe Complete!" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Margin="140,292,128,0" Width="308"/>
+        <TextBlock Text="Rate" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Width="84" Margin="246,359,246,0"/>
+        <TextBlock Text="Favourite" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Width="161" Margin="208,449,207,0"/>
+        <TextBlock Text="Share" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Margin="240,549,241,0"/>
+        
+        <local:RatingControl Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 105, 0, 0"/>
+        <local:HeartButton Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 300, 0, 0"/>
+        <local:TransitionPageButton x:Name="_back" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
+        <local:TransitionPageButton x:Name="_next" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
+
+
+        <Frame x:Name="completeMain" Height="880" Width="576" NavigationUIVisibility="Hidden"/>
     </Grid>
+
+
 </Page>
