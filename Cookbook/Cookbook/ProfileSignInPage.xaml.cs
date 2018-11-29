@@ -54,5 +54,15 @@ namespace Cookbook
             }
             
         }
+
+        private void UserInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            invalidInput.Text = "";
+        }
+
+        private void PasswordInput_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            invalidInput.Text = "";
+        }
     }
 }

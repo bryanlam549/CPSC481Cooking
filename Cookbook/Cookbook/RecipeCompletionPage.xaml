@@ -31,8 +31,8 @@
         <TextBlock Text="Recipe Page" HorizontalAlignment="Center" Height="100" FontSize="30" FontWeight ="Bold" Margin="398,824,-28,-44" Width="206"/>
         <TextBlock Text="Previous Step" HorizontalAlignment="Center" Height="100" FontSize="30" FontWeight ="Bold" Margin="10,824,374,-44" Width="192"/>
         <StackPanel Orientation="Horizontal" Height="28">
-            <Image Name="backButton" Source="{StaticResource backIcon}" Margin="0,301,0,-370" Width="209"/>
-            <Image x:Name="forwardButton" Source="{StaticResource forwardIcon}" Margin="0,301,0,-370" Width="543"/>
+            <Image x:Name="backButton" Source="{StaticResource backIcon}" Margin="0,301,0,-370" Width="188"/>
+            <Image x:Name="forwardButton" Source="{StaticResource forwardIcon}" Margin="0,301,0,-370" Width="583"/>
         </StackPanel>
     </Grid>
 </Page>
