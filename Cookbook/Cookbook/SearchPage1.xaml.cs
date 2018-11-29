@@ -32,24 +32,13 @@ namespace Cookbook
 				Orientation = Orientation.Horizontal,
 
 				Children = {
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw1"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw2"},
-					new TextBlock(){MaxHeight=80, MinWidth=80, Text = "Yehaw3"},
+					new Category("All\nCategories"),
+					new Category("Pastries"),
+					new Category("Seafood"),
+					new Category("Pastas"),
+					new Category("Burgers"),
+					new Category("Pizza"),
+					new Category("Desserts"),
 				}
 			};
 
