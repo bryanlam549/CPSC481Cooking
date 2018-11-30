@@ -54,8 +54,8 @@
         <TextBlock Text="Favourite" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Width="161" Margin="208,449,207,0"/>
         <TextBlock Text="Share" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Margin="240,549,241,0"/>
         
-        <local:RatingControl Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 105, 0, 0"/>
-        <local:HeartButton Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 300, 0, 0"/>
+        <local:RatingControl Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, -20, 0, 0"/>
+        <local:HeartButton Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 175, 0, 0"/>
         <local:TransitionPageButton x:Name="_back" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
         <local:TransitionPageButton x:Name="_next" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
 

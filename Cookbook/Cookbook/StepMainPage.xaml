@@ -9,6 +9,6 @@
       Title="StepPage">
 
     <Grid>
-        <Frame x:Name="stepsMain" Margin="0,115,0,10" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="stepsMain" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
