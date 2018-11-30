@@ -20,9 +20,23 @@ namespace Cookbook
     /// </summary>
     public partial class ProfilePage1 : Page
     {
+        private ProfileSignUpPage profilesignUpPage = new ProfileSignUpPage();
+        private ProfileSignInPage profilesignInPage = new ProfileSignInPage();
+
         public ProfilePage1()
         {
             InitializeComponent();
+
+        }
+
+        private void ProfileSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            profileMain.Content = profilesignUpPage;
+        }
+
+        private void ProfileSignIn_Click(object sender, RoutedEventArgs e)
+        {
+            profileMain.Content = profilesignInPage;
         }
     }
 }

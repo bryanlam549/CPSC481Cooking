@@ -20,11 +20,11 @@ namespace Cookbook
     /// </summary>
     public partial class SearchPage1 : Page
     {
+        //public BitmapImage fillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/heart.png"));
+        //public BitmapImage unfillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/unfillHeart.png"));
         public SearchPage1()
         {
             InitializeComponent();
-        
-
 
 			// Creating the list of categories
 			var categories = new StackPanel()

@@ -73,11 +73,62 @@
     <Compile Include="CurrentRecipePage1.xaml.cs">
       <DependentUpon>CurrentRecipePage1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GlobalData.cs" />
+    <Compile Include="HeartButton.xaml.cs">
+      <DependentUpon>HeartButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredient.cs" />
+    <Compile Include="Mod.xaml.cs">
+      <DependentUpon>Mod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModEquipments.xaml.cs">
+      <DependentUpon>ModEquipments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModIngredients.xaml.cs">
+      <DependentUpon>ModIngredients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModSteps.xaml.cs">
+      <DependentUpon>ModSteps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileInfoPage.xaml.cs">
+      <DependentUpon>ProfileInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileMainPage.xaml.cs">
+      <DependentUpon>ProfileMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage1.xaml.cs">
       <DependentUpon>ProfilePage1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfilePreferencesPage.xaml.cs">
+      <DependentUpon>ProfilePreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSignInPage.xaml.cs">
+      <DependentUpon>ProfileSignInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileSignUpPage.xaml.cs">
+      <DependentUpon>ProfileSignUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RatingControl.xaml.cs">
+      <DependentUpon>RatingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Recipe.cs" />
+    <Compile Include="RecipeCompletionPage.xaml.cs">
+      <DependentUpon>RecipeCompletionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeProfilePage.xaml.cs">
+      <DependentUpon>RecipeProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchPage1.xaml.cs">
       <DependentUpon>SearchPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionPageButton.xaml.cs">
+      <DependentUpon>TransitionPageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StepByStepPage.xaml.cs">
+      <DependentUpon>StepByStepPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StepMainPage.xaml.cs">
+      <DependentUpon>StepMainPage.xaml</DependentUpon>
     </Compile>
     <Page Include="CookbookFavouritePage.xaml">
       <SubType>Designer</SubType>
@@ -103,6 +154,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HeartButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,11 +174,71 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Mod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModEquipments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModIngredients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModSteps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProfilePage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ProfilePreferencesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileSignInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileSignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RatingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecipeCompletionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecipeProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SearchPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StepByStepPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StepMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransitionPageButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +310,25 @@
   <ItemGroup>
     <Resource Include="Images\fillStar.png" />
     <Resource Include="Images\unfillStar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\unfillHeart.png" />
+    <Resource Include="Images\InfoButton.png" />
+    <Resource Include="Images\InfoButtonDark.png" />
+    <Resource Include="Images\PreferencesButton.png" />
+    <Resource Include="Images\PreferencesButtonDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\shanghaiNoodles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

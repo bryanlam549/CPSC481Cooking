@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Cookbook.RatingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cookbook"
+             mc:Ignorable="d" 
+             d:DesignHeight="32" d:DesignWidth="160">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="starButton1" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton1_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}">
+            <Button.Background>
+                <ImageBrush x:Name="starButton1ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="starButton2" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton2_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush x:Name="starButton2ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="starButton3" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton3_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="2">
+            <Button.Background>
+                <ImageBrush x:Name="starButton3ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="starButton4" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton4_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="3">
+            <Button.Background>
+                <ImageBrush x:Name="starButton4ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="starButton5" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="4">
+            <Button.Background>
+                <ImageBrush x:Name="starButton5ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</UserControl>

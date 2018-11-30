@@ -40,13 +40,13 @@ namespace Cookbook
             set
             {
                 title = value;
-                this.TitleText.Content = this.title;
+                this.TitleText.Text = this.title;
             }
         }
 
         //Food description
         private string description;
-        public string Description
+        /*public string Description
         {
             get { return description; }
             set
@@ -54,7 +54,7 @@ namespace Cookbook
                 description = value;
                 this.desc.Text= this.description;
             }
-        }
+        }*/
 
         //Duration time
         private string dur;
@@ -97,5 +97,25 @@ namespace Cookbook
         {
             InitializeComponent();
         }
+
+        public event RoutedEventHandler Click;
+        private void onButtonClickEdit(object sender, RoutedEventArgs e)
+        {
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            if (this.Click != null)
+            {
+                this.Click(this, e);
+            }
+        }
+
+        private void onButtonClickProfile(object sender, RoutedEventArgs e)
+        {
+            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            if (this.Click != null)
+            {
+                this.Click(this, e);
+            }
+        }
     }
+
 }

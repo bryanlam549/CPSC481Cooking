@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Cookbook">
+    
+    <!-- Contains global resources that can be referenced anywhere in XAML or CS
+        Usage (XAML): e.g. ImageSource="{StaticResource unfillHeartIcon}"
+        Usage (CS): e.g. heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+    -->
+
+    <BitmapImage x:Key="backIcon" UriSource="Images/back.png" />
+    <BitmapImage x:Key="backgroundIcon" UriSource="Images/background.png" />
+    <BitmapImage x:Key="background1Icon" UriSource="Images/background1.png" />
+    <BitmapImage x:Key="burgerIcon" UriSource="Images/burger.jpg" />
+    <BitmapImage x:Key="cookbookButtonIcon" UriSource="Images/cookbookButton.png" />
+    <BitmapImage x:Key="cookbookButtonDarkIcon" UriSource="Images/cookbookButtonDark.png" />
+    <BitmapImage x:Key="currentRecipeButtonIcon" UriSource="Images/currentRecipeButton.png" />
+    <BitmapImage x:Key="currentRecipeButtonDarkIcon" UriSource="Images/currentRecipeButtonDark.png" />
+    <BitmapImage x:Key="darkIcon" UriSource="Images/dark.png" />
+    <BitmapImage x:Key="durationIconIcon" UriSource="Images/durationIcon.png" />
+    <BitmapImage x:Key="easyIconIcon" UriSource="Images/easyIcon.png" />
+    <BitmapImage x:Key="editIconIcon" UriSource="Images/editIcon.png" />
+    <BitmapImage x:Key="favouriteButtonIcon" UriSource="Images/favouriteButton.png" />
+    <BitmapImage x:Key="favouriteButtonDarkIcon" UriSource="Images/favouriteButtonDark.png" />
+    <BitmapImage x:Key="fillStarIcon" UriSource="Images/fillStar.png" />
+    <BitmapImage x:Key="forwardIcon" UriSource="Images/forward.png" />
+    <BitmapImage x:Key="hardIconIcon" UriSource="Images/hardIcon.png" />
+    <BitmapImage x:Key="heartIcon" UriSource="Images/heart.png" />
+    <BitmapImage x:Key="infoButtonIcon" UriSource="Images/infoButton.png" />
+    <BitmapImage x:Key="infoButtonDarkIcon" UriSource="Images/infoButtonDark.png" />
+    <BitmapImage x:Key="medIconIcon" UriSource="Images/medIcon.png" />
+    <BitmapImage x:Key="personalButtonIcon" UriSource="Images/personalButton.png" />
+    <BitmapImage x:Key="personalButtonDarkIcon" UriSource="Images/personalButtonDark.png" />
+    <BitmapImage x:Key="PreferencesButtonIcon" UriSource="Images/PreferencesButton.png" />
+    <BitmapImage x:Key="PreferencesButtonDarkIcon" UriSource="Images/PreferencesButtonDark.png" />
+    <BitmapImage x:Key="profileButtonIcon" UriSource="Images/profileButton.png" />
+    <BitmapImage x:Key="profileButtonDarkIcon" UriSource="Images/profileButtonDark.png" />
+    <BitmapImage x:Key="recentButtonIcon" UriSource="Images/recentButton.png" />
+    <BitmapImage x:Key="recentButtonDarkIcon" UriSource="Images/recentButtonDark.png" />
+    <BitmapImage x:Key="searchButtonIcon" UriSource="Images/searchButton.png" />
+    <BitmapImage x:Key="searchButtonDarkIcon" UriSource="Images/searchButtonDark.png" />
+    <BitmapImage x:Key="shanghaiNoodlesIcon" UriSource="Images/shanghaiNoodles.png" />
+    <BitmapImage x:Key="shareIconIcon" UriSource="Images/shareIcon.png" />
+    <BitmapImage x:Key="unfillHeartIcon" UriSource="Images/unfillHeart.png" />
+    <BitmapImage x:Key="unfillStarIcon" UriSource="Images/unfillStar.png" />
+    <BitmapImage x:Key="backButton" UriSource="Images/back.png" />
+
+</ResourceDictionary>

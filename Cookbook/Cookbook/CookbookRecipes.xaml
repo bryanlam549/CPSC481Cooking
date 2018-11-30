@@ -7,39 +7,84 @@
              mc:Ignorable="d" 
              d:DesignHeight="251.83" d:DesignWidth="576">
     <Grid>
-        <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,5" BorderThickness="2" Opacity="0.10">
+        <Label Name="NumberText" Content="1." FontSize="48"/>
         
-        </Border>
-        <StackPanel Margin="0,0,525,0">
+        <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"/>
+        <Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815"
+            HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}">
+            <StackPanel Orientation="Horizontal">
+                <Grid Name="imageGrid" Background="Transparent" Width="350" Height="251.83">
+
+
+                    <Image Name="foodPic" Source="{StaticResource burgerIcon}" HorizontalAlignment="Right" MaxWidth="280" Margin="0,0,10,-0.17"/>
+                </Grid>
+
+                <Grid Name="infoGrid" Background="Transparent" Width="226" Height="251.83" HorizontalAlignment="Left">
+
+                    <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="10,30">
+                        <TextBlock Name="TitleText" TextWrapping="Wrap">Food title</TextBlock>
+                    </Viewbox>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="10,100,0,0">
+                            <Image Name="difficulty" Source="{StaticResource medIconIcon}"  
+                                    HorizontalAlignment="Left" Margin="0,0,25,0"/>
+                            <Image Name="duration" Source="{StaticResource durationIconIcon}" HorizontalAlignment="Left"/>
+                            <Label Name="durationLabel" Content="10 mins" FontSize="16" VerticalAlignment="Bottom"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="28" Margin="10,5">
+                            <Image Name="rating1" Source="{StaticResource unfillStarIcon}"/>
+                            <Image Name="rating2" Source="{StaticResource unfillStarIcon}"/>
+                            <Image Name="rating3" Source="{StaticResource unfillStarIcon}"/>
+                            <Image Name="rating4" Source="{StaticResource unfillStarIcon}"/>
+                            <Image Name="rating5" Source="{StaticResource unfillStarIcon}"/>
+                        </StackPanel>
+                        <Label Name="ingNum" Content="7 Ingredients" FontSize="16" Margin="10,0"/>
+                    </StackPanel>
+
+                </Grid>
+
+            </StackPanel>
+        </Button>
+        <Button Name="editButton" Background="Transparent" HorizontalAlignment="Left" 
+                            Height="50" Click="onButtonClickEdit" Margin="10,75" VerticalAlignment="Top"
+                            Style="{StaticResource CustomButtonStyle}">
+            <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
+        </Button>
+        <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" VerticalAlignment="Bottom" Margin="0,5"/>
+        <!--Button Name="foodProfileButton" BorderBrush="Black" Background="#FFBF8130" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"
+                Click="onButtonClickProfile"/-->
+
+
+        <!--Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815" 
+                 HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}">
+            <StackPanel Margin="50,0,0,0" Width="526.30">
+                <Label Name="TitleText" HorizontalAlignment="Center" FontSize="48" Content="Hamburger"/>
+                <StackPanel Orientation="Horizontal" Height="150">
+                    <Image Name="foodPic" Width="246" Height="150" Source="Images/burger.jpg" Margin="0,0,0,-0.092"/>
+                    <TextBlock x:Name="desc" FontSize="18" TextWrapping="Wrap" Margin="0,0,0,-0.092" Width="258"><Run 
+                    Text="This is the food description....."/><LineBreak/><Run Text="blah."/></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="28">
+                    <Image Name="difficulty" Source="{StaticResource medIconIcon}" />
+                    <Image Name="rating1" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating2" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating3" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating4" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="rating5" Source="{StaticResource unfillStarIcon}"/>
+                    <Image Name="duration" Source="{StaticResource durationIconIcon}"/>
+                    <Label Name="durationLabel" Content="25 min" FontSize="8" VerticalAlignment="Bottom"/>
+                    <Image Name="share" Source="{StaticResource shareIconIcon}" Margin="185,0,0,0"/>
+                </StackPanel>
+                <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" Margin="0,10,25,0"/>
+            </StackPanel>
+        </-->
+        <!--StackPanel Margin="0,0,525,0">
             <Label Name="NumberText" Content="1." FontSize="48"/>
-            <Image Name="editIcon" VerticalAlignment="Bottom" Source="Images/editIcon.png"/>
-        </StackPanel>
+            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit" Style="{StaticResource CustomButtonStyle}">
+                <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
+            </Button>
+        </-->
         
-
-        <StackPanel Margin="50,0,0,0" Width="526.30">
-            <Label Name="TitleText" HorizontalAlignment="Center" FontSize="48" Content="Hamburger"/>
-            <StackPanel Orientation="Horizontal" Height="150">
-                <Image Name="foodPic" Width="246" Height="150" Source="Images/burger.jpg" Margin="0,0,0,-0.092"/>
-                <TextBlock x:Name="desc" FontSize="18" TextWrapping="Wrap" Margin="0,0,0,-0.092" Width="258"><Run Text="This is the food description....."/><LineBreak/><Run Text="blah."/></TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="28">
-                <Image Name="difficulty" Source="Images/medIcon.png" />
-                <Image Name="rating1" Source="Images/fillStar.png"/>
-                <Image Name="rating2" Source="Images/fillStar.png"/>
-                <Image Name="rating3" Source="Images/unfillStar.png" />
-                <Image Name="rating4" Source="Images/unfillStar.png" />
-                <Image Name="rating5" Source="Images/unfillStar.png" />
-                <Image Name="duration" Source="Images/durationIcon.png"/>
-                <Label Name="durationLabel" Content="25 min" FontSize="8" VerticalAlignment="Bottom"/>
-                <Image Name="share" Source="Images/shareIcon.png" Margin="185,0,0,0"/>
-                
-
-            </StackPanel>
-            <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" Margin="0,10,25,0"/>
-            
-            
-        </StackPanel>
-
 
         <!--Label Name="NumberText" Content="1." FontSize="48" Margin="10,10,494,154.815"/>
         <Image Name="editIcon" Source="Images/editIcon.png" Margin="10,142,517,41.815" />
@@ -49,6 +94,6 @@
         <Label Name="TitleText" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="48" Content="Food Title" Margin="175,0,179,0" Height="70"/>
         <Label Name="desc" FontSize="24" Content="Food description!&#xD;&#xA;Blah blah blah!!!&#xD;&#xA;And Blah Blah!&#xD;&#xA;and blah&#xA;" Margin="290,82,82,24.815"/>
         <Image Name="shareIcon" Source="Images/shareIcon.png" Margin="499,186,10,19.815" /-->
-       
+
     </Grid>
 </UserControl>

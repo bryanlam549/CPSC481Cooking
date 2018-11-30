@@ -7,8 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="576"
       Title="SearchPage1">
-
-
+	
 	<Grid>
 		<ScrollViewer x:Name="scroll1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="576" PanningMode="HorizontalOnly" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden"/>
 	</Grid>
