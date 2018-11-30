@@ -42,7 +42,7 @@ namespace Cookbook
         {
 
 
-            if (accountList.Contains(UserInput.Text) && accountList.Contains(PasswordInput.Password))
+            if (accountList.Contains(UserInput.Text) && (PasswordInput.Password).Equals(accountList[(accountList.IndexOf(UserInput.Text)) + 2]))
             {
 
                 ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, accountList[(accountList.IndexOf(UserInput.Text)) + 1], PasswordInput.Password);
