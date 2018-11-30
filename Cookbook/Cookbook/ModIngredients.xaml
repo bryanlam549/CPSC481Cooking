@@ -9,6 +9,13 @@
       Title="ModIngredients">
 
     <Grid>
+        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,155,0,0" 
+                VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
+                Style="{StaticResource CustomButtonStyle}" Click="cookbookPageButton_Click" >
+            <Button.Background>
+                <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
+            </Button.Background>
+        </Button>
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" TextWrapping="Wrap">Modification Ingredients</TextBlock>
     </Grid>
 </Page>

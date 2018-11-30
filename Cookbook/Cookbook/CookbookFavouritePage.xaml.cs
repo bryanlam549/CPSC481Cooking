@@ -20,10 +20,40 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookFavouritePage : Page
     {
-        
-        public CookbookFavouritePage()
+        public List<Recipe> _faveList;
+        //Pass in a LIST of recipes. 
+        public CookbookFavouritePage(List<Recipe> faveList)
         {
             InitializeComponent();
+            _faveList = faveList;
+            for(int i = 0; i < _faveList.Count; i++)
+            {
+                CookbookRecipes recipe = new CookbookRecipes();
+                int num = i + 1;
+                recipe.Number = num.ToString() + ".";
+                recipe.Title = _faveList[i]._name;
+                recipe.Dur = _faveList[i]._duration.ToString() + " min";
+
+                recipe.FoodImage = _faveList[i]._image;
+
+               
+
+                if (_faveList[i]._difficulty == Recipe.Difficulties.EASY)
+                    recipe.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+                else if (_faveList[i]._difficulty == Recipe.Difficulties.MEDIUM)
+                    recipe.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+                else if (_faveList[i]._difficulty == Recipe.Difficulties.HARD)
+                    recipe.DiffImage = (BitmapImage)Application.Current.Resources["hardIconIcon"];
+
+                recipe.editButton.Click += editButton_Click;
+                recipe.foodProfileButton.Click += foodProfileButton_Click;
+
+                //Still need to add ratings
+
+                Recipes.Children.Add(recipe);
+            }
+
+
             /*for(int i = 0; i < 10; i++)
             {
 
@@ -34,8 +64,8 @@ namespace Cookbook
                 Recipes.Children.Add(recipe);
             }*/
 
+            /*
             //If buger is favourited, then display it.
-            
             if (MainWindow.burgerFave)
             {
                 CookbookRecipes burger = new CookbookRecipes();
@@ -67,7 +97,8 @@ namespace Cookbook
                 burger.foodProfileButton.Click += foodProfileButton_Click;
 
                 Recipes.Children.Add(burger);
-            }
+            }*/
+
 
             /*This is with Global data in main...
             if (MainWindow.burgerFave)
@@ -150,11 +181,13 @@ namespace Cookbook
             //burger.Title = "HOW DARE YOU!!!";
             //blah.Content = "HOW DARE YOU!!!!";
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-
-            RecipeProfilePage profile = new RecipeProfilePage(GlobalData.Instance._shanghaiNoodlesRecipe);
-       
+            
             //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
             //((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.search;
+
+            RecipeProfilePage profile = new RecipeProfilePage(GlobalData.Instance._shanghaiNoodlesRecipe);
+            
+            
             
             ((MainWindow)App.Current.MainWindow).Main.Content = profile;
         }

@@ -74,6 +74,8 @@ namespace Cookbook
                                         @"Fry Patty", @"Place on buns", "@POUR KETCHUP" }
         };
 
+        public List<Recipe> favouriteList = new List<Recipe>();
+        public List<Recipe> recentList = new List<Recipe>();
 
         //Main page
         public SearchPage1 search = new SearchPage1();
@@ -96,6 +98,8 @@ namespace Cookbook
 
         private GlobalData()
         {
+            favouriteList.Add(_burger);
+            favouriteList.Add(_shanghaiNoodlesRecipe);
             // init fields of each recipe here
             // init fields of each page here
             //Page page = GlobalData.Instance.page1;
