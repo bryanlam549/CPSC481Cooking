@@ -11,7 +11,7 @@
         
         <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"/>
         <Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815"
-            HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}">
+            HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}" Click="foodProfileButton_Click">
             <StackPanel Orientation="Horizontal">
                 <Grid Name="imageGrid" Background="Transparent" Width="350" Height="251.83">
 

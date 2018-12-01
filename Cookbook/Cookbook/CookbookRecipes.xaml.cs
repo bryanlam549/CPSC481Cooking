@@ -98,24 +98,46 @@ namespace Cookbook
             InitializeComponent();
         }
 
-        public event RoutedEventHandler Click;
+        //public event RoutedEventHandler Click;
         private void onButtonClickEdit(object sender, RoutedEventArgs e)
         {
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+            Mod mod = GlobalData.Instance.modification;
+            ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+            /*
             if (this.Click != null)
             {
                 this.Click(this, e);
-            }
+            }*/
         }
 
-        private void onButtonClickProfile(object sender, RoutedEventArgs e)
+        private void foodProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-            if (this.Click != null)
+
+            for (int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
             {
-                this.Click(this, e);
+                if (this.Title == GlobalData.Instance.recipeList[i]._name)
+                {
+                    RecipeProfilePage profile = GlobalData.Instance.recipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                    ((MainWindow)App.Current.MainWindow).Main.Content = profile;
+                    break;
+                }
             }
+
         }
+            /*
+            private void onButtonClickProfile(object sender, RoutedEventArgs e)
+            {
+                //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+
+                /*if (this.Click != null)
+                {
+                    this.Click(this, e);
+                }*/
+            //}
+
+
     }
 
 }
+
