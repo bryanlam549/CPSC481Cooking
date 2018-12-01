@@ -20,16 +20,19 @@ namespace Cookbook
     public partial class Category : UserControl
 	{
 
-		public Category(String categoryName)
+		private string categoryName;
+
+		public Category(string categoryName)
         {
             InitializeComponent();
-			
+			this.categoryName = categoryName;
 			Button.Content = categoryName;
+
         }
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-
+			SearchPage1.setCategory(categoryName);
 		}
 	}
 }

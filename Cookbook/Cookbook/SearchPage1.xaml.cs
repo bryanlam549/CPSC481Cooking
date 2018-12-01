@@ -20,8 +20,8 @@ namespace Cookbook
     /// </summary>
     public partial class SearchPage1 : Page
     {
-        //public BitmapImage fillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/heart.png"));
-        //public BitmapImage unfillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/unfillHeart.png"));
+		private static string onCategory = "All Categories";
+
         public SearchPage1()
         {
             InitializeComponent();
@@ -44,6 +44,13 @@ namespace Cookbook
 
 			scroll1.Content = categories;
 			
+		}
+
+		
+
+		public static void setCategory(string toSet){
+			onCategory = toSet;
+			test.Content = toSet;
 		}
 		
 	}

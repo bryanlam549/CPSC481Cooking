@@ -10,5 +10,6 @@
 	
 	<Grid>
 		<ScrollViewer x:Name="scroll1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="576" PanningMode="HorizontalOnly" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden"/>
-	</Grid>
+        <Label x:Name="test" Content="Label" HorizontalAlignment="Left" Margin="467,142,0,0" VerticalAlignment="Top"/>
+    </Grid>
 </Page>

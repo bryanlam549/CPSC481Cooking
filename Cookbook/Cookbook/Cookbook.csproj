@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Category.xaml.cs">
+      <DependentUpon>Category.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CookbookFavouritePage.xaml.cs">
       <DependentUpon>CookbookFavouritePage.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
     <Compile Include="StepMainPage.xaml.cs">
       <DependentUpon>StepMainPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Category.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CookbookFavouritePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
