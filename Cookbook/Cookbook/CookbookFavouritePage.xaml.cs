@@ -21,6 +21,8 @@ namespace Cookbook
     public partial class CookbookFavouritePage : Page
     {
         public List<Recipe> _faveList;
+        private BitmapImage fillStarImage = (BitmapImage) Application.Current.Resources["fillStarIcon"];
+        private BitmapImage unfillStarImage = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
         //Pass in a LIST of recipes. 
         public CookbookFavouritePage(List<Recipe> faveList)
         {
@@ -49,7 +51,46 @@ namespace Cookbook
                 //recipe.foodProfileButton.Click += foodProfileButton_Click;
 
                 //Still need to add ratings
-
+                if(_faveList[i]._rating==1)
+                {
+                    recipe.Rate1Image = fillStarImage;
+                    recipe.Rate2Image = unfillStarImage;
+                    recipe.Rate3Image = unfillStarImage;
+                    recipe.Rate4Image = unfillStarImage;
+                    recipe.Rate5Image = unfillStarImage;
+                }
+                else if (_faveList[i]._rating==2)
+                {
+                    recipe.Rate1Image = fillStarImage;
+                    recipe.Rate2Image = fillStarImage;
+                    recipe.Rate3Image = unfillStarImage;
+                    recipe.Rate4Image = unfillStarImage;
+                    recipe.Rate5Image = unfillStarImage;
+                }
+                else if (_faveList[i]._rating==3)
+                {
+                    recipe.Rate1Image = fillStarImage;
+                    recipe.Rate2Image = fillStarImage;
+                    recipe.Rate3Image = fillStarImage;
+                    recipe.Rate4Image = unfillStarImage;
+                    recipe.Rate5Image = unfillStarImage;
+                }
+                else if (_faveList[i]._rating==4)
+                {
+                    recipe.Rate1Image = fillStarImage;
+                    recipe.Rate2Image = fillStarImage;
+                    recipe.Rate3Image = fillStarImage;
+                    recipe.Rate4Image = fillStarImage; 
+                    recipe.Rate5Image = unfillStarImage;
+                }
+                else if (_faveList[i]._rating==5)
+                {
+                    recipe.Rate1Image = fillStarImage;
+                    recipe.Rate2Image = fillStarImage;
+                    recipe.Rate3Image = fillStarImage;
+                    recipe.Rate4Image = fillStarImage;
+                    recipe.Rate5Image = fillStarImage;
+                }
                 Recipes.Children.Add(recipe);
             }
 

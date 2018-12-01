@@ -92,6 +92,59 @@ namespace Cookbook
             }
         }
 
+        //Ratings
+        private ImageSource rate1image;
+        public ImageSource Rate1Image
+        {
+            get { return rate1image; }
+            set
+            {
+                rate1image = value;
+                this.rating1.Source = this.rate1image;
+            }
+        }
+        private ImageSource rate2image;
+        public ImageSource Rate2Image
+        {
+            get { return rate2image; }
+            set
+            {
+                rate2image = value;
+                this.rating2.Source = this.rate2image;
+            }
+        }
+        private ImageSource rate3image;
+        public ImageSource Rate3Image
+        {
+            get { return rate3image; }
+            set
+            {
+                rate3image = value;
+                this.rating3.Source = this.rate3image;
+            }
+        }
+        private ImageSource rate4image;
+        public ImageSource Rate4Image
+        {
+            get { return rate4image; }
+            set
+            {
+                rate4image = value;
+                this.rating4.Source = this.rate4image;
+            }
+        }
+        private ImageSource rate5image;
+        public ImageSource Rate5Image
+        {
+            get { return rate5image; }
+            set
+            {
+                rate5image = value;
+                this.rating5.Source = this.rate5image;
+            }
+        }
+
+
         //Need to do ratings too...
         public CookbookRecipes()
         {
