@@ -45,8 +45,8 @@ namespace Cookbook
                 else if (_faveList[i]._difficulty == Recipe.Difficulties.HARD)
                     recipe.DiffImage = (BitmapImage)Application.Current.Resources["hardIconIcon"];
 
-                recipe.editButton.Click += editButton_Click;
-                recipe.foodProfileButton.Click += foodProfileButton_Click;
+                //recipe.editButton.Click += editButton_Click;
+                //recipe.foodProfileButton.Click += foodProfileButton_Click;
 
                 //Still need to add ratings
 
@@ -162,6 +162,7 @@ namespace Cookbook
             }
             */
         }
+        /*
         //public event RoutedEventHandler Click;
         public void editButton_Click(object sender, RoutedEventArgs e)
         {
@@ -185,11 +186,12 @@ namespace Cookbook
             //((MainWindow)App.Current.MainWindow).Main.Content = ((MainWindow)App.Current.MainWindow).searchPage1;
             //((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.search;
 
-            RecipeProfilePage profile = new RecipeProfilePage(GlobalData.Instance._shanghaiNoodlesRecipe);
+            //RecipeProfilePage profile = new RecipeProfilePage(GlobalData.Instance._shanghaiNoodlesRecipe);
             
             
             
-            ((MainWindow)App.Current.MainWindow).Main.Content = profile;
+            //((MainWindow)App.Current.MainWindow).Main.Content = MainWindow.shanghaiProfile;
         }
+        */
     }
 }
