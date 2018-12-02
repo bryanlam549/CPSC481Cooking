@@ -164,14 +164,24 @@ namespace Cookbook
             }*/
         }
 
+        public List<Recipe> _recipeList = GlobalData.Instance.recipeList;
+        public List<Recipe> _recentList = GlobalData.Instance.recentList;
+        public List<RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
         private void foodProfileButton_Click(object sender, RoutedEventArgs e)
         {
 
-            for (int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
+            for (int i = 0; i < _recipeList.Count; i++)
             {
-                if (this.Title == GlobalData.Instance.recipeList[i]._name)
+                if (this.Title == _recipeList[i]._name)
                 {
-                    RecipeProfilePage profile = GlobalData.Instance.recipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                    if (!_recentList.Contains(_recipeList[i]))
+                        _recentList.Add(_recipeList[i]);
+                    else if (_recentList.Contains(_recipeList[i]))
+                    {
+                        _recentList.Remove(_recipeList[i]);
+                        _recentList.Add(_recipeList[i]);
+                    }
+                    RecipeProfilePage profile = _recipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
                     ((MainWindow)App.Current.MainWindow).Main.Content = profile;
                     break;
                 }

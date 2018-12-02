@@ -9,6 +9,10 @@
       Title="CookbookRecentPage">
 
     <Grid>
-        <TextBlock Text="Recent" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72"/>
+        <ScrollViewer Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Name="Recipes" Height="auto" Width="auto">
+                <!--local:CookbookRecipes Dur="10mins" DiffImage="Images/easyIcon.png" Title="blah"/-->
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
