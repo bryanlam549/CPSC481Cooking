@@ -31,7 +31,8 @@ namespace Cookbook
 
         // ~~~~~~~LATER ON: have a Recipe (instance of Recipe class) field here (set by the page) so this button can be applied to a specific recipe
 
-        private bool _isFilled = false; // unfilled heart or filled heart?
+        //Changed this to public: BRYAN
+        public bool _isFilled; // unfilled heart or filled heart?
 
 
         public HeartButton()
@@ -40,8 +41,20 @@ namespace Cookbook
 
         }
 
+        //Heart icon image, either filled or unfilled when page is open: made by BRYAN
+        private ImageSource hearticonimage;
+        public ImageSource HeartIconImage
+        {
+            get { return hearticonimage; }
+            set
+            {
+                hearticonimage = value;
+                this.heartButtonImageBrush.ImageSource = this.heartImage;
+            }
+        }
+        
 
-
+        //Button
         private void HeartButton_Click(object sender, RoutedEventArgs e)
         {
             _isFilled = !_isFilled; // toggle flag

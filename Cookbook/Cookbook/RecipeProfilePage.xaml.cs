@@ -31,7 +31,21 @@ namespace Cookbook
 
             _recipe = recipe; // ~~~~NOTE: set to proper recipe later on based on recipe clicked on, but hard coded this for testing
 
+            //This was done by me, BRYAN. I would've initialized heartButton user control so that it is filled if the recipe is fave or not. 
+            //but I was running into problem there but it works if try it on this page. Had to add function in HeartButton.xaml and made isfilled public.
             _heartButton._recipe = _recipe;
+            if (_recipe._isFavourite)
+            {
+                _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["heartIcon"];
+                _heartButton._isFilled = true;
+            }
+            else
+            {
+                _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+                _heartButton._isFilled = false;
+            }
+
+            _recipeNameTextBlock.Text = _recipe._name;
 
             _recipeImageBrush.ImageSource = _recipe._image;
 

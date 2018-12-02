@@ -43,7 +43,7 @@ namespace Cookbook
         //private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage();
         //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
         //private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
-        private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage(GlobalData.Instance.favouriteList);
+        private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage(GlobalData.Instance.recipeList);
         private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
         private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
 

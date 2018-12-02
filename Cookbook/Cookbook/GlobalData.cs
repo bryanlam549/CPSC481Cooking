@@ -34,7 +34,7 @@ namespace Cookbook
 
         public Recipe _shanghaiNoodlesRecipe = new Recipe()
         {
-            _isFavourite = false,
+            _isFavourite = true,
             _name = "Shanghai Noodles",
             _image = (BitmapImage)Application.Current.Resources["shanghaiNoodlesIcon"],
             _difficulty = Recipe.Difficulties.EASY,
@@ -74,9 +74,6 @@ namespace Cookbook
                                         @"Fry Patty", @"Place on buns", @"POUR KETCHUP!!!" }
         };
 
-
-
-        public List<Recipe> favouriteList = new List<Recipe>();
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
         public List<RecipeProfilePage> recipePageList = new List<RecipeProfilePage>(); //Used to access profile pages
@@ -93,10 +90,9 @@ namespace Cookbook
 
         private GlobalData()
         {
-            favouriteList.Add(_burger);
-            favouriteList.Add(_shanghaiNoodlesRecipe);
-            recipeList.Add(_burger);
             recipeList.Add(_shanghaiNoodlesRecipe);
+            recipeList.Add(_burger);
+            
             for (int i = 0; i < recipeList.Count; i++)
             {
                 RecipeProfilePage recipeProfilePage = new RecipeProfilePage(recipeList[i]);
