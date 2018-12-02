@@ -20,6 +20,10 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookRecipes : UserControl
     {
+        public List<Recipe> _recipeList = GlobalData.Instance.recipeList;
+        public List<Recipe> _recentList = GlobalData.Instance.recentList;
+        public List<RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
+
         //Number in list
         private string number;
         public string Number
@@ -155,8 +159,16 @@ namespace Cookbook
         private void onButtonClickEdit(object sender, RoutedEventArgs e)
         {
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-            Mod mod = GlobalData.Instance.modification;
-            ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+            for (int i = 0; i < _recipeList.Count; i++)
+            {
+                if (this.Title == _recipeList[i]._name)
+                {
+                    Mod mod = new Mod(_recipeList[i]);
+                    ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                    break;
+                }
+            }
+            
             /*
             if (this.Click != null)
             {
@@ -164,9 +176,7 @@ namespace Cookbook
             }*/
         }
 
-        public List<Recipe> _recipeList = GlobalData.Instance.recipeList;
-        public List<Recipe> _recentList = GlobalData.Instance.recentList;
-        public List<RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
+        
         private void foodProfileButton_Click(object sender, RoutedEventArgs e)
         {
 

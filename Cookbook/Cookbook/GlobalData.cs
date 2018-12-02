@@ -45,16 +45,16 @@ namespace Cookbook
             _ingredientCount = 14,
             _category = Recipe.Categories.CHINESE,
             _equipment = new List<string> { "1 wok or heavy skillet", "stirring utensils" },
-            _steps = new List<string> { @"1. To make the marinade, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved. 
-                                        Place the pork in the marinade and let sit for 10 minutes",
-                                        @"2. Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside).
-                                        Remove the pork and set aside.
-                                        Next fry the white parts of the cabbage and green onions along with the garlic for 30 seconds or until tender.
-                                        Return the pork to the pan along with the reserved marinade, the sesame oil, chicken/cornstarch mixture and the green parts of the cabbage and green onions.
-                                        Cook for 30 seconds.
-                                        Add the noodles and stir until combined.
-                                        Add white pepper to taste.
-                                        Serve immediately."}
+            _steps = new List<string> { @"1. To make the marinade, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved." 
+                                        +"Place the pork in the marinade and let sit for 10 minutes",
+                                        @"2. Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside)."
+                                        +"Remove the pork and set aside." +
+                                        "Next fry the white parts of the cabbage and green onions along with the garlic for 30 seconds or until tender." +
+                                        "Return the pork to the pan along with the reserved marinade, the sesame oil, chicken/cornstarch mixture and the green parts of the cabbage and green onions." +
+                                        "Cook for 30 seconds."+
+                                        "Add the noodles and stir until combined."+
+                                        "Add white pepper to taste."+
+                                        "Serve immediately."}
     };
         // ~~~~~~init the ingredients and fill ingredients list here
         public Recipe _burger = new Recipe()
@@ -76,6 +76,7 @@ namespace Cookbook
 
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
+        public List<Recipe> modRecipeList = new List<Recipe>(); //List of MODIFIED recipes
         public List<RecipeProfilePage> recipePageList = new List<RecipeProfilePage>(); //Used to access profile pages
 
         //Main page
@@ -84,8 +85,7 @@ namespace Cookbook
         public CurrentRecipePage1 currentRecipePage = new CurrentRecipePage1();
         public ProfilePage1 profilePage = new ProfilePage1();
 
-        //Other subpages?
-        public Mod modification = new Mod();
+
 
 
         private GlobalData()

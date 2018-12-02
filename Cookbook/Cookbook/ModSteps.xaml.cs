@@ -20,9 +20,19 @@ namespace Cookbook
     /// </summary>
     public partial class ModSteps : Page
     {
-        public ModSteps()
+        public ModSteps(Recipe _recipe)
         {
             InitializeComponent();
+            foodTitle.Text = _recipe._name;
+            for(int i = 0; i < _recipe._steps.Count; i++)
+            {
+                //Instead of this...Use a user control...
+                System.Windows.Controls.TextBlock newStep = new System.Windows.Controls.TextBlock();
+                newStep.TextWrapping = System.Windows.TextWrapping.Wrap;
+                newStep.FontSize = 18;
+                newStep.Text = _recipe._steps[i];
+                Steps.Children.Add(newStep);
+            }
         }
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {

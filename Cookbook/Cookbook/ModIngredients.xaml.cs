@@ -20,9 +20,11 @@ namespace Cookbook
     /// </summary>
     public partial class ModIngredients : Page
     {
-        public ModIngredients()
+        public ModIngredients(Recipe _recipe)
         {
             InitializeComponent();
+            foodTitle.Text = _recipe._name;
+
         }
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {

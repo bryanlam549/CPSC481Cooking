@@ -16,6 +16,19 @@
                 <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
             </Button.Background>
         </Button>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" TextWrapping="Wrap">Modification Ingredients</TextBlock>
+        <Rectangle Fill="#9c3828" Height="124.506" VerticalAlignment="Top" Stroke="#c29a3a" 
+                   StrokeThickness="3.5"/>
+        <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="100,0" Height="125" HorizontalAlignment="Center">
+            <TextBlock Name="modIngTitle"  FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center"
+               Foreground="#c29a3a" TextWrapping="Wrap">Ingredients</TextBlock>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="150,155,140,0" Height="125" HorizontalAlignment="Center" Width="286">
+            <TextBlock Name="foodTitle"  FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"
+               TextWrapping="Wrap">food title</TextBlock>
+        </Viewbox>
+        
+        <StackPanel Name="Ings" Margin="0,230,0,0" Height="604">
+
+        </StackPanel>
     </Grid>
 </Page>
