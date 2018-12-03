@@ -17,7 +17,8 @@
             <RowDefinition Height="110" />
             <RowDefinition Height="110" />
             <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
+            <RowDefinition Height="81.808" />
+            <RowDefinition Height="28.192"/>
             <RowDefinition Height="110" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -28,9 +29,10 @@
             <ColumnDefinition Width="96" />
             <ColumnDefinition Width="96" />
         </Grid.ColumnDefinitions>
-        <Frame x:Name="stepsMain" Height="880" Width="576" NavigationUIVisibility="Hidden"/>
 
-        <local:TransitionPageButton x:Name="_backButton" Width="90" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,10,92,10" Height="90" />
+        <Frame x:Name="stepsMain" Height="880" Width="576" NavigationUIVisibility="Hidden" Grid.ColumnSpan="6" Grid.RowSpan="9"/>
+
+        <local:TransitionPageButton x:Name="_backButton" Width="90" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,23,66,107" Height="90" Grid.RowSpan="2" />
 
         <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Left" 
                             Height="50" Click="onButtonClickEdit" Margin="26,23,0,0" VerticalAlignment="Top"
@@ -39,14 +41,16 @@
         </Button>
 
 
-        <TextBlock x:Name="_recipeName" Grid.Column="2"  Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="RecipeName"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,41,0,0"/>
-        <TextBlock x:Name="_stepNumber" Grid.Row="1" Grid.Column ="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Step 1 of 10"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" Height="37" Width="210" Margin="78,10,0,0"/>
-        <Rectangle Fill="#FF7C2F1F" Grid.Row="1" Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" RadiusX="10" RadiusY="10" Margin="43,60,33,0" />
-        <TextBlock x:Name="_stepBody" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="3" HorizontalAlignment="Left" Height="313" TextWrapping="Wrap" Text="Recipe Steps here "  TextAlignment="Left" FontSize="20" FontWeight ="SemiBold" VerticalAlignment="Top" Width="566" RenderTransformOrigin="1.103,0.872" Background="{x:Null}"/>
+        <TextBlock x:Name="_recipeName" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="RecipeName"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0"/>
+        <TextBlock x:Name="_stepNumber" Grid.Column ="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Step 1 of 10"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" Height="37" Width="210" Margin="68,78,0,0" Grid.RowSpan="2"/>
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" Margin="38,20,38,0" RadiusX="10" RadiusY="10" />
 
-        <Rectangle Fill="#FF7C2F1F" Grid.Row="5" Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" RadiusX="10" RadiusY="10" Margin="43,66,33,0" />
-        <local:TransitionPageButton x:Name="_previousStep" Grid.Row="6" Width="90" HorizontalAlignment="Right" Height="90" Grid.ColumnSpan="2" Margin="0,0,92,20" />
-        <local:TransitionPageButton x:Name="_nextStep" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Right"  Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20" />
+        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="6" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True"  Height="300" VerticalAlignment="Top" Margin="43,10,53,0" Grid.RowSpan="3">
+            <TextBlock x:Name="_stepBody" HorizontalAlignment="Left" Width="Auto"  Height="Auto" TextWrapping="Wrap" Text="Recipe Steps here "  TextAlignment="Left" FontSize="20" FontWeight ="SemiBold" VerticalAlignment="Top" Background="{x:Null}"/>
+        </ScrollViewer>
+        <Rectangle Grid.Row="6" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="500" Height="10" Margin="38,0,38,20" RadiusX="10" RadiusY="10" />
+        <local:TransitionPageButton x:Name="_previousStep" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <local:TransitionPageButton x:Name="_nextStep" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" Grid.RowSpan="2" />
 
     </Grid>
 </Page>
