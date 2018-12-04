@@ -33,7 +33,7 @@ namespace Cookbook
 
                 ModUserControl step = new ModUserControl(_recipe._steps[i]);
                 step.Change.Tag = i;    //This will be used to determine which user control is connected to which button
-
+                step.Delete.Tag = i;    //Same as above to use it for delete button
                 //Instead of this...Use a user control...
                 /*
                 System.Windows.Controls.TextBlock newStep = new System.Windows.Controls.TextBlock();
@@ -43,28 +43,55 @@ namespace Cookbook
                 step.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
                 step.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
                 step.Change.Click += Change_Click;
-                
+                step.Delete.Click += Delete_Click;
                 Steps.Children.Add(step);
                 
                 
             }
         }
 
+        //-------------------------User control buttons--------------------------------
         private void Change_Click(object sender, RoutedEventArgs e)
         {
-            //This is important...
+            
+            //This is important... Used to determine which step it's on
             var _stepNum = sender as Button;
             int  stepNum = (int)_stepNum.Tag;        //This was set during initiation 
             //MessageBox.Show(resp.ToString());
             
+            //Functional stuff, make the popup, display the step that's going to be changed in the text box
+            //And display which step it's on
             stepBox.Clear();
             modBox.IsEnabled = true;
             modBox.Visibility = System.Windows.Visibility.Visible;
-            //Need to determine which step its on
+            incBox.Text = (stepNum+1).ToString();
             stepBox.Text = _recipe._steps[stepNum];
+
+            //Depending on which step its on, disable up and down arrow
+            if (stepNum+1 == _recipe._steps.Count)
+            {
+                IncButton.IsEnabled = false;
+                DecButton.IsEnabled = true;
+            }
+            else if(stepNum+1 == 1)
+            {
+                DecButton.IsEnabled = false;
+                IncButton.IsEnabled = true;
+            }
+            //This is important... Used to determine which step to delete
             
         }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            var _stepNum = sender as Button;
+            int stepNum = (int)_stepNum.Tag;        //This was set during initiation 
+            _recipe._steps.RemoveAt(stepNum);
+            ModSteps updatePage = new ModSteps(_recipe);
+            ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+        }
 
+
+        //----------------------------------------This pages buttons -----------------------------------------
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
@@ -98,6 +125,7 @@ namespace Cookbook
                 if (x == _recipe._steps.Count)
                 {
                     IncButton.IsEnabled = false;
+                    DecButton.IsEnabled = true;
                 }
                 else
                 {
@@ -120,6 +148,7 @@ namespace Cookbook
                 if (x == 1)
                 {
                     DecButton.IsEnabled = false;
+                    IncButton.IsEnabled = true;
                 }
                 else
                 {

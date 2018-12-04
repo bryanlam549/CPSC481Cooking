@@ -46,5 +46,13 @@ namespace Cookbook
                 this.Click(this, e);
             }
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Click != null)
+            {
+                this.Click(this, e);
+            }
+        }
     }
 }

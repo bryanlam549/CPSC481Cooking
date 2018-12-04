@@ -36,7 +36,7 @@
         
         
         <Border Name="modBox"  Background="#FF9C3828" Margin="135,253,126,105.246" CornerRadius="20" 
-                BorderBrush="#FFC29A3A" BorderThickness="2"  >
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
                 <Button Name="IncButton" Content="+" Height="50" Width="50" Margin="165,10,0,0" Click="IncButton_Click"/>
                 <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
@@ -50,7 +50,9 @@
                 <Button Name="DecButton" Content="-" Height="50" Width="50"  Margin="165,10,0,0" Click="DecButton_Click"/>
                 
                 <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
-                <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" Text="blah" Margin="28,0,23.631,0" Height="166" />
+                <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" 
+                         Text="This is where steps are" Margin="28,0,23.631,0" Height="166" />
+                
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
                     <Button Name="Save" Content="Save" Height="50" Width="64" Margin="0,0,50,0" Click="Save_Click"/>
                     <Button Name="Cancel" Content="Cancel" Height="50" Width="64" Click="Cancel_Click"/>

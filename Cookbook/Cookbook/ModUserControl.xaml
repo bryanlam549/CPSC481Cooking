@@ -12,9 +12,9 @@
                        Width="390" FontSize="20" VerticalAlignment="Center"
                        FontWeight="DemiBold">Ingredients/Equipments/Steps</TextBlock>
             <Button Name="Change" Width="40" VerticalAlignment="Center" Height="50" 
-                    Content="+" Margin="9,0,5,0.215" Click="Change_Click"/>
+                    Content="+" Margin="0,0,0,0.215" Click="Change_Click"/>
             <Button Name="Delete" Width="40" VerticalAlignment="Center" Height="50" 
-                    Content="-" Margin="0,0,0,0.215"/>
+                    Content="-" Margin="0,0,0,0.215" Click="Delete_Click"/>
         </StackPanel>
 
     </Grid>
