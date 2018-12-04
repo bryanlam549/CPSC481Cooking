@@ -26,12 +26,38 @@
 
         <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="150,155,140,0" Height="125" HorizontalAlignment="Center" Width="286">
             <TextBlock Name="foodTitle"  FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"
-               TextWrapping="Wrap">food title</TextBlock>
+               TextWrapping="Wrap" FontWeight="DemiBold">food title</TextBlock>
         </Viewbox>
 
-        <StackPanel Name="Steps" Margin="50,253,140,23.246" Height="604">
-            
+        <StackPanel Name="Steps" Margin="45,253,46,23.246" Height="604">
+
         </StackPanel>
         
+        
+        
+        <Border Name="modBox"  Background="#FF9C3828" Margin="135,253,126,105.246" CornerRadius="20" 
+                BorderBrush="#FFC29A3A" BorderThickness="2"  >
+            <StackPanel>
+                <Button Name="IncButton" Content="+" Height="50" Width="50" Margin="165,10,0,0" Click="IncButton_Click"/>
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Label Content="After Step:" FontSize="36" Margin="0,0,2,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
+
+                    
+                    <TextBox x:Name="incBox"  Text="1" FontSize="24" TextWrapping="Wrap" 
+                           Width="64" HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center"/>
+                </StackPanel>
+                <Button Name="DecButton" Content="-" Height="50" Width="50"  Margin="165,10,0,0" Click="DecButton_Click"/>
+                
+                <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
+                <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" Text="blah" Margin="28,0,23.631,0" Height="166" />
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
+                    <Button Name="Save" Content="Save" Height="50" Width="64" Margin="0,0,50,0" Click="Save_Click"/>
+                    <Button Name="Cancel" Content="Cancel" Height="50" Width="64" Click="Cancel_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+
     </Grid>
 </Page>

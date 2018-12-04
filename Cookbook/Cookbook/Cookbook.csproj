@@ -90,6 +90,9 @@
     <Compile Include="ModSteps.xaml.cs">
       <DependentUpon>ModSteps.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModUserControl.xaml.cs">
+      <DependentUpon>ModUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfileInfoPage.xaml.cs">
       <DependentUpon>ProfileInfoPage.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ModSteps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
