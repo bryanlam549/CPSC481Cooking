@@ -28,37 +28,38 @@
             <TextBlock Name="foodTitle"  FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"
                TextWrapping="Wrap" FontWeight="DemiBold">food title</TextBlock>
         </Viewbox>
+        <ScrollViewer Name="scroller" PanningMode="VerticalOnly" 
+                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,253,46,130.246">
+            <StackPanel Name="Steps" VerticalAlignment="Top"/>
+        </ScrollViewer>
 
-        <StackPanel Name="Steps" Margin="45,253,46,23.246" Height="604">
 
-        </StackPanel>
-        
-        
-        
+
         <Border Name="modBox"  Background="#FF9C3828" Margin="135,253,126,105.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
                 <Button Name="IncButton" Content="+" Height="50" Width="50" Margin="165,10,0,0" Click="IncButton_Click"/>
                 <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <Label Content="After Step:" FontSize="36" Margin="0,0,2,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
+                    <Label Content="At Step:" FontSize="36" Margin="0,0,50,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
 
-                    
+
                     <TextBox x:Name="incBox"  Text="1" FontSize="24" TextWrapping="Wrap" 
                            Width="64" HorizontalContentAlignment="Center" 
                              VerticalContentAlignment="Center"/>
                 </StackPanel>
                 <Button Name="DecButton" Content="-" Height="50" Width="50"  Margin="165,10,0,0" Click="DecButton_Click"/>
-                
+
                 <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
                 <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" 
                          Text="This is where steps are" Margin="28,0,23.631,0" Height="166" />
-                
+
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
                     <Button Name="Save" Content="Save" Height="50" Width="64" Margin="0,0,50,0" Click="Save_Click"/>
                     <Button Name="Cancel" Content="Cancel" Height="50" Width="64" Click="Cancel_Click"/>
                 </StackPanel>
             </StackPanel>
         </Border>
+        <Button Name="doneButton" Content="DONE" Margin="150,775,140,35.246" Click="doneButton_Click"/>
 
 
     </Grid>
