@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Cookbook
 {
@@ -35,10 +28,43 @@ namespace Cookbook
 
             if (currentStep < recipeSteps.Count)
             {
-                _stepBody.Text = recipeSteps.ElementAt(currentStep);
+               String step =  recipeSteps.ElementAt(currentStep);
+                if (step.Contains("<hyperLink>"))
+                {
+                    int index = step.IndexOf("<hyperLink>");
+                    String textBeforeLookup = step.Substring(0, index);
+                    // String textAfterLookUp = step.Substring(index + 1, step.Length -1 );
+                    int endTag = step.IndexOf("</hyperLink>");
+                    int wordLength = endTag - index - 11;
+                    String lookUpWord = step.Substring(index + 11, wordLength);
+                    String restOfString = step.Substring(endTag + 12);
+                    Console.WriteLine(textBeforeLookup);
+                    Console.WriteLine(restOfString);
+                    Console.WriteLine(lookUpWord);
+
+                    _stepBody.Inlines.Add(textBeforeLookup);
+
+                    Hyperlink link = new Hyperlink();
+                    link.IsEnabled = true;
+                    link.Inlines.Add(lookUpWord);
+                    link.Click += handleLookUpWord;
+                    _stepBody.Inlines.Add(link);
+                    _stepBody.Inlines.Add(restOfString);
+
+                }
+                else
+                {
+                    _stepBody.Text = recipeSteps.ElementAt(currentStep);
+                }
             }
         
-
+            if(currentStep == 0)
+            {
+                // need a way to make it hidden
+                // TO: DO  need a clearner way to do this 
+                _previousStep.transitionPageButton.IsEnabled = false;
+                _previousStep.transitionPageButton.Visibility = System.Windows.Visibility.Hidden;
+            }
             _nextStep.transitionPageButton.Click += Next_Step_Click;
             _previousStep.transitionPageButton.Click += Prev_Step_Click;
             _backButton.transitionPageButton.Click += Back_Button_Click;
@@ -75,7 +101,15 @@ namespace Cookbook
 
         private void onButtonClickEdit(object sender, RoutedEventArgs e)
         {
-            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";  
+            Mod mod = new Mod(currentRecipe);
+            ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+        }
+
+        private void handleLookUpWord(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("The link works!");
+
+
         }
     }
 

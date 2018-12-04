@@ -28,10 +28,25 @@ namespace Cookbook
 
         public Page _page; // page to transition to...
 
+        public static readonly DependencyProperty ImageSrc = DependencyProperty.Register("ImageSource", typeof(BitmapImage), typeof(TransitionPageButton));
+        public static readonly DependencyProperty buttonLabel = DependencyProperty.Register("ButtonLabel", typeof(string), typeof(TransitionPageButton));
+
+        public BitmapImage ImageSource
+        {
+            get { return (BitmapImage)GetValue(ImageSrc); }
+            set { SetValue(ImageSrc, value); }
+        }
+
+        public string ButtonLabel
+        {
+            get { return (string)GetValue(buttonLabel); }
+            set { SetValue(buttonLabel, value); }
+        }
+
         public TransitionPageButton()
         {
             InitializeComponent();
-
+            this.DataContext = this;
             // init the proper icon here...
         }
 
