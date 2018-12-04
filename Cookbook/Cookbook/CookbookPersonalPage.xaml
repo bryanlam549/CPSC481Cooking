@@ -9,10 +9,9 @@
       Title="CookbookPersonalPage">
 
     <Grid>
-        <ScrollViewer Height="auto">
+        <ScrollViewer Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Name="Recipes" Height="auto" Width="auto">
-
-
+                <!--local:CookbookRecipes Dur="10mins" DiffImage="Images/easyIcon.png" Title="blah"/-->
             </StackPanel>
         </ScrollViewer>
         <!--TextBlock Text="Personal" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72"/-->

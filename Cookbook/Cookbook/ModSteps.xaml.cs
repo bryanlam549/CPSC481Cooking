@@ -21,7 +21,7 @@ namespace Cookbook
     public partial class ModSteps : Page
     {
         public Recipe _recipe;
-        //int stepNum;
+        int stepNum;
         public ModSteps(Recipe recipe)
         {
             InitializeComponent();
@@ -56,7 +56,7 @@ namespace Cookbook
             
             //This is important... Used to determine which step it's on
             var _stepNum = sender as Button;
-            int  stepNum = (int)_stepNum.Tag;        //This was set during initiation 
+            stepNum = (int)_stepNum.Tag;        //This was set during initiation 
             //MessageBox.Show(resp.ToString());
             
             //Functional stuff, make the popup, display the step that's going to be changed in the text box
@@ -84,8 +84,11 @@ namespace Cookbook
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             var _stepNum = sender as Button;
-            int stepNum = (int)_stepNum.Tag;        //This was set during initiation 
+            stepNum = (int)_stepNum.Tag;        //This was set during initiation 
             _recipe._steps.RemoveAt(stepNum);
+
+            //Steps.Children.RemoveAt(stepNum);
+            //Or i can update the page
             ModSteps updatePage = new ModSteps(_recipe);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
         }
@@ -105,10 +108,36 @@ namespace Cookbook
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            //Exit the popup
             modBox.IsEnabled = false;
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
-            //_recipe._steps[stepNum] = stepBox.Text;
-            //GlobalData.Instance.modRecipeList.Add(_recipe);
+
+
+            //Change the step and place it accordingly
+            _recipe._steps.RemoveAt(stepNum);
+            Steps.Children.RemoveAt(stepNum);
+            int x = 0;
+            if (Int32.TryParse(incBox.Text, out x))
+            {
+                x = Int32.Parse(incBox.Text) - 1;
+            }
+            _recipe._steps.Insert(x, stepBox.Text);
+
+            //Make the new step and add it in
+            ModUserControl changedStep = new ModUserControl(stepBox.Text);
+            /*
+            changedStep.Change.Tag = x;    //This will be used to determine which user control is connected to which button
+            changedStep.Delete.Tag = x;    //Same as above to use it for delete button
+            changedStep.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
+            changedStep.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+            changedStep.Change.Click += Change_Click;
+            changedStep.Delete.Click += Delete_Click;
+            Steps.Children.Insert(x, changedStep);
+            */
+            //OR i can just update the page
+            ModSteps updatePage = new ModSteps(_recipe);
+            ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+
         }
 
         private void IncButton_Click(object sender, RoutedEventArgs e)
@@ -155,6 +184,12 @@ namespace Cookbook
                     IncButton.IsEnabled = true;
                 }
             }
+        }
+
+        private void doneButton_Click(object sender, RoutedEventArgs e)
+        {
+            Mod doneUpdate = new Mod(_recipe);
+            ((MainWindow)App.Current.MainWindow).Main.Content = doneUpdate;
         }
     }
 }
