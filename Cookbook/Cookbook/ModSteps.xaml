@@ -9,38 +9,44 @@
       Title="ModSteps">
 
     <Grid>
-        <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
+        <Grid Name="mainGrid">
+            <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
                    VerticalAlignment="Top" Width="500" Height="10" Margin="0,250,0,0" RadiusX="10" RadiusY="10" />
 
-        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="38,155,0,0" 
+            <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="38,155,0,0" 
                 VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
                 Style="{StaticResource CustomButtonStyle}" Click="cookbookPageButton_Click" >
-            <Button.Background>
-                <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
-            </Button.Background>
-        </Button>
+                <Button.Background>
+                    <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
+                </Button.Background>
+            </Button>
 
-        <Rectangle Fill="#9c3828" Height="124.506" VerticalAlignment="Top" Stroke="#c29a3a" 
+            <Rectangle Fill="#9c3828" Height="124.506" VerticalAlignment="Top" Stroke="#c29a3a" 
                    StrokeThickness="3.5"/>
-        <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="100,0" Height="125" HorizontalAlignment="Center">
-            <TextBlock Name="modIngTitle"  FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center"
+            <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="100,0" Height="125" HorizontalAlignment="Center">
+                <TextBlock Name="modIngTitle"  FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center"
                Foreground="#c29a3a" TextWrapping="Wrap">Steps</TextBlock>
-        </Viewbox>
+            </Viewbox>
 
-        <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="150,155,140,0" Height="125" HorizontalAlignment="Center" Width="286">
-            <TextBlock Name="foodTitle"  FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"
+            <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="150,155,140,0" Height="125" HorizontalAlignment="Center" Width="286">
+                <TextBlock Name="foodTitle"  FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"
                TextWrapping="Wrap" FontWeight="DemiBold">food title</TextBlock>
-        </Viewbox>
-        <ScrollViewer Name="scroller" PanningMode="VerticalOnly" 
+            </Viewbox>
+            <ScrollViewer Name="scroller" PanningMode="VerticalOnly" 
                       VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,265,46,130.246">
-            <StackPanel Name="Steps" VerticalAlignment="Top">
+                <StackPanel Name="Steps" VerticalAlignment="Top">
 
-            </StackPanel>
-        </ScrollViewer>
-        <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
+                </StackPanel>
+            </ScrollViewer>
+            <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
                    VerticalAlignment="Bottom" Width="500" Height="10" Margin="0,0,0,130" RadiusX="10" RadiusY="10" />
 
 
+
+            <Button Name="Add" Content="ADD" Width="55" HorizontalAlignment="Center" Margin="475,785,46,45.246" Click="Add_Click"/>
+            <Button Name="doneButton" Content="DONE" Margin="150,775,140,35.246" Click="doneButton_Click"/>
+        </Grid>
+        
         <Border Name="modBox"  Background="#FF9C3828" Margin="135,253,126,105.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
@@ -66,10 +72,6 @@
             </StackPanel>
         </Border>
 
-
-        <Button Name="Add" Content="ADD" Width="55" HorizontalAlignment="Center" Margin="475,785,46,45.246" Click="Add_Click"/>
-        <Button Name="doneButton" Content="DONE" Margin="150,775,140,35.246" Click="doneButton_Click"/>
-
-
     </Grid>
+    
 </Page>

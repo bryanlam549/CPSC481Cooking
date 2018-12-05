@@ -27,6 +27,7 @@ namespace Cookbook
         public ModSteps(Recipe recipe, int _recipeNum)
         {
             InitializeComponent();
+            //mainGrid.IsEnabled = true;
             _recipe = recipe;
             foodTitle.Text = _recipe._name;
             recipeNum = _recipeNum;
@@ -56,6 +57,7 @@ namespace Cookbook
         //-------------------------User control buttons--------------------------------
         private void Change_Click(object sender, RoutedEventArgs e)
         {
+            mainGrid.IsEnabled = false;
             changeAddFlag = false;
             //This is important... Used to determine which step it's on
             var _stepNum = sender as Button;
@@ -102,6 +104,7 @@ namespace Cookbook
         //----------------------------------------This pages buttons -----------------------------------------
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            mainGrid.IsEnabled = false;
             changeAddFlag = true;
             //Functional stuff, make the popup, display the step that's going to be changed in the text box
             //And display which step it's on
@@ -123,6 +126,7 @@ namespace Cookbook
         {
             modBox.IsEnabled = false;
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -168,7 +172,7 @@ namespace Cookbook
             }
             ModSteps updatePage = new ModSteps(_recipe, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
-             
+            mainGrid.IsEnabled = true;
 
         }
 
