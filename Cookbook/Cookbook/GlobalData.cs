@@ -79,6 +79,7 @@ namespace Cookbook
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
         public List<Recipe> modRecipeList = new List<Recipe>(); //List of MODIFIED recipes
         public List<RecipeProfilePage> recipePageList = new List<RecipeProfilePage>(); //Used to access profile pages
+        public List<RecipeProfilePage> modrecipePageList = new List<RecipeProfilePage>(); //Used to access modified profile pages
 
         //Main page
         public SearchPage1 search = new SearchPage1();

@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 
 namespace Cookbook
 {
+
     public class Recipe
     {
 
@@ -43,10 +44,11 @@ namespace Cookbook
 
         public List<Ingredient> _ingredients = new List<Ingredient>(); // each ingredient will have text, current unit, possible units, substitutions..., _isChecked, etc.
 
-        public List<string> _equipment;
+        public List<string> _equipment = new List<string>();
 
-        public List<string> _steps;
+        public List<string> _steps = new List<string>();
 
+        public bool modified = false;    //Set true if this is a modified recipe. Modified will NOT have substitutions, won't have favourites and won't be shown on recent.
 
         public Recipe()
         {
