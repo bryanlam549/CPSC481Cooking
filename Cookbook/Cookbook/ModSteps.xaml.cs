@@ -131,48 +131,55 @@ namespace Cookbook
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            //Exit the popup
-            modBox.IsEnabled = false;
-            this.modBox.Visibility = System.Windows.Visibility.Hidden;
-
-            if (!changeAddFlag)  //When change flag is set
+            if (!string.IsNullOrWhiteSpace(stepBox.Text))
             {
-                //Change the step and place it accordingly
-                _recipe._steps.RemoveAt(stepNum);
-                //Steps.Children.RemoveAt(stepNum);
-                int x = 0;
-                if (Int32.TryParse(incBox.Text, out x))
-                {
-                    x = Int32.Parse(incBox.Text) - 1;
-                }
-                _recipe._steps.Insert(x, stepBox.Text);
+                //Exit the popup
+                modBox.IsEnabled = false;
+                this.modBox.Visibility = System.Windows.Visibility.Hidden;
 
-                //Make the new step and add it in
-                //ModUserControl changedStep = new ModUserControl(stepBox.Text);
-                /*
-                changedStep.Change.Tag = x;    //This will be used to determine which user control is connected to which button
-                changedStep.Delete.Tag = x;    //Same as above to use it for delete button
-                changedStep.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-                changedStep.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-                changedStep.Change.Click += Change_Click;
-                changedStep.Delete.Click += Delete_Click;
-                Steps.Children.Insert(x, changedStep);
-                */
-                //OR i can just update the page
+                if (!changeAddFlag)  //When change flag is set
+                {
+                    //Change the step and place it accordingly
+                    _recipe._steps.RemoveAt(stepNum);
+                    //Steps.Children.RemoveAt(stepNum);
+                    int x = 0;
+                    if (Int32.TryParse(incBox.Text, out x))
+                    {
+                        x = Int32.Parse(incBox.Text) - 1;
+                    }
+                    _recipe._steps.Insert(x, stepBox.Text);
+
+                    //Make the new step and add it in
+                    //ModUserControl changedStep = new ModUserControl(stepBox.Text);
+                    /*
+                    changedStep.Change.Tag = x;    //This will be used to determine which user control is connected to which button
+                    changedStep.Delete.Tag = x;    //Same as above to use it for delete button
+                    changedStep.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
+                    changedStep.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+                    changedStep.Change.Click += Change_Click;
+                    changedStep.Delete.Click += Delete_Click;
+                    Steps.Children.Insert(x, changedStep);
+                    */
+                    //OR i can just update the page
+                }
+                else
+                {
+                    int x = 0;
+                    if (Int32.TryParse(incBox.Text, out x))
+                    {
+                        x = Int32.Parse(incBox.Text) - 1;
+                    }
+                    _recipe._steps.Insert(x, stepBox.Text);
+
+                }
+                ModSteps updatePage = new ModSteps(_recipe, recipeNum);
+                ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+                mainGrid.IsEnabled = true;
             }
             else
             {
-                int x = 0;
-                if (Int32.TryParse(incBox.Text, out x))
-                {
-                    x = Int32.Parse(incBox.Text) - 1;
-                }
-                _recipe._steps.Insert(x, stepBox.Text);
-                
+                MessageBox.Show("One does not simply put in an empty step!!!!!! You stupid Biiimbo");
             }
-            ModSteps updatePage = new ModSteps(_recipe, recipeNum);
-            ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
-            mainGrid.IsEnabled = true;
 
         }
 
@@ -242,9 +249,16 @@ namespace Cookbook
 
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
-            //Determine where the recipe is...
-            Mod doneUpdate = new Mod(_recipe, recipeNum);
-            ((MainWindow)App.Current.MainWindow).Main.Content = doneUpdate;
+            if (_recipe._steps.Count == 0)
+            {
+                MessageBox.Show("Uh. You need at least one step stoopud human.");
+            }
+            else
+            {
+                //Determine where the recipe is...
+                Mod doneUpdate = new Mod(_recipe, recipeNum);
+                ((MainWindow)App.Current.MainWindow).Main.Content = doneUpdate;
+            }
         }
 
         
