@@ -19,7 +19,7 @@
             </Button.Background>
         </Button>
         <Viewbox StretchDirection="DownOnly" Stretch="Uniform" Grid.Row="1">
-            <ContentControl Content="BACK" FontSize="22"/>
+            <ContentControl x:Name="buttonTextControl" Content="BACK" FontSize="22"/>
         </Viewbox>
     </Grid>
 

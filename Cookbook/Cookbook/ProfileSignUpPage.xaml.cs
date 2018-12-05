@@ -26,6 +26,8 @@ namespace Cookbook
         {
             InitializeComponent();
             _back.transitionPageButton.Click += Back_Click;
+
+            _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)

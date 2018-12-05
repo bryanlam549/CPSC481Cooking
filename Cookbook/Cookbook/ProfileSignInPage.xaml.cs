@@ -28,6 +28,8 @@ namespace Cookbook
             InitializeComponent();
             _back.transitionPageButton.Click += Back_Click;
 
+            _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
+
             accountList.Add("foodluver123");
             accountList.Add("ilovefood456@food.com");
             accountList.Add("123456789123456789123456789");

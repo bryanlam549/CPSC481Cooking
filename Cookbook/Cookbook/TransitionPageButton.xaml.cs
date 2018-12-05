@@ -21,6 +21,9 @@ namespace Cookbook
     public partial class TransitionPageButton : UserControl
     {
 
+        public enum Orientation { BACK, FORWARD };
+
+
         // cache global resources...
         private BitmapImage backImage = (BitmapImage)Application.Current.Resources["backIcon"];
         private BitmapImage forwardImage = (BitmapImage)Application.Current.Resources["forwardIcon"];
@@ -49,6 +52,23 @@ namespace Cookbook
             this.DataContext = this;
             // init the proper icon here...
         }
+
+        public void initAppearance(Orientation orientation, String text)
+        {
+            if (orientation == Orientation.BACK)
+            {
+                transitionPageButtonImageBrush.ImageSource = backImage;
+            }
+            else
+            {
+                transitionPageButtonImageBrush.ImageSource = forwardImage;
+            }
+
+            buttonTextControl.Content = text;
+
+        }
+
+
 
 
         private void TransitionPageButton_Click(object sender, RoutedEventArgs e)

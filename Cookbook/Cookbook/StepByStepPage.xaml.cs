@@ -70,6 +70,13 @@ namespace Cookbook
             _backButton.transitionPageButton.Click += Back_Button_Click;
 
 
+            _backButton.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
+            _previousStep.initAppearance(TransitionPageButton.Orientation.BACK, "PREVIOUS");
+            _nextStep.initAppearance(TransitionPageButton.Orientation.FORWARD, "NEXT");
+
+
+
+
 
         }
         private void Next_Step_Click(object sender, RoutedEventArgs e)

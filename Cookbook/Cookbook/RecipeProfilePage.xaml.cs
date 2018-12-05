@@ -52,6 +52,11 @@ namespace Cookbook
 
             _startButton.transitionPageButton.Click += StartButton_Click;
 
+            _backButton.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
+
+            _startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "START");
+
+
         }
 
 

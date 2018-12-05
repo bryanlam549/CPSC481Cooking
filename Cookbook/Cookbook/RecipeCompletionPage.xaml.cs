@@ -29,6 +29,9 @@ namespace Cookbook
             _next.transitionPageButton.Click += Next_Click;
             _recipeImageBrush.ImageSource = recipe._image;
             _recipeName.Text = recipe._name;
+
+            _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK TO STEPS");
+            _next.initAppearance(TransitionPageButton.Orientation.FORWARD, "GO TO RECIPE PAGE");
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
