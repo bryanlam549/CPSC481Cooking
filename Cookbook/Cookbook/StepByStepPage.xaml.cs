@@ -108,7 +108,7 @@ namespace Cookbook
 
         private void onButtonClickEdit(object sender, RoutedEventArgs e)
         {
-            Mod mod = new Mod(currentRecipe);
+            Mod mod = new Mod(currentRecipe, 0);
             ((MainWindow)App.Current.MainWindow).Main.Content = mod;
         }
 

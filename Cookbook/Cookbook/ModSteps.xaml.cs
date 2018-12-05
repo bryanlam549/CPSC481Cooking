@@ -22,6 +22,7 @@ namespace Cookbook
     {
         public Recipe _recipe;
         int stepNum;
+        bool changeAddFlag; //falsefor change, true for add
         public ModSteps(Recipe recipe)
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace Cookbook
                 newStep.TextWrapping = System.Windows.TextWrapping.Wrap;
                 newStep.FontSize = 18;
                 newStep.Text = _recipe._steps[i];*/
+                step.IES.Text = (i+1).ToString() + ") " + step.IES.Text;
                 step.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
                 step.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
                 step.Change.Click += Change_Click;
@@ -53,7 +55,7 @@ namespace Cookbook
         //-------------------------User control buttons--------------------------------
         private void Change_Click(object sender, RoutedEventArgs e)
         {
-            
+            changeAddFlag = false;
             //This is important... Used to determine which step it's on
             var _stepNum = sender as Button;
             stepNum = (int)_stepNum.Tag;        //This was set during initiation 
@@ -78,7 +80,7 @@ namespace Cookbook
                 DecButton.IsEnabled = false;
                 IncButton.IsEnabled = true;
             }
-            //This is important... Used to determine which step to delete
+
             
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -97,6 +99,20 @@ namespace Cookbook
 
 
         //----------------------------------------This pages buttons -----------------------------------------
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            changeAddFlag = true;
+            //Functional stuff, make the popup, display the step that's going to be changed in the text box
+            //And display which step it's on
+            stepBox.Clear();
+            modBox.IsEnabled = true;
+            modBox.Visibility = System.Windows.Visibility.Visible;
+            incBox.Text = ((_recipe._steps.Count) + 1).ToString();    //Always make increment box at the max
+            stepBox.Text= "";
+            IncButton.IsEnabled = false;
+
+        }
+
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
@@ -114,31 +130,44 @@ namespace Cookbook
             modBox.IsEnabled = false;
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
 
-
-            //Change the step and place it accordingly
-            _recipe._steps.RemoveAt(stepNum);
-            //Steps.Children.RemoveAt(stepNum);
-            int x = 0;
-            if (Int32.TryParse(incBox.Text, out x))
+            if (!changeAddFlag)  //When change flag is set
             {
-                x = Int32.Parse(incBox.Text) - 1;
-            }
-            _recipe._steps.Insert(x, stepBox.Text);
+                //Change the step and place it accordingly
+                _recipe._steps.RemoveAt(stepNum);
+                //Steps.Children.RemoveAt(stepNum);
+                int x = 0;
+                if (Int32.TryParse(incBox.Text, out x))
+                {
+                    x = Int32.Parse(incBox.Text) - 1;
+                }
+                _recipe._steps.Insert(x, stepBox.Text);
 
-            //Make the new step and add it in
-            ModUserControl changedStep = new ModUserControl(stepBox.Text);
-            /*
-            changedStep.Change.Tag = x;    //This will be used to determine which user control is connected to which button
-            changedStep.Delete.Tag = x;    //Same as above to use it for delete button
-            changedStep.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-            changedStep.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-            changedStep.Change.Click += Change_Click;
-            changedStep.Delete.Click += Delete_Click;
-            Steps.Children.Insert(x, changedStep);
-            */
-            //OR i can just update the page
+                //Make the new step and add it in
+                //ModUserControl changedStep = new ModUserControl(stepBox.Text);
+                /*
+                changedStep.Change.Tag = x;    //This will be used to determine which user control is connected to which button
+                changedStep.Delete.Tag = x;    //Same as above to use it for delete button
+                changedStep.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
+                changedStep.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+                changedStep.Change.Click += Change_Click;
+                changedStep.Delete.Click += Delete_Click;
+                Steps.Children.Insert(x, changedStep);
+                */
+                //OR i can just update the page
+            }
+            else
+            {
+                int x = 0;
+                if (Int32.TryParse(incBox.Text, out x))
+                {
+                    x = Int32.Parse(incBox.Text) - 1;
+                }
+                _recipe._steps.Insert(x, stepBox.Text);
+                
+            }
             ModSteps updatePage = new ModSteps(_recipe);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+             
 
         }
 
@@ -153,14 +182,31 @@ namespace Cookbook
                 //If x is not maximum step then you can't increase anymore.
                 x++;
                 incBox.Text = x.ToString();
-                if (x == _recipe._steps.Count)
+                //When you are in change mode
+                if (!changeAddFlag)
                 {
-                    IncButton.IsEnabled = false;
-                    DecButton.IsEnabled = true;
+                    if (x == _recipe._steps.Count)
+                    {
+                        IncButton.IsEnabled = false;
+                        DecButton.IsEnabled = true;
+                    }
+                    else
+                    {
+                        DecButton.IsEnabled = true;
+                    }
                 }
+                //When you are in add mode
                 else
                 {
-                    DecButton.IsEnabled = true;
+                    if (x == _recipe._steps.Count + 1)
+                    {
+                        IncButton.IsEnabled = false;
+                        DecButton.IsEnabled = true;
+                    }
+                    else
+                    {
+                        DecButton.IsEnabled = true;
+                    }
                 }
             }
         }
@@ -185,13 +231,16 @@ namespace Cookbook
                 {
                     IncButton.IsEnabled = true;
                 }
+
             }
         }
 
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
-            Mod doneUpdate = new Mod(_recipe);
+            Mod doneUpdate = new Mod(_recipe, 0);
             ((MainWindow)App.Current.MainWindow).Main.Content = doneUpdate;
         }
+
+        
     }
 }

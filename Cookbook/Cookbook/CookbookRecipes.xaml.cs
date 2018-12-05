@@ -180,7 +180,7 @@ namespace Cookbook
                 {
                     if (this.Title == _recipeList[i]._name)
                     {
-                        Mod mod = new Mod(_recipeList[i]);
+                        Mod mod = new Mod(_recipeList[i], i);
                         ((MainWindow)App.Current.MainWindow).Main.Content = mod;
                         break;
                     }
@@ -192,7 +192,7 @@ namespace Cookbook
                 {
                     if (this.Title == _modrecipeList[i]._name)
                     {
-                        Mod mod1 = new Mod(_modrecipeList[i]);
+                        Mod mod1 = new Mod(_modrecipeList[i], i);
                         ((MainWindow)App.Current.MainWindow).Main.Content = mod1;
                         break;
                     }

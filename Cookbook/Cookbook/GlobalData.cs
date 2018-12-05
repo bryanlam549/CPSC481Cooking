@@ -45,9 +45,9 @@ namespace Cookbook
             _ingredientCount = 14,
             _category = Recipe.Categories.CHINESE,
             _equipment = new List<string> { "1 wok or heavy skillet", "stirring utensils" },
-            _steps = new List<string> { @"1. To make the <hyperLink>marinade</hyperLink>, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
+            _steps = new List<string> { @"To make the <hyperLink>marinade</hyperLink>, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
                                         +"Place the pork in the marinade and let sit for 10 minutes",
-                                        @"2. Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside)."
+                                        @"Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside)."
                                         +"Remove the pork and set aside." +
                                         "Next fry the white parts of the cabbage and green onions along with the garlic for 30 seconds or until tender." +
                                         "Return the pork to the pan along with the reserved marinade, the sesame oil, chicken/cornstarch mixture and the green parts of the cabbage and green onions." +

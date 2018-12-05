@@ -20,11 +20,12 @@ namespace Cookbook
     /// </summary>
     public partial class Mod : Page
     {
-
+        public int recipeNum;
         public Recipe recipeMod = new Recipe();
-        public Mod(Recipe _recipe)
+        public Mod(Recipe _recipe, int _recipeNum)
         {
             InitializeComponent();
+            recipeNum = _recipeNum;  //This is used to determine which recipe to replace when the  recipe being edited is already modified
             //recipe = _recipe;
             //COPY the recipe...Might not actually be a copy....
             //I NEEEED A DEEP COPY!
@@ -79,6 +80,9 @@ namespace Cookbook
 
             Recipe.Categories tempCategories = _recipe._category;
             recipeMod._category = tempCategories;
+
+            bool tempModified = _recipe.modified;
+            recipeMod.modified = tempModified;
 
             List<Ingredient> tempIngredients = new List<Ingredient>();
             for(int i = 0; i < _recipe._ingredients.Count; i++)
@@ -144,15 +148,35 @@ namespace Cookbook
             ((MainWindow)App.Current.MainWindow).Main.Content = modStepsPg;
         }
 
+        public List<Recipe> globalModRecipeList = GlobalData.Instance.modRecipeList;
+        public List<RecipeProfilePage> globalModPageList = GlobalData.Instance.modrecipePageList;
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //Need to add into ModList
-            recipeMod.modified = true;  //Flag as modified recipe
-            GlobalData.Instance.modRecipeList.Add(recipeMod);   //Add it into the modified recipe list
-            //Also make an instance of a profile page for later access
-            RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
-            GlobalData.Instance.modrecipePageList.Add(modProfilePage);
+            
+            //If the recipe is an original, then add it into the modified tab
+            if (recipeMod.modified == false)
+            {
+                //Need to add into ModList
+                recipeMod.modified = true;  //Flag as modified recipe
+                globalModRecipeList.Add(recipeMod);   //Add it into the modified recipe list
+                                                                    //Also make an instance of a profile page for later access
+                RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
+                globalModPageList.Add(modProfilePage);
 
+                
+            }
+            //If the recipe is modified, then the edits will just replace it
+            else
+            {
+                //I need to know the one i'm replacing
+                globalModRecipeList.RemoveAt(recipeNum);
+                globalModPageList.RemoveAt(recipeNum);
+
+                globalModRecipeList.Insert(recipeNum, recipeMod);
+                RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
+                globalModPageList.Insert(recipeNum, modProfilePage);
+
+            }
 
             //Need to reload previous page, just gonna be hard coded to favourite page rn...
             //Probably pass in previous page into this page. Or have "previous page" as a global data. and reload it when this button is pressed.
@@ -163,7 +187,6 @@ namespace Cookbook
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             //Don't update the modList
-
             //Probably pass in previous page into this page. Or have "previous page" as a global data. and reload it when this button is pressed.
             CookbookPage1 prevPage = new CookbookPage1();
             ((MainWindow)App.Current.MainWindow).Main.Content = prevPage;

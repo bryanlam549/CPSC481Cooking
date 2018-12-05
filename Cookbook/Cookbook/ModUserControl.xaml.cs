@@ -23,7 +23,7 @@ namespace Cookbook
         public ModUserControl(String ies) //Ingredient, equipment, or step
         {
             InitializeComponent();
-            IES.Text = ies;
+            IES.Text =ies;
         }
 
         public event RoutedEventHandler Click;

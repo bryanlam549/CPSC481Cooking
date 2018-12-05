@@ -9,7 +9,10 @@
       Title="ModSteps">
 
     <Grid>
-        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,155,0,0" 
+        <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
+                   VerticalAlignment="Top" Width="500" Height="10" Margin="0,250,0,0" RadiusX="10" RadiusY="10" />
+
+        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="38,155,0,0" 
                 VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
                 Style="{StaticResource CustomButtonStyle}" Click="cookbookPageButton_Click" >
             <Button.Background>
@@ -29,10 +32,13 @@
                TextWrapping="Wrap" FontWeight="DemiBold">food title</TextBlock>
         </Viewbox>
         <ScrollViewer Name="scroller" PanningMode="VerticalOnly" 
-                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,253,46,130.246">
-            <StackPanel Name="Steps" VerticalAlignment="Top"/>
-        </ScrollViewer>
+                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,265,46,130.246">
+            <StackPanel Name="Steps" VerticalAlignment="Top">
 
+            </StackPanel>
+        </ScrollViewer>
+        <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom" Width="500" Height="10" Margin="0,0,0,130" RadiusX="10" RadiusY="10" />
 
 
         <Border Name="modBox"  Background="#FF9C3828" Margin="135,253,126,105.246" CornerRadius="20" 
@@ -40,7 +46,7 @@
             <StackPanel>
                 <Button Name="IncButton" Content="+" Height="50" Width="50" Margin="165,10,0,0" Click="IncButton_Click"/>
                 <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <Label Content="At Step:" FontSize="36" Margin="0,0,50,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
+                    <Label Name="stepTitle" Content="At Step:" FontSize="36" Margin="0,0,50,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
 
 
                     <TextBox x:Name="incBox"  Text="1" FontSize="24" TextWrapping="Wrap" 
@@ -59,6 +65,9 @@
                 </StackPanel>
             </StackPanel>
         </Border>
+
+
+        <Button Name="Add" Content="ADD" Width="55" HorizontalAlignment="Center" Margin="475,785,46,45.246" Click="Add_Click"/>
         <Button Name="doneButton" Content="DONE" Margin="150,775,140,35.246" Click="doneButton_Click"/>
 
 
