@@ -144,7 +144,7 @@ namespace Cookbook
 
         private void stepsButton_Click(object sender, RoutedEventArgs e)
         {
-            ModSteps modStepsPg = new ModSteps(recipeMod);
+            ModSteps modStepsPg = new ModSteps(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modStepsPg;
         }
 

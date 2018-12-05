@@ -21,14 +21,15 @@ namespace Cookbook
     public partial class ModSteps : Page
     {
         public Recipe _recipe;
+        public int recipeNum;
         int stepNum;
         bool changeAddFlag; //falsefor change, true for add
-        public ModSteps(Recipe recipe)
+        public ModSteps(Recipe recipe, int _recipeNum)
         {
             InitializeComponent();
             _recipe = recipe;
             foodTitle.Text = _recipe._name;
-            
+            recipeNum = _recipeNum;
             for(int i = 0; i < _recipe._steps.Count; i++)
             {
 
@@ -91,7 +92,7 @@ namespace Cookbook
 
             //Steps.Children.RemoveAt(stepNum);
             //Or i can update the page
-            ModSteps updatePage = new ModSteps(_recipe);
+            ModSteps updatePage = new ModSteps(_recipe, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
 
             //GlobalData.Instance.modRecipeList.Add(_recipe);
@@ -165,7 +166,7 @@ namespace Cookbook
                 _recipe._steps.Insert(x, stepBox.Text);
                 
             }
-            ModSteps updatePage = new ModSteps(_recipe);
+            ModSteps updatePage = new ModSteps(_recipe, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
              
 
@@ -237,7 +238,8 @@ namespace Cookbook
 
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
-            Mod doneUpdate = new Mod(_recipe, 0);
+            //Determine where the recipe is...
+            Mod doneUpdate = new Mod(_recipe, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = doneUpdate;
         }
 
