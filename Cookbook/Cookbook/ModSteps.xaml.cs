@@ -91,6 +91,8 @@ namespace Cookbook
             //Or i can update the page
             ModSteps updatePage = new ModSteps(_recipe);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+
+            //GlobalData.Instance.modRecipeList.Add(_recipe);
         }
 
 
@@ -115,7 +117,7 @@ namespace Cookbook
 
             //Change the step and place it accordingly
             _recipe._steps.RemoveAt(stepNum);
-            Steps.Children.RemoveAt(stepNum);
+            //Steps.Children.RemoveAt(stepNum);
             int x = 0;
             if (Int32.TryParse(incBox.Text, out x))
             {

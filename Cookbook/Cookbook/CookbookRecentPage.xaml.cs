@@ -32,7 +32,7 @@ namespace Cookbook
                 
                 CookbookRecipes recipe = new CookbookRecipes();
                 num--;
-                recipe.Number = num.ToString() + ".";
+                recipe.Number = num.ToString();
                 recipe.Title = recipeList[i]._name;
                 recipe.Dur = recipeList[i]._duration.ToString() + " min";
 
@@ -91,6 +91,7 @@ namespace Cookbook
                     recipe.Rate4Image = fillStarImage;
                     recipe.Rate5Image = fillStarImage;
                 }
+                recipe.Modified = recipeList[i].modified;   
                 Recipes.Children.Insert(0,recipe);
 
             }

@@ -22,7 +22,22 @@ namespace Cookbook
     {
         public List<Recipe> _recipeList = GlobalData.Instance.recipeList;
         public List<Recipe> _recentList = GlobalData.Instance.recentList;
+        public List<Recipe> _modrecipeList = GlobalData.Instance.modRecipeList;
         public List<RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
+        public List<RecipeProfilePage> _modrecipePageList = GlobalData.Instance.modrecipePageList;
+
+        //if it's a modified recipe. Not really shown on this page but is a hidde value that will be used to determine if it shows up
+        //in personal,recent or favourites
+        private bool modified;
+        public bool Modified
+        {
+            get { return modified; }
+            set
+            {
+                modified = value;
+            }
+        }
+
 
         //Number in list
         private string number;
@@ -32,7 +47,7 @@ namespace Cookbook
             set
             {
                 number = value;
-                this.NumberText.Content = this.number;
+                this.NumberText.Content = this.number + ".";
             }
         }
 
@@ -159,13 +174,28 @@ namespace Cookbook
         private void onButtonClickEdit(object sender, RoutedEventArgs e)
         {
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-            for (int i = 0; i < _recipeList.Count; i++)
+            if (this.Modified == false)
             {
-                if (this.Title == _recipeList[i]._name)
+                for (int i = 0; i < _recipeList.Count; i++)
                 {
-                    Mod mod = new Mod(_recipeList[i]);
-                    ((MainWindow)App.Current.MainWindow).Main.Content = mod;
-                    break;
+                    if (this.Title == _recipeList[i]._name)
+                    {
+                        Mod mod = new Mod(_recipeList[i]);
+                        ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < _modrecipeList.Count; i++)
+                {
+                    if (this.Title == _modrecipeList[i]._name)
+                    {
+                        Mod mod1 = new Mod(_modrecipeList[i]);
+                        ((MainWindow)App.Current.MainWindow).Main.Content = mod1;
+                        break;
+                    }
                 }
             }
             
@@ -179,23 +209,30 @@ namespace Cookbook
         
         private void foodProfileButton_Click(object sender, RoutedEventArgs e)
         {
-
-            for (int i = 0; i < _recipeList.Count; i++)
+            int i = Int32.Parse(this.Number) - 1;
+            //IF recipe is not modified: Open the profile page and add it to recent page
+            if (this.Modified == false)
             {
-                if (this.Title == _recipeList[i]._name)
+                if (!_recentList.Contains(_recipeList[i]))
+                    _recentList.Add(_recipeList[i]);
+                else if (_recentList.Contains(_recipeList[i]))
                 {
-                    if (!_recentList.Contains(_recipeList[i]))
-                        _recentList.Add(_recipeList[i]);
-                    else if (_recentList.Contains(_recipeList[i]))
-                    {
-                        _recentList.Remove(_recipeList[i]);
-                        _recentList.Add(_recipeList[i]);
-                    }
-                    RecipeProfilePage profile = _recipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
-                    ((MainWindow)App.Current.MainWindow).Main.Content = profile;
-                    break;
+                    _recentList.Remove(_recipeList[i]);
+                    _recentList.Add(_recipeList[i]);
                 }
+                RecipeProfilePage profile = _recipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                ((MainWindow)App.Current.MainWindow).Main.Content = profile;
+
             }
+            
+            //If you are a modified recipe: Dont add it to recently viewed tab
+            //And Open page using page list (mod version)
+            else
+            {
+                RecipeProfilePage modprofile = _modrecipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                ((MainWindow)App.Current.MainWindow).Main.Content = modprofile;
+            }
+
 
         }
             /*
