@@ -8,7 +8,8 @@
       d:DesignHeight="880" d:DesignWidth="576"
       Title="StepByStepPage">
 
-    <Grid Height="880" Width="576">
+    <Grid>
+        <Grid x:Name="mainGrid" Height="880" Width="576">
         <Grid.RowDefinitions >
             <RowDefinition Height="110" />
             <RowDefinition Height="110" />
@@ -55,5 +56,13 @@
         <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" Width="200" Height="200" Margin="3,70,10,0" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
             <local:CountdownTimer x:Name="_timer" Height="Auto" Width="Auto"/>
         </StackPanel>
+    </Grid>
+        <Border Name="termDef"  Background="#FF9C3828" Margin="114,285,119,325" CornerRadius="20" 
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
+            <StackPanel>
+                <TextBlock><Run Text="Some Text Here"/></TextBlock>
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Page>
