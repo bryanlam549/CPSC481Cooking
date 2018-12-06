@@ -173,6 +173,11 @@ namespace Cookbook
         //public event RoutedEventHandler Click;
         private void onButtonClickEdit(object sender, RoutedEventArgs e)
         {
+            Window parentWindow = Window.GetWindow(this);
+            MainWindow x = parentWindow as MainWindow;
+            Page y = x.Main.Content as Page;
+            GlobalData.Instance.prevPage = y;
+
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
             if (this.Modified == false)
             {

@@ -21,6 +21,7 @@ namespace Cookbook
     public partial class Mod : Page
     {
         public int recipeNum;
+        Page previousPage = GlobalData.Instance.prevPage;
         public Recipe recipeMod = new Recipe();
         public Mod(Recipe _recipe, int _recipeNum)
         {
@@ -125,9 +126,11 @@ namespace Cookbook
             //modTitle.Text = recipeMod._steps.Count.ToString();
         }
 
+        //Back button
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            //this.NavigationService.GoBack();
+            this.NavigationService.Navigate(previousPage);
         }
 
         private void ingButton_Click(object sender, RoutedEventArgs e)
