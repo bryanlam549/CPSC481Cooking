@@ -354,5 +354,9 @@
   <ItemGroup>
     <Resource Include="Images\holymackeral.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chowmein.jpg" />
+    <Resource Include="Images\salad.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
