@@ -11,7 +11,7 @@
             </ResourceDictionary.MergedDictionaries>
             <Style x:Key="CustomButtonStyle" TargetType="Button"> <!-- should get applied to all buttons in app by default?-->
                 <Setter Property="OverridesDefaultStyle" Value="True" />
-                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Cursor" Value="None" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">

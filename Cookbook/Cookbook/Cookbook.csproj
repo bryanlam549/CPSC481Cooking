@@ -136,6 +136,9 @@
     <Compile Include="StepMainPage.xaml.cs">
       <DependentUpon>StepMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CountDownTimer.xaml.cs">
+      <DependentUpon>CountDownTimer.xaml</DependentUpon>
+    </Compile>
     <Page Include="CompletionPageRatingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -256,6 +259,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CountDownTimer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -346,6 +353,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\holymackeral.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chowmein.jpg" />
+    <Resource Include="Images\salad.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

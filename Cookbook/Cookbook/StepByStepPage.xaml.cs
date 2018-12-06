@@ -115,9 +115,20 @@ namespace Cookbook
         private void handleLookUpWord(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("The link works!");
+            termDef.Visibility = System.Windows.Visibility.Visible;
+            mainGrid.IsEnabled = false;
 
 
         }
+
+        private void StartTimer(object sender, RoutedEventArgs e)
+        {
+          
+
+
+        }
+
+
     }
 
 

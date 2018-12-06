@@ -274,11 +274,97 @@ namespace Cookbook
         #endregion
 
         // 4.)
+        #region
+        #region Ingredients
+        //Will reuse cooking oil and cloves from Shanghai noodle recipe
+        public static Ingredient chowmeinNoodles = new Ingredient()
+        {
+            _name = "Chow Mein Noodles",
+            _measurement = 170,
+            _standardUnit = Ingredient.Units.G,
+            _otherUnit = ""
+            //Don't you need a list of substitutions here? empty if none?
+        };
+        //Will reuse cooking oil and cloves from Shanghai noodle recipe
+        public static Ingredient chickenthighs = new Ingredient()
+        {
+            _name = "ChickenThighs",
+            _measurement = 454,
+            _standardUnit = Ingredient.Units.G,
+            _otherUnit = ""
+            //Don't you need a list of substitutions here? empty if none?
+        };
+        public static Ingredient bonelesschickenthighs = new Ingredient()
+        {
+            _name = "ChickenThighs",
+            _measurement = 454,
+            _standardUnit = Ingredient.Units.G,
+            _otherUnit = ""
+            //Don't you need a list of substitutions here? empty if none?
+        };
+
+        public static Ingredient broth = new Ingredient()
+        {
+            _name = "Broth",
+            _measurement = 2,
+            _standardUnit = Ingredient.Units.CUP,
+            _otherUnit = ""
+            //Don't you need a list of substitutions here? empty if none?
+        };
+        #endregion
+
+        public Recipe _chowmein = new Recipe()
+        {
+            _isFavourite = true,
+            _name = "Chicken Chow Mein",
+            _image = (BitmapImage)Application.Current.Resources["chowmeinIcon"],
+            _difficulty = Recipe.Difficulties.MEDIUM,
+            _rating = 3,
+            _duration = 25,
+            _description = "\"A traditional Chinese dish.\"",
+            _servings = 4,
+            _ingredientCount = 6,
+            _category = Recipe.Categories.CHINESE,
+            _ingredients = new List<Ingredient> { chowmeinNoodles, bonelesschickenthighs, broth, seasameoil, darksoysauce, cornstarch },
+            _equipment = new List<string> { "Whisk", "Non-Stick-Skillet" },
+            _steps = new List<string> { @"In a small bowl, whisk together dark soy sauce, cornstarch and broth. Set aside.", @"Cook chow mein noodles according to package instructions",
+                                        @"In a large non-stick skillet, heat oil over medium high heat. Add chicken and cook until chicken is browned. Stir in the carrots and cook for 2 minutes",
+                                        @"Pour in broth mixture and bring to a boil. Cook until sauce is slightly thickened. Stir in seasame oil.",
+                                        @"Spread noodles onto a platter and pour chicken mixture over top. Serve immediately."}
+        };
 
 
-
+        #endregion
 
         // 5.)
+        #region
+        #region Ingredients
+        public static Ingredient lettece = new Ingredient()
+        {
+            _name = "Lettece",
+            _measurement = 1,
+            _standardUnit = Ingredient.Units.CUP, //???
+            _otherUnit = "Head"
+            //Don't you need a list of substitutions here? empty if none?
+        };
+        #endregion
+        public Recipe _salad = new Recipe()
+        {
+            _isFavourite = true,
+            _name = "Head of Lettece",
+            _image = (BitmapImage)Application.Current.Resources["saladIcon"],
+            _difficulty = Recipe.Difficulties.EASY,
+            _rating = 1,
+            _duration = 5,
+            _description = "\"Literally a head of lettece\"",
+            _servings = 2,
+            _ingredientCount = 1,
+            _category = Recipe.Categories.VEGETARIAN,
+            _ingredients = new List<Ingredient> { lettece },
+            _equipment = new List<string> { },
+            _steps = new List<string> { @"Wash head of lettece", @"Enjoy" }
+        };
+        #endregion
 
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
@@ -307,7 +393,8 @@ namespace Cookbook
             recipeList.Add(_shanghaiNoodlesRecipe);
             recipeList.Add(_burger);
             recipeList.Add(_holymackeral);
-            
+            recipeList.Add(_chowmein);
+            recipeList.Add(_salad);
             //Adds a profile page for each recipe
             for (int i = 0; i < recipeList.Count; i++)
             {

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Cookbook.CountdownTimer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cookbook"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="Black" Margin="0,0,10,10">
+        <TextBlock x:Name="CountdownDisplay" Text="00:00:00" FontFamily="Calibri" FontSize="60" Foreground="Black" Margin="0,10,0,70" Background="#FF56BBB7"/>
+        <Button x:Name="_start"  Content="Start" HorizontalAlignment="Left" Margin="105,118,0,0" VerticalAlignment="Top" Width="75" Click="_start_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="8.868"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.56"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</UserControl>
