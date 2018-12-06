@@ -25,6 +25,7 @@
     <BitmapImage x:Key="forwardIcon" UriSource="Images/forward.png" />
     <BitmapImage x:Key="hardIconIcon" UriSource="Images/hardIcon.png" />
     <BitmapImage x:Key="heartIcon" UriSource="Images/heart.png" />
+    <BitmapImage x:Key="holymackeralIcon" UriSource="Images/holymackeral.jpg"/>
     <BitmapImage x:Key="infoButtonIcon" UriSource="Images/infoButton.png" />
     <BitmapImage x:Key="infoButtonDarkIcon" UriSource="Images/infoButtonDark.png" />
     <BitmapImage x:Key="medIconIcon" UriSource="Images/medIcon.png" />
