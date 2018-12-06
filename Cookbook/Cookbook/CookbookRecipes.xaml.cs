@@ -223,6 +223,10 @@ namespace Cookbook
                             _recentList.Add(_recipeList[j]);
                         }
                         RecipeProfilePage profile = _recipePageList[j];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                        //Maybe set a flag? Also need to set something as current recipe
+                        GlobalData.Instance.currentRecipe = _recipeList[j];
+                        ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
+                        ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
                         ((MainWindow)App.Current.MainWindow).Main.Content = profile;
                         break;
                     }
@@ -230,16 +234,17 @@ namespace Cookbook
                 }
 
             }
-            
             //If you are a modified recipe: Dont add it to recently viewed tab
             //And Open page using page list (mod version)
             else
             {
                 RecipeProfilePage modprofile = _modrecipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                //Maybe set a flag. Also need to set something as current recipe
+                GlobalData.Instance.currentRecipe = _modrecipeList[i];
+                ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
+                ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
                 ((MainWindow)App.Current.MainWindow).Main.Content = modprofile;
             }
-
-
         }
             /*
             private void onButtonClickProfile(object sender, RoutedEventArgs e)

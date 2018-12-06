@@ -216,5 +216,11 @@ namespace Cookbook
                 MessageBox.Show("Can't leave blank.");
             }
         }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.modBox.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
+        }
     }
 }

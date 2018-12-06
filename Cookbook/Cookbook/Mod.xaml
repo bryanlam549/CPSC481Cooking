@@ -67,7 +67,7 @@
                          VerticalContentAlignment="Center" Margin="71,127,70.754,217.123" />
 
                     <Button Name="Confirm" Content="Confirm" Margin="71,286,70.754,35.123" Click="Confirm_Click"/>
-                    <Button Name="Cancel" Content="Cancel" Margin="71,392,70.754,68.692" Grid.RowSpan="2"/>
+                    <Button Name="Cancel" Content="Cancel" Margin="71,392,70.754,68.692" Grid.RowSpan="2" Click="Cancel_Click"/>
                 </Grid>
 
             </Border>

@@ -102,8 +102,15 @@ namespace Cookbook
             searchPageButtonImageBrush.ImageSource = searchButtonImage; // light
             cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage;
             profilePageButtonImageBrush.ImageSource = profileButtonImage;
-
-            Main.Content = currentRecipePage1;
+            if(GlobalData.Instance.currentRecipe == null)
+            {
+                Main.Content = currentRecipePage1;
+            }
+            else
+            {
+                Main.Content = new RecipeProfilePage(GlobalData.Instance.currentRecipe);
+            }
+            
         }
 
         private void ProfilePageButton_Click(object sender, RoutedEventArgs e)
