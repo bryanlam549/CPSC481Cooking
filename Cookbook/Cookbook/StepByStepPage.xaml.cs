@@ -91,8 +91,8 @@ namespace Cookbook
                 //make the next button invisible
 
                 // go to completion page
-                RecipeCompletionPage completionPage = new RecipeCompletionPage(currentRecipe);
-                this.NavigationService.Navigate(completionPage);
+                GlobalData.Instance.completionPage = new RecipeCompletionPage(currentRecipe);
+                this.NavigationService.Navigate(GlobalData.Instance.completionPage);
             }
         }
 

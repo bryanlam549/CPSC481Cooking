@@ -33,6 +33,7 @@ namespace Cookbook
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             ProfileMainPage profileMainPage = new ProfileMainPage(nameInput.Text, emailInput.Text, passwordInput.Password);
+            GlobalData.Instance.signedIn = true;
             signUpMain.Content = profileMainPage;
 
             //removing later

@@ -32,11 +32,11 @@ namespace Cookbook
 
             accountList.Add("foodluver123");
             accountList.Add("ilovefood456@food.com");
-            accountList.Add("123456789123456789123456789");
+            accountList.Add("123456789");
 
             accountList.Add("foodisLIFE");
             accountList.Add("burgers@food.com");
-            accountList.Add("123456789");
+            accountList.Add("123456789123456789123456789");
         }
 
 
@@ -48,6 +48,7 @@ namespace Cookbook
             {
 
                 ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, accountList[(accountList.IndexOf(UserInput.Text)) + 1], PasswordInput.Password);
+                GlobalData.Instance.signedIn = true;
                 signInMain.Content = profileMainPage;
             }
             else

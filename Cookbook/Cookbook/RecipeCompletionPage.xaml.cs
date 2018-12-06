@@ -20,6 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class RecipeCompletionPage : Page
     {
+
         Recipe currentRecipe;
         public RecipeCompletionPage(Recipe recipe)
         {
@@ -32,6 +33,8 @@ namespace Cookbook
 
             _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK TO STEPS");
             _next.initAppearance(TransitionPageButton.Orientation.FORWARD, "GO TO RECIPE PAGE");
+
+         
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
@@ -49,6 +52,13 @@ namespace Cookbook
         {
             //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
 
+        }
+
+        private void _close_Click(object sender, RoutedEventArgs e)
+        {
+            this.signInBox.Visibility = System.Windows.Visibility.Hidden;
+            favHeart.Visibility = System.Windows.Visibility.Visible;
+            rating.Visibility = System.Windows.Visibility.Visible;
         }
 
     }

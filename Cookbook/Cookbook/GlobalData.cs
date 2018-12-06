@@ -21,6 +21,7 @@ namespace Cookbook
             get { return instance; }
         }
 
+
         //public Recipe recipe1 = new Recipe(); // something like this, then each component like a HeartButton could have a field set to 1 recipe.
         //public Recipe recipe2 = new Recipe();
 
@@ -81,11 +82,15 @@ namespace Cookbook
         public List<RecipeProfilePage> recipePageList = new List<RecipeProfilePage>(); //Used to access profile pages
         public List<RecipeProfilePage> modrecipePageList = new List<RecipeProfilePage>(); //Used to access modified profile pages
 
+        public RecipeCompletionPage completionPage;
+
         //Main page
         public SearchPage1 search = new SearchPage1();
         //public CookbookPage1 cookbookPage = new CookbookPage1();
         public CurrentRecipePage1 currentRecipePage = new CurrentRecipePage1();
         public ProfilePage1 profilePage = new ProfilePage1();
+
+        public Boolean signedIn = false;
 
         //Current recipe
         public Recipe currentRecipe;

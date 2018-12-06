@@ -53,9 +53,17 @@
         <TextBlock Text="Rate" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Width="84" Margin="246,359,246,0"/>
         <TextBlock Text="Favourite" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Width="161" Margin="208,449,207,0"/>
         <TextBlock Text="Share" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Margin="240,549,241,0"/>
-        
-        <local:RatingControl Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, -20, 0, 0"/>
-        <local:HeartButton Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 175, 0, 0"/>
+
+        <Border Name="signInBox"  Background="#FF9C3828" Height="250" Width="250" CornerRadius="20" 
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
+            <StackPanel Height="250" Width="250">
+               <TextBlock Text="You must be signed in to rate a recipe." FontSize="24" Margin="20,20,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                <Button Name="_close" Content="Close" Height="50" Width="64" Margin="0,40,0,0" Click="_close_Click"/>
+            </StackPanel>
+        </Border>
+
+        <local:CompletionPageRatingControl x:Name="rating" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, -20, 0, 0"/>
+        <local:HeartButton x:Name="favHeart" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 175, 0, 0"/>
         <local:TransitionPageButton x:Name="_back" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
         <local:TransitionPageButton x:Name="_next" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
 

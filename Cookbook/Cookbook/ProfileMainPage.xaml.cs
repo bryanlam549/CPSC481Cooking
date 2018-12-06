@@ -18,13 +18,16 @@ namespace Cookbook
     /// <summary>
     /// Interaction logic for ProfileInfoPage.xaml
     /// </summary>
+    /// 
     public partial class ProfileMainPage : Page
     {
+
         public BitmapImage infoButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/InfoButton.png"));
         public BitmapImage infoButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/InfoButtonDark.png"));
 
         public BitmapImage preferencesButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButton.png"));
         public BitmapImage preferencesButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButtonDark.png"));
+
 
         //private ProfileInfoPage profileInfoPage = new ProfileInfoPage(UserNameInput.Text);
         private ProfilePreferencesPage profilePreferencesPage = new ProfilePreferencesPage();
@@ -71,6 +74,7 @@ namespace Cookbook
         private void SignOut_Click(object sender, RoutedEventArgs e)
         {
             ProfilePage1 profilepage1 = new ProfilePage1();
+            GlobalData.Instance.signedIn = false;
             this.NavigationService.Navigate(profilepage1);
         }
     }
