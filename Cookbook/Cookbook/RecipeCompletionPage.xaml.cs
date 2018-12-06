@@ -34,7 +34,13 @@ namespace Cookbook
             _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK TO STEPS");
             _next.initAppearance(TransitionPageButton.Orientation.FORWARD, "GO TO RECIPE PAGE");
 
-         
+            favHeart._recipe = currentRecipe;
+            if (recipe._isFavourite)
+            {
+                favHeart.HeartIconImage = (BitmapImage)Application.Current.Resources["heartIcon"];
+                favHeart._isFilled = true;
+            }
+
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
@@ -59,6 +65,7 @@ namespace Cookbook
             this.signInBox.Visibility = System.Windows.Visibility.Hidden;
             favHeart.Visibility = System.Windows.Visibility.Visible;
             rating.Visibility = System.Windows.Visibility.Visible;
+            completionMain.IsEnabled = true;
         }
 
     }

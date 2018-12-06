@@ -43,6 +43,7 @@ namespace Cookbook
                 GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
+                GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
                 
             }
             else if (_currentRating != 1) // update to 1 star
@@ -76,6 +77,8 @@ namespace Cookbook
                 GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
+                GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
+
             }
             else if (_currentRating != 2) // update to 2 star
             {
@@ -108,6 +111,7 @@ namespace Cookbook
                 GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
+                GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
             }
             else if (_currentRating != 3) // update to 3 star
             {
@@ -140,6 +144,7 @@ namespace Cookbook
                 GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
+                GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
             }
             else  if (_currentRating != 4) // update to 4 star
             {
@@ -172,6 +177,7 @@ namespace Cookbook
                 GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
+                GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
             }
             else if (_currentRating != 5) // update to 5 star
             {
