@@ -87,8 +87,7 @@ namespace Cookbook
         public CurrentRecipePage1 currentRecipePage = new CurrentRecipePage1();
         public ProfilePage1 profilePage = new ProfilePage1();
 
-
-
+        
 
         private GlobalData()
         {

@@ -191,5 +191,30 @@ namespace Cookbook
             CookbookPage1 prevPage = new CookbookPage1();
             ((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
         }
+
+        //This is for rename button
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainGrid.IsEnabled = false;
+            foodBox.Text = recipeMod._name;
+            modBox.Visibility = System.Windows.Visibility.Visible;
+            
+        }
+
+        private void Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(foodBox.Text))
+            {
+                recipeMod._name = foodBox.Text;
+                this.modBox.Visibility = System.Windows.Visibility.Hidden;
+                Mod updatePage = new Mod(recipeMod,recipeNum);
+                ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+                mainGrid.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Can't leave blank.");
+            }
+        }
     }
 }

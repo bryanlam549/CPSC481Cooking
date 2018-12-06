@@ -188,15 +188,13 @@ namespace Cookbook
             }
             else
             {
-                for (int i = 0; i < _modrecipeList.Count; i++)
-                {
-                    if (this.Title == _modrecipeList[i]._name)
-                    {
-                        Mod mod1 = new Mod(_modrecipeList[i], i);
-                        ((MainWindow)App.Current.MainWindow).Main.Content = mod1;
-                        break;
-                    }
-                }
+                int k = Int32.Parse(this.Number) - 1;
+
+                Mod mod1 = new Mod(_modrecipeList[k], k);
+                ((MainWindow)App.Current.MainWindow).Main.Content = mod1;
+
+
+                
             }
             
             /*
@@ -213,15 +211,23 @@ namespace Cookbook
             //IF recipe is not modified: Open the profile page and add it to recent page
             if (this.Modified == false)
             {
-                if (!_recentList.Contains(_recipeList[i]))
-                    _recentList.Add(_recipeList[i]);
-                else if (_recentList.Contains(_recipeList[i]))
+                for (int j = 0; j < _recipeList.Count; j++)
                 {
-                    _recentList.Remove(_recipeList[i]);
-                    _recentList.Add(_recipeList[i]);
+                    if (this.Title == _recipeList[j]._name)
+                    {
+                        if (!_recentList.Contains(_recipeList[j]))
+                            _recentList.Add(_recipeList[j]);
+                        else if (_recentList.Contains(_recipeList[j]))
+                        {
+                            _recentList.Remove(_recipeList[j]);
+                            _recentList.Add(_recipeList[j]);
+                        }
+                        RecipeProfilePage profile = _recipePageList[j];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                        ((MainWindow)App.Current.MainWindow).Main.Content = profile;
+                        break;
+                    }
+                    
                 }
-                RecipeProfilePage profile = _recipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
-                ((MainWindow)App.Current.MainWindow).Main.Content = profile;
 
             }
             

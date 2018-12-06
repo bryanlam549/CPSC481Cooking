@@ -9,47 +9,68 @@
       Title="Mod">
 
     <Grid>
-        <!--Button Content="Hello" Height="124.506" FontSize="36" Background="#9c3828"  
+        <Grid Name="mainGrid">
+            <!--Button Content="Hello" Height="124.506" FontSize="36" Background="#9c3828"  
                 Foreground="#c29a3a" BorderBrush="#c29a3a" BorderThickness="3"
                 Margin="0,0,384,755.246" HorizontalAlignment="Right" Width="192"/-->
-        <Rectangle Fill="#9c3828" Height="124.506" VerticalAlignment="Top" Stroke="#c29a3a" 
+            <Rectangle Fill="#9c3828" Height="124.506" VerticalAlignment="Top" Stroke="#c29a3a" 
                    StrokeThickness="3.5"/>
-        <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="100,0" Height="125" HorizontalAlignment="Center">
-            <TextBlock Name="modTitle"  FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center"
+            <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="100,0" Height="125" HorizontalAlignment="Center">
+                <TextBlock Name="modTitle"  FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center"
                Foreground="#c29a3a" TextWrapping="Wrap">Food Title</TextBlock>
-        </Viewbox>
-        <Button Content="Rename" Background="BlanchedAlmond" BorderBrush="#c29a3a" Foreground="#c29a3a" BorderThickness="3" FontStyle="Oblique"
-                Margin="495,50,10,795.246" RenderTransformOrigin="0.427,0.708" Style="{StaticResource CustomButtonStyle}"/>
+            </Viewbox>
+            <Button Content="Rename" Background="BlanchedAlmond" BorderBrush="#c29a3a" Foreground="#c29a3a" BorderThickness="3" FontStyle="Oblique"
+                Margin="495,50,10,795.246" RenderTransformOrigin="0.427,0.708" Style="{StaticResource CustomButtonStyle}" Click="Button_Click"/>
 
-        <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,155,0,0" 
+            <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,155,0,0" 
                 VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
                 Style="{StaticResource CustomButtonStyle}" Click="cookbookPageButton_Click" >
-            <Button.Background>
-                <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
-            </Button.Background>
-        </Button>
-        <Label Content="Change?" FontSize="56" FontWeight="Medium" HorizontalAlignment="Center" Margin="151.0988"/>
+                <Button.Background>
+                    <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
+                </Button.Background>
+            </Button>
+            <Label Content="Change?" FontSize="56" FontWeight="Medium" HorizontalAlignment="Center" Margin="151.0988"/>
 
-        <StackPanel Margin="0,230,0,0" Height="604">
-            <Button Name="ingButton" Content="Ingredients" FontWeight ="Medium" Height="75" Width="375" FontSize="32"
+            <StackPanel Margin="0,230,0,0" Height="604">
+                <Button Name="ingButton" Content="Ingredients" FontWeight ="Medium" Height="75" Width="375" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,50,0,80"
                     Style="{StaticResource CustomButtonStyle}" Click="ingButton_Click"/>
 
-            <Button Name="equipButton" Content="Equipment" FontWeight ="DemiBold" Height="75" Width="375" FontSize="32"
+                <Button Name="equipButton" Content="Equipment" FontWeight ="DemiBold" Height="75" Width="375" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,0,0,80"
                     Style="{StaticResource CustomButtonStyle}" Click="equipButton_Click"/>
-            <Button Name="stepsButton" Content="Steps" FontWeight ="DemiBold" Height="75" Width="376" FontSize="32"
+                <Button Name="stepsButton" Content="Steps" FontWeight ="DemiBold" Height="75" Width="376" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,0,0,80"
                     Style="{StaticResource CustomButtonStyle}" Click="stepsButton_Click"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="60" Margin="0,0">
-                <Button Name="saveButton" Content="Save" FontWeight ="DemiBold" Width="200" Margin="0,0,80,0" FontSize="32"
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="60" Margin="0,0">
+                    <Button Name="saveButton" Content="Save" FontWeight ="DemiBold" Width="200" Margin="0,0,80,0" FontSize="32"
                         Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95" Click="saveButton_Click"/>
 
-                <Button Name="cancelButton" Content="Cancel" FontWeight ="DemiBold" Width="200"
+                    <Button Name="cancelButton" Content="Cancel" FontWeight ="DemiBold" Width="200"
                         Background="Red"  Margin="0,0,0,0" FontSize="32"
                         Style="{StaticResource CustomButtonStyle}" Click="cancelButton_Click"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <!--Label Content="MODIFICATION" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center"/-->
+            <!--Label Content="MODIFICATION" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center"/-->
+        </Grid>
+        <Grid>
+            <Border Name="modBox"  Background="#FF9C3828" Margin="30,215,26,125.246" CornerRadius="20" 
+                BorderBrush="#FFC29A3A" BorderThickness="4" Visibility="Hidden">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="14*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Please enter a name for this recipe" FontSize="28" Foreground="#c29a3a" Margin="46,46,40.754,-47.308" Grid.RowSpan="2" />
+                    <TextBox Name="foodBox" Text="Food Title" AcceptsReturn="False" 
+                         TextWrapping="NoWrap" FontSize="24" HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center" Margin="71,127,70.754,217.123" />
+
+                    <Button Name="Confirm" Content="Confirm" Margin="71,286,70.754,35.123" Click="Confirm_Click"/>
+                    <Button Name="Cancel" Content="Cancel" Margin="71,392,70.754,68.692" Grid.RowSpan="2"/>
+                </Grid>
+
+            </Border>
+        </Grid>
     </Grid>
 </Page>
