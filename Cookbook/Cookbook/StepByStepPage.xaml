@@ -46,12 +46,14 @@
         <TextBlock x:Name="_stepNumber" Grid.Column ="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="Step 1 of 10"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" Height="37" Width="210"  VerticalAlignment="Bottom" HorizontalAlignment="Center"   Grid.RowSpan="2" Margin="78,0,0,105"/>
         <Rectangle Grid.Row="1" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" Margin="38,20,38,0" RadiusX="10" RadiusY="10" />
 
-        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="6" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="True"  Height="300" VerticalAlignment="Top" Margin="43,10,53,0" Grid.RowSpan="3">
+        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="6"  Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" Margin="43,10,53,0" Grid.RowSpan="3">
             <TextBlock x:Name="_stepBody" HorizontalAlignment="Left" Width="Auto"  Height="Auto" TextWrapping="Wrap" TextAlignment="Left" FontSize="20" FontWeight ="SemiBold" VerticalAlignment="Top" Background="{x:Null}"/>
         </ScrollViewer>
         <Rectangle Grid.Row="6" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="500" Height="10" Margin="38,0,38,20" RadiusX="10" RadiusY="10" />
         <local:TransitionPageButton x:Name="_previousStep" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         <local:TransitionPageButton x:Name="_nextStep" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" Grid.RowSpan="2" />
-
+        <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" Width="200" Height="200" Margin="3,70,10,0" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+            <local:CountdownTimer x:Name="_timer" Height="Auto" Width="Auto"/>
+        </StackPanel>
     </Grid>
 </Page>
