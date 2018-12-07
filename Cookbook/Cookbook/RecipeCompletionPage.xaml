@@ -44,7 +44,7 @@
 
             </Grid>
             <Button x:Name="editButton" Background="Transparent" HorizontalAlignment="Right" 
-                                Height="50" Click="onButtonClickEdit" Margin="0,23,24,0" VerticalAlignment="Top"
+                                Height="50" Click="onEdit" Margin="0,23,24,0" VerticalAlignment="Top"
                                 Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
                 <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
                 <Button.Effect>
