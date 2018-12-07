@@ -33,10 +33,14 @@ namespace Cookbook
             accountList.Add("foodluver123");
             accountList.Add("ilovefood456@food.com");
             accountList.Add("123456789");
+            accountList.Add("1");
+            accountList.Add("2");
 
             accountList.Add("foodisLIFE");
             accountList.Add("burgers@food.com");
             accountList.Add("123456789123456789123456789");
+            accountList.Add("2");
+            accountList.Add("2");
         }
 
 
@@ -47,7 +51,7 @@ namespace Cookbook
             if (accountList.Contains(UserInput.Text) && (PasswordInput.Password).Equals(accountList[(accountList.IndexOf(UserInput.Text)) + 2]))
             {
 
-                ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, accountList[(accountList.IndexOf(UserInput.Text)) + 1], PasswordInput.Password);
+                ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, accountList[(accountList.IndexOf(UserInput.Text)) + 1], PasswordInput.Password, accountList[(accountList.IndexOf(UserInput.Text)) + 3], accountList[(accountList.IndexOf(UserInput.Text)) + 4]);
                 GlobalData.Instance.signedIn = true;
                 signInMain.Content = profileMainPage;
             }

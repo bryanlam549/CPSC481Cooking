@@ -32,11 +32,20 @@ namespace Cookbook
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            ProfileMainPage profileMainPage = new ProfileMainPage(nameInput.Text, emailInput.Text, passwordInput.Password);
-            GlobalData.Instance.signedIn = true;
-            signUpMain.Content = profileMainPage;
+            
+            if (passwordInput.Password.Length < 8)
+            {
+                invalidInput.Text = "Password needs to be at least 8 characters.";
+                
+            }
+            else
+            {
+                ProfileMainPage profileMainPage = new ProfileMainPage(nameInput.Text, emailInput.Text, passwordInput.Password, "", "");
+                GlobalData.Instance.signedIn = true;
+                signUpMain.Content = profileMainPage;
+            }
 
-            //removing later
+            
             //RecipeCompletionPage rcpage = new RecipeCompletionPage();
             //signUpMain.Content = rcpage;
         }
@@ -46,6 +55,21 @@ namespace Cookbook
             ProfilePage1 profilepage1 = new ProfilePage1();
             this.NavigationService.Navigate(profilepage1);
 
+        }
+
+        private void UserInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            invalidInput.Text = "";
+        }
+
+        private void EmailInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            invalidInput.Text = "";
+        }
+
+        private void PasswordInput_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            invalidInput.Text = "";
         }
     }
 }

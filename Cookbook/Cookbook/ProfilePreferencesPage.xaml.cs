@@ -20,9 +20,39 @@ namespace Cookbook
     /// </summary>
     public partial class ProfilePreferencesPage : Page
     {
-        public ProfilePreferencesPage()
+        public ProfilePreferencesPage(string pref1, string pref2)
         {
             InitializeComponent();
+            string tempPref = pref1;
+            string weightPref = pref2;
+
+            if (tempPref.Equals("1"))
+            {
+                _Cel.IsChecked = true;
+            }
+            else if (tempPref.Equals("2"))
+            {
+                _Fah.IsChecked = true;
+            }
+            else
+            {
+                _Cel.IsChecked = false;
+                _Fah.IsChecked = false;
+            }
+
+            if (weightPref.Equals("1"))
+            {
+                _Oun.IsChecked = true;
+            }
+            else if (weightPref.Equals("2"))
+            {
+                _Gram.IsChecked = true;
+            }
+            else
+            {
+                _Oun.IsChecked = false;
+                _Gram.IsChecked = false;
+            }
         }
     }
 }

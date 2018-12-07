@@ -28,11 +28,10 @@ namespace Cookbook
         public BitmapImage preferencesButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButton.png"));
         public BitmapImage preferencesButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButtonDark.png"));
 
+        public string prefernce1;
+        //private ProfileInfoPage profileInfoPage = new ProfileInfoPage(UserNameInput.Text); 
 
-        //private ProfileInfoPage profileInfoPage = new ProfileInfoPage(UserNameInput.Text);
-        private ProfilePreferencesPage profilePreferencesPage = new ProfilePreferencesPage();
-
-        public ProfileMainPage(string username, string email, string password)
+        public ProfileMainPage(string username, string email, string password, string pref1, string pref2)
         {
             InitializeComponent();
             UserNameInput.Text = username;
@@ -46,6 +45,8 @@ namespace Cookbook
             }
             PasswordInput.Text = x;
 
+            _tempPref.Text = pref1;
+            _weightPref.Text = pref2;
         }
 
         private void ProfileInfoButton_Click(object sender, RoutedEventArgs e)
@@ -68,6 +69,7 @@ namespace Cookbook
             InfoButtonImageBrush.ImageSource = infoButtonImage;
 
             //Switch content
+            ProfilePreferencesPage profilePreferencesPage = new ProfilePreferencesPage(_tempPref.Text, _weightPref.Text);
             profileMain.Content = profilePreferencesPage;
         }
 
