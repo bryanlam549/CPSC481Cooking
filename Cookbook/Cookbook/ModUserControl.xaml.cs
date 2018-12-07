@@ -20,7 +20,7 @@ namespace Cookbook
     /// </summary>
     public partial class ModUserControl : UserControl
     {
-        public ModUserControl(String ies) //Ingredient, equipment, or step
+        public ModUserControl(string ies) //Ingredient, equipment, or step
         {
             InitializeComponent();
             IES.Text =ies;
