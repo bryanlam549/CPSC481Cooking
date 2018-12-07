@@ -77,6 +77,7 @@ namespace Cookbook
             ProfilePage1 profilepage1 = new ProfilePage1();
             GlobalData.Instance.signedIn = false;
             GlobalData.Instance.newAcc = false;
+            GlobalData.Instance.test2 = 0;
             this.NavigationService.Navigate(profilepage1);
         }
     }

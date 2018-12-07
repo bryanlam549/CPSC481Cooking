@@ -27,7 +27,7 @@ namespace Cookbook
             string weightPref = pref2;
 
 
-            if (GlobalData.Instance.test == 0)
+            if (GlobalData.Instance.test == 0 && GlobalData.Instance.newAcc == false)
             {
                 if (tempPref.Equals("1"))
                 {
@@ -41,6 +41,7 @@ namespace Cookbook
                 }
 
 
+
                 if (weightPref.Equals("1"))
                 {
                     _Oun.IsChecked = true;
@@ -52,15 +53,19 @@ namespace Cookbook
                     GlobalData.Instance.preference2 = "2";
                 }
                 GlobalData.Instance.test = 1;
+                GlobalData.Instance.test3 = 1;
                 
             }
-            else if (GlobalData.Instance.newAcc == true)
+            else if (GlobalData.Instance.newAcc == true && GlobalData.Instance.test2 == 0)
             {
                 _Cel.IsChecked = false;
                 _Fah.IsChecked = false;
 
                 _Oun.IsChecked = false;
                 _Gram.IsChecked = false;
+
+                GlobalData.Instance.test2 = 1;
+
             }
             else
             {
