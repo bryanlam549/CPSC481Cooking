@@ -68,11 +68,23 @@
         </Grid>
         <Border Name="termDef"  Background="#FF9C3828" Margin="114,285,119,325" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
-            <StackPanel >
-                <TextBlock Name="_lookupDef"  Text="Some Text Here"  HorizontalAlignment="Left" Width="Auto"  Height="Auto" TextWrapping="Wrap" TextAlignment="Left" FontSize="20" FontWeight="DemiBold"/>
-                <Button Content="Button" HorizontalAlignment="Center" Height="31" Margin="42,0,257,0" RenderTransformOrigin="2.024,0.319" Click="Button_Click"/>
-
-            </StackPanel>
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="_lookupDef" Grid.ColumnSpan="4" Grid.RowSpan="3" Text="Some Text Here"  Height="Auto" TextWrapping="Wrap" TextAlignment="Left" FontSize="20" FontWeight="DemiBold" Margin="32,0,22,19"/>
+                <Button Name="_doneBtn" Content="Done" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2"  Height="50" Width="64" Click="Button_Click"
+                        FontWeight ="DemiBold" FontSize="16" Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
+            </Grid>
         </Border>
 
     </Grid>
