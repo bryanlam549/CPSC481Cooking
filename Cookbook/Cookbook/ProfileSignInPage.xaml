@@ -12,9 +12,9 @@
         <ImageBrush ImageSource="Images/background.png"/>
     </Page.Background>
     <Grid>
-        <TextBlock Text="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold"/>
-        <TextBlock Text="Username" HorizontalAlignment="Left" Height="700" FontSize="36" FontWeight ="Bold"/>
-        <TextBlock Text="Password" HorizontalAlignment="Left" Height="400" FontSize="36" FontWeight ="Bold"/>
+        <TextBlock Text="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Margin="220,25,220,0"/>
+        <TextBlock x:Name="_name" Text="Username" HorizontalAlignment="Left" Height="700" FontSize="36" FontWeight ="Bold" Margin="28,115,0,65"/>
+        <TextBlock x:Name="_pass" Text="Password" HorizontalAlignment="Left" Height="400" FontSize="36" FontWeight ="Bold" Margin="28,273,0,207"/>
         <TextBox x:Name ="UserInput" HorizontalAlignment="Center" Height="39" Margin="28,164,42,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" FontSize="28" MaxLength="12" TextBoxBase.TextChanged="UserInput_TextChanged"/>
         <PasswordBox x:Name ="PasswordInput" HorizontalAlignment="Center" Height="39" Margin="28,322,42,0" VerticalAlignment="Top" Width="506" FontSize="28" PasswordChar="*" PasswordBox.PasswordChanged="PasswordInput_PasswordChanged"/>
         <Button Content="SIGN IN" FontWeight ="DemiBold" FontSize="32" Height="75" Width="380" Background="White" Margin="96,0,100,150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SignIn_Click" Style="{StaticResource CustomButtonStyle}">
@@ -25,7 +25,32 @@
 
         <TextBlock x:Name="_forgotPass" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="28,374,305,0" Width="243"/>
         <TextBlock x:Name="invalidInput" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="28,445,21,0" Width="527" Foreground="Red"/>
-        <local:TransitionPageButton x:Name="_back" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
+
+        <Grid x:Name="mainGrid" Height="880" Width="576">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="81.808" />
+                <RowDefinition Height="28.192"/>
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+            </Grid.ColumnDefinitions>
+
+            <local:TransitionPageButton x:Name="_back" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        </Grid>
+
         <Frame x:Name="signInMain" HorizontalAlignment="Left" Height="880" VerticalAlignment="Top" Width="576" NavigationUIVisibility="Hidden"/>
 
     </Grid>

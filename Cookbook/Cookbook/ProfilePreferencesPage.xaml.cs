@@ -75,7 +75,7 @@ namespace Cookbook
                     _Cel.IsChecked = true;
                     GlobalData.Instance.preference1 = "1";
                 }
-                else
+                else if (GlobalData.Instance.preference1.Equals("2"))
                 {
                     _Fah.IsChecked = true;
                     GlobalData.Instance.preference1 = "2";
@@ -86,7 +86,7 @@ namespace Cookbook
                     _Oun.IsChecked = true;
                     GlobalData.Instance.preference2 = "1";
                 }
-                else
+                else if (GlobalData.Instance.preference2.Equals("2"))
                 {
                     _Gram.IsChecked = true;
                     GlobalData.Instance.preference2 = "2";

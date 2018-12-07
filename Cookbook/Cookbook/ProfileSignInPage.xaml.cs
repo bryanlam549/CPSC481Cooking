@@ -69,6 +69,8 @@ namespace Cookbook
             }
             else
             {
+                _name.Foreground = Brushes.Red;
+                _pass.Foreground = Brushes.Red;
                 invalidInput.Text = "Invalid username or password";
                
             }
@@ -78,11 +80,15 @@ namespace Cookbook
         private void UserInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             invalidInput.Text = "";
+            _name.Foreground = Brushes.Black;
+            _pass.Foreground = Brushes.Black;
         }
 
         private void PasswordInput_PasswordChanged(object sender, RoutedEventArgs e)
         {
             invalidInput.Text = "";
+            _pass.Foreground = Brushes.Black;
+            _name.Foreground = Brushes.Black;
         }
 
 
