@@ -388,7 +388,6 @@ namespace Cookbook
 
         public int test = 0;
         public int test2 = 0;
-        public int test3 = 0;
         public string preference1 = "";
         public string preference2 = "";
         public bool newAcc = false;

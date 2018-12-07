@@ -52,8 +52,8 @@ namespace Cookbook
                     _Gram.IsChecked = true;
                     GlobalData.Instance.preference2 = "2";
                 }
+
                 GlobalData.Instance.test = 1;
-                GlobalData.Instance.test3 = 1;
                 
             }
             else if (GlobalData.Instance.newAcc == true && GlobalData.Instance.test2 == 0)

@@ -31,9 +31,10 @@
         <TextBlock x:Name="UserNameInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,257,10,575" Width="363" RenderTransformOrigin="0.129,-6.016"/>
         <TextBlock x:Name="EmailInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,305,10,527" Width="363" RenderTransformOrigin="0.129,-6.016" TextWrapping="Wrap"/>
         <TextBlock x:Name="PasswordInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,374,10,474" Width="363" RenderTransformOrigin="0.129,-6.016"/>
-        
-        <Button Content="SIGN OUT" FontWeight ="Bold" Height="75" FontSize="36" Width="376" Background="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SignOut_Click" Style="{StaticResource CustomButtonStyle}" Margin="100,0,100,71"/>
-        
+
+        <Button Content="SIGN OUT" FontWeight="DemiBold" Height="75" FontSize="32" Width="376" Background="Red" HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" Click="SignOut_Click" Style="{StaticResource CustomButtonStyle}" Margin="100,0,100,71"/>
+
         <TextBlock Text="Change Password" HorizontalAlignment="Right" VerticalAlignment="top" FontSize="20" Margin="0,412,9,0"/>
 
         <TextBlock x:Name="_tempPref" Text="" HorizontalAlignment="Center" Height="175" FontSize="30" Visibility="Hidden"/>
