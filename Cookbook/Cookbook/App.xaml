@@ -11,7 +11,7 @@
             </ResourceDictionary.MergedDictionaries>
             <Style x:Key="CustomButtonStyle" TargetType="Button"> <!-- should get applied to all buttons in app by default?-->
                 <Setter Property="OverridesDefaultStyle" Value="True" />
-                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Cursor" Value="None" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -28,43 +28,6 @@
                 </Setter>
             </Style>
 
-            <!-- BUTTON TEMPLATE -->
-
-            <Style x:Key="buttonProfile" TargetType="{x:Type Button}">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border x:Name="OuterBorder"
-                                CornerRadius="3"
-                                Background="{DynamicResource ButtonGradient}">
-                                <Border
-                                x:Name="InnerBorder"
-                                CornerRadius="3"
-                                Background="{DynamicResource ButtonUpGradient}"
-                                Padding="{TemplateBinding Padding}">
-                                    <ContentPresenter x:Name="ContentSite"
-                                                  HorizontalAlignment="Center"
-                                                  VerticalAlignment="Center" />
-                                </Border>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsPressed" Value="true">
-                                    <Setter TargetName="InnerBorder" Property="Background"
-                                        Value="{DynamicResource ButtonDownGradient}" />
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="false">
-                                    <Setter TargetName="InnerBorder" Property="Background"
-                                        Value="{DynamicResource ButtonDisabledGradient}" />
-                                    <Setter Property="BorderBrush" Value="Silver" />
-                                    <Setter Property="Foreground" Value="SlateGray" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="Height" Value="18" />
-                <Setter Property="Foreground" Value="MidnightBlue" />
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
     

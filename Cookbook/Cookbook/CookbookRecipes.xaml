@@ -9,7 +9,7 @@
 
     <Grid>
         <!--Edit button panel-->
-        
+
 
         <!--Middle Panel-->
         <Canvas>
@@ -26,8 +26,10 @@
                 </Rectangle.Fill>
             </Rectangle!-->
 
+            <Border Name="bordercenter" BorderBrush="Black" CornerRadius="14" BorderThickness="2" Opacity="1" HorizontalAlignment="Left" 
+                Width="436" Height="251.83" Margin="70,0,0,0" Background="Transparent"/>
             <!-- transparent rect -->
-            <Rectangle Width="436" Height="251.83" Canvas.Top="0" Canvas.Left="70" RadiusX="14" RadiusY="14" Stroke="Black" StrokeThickness="2.5"
+            <Rectangle Width="436" Height="251.83" Canvas.Top="0" Canvas.Left="70" RadiusX="14" RadiusY="14" Stroke="Black" StrokeThickness="1"
                        Opacity="0.2">
                 <Rectangle.Fill>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -39,12 +41,20 @@
         </Canvas>
 
 
-        <Border Name="LeftBorder" BorderBrush="Black" CornerRadius="16" BorderThickness="1" Opacity="0.5" HorizontalAlignment="Left" Width="506"
+        <!--Border Name="LeftBorder" BorderBrush="Black" CornerRadius="16" BorderThickness="1" Opacity="0.5" HorizontalAlignment="Left" Width="506"
                  Margin="0,0,0,0" Background="Transparent"/>
-        <Border Name="CenterBorder" BorderBrush="Black" CornerRadius="20" BorderThickness="1" Opacity="0.10" HorizontalAlignment="Left" Width="576"
-                 Margin="0,0,0,0" Background="#FFBF8130"/>
-        <Border Name= "RightBorder" BorderBrush="Black" CornerRadius="16" BorderThickness="1" Opacity="0.5" HorizontalAlignment="Left" Width="506"
-                 Margin="70,0,0,0" Background="Transparent"/>
+        <Border Name= "RightBorder" BorderBrush="Black" CornerRadius="0,0,0,0" BorderThickness="1" Opacity="0.5" HorizontalAlignment="Left" Width="506"
+                 Margin="70,0,0,0" Background="Transparent"/-->
+        <Border Name="borderleft" BorderBrush="Black" CornerRadius="50,0,0,50" BorderThickness="1" Opacity="1" HorizontalAlignment="Left" 
+                Width="70" Height="200" Margin="0,0,0,0" Background="Transparent"/>
+        <Border Name="borderright" BorderBrush="Black" CornerRadius="0,50,50,0" BorderThickness="1" Opacity="1" HorizontalAlignment="Left" 
+                Width="70" Height="200" Margin="505,0,0,0" Background="Transparent"/>
+        <Border Name="fillleft" BorderBrush="Black" CornerRadius="50,0,0,50" BorderThickness="1" Opacity="0.10" HorizontalAlignment="Left" 
+                Width="70" Height="200" Margin="0,0,0,0" Background="#FF47E559"/>
+        <Border Name="fillright" BorderBrush="Black" CornerRadius="0,50,50,0" BorderThickness="1" Opacity="0.10" HorizontalAlignment="Left" 
+                Width="70" Height="200" Margin="505,0,0,0" Background="#FF47E5C8"/>
+
+
         <!--Border Name="LeftBorder" BorderBrush="Black" Background="DarkKhaki" CornerRadius="20,0,0,20" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Left" Width="70"
                 Margin="0,0,0,0"/>
         <Border Name="RightBorder" BorderBrush="Black" Background="DarkKhaki" CornerRadius="0,20,20,0" BorderThickness="0" Opacity="0.10" HorizontalAlignment="Right" Width="70"
@@ -52,11 +62,13 @@
 
         <Grid Name="EditGrid" HorizontalAlignment="Left" Width="70">
 
-            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit" Style="{StaticResource CustomButtonStyle}" Height="252" Margin="3,0,3,-0.185">
+            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" Click="onButtonClickEdit" Style="{StaticResource CustomButtonStyle}" Height="200" Margin="0,25,5,26.815" Width="65">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
-                <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" Height="74" Width="55"/>
+                <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" 
+                       Height="74" Width="55" Margin="5,0,0,0"/>
             </Button>
             <!--Rectangle Name="editSeperator" Fill="Black" Height="200" Width="5" VerticalAlignment="Center" 
                        HorizontalAlignment="Right" RadiusY="100.062" RadiusX="100.062" /-->
@@ -108,17 +120,16 @@
         </Button>
         <Grid Name="ShareGrid" HorizontalAlignment="Right" Width="70">
             <Button Name="shareButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Style="{StaticResource CustomButtonStyle}" Height="252" Margin="3,0,3,-0.185">
+                    Style="{StaticResource CustomButtonStyle}" Height="200" Margin="-1,25,6,26.815" Width="65">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
 
                 <StackPanel Opacity="1" Width="50" Margin="0,25,0,0">
-
-                    <Image Name="share1" Source="{StaticResource share1Icon}" />
+                    <Image Name="share1" Source="{StaticResource share1Icon}"/>
                     <Image Name="share2"  Source="{StaticResource share2Icon}" />
                     <StackPanel Orientation="Horizontal" Height="25">
-                        
+
                     </StackPanel>
                 </StackPanel>
             </Button>
