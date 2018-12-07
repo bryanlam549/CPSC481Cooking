@@ -43,31 +43,60 @@
 
 
 
-            <Button Name="Add" Content="ADD" Width="55" HorizontalAlignment="Center" Margin="475,785,46,45.246" Click="Add_Click"/>
-            <Button Name="doneButton" Content="DONE" Margin="150,775,140,35.246" Click="doneButton_Click"/>
+            <!--Button Name="Adds" Content="ADD" Width="55" HorizontalAlignment="Center" Margin="475,785,46,45.246" Click="Add_Click"/-->
+            <Button Name="Add" Content="" HorizontalAlignment="Center"  Width="50" Margin="485,785,41,45.246" 
+                    Click="Add_Click"  Style="{StaticResource CustomButtonStyle}">
+                <Button.Background>
+                    <ImageBrush x:Name="addBrush" ImageSource="{StaticResource addIcon}"/>
+                </Button.Background>
+            </Button>
+            <Label Name="buttonLabel" Content="Add" HorizontalAlignment="Right" 
+                   VerticalAlignment="Bottom" Margin="0,0,45,20.246"
+                   FontWeight="DemiBold" FontSize="16"/>
+
+            <Button Name="saveButton" Content="Done"   Click="doneButton_Click" 
+                    FontWeight ="DemiBold" Width="200" Margin="150,775,140,35.246" FontSize="32"
+                        Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
+
         </Grid>
         
-        <Border Name="modBox"  Background="#FF9C3828" Margin="135,253,126,105.246" CornerRadius="20" 
+        <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,110.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
-                <Button Name="IncButton" Content="+" Height="50" Width="50" Margin="165,10,0,0" Click="IncButton_Click"/>
-                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <Label Name="stepTitle" Content="At Step:" FontSize="36" Margin="0,0,50,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
+                <Button Name="IncButton" Height="50" Width="50" Margin="192,10,0,0" 
+                        Click="IncButton_Click" Style="{StaticResource CustomButtonStyle}">
+                    <Button.Background>
+                        <ImageBrush x:Name="incrementBrush" ImageSource="{StaticResource incIcon}"/>
+                    </Button.Background>
+                </Button>
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                    <Label Name="stepTitle" Content="At Step:" FontSize="36" Margin="0,0,96,0" 
+                           FontWeight="DemiBold" Foreground="#FFC29A3A"/>
 
 
                     <TextBox x:Name="incBox"  Text="1" FontSize="24" TextWrapping="Wrap" 
                            Width="64" HorizontalContentAlignment="Center" 
                              VerticalContentAlignment="Center"/>
                 </StackPanel>
-                <Button Name="DecButton" Content="-" Height="50" Width="50"  Margin="165,10,0,0" Click="DecButton_Click"/>
+                <Button Name="DecButton" Height="50" Width="50"  Margin="192,10,0,0" 
+                        Click="DecButton_Click" Style="{StaticResource CustomButtonStyle}">
+                    <Button.Background>
+                        <ImageBrush x:Name="decrementBrush" ImageSource="{StaticResource decIcon}"/>
+                    </Button.Background>
+                </Button>
 
                 <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
                 <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" 
                          Text="This is where steps are" Margin="28,0,23.631,0" Height="166" />
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
-                    <Button Name="Save" Content="Save" Height="50" Width="64" Margin="0,0,50,0" Click="Save_Click"/>
-                    <Button Name="Cancel" Content="Cancel" Height="50" Width="64" Click="Cancel_Click"/>
+                    
+                    <Button Name="Save" Content="Save"  Height="50" Width="64" Margin="0,0,50,0" Click="Save_Click"
+                    FontWeight ="DemiBold" FontSize="16" Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
+                    
+                    <Button Name="Cancel" Content="Cancel" Height="50" Width="64" Click="Cancel_Click" 
+                            FontWeight ="DemiBold" Background="Red"  Margin="0,0,0,0" FontSize="16" 
+                            Style="{StaticResource CustomButtonStyle}" />
                 </StackPanel>
             </StackPanel>
         </Border>

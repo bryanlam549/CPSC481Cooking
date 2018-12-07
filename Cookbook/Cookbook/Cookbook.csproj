@@ -362,5 +362,22 @@
     <Resource Include="Images\share1.png" />
     <Resource Include="Images\share2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\del.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\decrement.png" />
+    <Resource Include="Images\increment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\decrementfade.png" />
+    <Resource Include="Images\incrementfade.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

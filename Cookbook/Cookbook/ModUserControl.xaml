@@ -6,15 +6,25 @@
              xmlns:local="clr-namespace:Cookbook"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="576">
-    <Grid>
+    <Grid Margin="0,0,0,0">
         <StackPanel Orientation="Horizontal">
-            <TextBlock Name="IES" TextWrapping="Wrap" Margin="0,12,15,12.215" 
-                       Width="390" FontSize="20" VerticalAlignment="Center"
+            <Button Name="Change" Width="50" VerticalAlignment="Center" Height="50" 
+                    Margin="0,0,10,0.215" Click="Change_Click" Style="{StaticResource CustomButtonStyle}">
+                <Button.Background>
+                    <ImageBrush x:Name="addBrush" ImageSource="{StaticResource changeIcon}"/>
+                </Button.Background>
+            </Button>
+            <TextBlock Name="IES" TextWrapping="Wrap" Margin="0,12,0,12.215" 
+                       Width="375" FontSize="20" VerticalAlignment="Center"
                        FontWeight="DemiBold">Ingredients/Equipments/Steps</TextBlock>
-            <Button Name="Change" Width="40" VerticalAlignment="Center" Height="50" 
-                    Content="+" Margin="0,0,0,0.215" Click="Change_Click"/>
-            <Button Name="Delete" Width="40" VerticalAlignment="Center" Height="50" 
-                    Content="-" Margin="0,0,0,0.215" Click="Delete_Click"/>
+
+
+            <Button Name="Delete" Width="50" VerticalAlignment="Center" Height="50" 
+                    Margin="0,0,0,0.215" Click="Delete_Click" Style="{StaticResource CustomButtonStyle}">
+                <Button.Background>
+                    <ImageBrush x:Name="delBrush" ImageSource="{StaticResource delIcon}"/>
+                </Button.Background>
+            </Button>
         </StackPanel>
 
     </Grid>
