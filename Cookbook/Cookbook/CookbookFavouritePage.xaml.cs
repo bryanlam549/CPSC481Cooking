@@ -36,7 +36,7 @@ namespace Cookbook
                     num++;
                     recipe.Number = num.ToString();
                     recipe.Title = recipeList[i]._name;
-                    recipe.Dur = recipeList[i]._duration.ToString() + " min";
+                    recipe.Dur = recipeList[i]._duration.ToString() + "m";
 
                     recipe.FoodImage = recipeList[i]._image;
 

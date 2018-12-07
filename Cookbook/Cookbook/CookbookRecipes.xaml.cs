@@ -47,7 +47,7 @@ namespace Cookbook
             set
             {
                 number = value;
-                this.NumberText.Content = this.number + ".";
+                //this.NumberText.Content = this.number + ".";
             }
         }
 
@@ -95,7 +95,7 @@ namespace Cookbook
             set
             {
                 foodimage = value;
-                this.foodPic.Source = this.foodimage;
+                this.foodPic.ImageSource = this.foodimage;
             }
         }
 
