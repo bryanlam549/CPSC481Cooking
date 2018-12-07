@@ -48,13 +48,25 @@ namespace Cookbook
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            RecipeProfilePage recipeProfile = new RecipeProfilePage(currentRecipe);
+            Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
+            RecipeProfilePage recipeProfile = recipes[currentRecipe._name];
+            recipeProfile._completionPage = this;
+            recipeProfile._currentStep = 0;
+            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "To RECIPE COMPLETION PAGE");
             this.NavigationService.Navigate(recipeProfile);
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
+            RecipeProfilePage recipeProfile = recipes[currentRecipe._name];
+            recipeProfile._completionPage = null;
+            recipeProfile._currentStep = currentRecipe._steps.Count - 1;
+            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
+
+            StepByStepPage step = new StepByStepPage(currentRecipe, currentRecipe._steps.Count - 1);
+
+            this.NavigationService.Navigate(step);
         }
 
         private void _close_Click(object sender, RoutedEventArgs e)

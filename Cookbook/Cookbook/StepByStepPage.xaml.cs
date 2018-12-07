@@ -14,9 +14,10 @@ namespace Cookbook
     public partial class StepByStepPage : Page
     {
         Recipe currentRecipe;
-        List<String> recipeSteps;
+        public List<String> recipeSteps;
         int currentStep;
         string currentLookUpWord;
+        RecipeProfilePage recipeProfilePage;
 
  
         public StepByStepPage(Recipe recipe, int currentStep)
@@ -42,6 +43,11 @@ namespace Cookbook
                 // TO: DO  need a clearner way to do this 
                 _previousStep.transitionPageButton.IsEnabled = false;
                 _previousStep.transitionPageButton.Visibility = System.Windows.Visibility.Hidden;
+                _previousStep.initAppearance(TransitionPageButton.Orientation.BACK, "");
+            }
+            else
+            {
+                _previousStep.initAppearance(TransitionPageButton.Orientation.BACK, "PREVIOUS");
             }
 
             setStepBody(recipeSteps.ElementAt(currentStep));
@@ -51,9 +57,15 @@ namespace Cookbook
 
 
             _backButton.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
-            _previousStep.initAppearance(TransitionPageButton.Orientation.BACK, "PREVIOUS");
             _nextStep.initAppearance(TransitionPageButton.Orientation.FORWARD, "NEXT");
 
+
+            //setting a reference for the current step in recipeProfile everytime navigated to this step page 
+            Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
+            recipeProfilePage = recipes[currentRecipe._name];
+            recipeProfilePage._currentStep = currentStep;
+            recipeProfilePage._currentStep = currentStep;
+            recipeProfilePage._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
 
 
 
@@ -139,18 +151,17 @@ namespace Cookbook
 
         private void Prev_Step_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            if(currentStep > 0)
+            {
+                StepByStepPage prevStep = new StepByStepPage(currentRecipe, currentStep - 1);
+                this.NavigationService.Navigate(prevStep);
+            }
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
-            RecipeProfilePage recipeProfile = recipes[currentRecipe._name];
-            recipeProfile._currentStep = currentStep;
 
-            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
-
-            this.NavigationService.Navigate(recipeProfile);
+            this.NavigationService.Navigate(recipeProfilePage);
         }
 
         private void onButtonClickEdit(object sender, RoutedEventArgs e)

@@ -22,6 +22,8 @@ namespace Cookbook
     {
         public Recipe _recipe;
         public int _currentStep = 0 ;
+        public Page _completionPage;
+      
 
         public RecipeProfilePage(Recipe recipe)
         {
@@ -57,21 +59,23 @@ namespace Cookbook
 
             _startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "START");
 
-
         }
 
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentStep == 0)
+            if (_completionPage == null && _currentStep == 0 )
             {
                 StepPage mainStep = new StepPage(_recipe);
                 this.NavigationService.Navigate(mainStep);
             }
-            else
+            else if(_completionPage == null && _currentStep > 0)
             {
                 StepByStepPage step = new StepByStepPage(_recipe, _currentStep);
                 this.NavigationService.Navigate(step);
+            }else if(_completionPage != null)
+            {
+                this.NavigationService.Navigate(_completionPage);
             }
             
         }
