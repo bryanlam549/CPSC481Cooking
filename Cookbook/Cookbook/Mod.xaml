@@ -53,21 +53,28 @@
             </StackPanel>
             <!--Label Content="MODIFICATION" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center"/-->
         </Grid>
+
+
         <Grid>
-            <Border Name="modBox"  Background="#FF9C3828" Margin="30,215,26,125.246" CornerRadius="20" 
-                BorderBrush="#FFC29A3A" BorderThickness="4" Visibility="Hidden">
+            <Border Name="modBox"  Background="#FF9C3828" Margin="96,265,96,215.246" CornerRadius="20" 
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="14*"/>
                         <RowDefinition Height="5*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Please enter a name for this recipe" FontSize="28" Foreground="#c29a3a" Margin="46,46,40.754,-47.308" Grid.RowSpan="2" />
+                    <TextBlock Text="Please enter a name for this recipe" FontSize="28" Foreground="#c29a3a" Margin="46,46,40.754,50.692" Grid.RowSpan="2" />
                     <TextBox Name="foodBox" Text="Food Title" AcceptsReturn="False" 
                          TextWrapping="NoWrap" FontSize="24" HorizontalContentAlignment="Center"
-                         VerticalContentAlignment="Center" Margin="71,127,70.754,217.123" />
+                         VerticalContentAlignment="Center" Margin="50,123,50,121.431" />
 
-                    <Button Name="Confirm" Content="Confirm" Margin="71,286,70.754,35.123" Click="Confirm_Click"/>
-                    <Button Name="Cancel" Content="Cancel" Margin="71,392,70.754,68.692" Grid.RowSpan="2" Click="Cancel_Click"/>
+                    <Button Name="Done" Content="Done" FontWeight ="DemiBold" Width="200" FontSize="16"
+                            HorizontalAlignment="Center" Height="50" 
+                            Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"  Click="Confirm_Click" Margin="92,223,88.308,19.431"/>
+                    <Button Name="Cancel" Content="Cancel" FontWeight ="DemiBold" Height="50" Width="200"
+                        Background="Red"  HorizontalAlignment="Center" FontSize="16" Margin="92,5.569,88.308,48.554"
+                        Style="{StaticResource CustomButtonStyle}" Click="Cancel_Click" Grid.Row="1"/>
+
                 </Grid>
 
             </Border>

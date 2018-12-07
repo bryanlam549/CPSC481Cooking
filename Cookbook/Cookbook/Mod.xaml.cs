@@ -135,13 +135,13 @@ namespace Cookbook
 
         private void ingButton_Click(object sender, RoutedEventArgs e)
         {
-            ModIngredients modIngPg = new ModIngredients(recipeMod);
+            ModIngredients modIngPg = new ModIngredients(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modIngPg;
         }
 
         private void equipButton_Click(object sender, RoutedEventArgs e)
         {
-            ModEquipments modEquipPg = new ModEquipments();
+            ModEquipments modEquipPg = new ModEquipments(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modEquipPg;
         }
 

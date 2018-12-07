@@ -20,6 +20,10 @@ namespace Cookbook
     /// </summary>
     public partial class ModSteps : Page
     {
+        public ImageSource incfadeicon =  (BitmapImage) Application.Current.Resources["incfadeIcon"];
+        public ImageSource decfadeicon =  (BitmapImage)Application.Current.Resources["decfadeIcon"];
+        public ImageSource incicon = (BitmapImage)Application.Current.Resources["incIcon"];
+        public ImageSource decicon = (BitmapImage)Application.Current.Resources["decIcon"];
         public Recipe _recipe;
         public int recipeNum;
         int stepNum;
@@ -46,8 +50,12 @@ namespace Cookbook
                 step.IES.Text = (i+1).ToString() + ") " + step.IES.Text;
                 step.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
                 step.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+                Thickness margin = step.Margin;
+                margin.Top = 20;
+                step.Margin = margin;
                 step.Change.Click += Change_Click;
                 step.Delete.Click += Delete_Click;
+                
                 Steps.Children.Add(step);
                 
                 
@@ -76,12 +84,16 @@ namespace Cookbook
             if (stepNum+1 == _recipe._steps.Count)
             {
                 IncButton.IsEnabled = false;
+                incrementBrush.ImageSource = incfadeicon;
                 DecButton.IsEnabled = true;
+                decrementBrush.ImageSource = decicon;
             }
             else if(stepNum+1 == 1)
             {
                 DecButton.IsEnabled = false;
+                decrementBrush.ImageSource = decfadeicon;
                 IncButton.IsEnabled = true;
+                incrementBrush.ImageSource = incicon;
             }
 
             
@@ -114,6 +126,12 @@ namespace Cookbook
             incBox.Text = ((_recipe._steps.Count) + 1).ToString();    //Always make increment box at the max
             stepBox.Text= "";
             IncButton.IsEnabled = false;
+            incrementBrush.ImageSource = incfadeicon;
+            if(_recipe._steps.Count == 0)
+            {
+                DecButton.IsEnabled = false;
+                decrementBrush.ImageSource = decfadeicon;
+            }
 
         }
 
@@ -200,11 +218,14 @@ namespace Cookbook
                     if (x == _recipe._steps.Count)
                     {
                         IncButton.IsEnabled = false;
+                        incrementBrush.ImageSource = incfadeicon;
                         DecButton.IsEnabled = true;
+                        decrementBrush.ImageSource = decicon;
                     }
                     else
                     {
                         DecButton.IsEnabled = true;
+                        decrementBrush.ImageSource = decicon;
                     }
                 }
                 //When you are in add mode
@@ -213,11 +234,14 @@ namespace Cookbook
                     if (x == _recipe._steps.Count + 1)
                     {
                         IncButton.IsEnabled = false;
+                        incrementBrush.ImageSource = incfadeicon;
                         DecButton.IsEnabled = true;
+                        decrementBrush.ImageSource = decicon;
                     }
                     else
                     {
                         DecButton.IsEnabled = true;
+                        incrementBrush.ImageSource = incicon;
                     }
                 }
             }
@@ -237,11 +261,14 @@ namespace Cookbook
                 if (x == 1)
                 {
                     DecButton.IsEnabled = false;
+                    decrementBrush.ImageSource = decfadeicon;
                     IncButton.IsEnabled = true;
+                    incrementBrush.ImageSource = incicon;
                 }
                 else
                 {
                     IncButton.IsEnabled = true;
+                    incrementBrush.ImageSource = incicon;
                 }
 
             }

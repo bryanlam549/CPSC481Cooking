@@ -12,23 +12,21 @@
         <ImageBrush ImageSource="Images/background.png"/>
     </Page.Background>
     <Grid>
-        <TextBlock Text="Preferences" HorizontalAlignment="Center" VerticalAlignment="Top" Height ="700" FontSize="36" FontWeight ="Bold" Margin="194,0,184,0"/>
+        <TextBlock x:Name="_name" Text="Preferences" HorizontalAlignment="Center" VerticalAlignment="Top" Height ="700" FontSize="36" FontWeight ="Bold" Margin="194,0,184,0"/>
         <TextBlock HorizontalAlignment="Left" Height="700" FontSize="30" Margin="0,93,0,87"><Run Text="Here you can "/><Run Text="find your measurement"/></TextBlock>
         <TextBlock Text="and temperature preferences." HorizontalAlignment="Left" Height="625" FontSize="30" Margin="0,131,0,124"/>
         <TextBlock HorizontalAlignment="Left" Height="500" FontSize="30" Margin="0,193,0,187"><Run Text="Press the toggle swit"/><Run Text="ch"/><Run Text=" to change"/></TextBlock>
         <TextBlock Text="your preferences!" HorizontalAlignment="Left" Height="425" FontSize="30" Margin="0,231,0,224"/>
         <TextBlock Text="Temperature" HorizontalAlignment="Left" Height="175" FontSize="30"/>
         <StackPanel Margin="-5,342,5,-33">
-            <RadioButton Margin="5" Content="Celcius" FontSize="24"/>
-            <RadioButton Margin="5" Content="Fahrenheit" FontSize="24"/>
+            <RadioButton x:Name="_Cel" Margin="5" Content="Celcius" FontSize="24" Checked="_Cel_Checked"/>
+            <RadioButton x:Name="_Fah" Margin="5" Content="Fahrenheit" FontSize="24" Checked="_Fah_Checked"/>
         </StackPanel>
         <TextBlock Text="Weight" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="325" FontSize="30"/>
         <StackPanel Margin="-5,485,5,-33">
-            <RadioButton Margin="5" Content="Ounces" FontSize="24"/>
-            <RadioButton Margin="5" Content="Grams" FontSize="24"/>
+            <RadioButton x:Name="_Oun" Margin="5" Content="Ounces" FontSize="24" Checked="_Oun_Checked"/>
+            <RadioButton x:Name="_Gram" Margin="5" Content="Grams" FontSize="24" Checked="_Gram_Checked"/>
         </StackPanel>
-
-
 
 
     </Grid>

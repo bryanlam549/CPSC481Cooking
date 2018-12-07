@@ -18,10 +18,13 @@ namespace Cookbook
     /// <summary>
     /// Interaction logic for RecipeCompletionPage.xaml
     /// </summary>
+    /// 
+
     public partial class RecipeCompletionPage : Page
     {
 
         Recipe currentRecipe;
+
         public RecipeCompletionPage(Recipe recipe)
         {
             InitializeComponent();
@@ -54,12 +57,6 @@ namespace Cookbook
             this.NavigationService.GoBack();
         }
 
-        private void onButtonClickEdit(object sender, RoutedEventArgs e)
-        {
-            //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
-
-        }
-
         private void _close_Click(object sender, RoutedEventArgs e)
         {
             this.signInBox.Visibility = System.Windows.Visibility.Hidden;
@@ -68,5 +65,36 @@ namespace Cookbook
             completionMain.IsEnabled = true;
         }
 
+        private bool modified;
+        public bool Modified
+        {
+            get { return modified; }
+            set
+            {
+                modified = value;
+            }
+        }
+
+
+        //Number in list
+        private string number;
+        public string Number
+        {
+            get { return number; }
+            set
+            {
+                number = value;
+                //this.NumberText.Content = this.number + ".";
+            }
+        }
+
+        private void onEdit(object sender, RoutedEventArgs e)
+        {
+
+            Mod mod = new Mod(currentRecipe, 0);
+            ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+
+        }
     }
+
 }

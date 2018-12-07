@@ -10,58 +10,81 @@
 
     <Grid>
         <Grid x:Name="mainGrid" Height="880" Width="576">
-        <Grid.RowDefinitions >
-            <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
-            <RowDefinition Height="110" />
-            <RowDefinition Height="81.808" />
-            <RowDefinition Height="28.192"/>
-            <RowDefinition Height="110" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="96" />
-            <ColumnDefinition Width="96" />
-            <ColumnDefinition Width="96" />
-            <ColumnDefinition Width="96" />
-            <ColumnDefinition Width="96" />
-            <ColumnDefinition Width="96" />
-        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="81.808" />
+                <RowDefinition Height="28.192"/>
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+            </Grid.ColumnDefinitions>
 
-        <Frame x:Name="stepsMain" Height="880" Width="576" NavigationUIVisibility="Hidden" Grid.ColumnSpan="6" Grid.RowSpan="9"/>
+            <Frame x:Name="stepsMain" Height="880" Width="576" NavigationUIVisibility="Hidden" Grid.ColumnSpan="6" Grid.RowSpan="9"/>
 
-        <local:TransitionPageButton x:Name="_backButton" Width="90" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,23,66,107" Height="90" Grid.RowSpan="2" />
+            <local:TransitionPageButton x:Name="_backButton" Width="90" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,23,66,107" Height="90" Grid.RowSpan="2" />
 
-        <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Left" 
+            <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Left" 
                             Height="50" Click="onButtonClickEdit" Margin="26,23,0,0" VerticalAlignment="Top"
                             Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
-            <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
-        </Button>
+                <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
+            </Button>
 
 
-        <TextBlock x:Name="_recipeName" Grid.Column="2" Grid.ColumnSpan="3"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0" Foreground="#FF363232">
-        </TextBlock>
-        <TextBlock x:Name="_stepNumber" Grid.Column ="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="Step 1 of 10"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" Height="37" Width="210"  VerticalAlignment="Bottom" HorizontalAlignment="Center"   Grid.RowSpan="2" Margin="78,0,0,105"/>
-        <Rectangle Grid.Row="1" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" Margin="38,20,38,0" RadiusX="10" RadiusY="10" />
+            <TextBlock x:Name="_recipeName" Grid.Column="2" Grid.ColumnSpan="3"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0" Foreground="#FF363232">
+            </TextBlock>
+            <TextBlock x:Name="_stepNumber" Grid.Column ="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="Step 1 of 10"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" Height="37" Width="210"  VerticalAlignment="Bottom" HorizontalAlignment="Center"   Grid.RowSpan="2" Margin="78,0,0,105"/>
+            <Rectangle Grid.Row="1" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" Margin="38,20,38,0" RadiusX="10" RadiusY="10" />
 
-        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="6"  Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" Margin="43,10,53,0" Grid.RowSpan="3">
-            <TextBlock x:Name="_stepBody" HorizontalAlignment="Left" Width="Auto"  Height="Auto" TextWrapping="Wrap" TextAlignment="Left" FontSize="20" FontWeight ="SemiBold" VerticalAlignment="Top" Background="{x:Null}"/>
-        </ScrollViewer>
-        <Rectangle Grid.Row="6" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="500" Height="10" Margin="38,0,38,20" RadiusX="10" RadiusY="10" />
-        <local:TransitionPageButton x:Name="_previousStep" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <local:TransitionPageButton x:Name="_nextStep" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" Grid.RowSpan="2" />
-        <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" Width="200" Height="200" Margin="3,70,10,0" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
-            <local:CountdownTimer x:Name="_timer" Height="Auto" Width="Auto"/>
-        </StackPanel>
-    </Grid>
+            <ScrollViewer Grid.Row="2" Grid.ColumnSpan="6"  Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" Margin="43,10,53,0" Grid.RowSpan="3">
+                <TextBlock x:Name="_stepBody" HorizontalAlignment="Left" Width="Auto"  Height="Auto" TextWrapping="Wrap" TextAlignment="Left" FontSize="20" FontWeight ="SemiBold" VerticalAlignment="Top" Background="{x:Null}"/>
+            </ScrollViewer>
+            <Rectangle Grid.Row="6" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="500" Height="10" Margin="38,0,38,20" RadiusX="10" RadiusY="10" />
+            <local:TransitionPageButton x:Name="_previousStep" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <local:TransitionPageButton x:Name="_nextStep" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" Grid.RowSpan="2" />
+            <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" Width="200" Height="150" Margin="0,40,88,30" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="3" >
+                <local:CountdownTimer x:Name="_timer" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5">
+                    <local:CountdownTimer.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.511"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </local:CountdownTimer.RenderTransform>
+                </local:CountdownTimer>
+            </StackPanel>
+        </Grid>
         <Border Name="termDef"  Background="#FF9C3828" Margin="114,285,119,325" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
-            <StackPanel>
-                <TextBlock><Run Text="Some Text Here"/></TextBlock>
-            </StackPanel>
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="75" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="_lookupDef" Grid.ColumnSpan="4" Grid.RowSpan="3" Text="Some Text Here"  Height="Auto" TextWrapping="Wrap" TextAlignment="Left" FontSize="20" FontWeight="DemiBold" Margin="32,0,22,19"/>
+                <Button Name="_doneBtn" Content="Done" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2"  Height="50" Width="64" Click="Button_Click"
+                        FontWeight ="DemiBold" FontSize="16" Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
+            </Grid>
         </Border>
 
     </Grid>

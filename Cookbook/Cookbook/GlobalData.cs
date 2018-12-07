@@ -168,7 +168,7 @@ namespace Cookbook
             _ingredients = new List<Ingredient> {darksoysauce, oystersauce, sugar, ginger, pork, eggnoodles, cookingoil, garlic, greenonions,
                 napacabbage, cornstarch, seasameoil, whitepepper},
             _equipment = new List<string> { "1 wok or heavy skillet", "stirring utensils" },
-            _steps = new List<string> { @"To make the <hyperLink>marinade</hyperLink>, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
+            _steps = new List<string> { @"To make the marinade, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
                                         +"Place the pork in the marinade and let sit for 10 minutes",
                                         @"Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside)."
                                         +"Remove the pork and set aside." +
@@ -177,8 +177,7 @@ namespace Cookbook
                                         "Cook for 30 seconds."+
                                         "Add the noodles and stir until combined."+
                                         "Add white pepper to taste."+
-                                        "Serve immediately.hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"+ 
-                "ihaknkjhkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"}
+                                        "Serve immediately."}
     };
         #endregion
 
@@ -369,8 +368,10 @@ namespace Cookbook
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
         public List<Recipe> modRecipeList = new List<Recipe>(); //List of MODIFIED recipes
-        public List<RecipeProfilePage> recipePageList = new List<RecipeProfilePage>(); //Used to access profile pages
+        public Dictionary<String, RecipeProfilePage> recipePageList = new Dictionary<string, RecipeProfilePage>(); //Used to access profile pages
         public List<RecipeProfilePage> modrecipePageList = new List<RecipeProfilePage>(); //Used to access modified profile pages
+
+        public  Dictionary<String, String> lookUpTerms = new Dictionary<String, String>(); //map of dictionary words
 
         public RecipeCompletionPage completionPage;
 
@@ -380,10 +381,16 @@ namespace Cookbook
         public CurrentRecipePage1 currentRecipePage = new CurrentRecipePage1();
         public ProfilePage1 profilePage = new ProfilePage1();
 
-        public Boolean signedIn = false;
+        public bool signedIn = false;
 
         //Current recipe
         public Recipe currentRecipe;
+
+        public int test = 0;
+        public int test2 = 0;
+        public string preference1 = "";
+        public string preference2 = "";
+        public bool newAcc = false;
 
         //Store previous page...using this for back button for now. Unless better solution comes up
         public Page prevPage;
@@ -399,9 +406,11 @@ namespace Cookbook
             for (int i = 0; i < recipeList.Count; i++)
             {
                 RecipeProfilePage recipeProfilePage = new RecipeProfilePage(recipeList[i]);
-                recipePageList.Add(recipeProfilePage);
+                recipePageList.Add(recipeProfilePage._recipe._name, recipeProfilePage);
             }
 
+            lookUpTerms.Add("marinade", "A marinade is a sauce, typically made of oil, vinegar, spices, and herbs, in which meat, fish, or other food is soaked before cooking in order to flavor or soften it.");
+            lookUpTerms.Add("Chop", "cut into small pieces with repeated sharp blows a knife.");
         }
 
     }
