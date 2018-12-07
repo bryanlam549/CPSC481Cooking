@@ -91,8 +91,7 @@
                     </Button.Effect>
                 </Button>
 
-                <TextBlock x:Name="_recipeName" Grid.Column="2" Grid.ColumnSpan="3"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0">
-                </TextBlock>
+                <TextBlock x:Name="_recipeName" Text="" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0"/>
 
                 <TextBlock Text="Recipe Complete!" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="70,0,0,0"/>
                 <TextBlock Text="Rate" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="66,70,0,0"/>
