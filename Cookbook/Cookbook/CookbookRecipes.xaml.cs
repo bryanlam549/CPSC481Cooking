@@ -23,7 +23,7 @@ namespace Cookbook
         public List<Recipe> _recipeList = GlobalData.Instance.recipeList;
         public List<Recipe> _recentList = GlobalData.Instance.recentList;
         public List<Recipe> _modrecipeList = GlobalData.Instance.modRecipeList;
-        public List<RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
+        public Dictionary<String, RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
         public List<RecipeProfilePage> _modrecipePageList = GlobalData.Instance.modrecipePageList;
 
         //if it's a modified recipe. Not really shown on this page but is a hidde value that will be used to determine if it shows up
@@ -227,7 +227,11 @@ namespace Cookbook
                             _recentList.Remove(_recipeList[j]);
                             _recentList.Add(_recipeList[j]);
                         }
-                        RecipeProfilePage profile = _recipePageList[j];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+                        RecipeProfilePage profile = _recipePageList[_recipeList[j]._name];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
+
+                        //resetting the start button to "START" since its changed to continue during navigation bak from steps
+                        profile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "START");
+
                         //Maybe set a flag? Also need to set something as current recipe
                         GlobalData.Instance.currentRecipe = _recipeList[j];
                         ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];

@@ -144,7 +144,13 @@ namespace Cookbook
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            RecipeProfilePage recipeProfile = new RecipeProfilePage(currentRecipe);
+            Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
+            RecipeProfilePage recipeProfile = recipes[currentRecipe._name];
+            recipeProfile._currentStep = currentStep;
+
+            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
+
+            this.NavigationService.Navigate(recipeProfile);
         }
 
         private void onButtonClickEdit(object sender, RoutedEventArgs e)

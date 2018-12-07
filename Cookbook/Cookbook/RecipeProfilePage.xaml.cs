@@ -21,6 +21,7 @@ namespace Cookbook
     public partial class RecipeProfilePage : Page
     {
         public Recipe _recipe;
+        public int _currentStep = 0 ;
 
         public RecipeProfilePage(Recipe recipe)
         {
@@ -62,8 +63,17 @@ namespace Cookbook
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            StepPage mainStep = new StepPage(_recipe);
-            this.NavigationService.Navigate(mainStep);
+            if (_currentStep == 0)
+            {
+                StepPage mainStep = new StepPage(_recipe);
+                this.NavigationService.Navigate(mainStep);
+            }
+            else
+            {
+                StepByStepPage step = new StepByStepPage(_recipe, _currentStep);
+                this.NavigationService.Navigate(step);
+            }
+            
         }
     }
 }

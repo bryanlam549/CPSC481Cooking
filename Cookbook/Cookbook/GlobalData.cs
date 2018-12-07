@@ -368,7 +368,7 @@ namespace Cookbook
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
         public List<Recipe> modRecipeList = new List<Recipe>(); //List of MODIFIED recipes
-        public List<RecipeProfilePage> recipePageList = new List<RecipeProfilePage>(); //Used to access profile pages
+        public Dictionary<String, RecipeProfilePage> recipePageList = new Dictionary<string, RecipeProfilePage>(); //Used to access profile pages
         public List<RecipeProfilePage> modrecipePageList = new List<RecipeProfilePage>(); //Used to access modified profile pages
 
         public  Dictionary<String, String> lookUpTerms = new Dictionary<String, String>(); //map of dictionary words
@@ -406,10 +406,10 @@ namespace Cookbook
             for (int i = 0; i < recipeList.Count; i++)
             {
                 RecipeProfilePage recipeProfilePage = new RecipeProfilePage(recipeList[i]);
-                recipePageList.Add(recipeProfilePage);
+                recipePageList.Add(recipeProfilePage._recipe._name, recipeProfilePage);
             }
 
-            lookUpTerms.Add("marinade", "To soak (meat, fish, or other food) in a marinade.A marinade is a sauce, typically made of oil, vinegar, spices, and herbs, in which meat, fish, or other food is soaked before cooking in order to flavor or soften it.");
+            lookUpTerms.Add("marinade", "A marinade is a sauce, typically made of oil, vinegar, spices, and herbs, in which meat, fish, or other food is soaked before cooking in order to flavor or soften it.");
             lookUpTerms.Add("Chop", "cut into small pieces with repeated sharp blows a knife.");
         }
 
