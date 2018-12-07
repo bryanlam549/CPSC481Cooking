@@ -7,55 +7,103 @@
              mc:Ignorable="d" 
              d:DesignHeight="251.83" d:DesignWidth="576">
     <Grid>
-        <Label Name="NumberText" Content="1." FontSize="48"/>
-        
         <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"/>
-        <Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815"
+        <Grid Name="EditGrid" HorizontalAlignment="Left" Width="70">
+            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit" Style="{StaticResource CustomButtonStyle}" Height="252" Margin="3,0,3,-0.185">
+                <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" Height="74" Width="55"/>
+            </Button>
+            <Rectangle Name="editSeperator" Fill="Black" Height="200" Width="3" VerticalAlignment="Center" 
+                       HorizontalAlignment="Right"/>
+        </Grid>
+
+        <Grid Name="ContentGrid">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+                <ColumnDefinition Width="96" />
+            </Grid.ColumnDefinitions>
+            
+            
+            <Rectangle Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Stroke="Black" StrokeThickness="3" Margin="0,74,0,36">
+                <Rectangle.Fill>
+                    <ImageBrush x:Name="_recipeImageBrush" ImageSource="{StaticResource burgerIcon}"/>
+                    <!-- just a placeholder image (will be overwritten)-->
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+
+        <Grid Name="ShareGrid" HorizontalAlignment="Right" Width="70">
+            <Button Name="shareButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit" Style="{StaticResource CustomButtonStyle}" Height="252" Margin="3,0,3,-0.185">
+                <Image Name="shareIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" Height="74" Width="55"/>
+            </Button>
+            <Rectangle Name="shareSeperator" Fill="Black" Height="200" Width="3" VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"/>
+        </Grid>
+    </Grid>
+
+    <!--Grid>
+            <Label Name="NumberText" Content="1." FontSize="48"/>
+
+            <Border BorderBrush="Black" Background="#FFBF8130" CornerRadius="20" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"/>
+            <Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815"
             HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}" Click="foodProfileButton_Click">
-            <StackPanel Orientation="Horizontal">
-                <Grid Name="imageGrid" Background="Transparent" Width="350" Height="251.83">
+                <StackPanel Orientation="Horizontal">
+                    <Grid Name="imageGrid" Background="Transparent" Width="350" Height="251.83">
 
 
-                    <Image Name="foodPic" Source="{StaticResource burgerIcon}" HorizontalAlignment="Right" MaxWidth="280" Margin="0,0,10,-0.17"/>
-                </Grid>
+                        <Image Name="foodPic" Source="{StaticResource burgerIcon}" HorizontalAlignment="Right" MaxWidth="280" Margin="0,0,10,-0.17"/>
+                    </Grid>
 
-                <Grid Name="infoGrid" Background="Transparent" Width="226" Height="251.83" HorizontalAlignment="Left">
+                    <Grid Name="infoGrid" Background="Transparent" Width="226" Height="251.83" HorizontalAlignment="Left">
 
-                    <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="10,30">
-                        <TextBlock Name="TitleText" TextWrapping="Wrap">Food title</TextBlock>
-                    </Viewbox>
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="10,100,0,0">
-                            <Image Name="difficulty" Source="{StaticResource medIconIcon}"  
+                        <Viewbox Stretch="Uniform" VerticalAlignment="Top" Margin="10,30">
+                            <TextBlock Name="TitleText" TextWrapping="Wrap">Food title</TextBlock>
+                        </Viewbox>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10,100,0,0">
+                                <Image Name="difficulty" Source="{StaticResource medIconIcon}"  
                                     HorizontalAlignment="Left" Margin="0,0,25,0"/>
-                            <Image Name="duration" Source="{StaticResource durationIconIcon}" HorizontalAlignment="Left"/>
-                            <Label Name="durationLabel" Content="10 mins" FontSize="16" VerticalAlignment="Bottom"/>
+                                <Image Name="duration" Source="{StaticResource durationIconIcon}" HorizontalAlignment="Left"/>
+                                <Label Name="durationLabel" Content="10 mins" FontSize="16" VerticalAlignment="Bottom"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="28" Margin="10,5">
+                                <Image Name="rating1" Source="{StaticResource unfillStarIcon}"/>
+                                <Image Name="rating2" Source="{StaticResource unfillStarIcon}"/>
+                                <Image Name="rating3" Source="{StaticResource unfillStarIcon}"/>
+                                <Image Name="rating4" Source="{StaticResource unfillStarIcon}"/>
+                                <Image Name="rating5" Source="{StaticResource unfillStarIcon}"/>
+                            </StackPanel>
+                            <Label Name="ingNum" Content="7 Ingredients" FontSize="16" Margin="10,0"/>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Height="28" Margin="10,5">
-                            <Image Name="rating1" Source="{StaticResource unfillStarIcon}"/>
-                            <Image Name="rating2" Source="{StaticResource unfillStarIcon}"/>
-                            <Image Name="rating3" Source="{StaticResource unfillStarIcon}"/>
-                            <Image Name="rating4" Source="{StaticResource unfillStarIcon}"/>
-                            <Image Name="rating5" Source="{StaticResource unfillStarIcon}"/>
-                        </StackPanel>
-                        <Label Name="ingNum" Content="7 Ingredients" FontSize="16" Margin="10,0"/>
-                    </StackPanel>
 
-                </Grid>
+                    </Grid>
 
-            </StackPanel>
-        </Button>
-        <Button Name="editButton" Background="Transparent" HorizontalAlignment="Left" 
+                </StackPanel>
+            </Button>
+            <Button Name="editButton" Background="Transparent" HorizontalAlignment="Left" 
                             Height="50" Click="onButtonClickEdit" Margin="10,75" VerticalAlignment="Top"
                             Style="{StaticResource CustomButtonStyle}">
-            <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
-        </Button>
-        <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" VerticalAlignment="Bottom" Margin="0,5"/>
-        <!--Button Name="foodProfileButton" BorderBrush="Black" Background="#FFBF8130" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"
+                <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
+            </Button>
+            <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" VerticalAlignment="Bottom" Margin="0,5"/>
+        </-->
+
+
+
+    <!--Button Name="foodProfileButton" BorderBrush="Black" Background="#FFBF8130" Margin="0,0,0,4.815" BorderThickness="2" Opacity="0.10" HorizontalAlignment="Right" Width="576"
                 Click="onButtonClickProfile"/-->
 
 
-        <!--Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815" 
+    <!--Button Name="foodProfileButton"  Background="Transparent" BorderBrush="Transparent" Margin="0,0,0,4.815" 
                  HorizontalAlignment="Right" Width="576" Style="{StaticResource CustomButtonStyle}">
             <StackPanel Margin="50,0,0,0" Width="526.30">
                 <Label Name="TitleText" HorizontalAlignment="Center" FontSize="48" Content="Hamburger"/>
@@ -78,15 +126,15 @@
                 <Rectangle Name="seperator" Fill="Black" Height="3" Width="476" Margin="0,10,25,0"/>
             </StackPanel>
         </-->
-        <!--StackPanel Margin="0,0,525,0">
+    <!--StackPanel Margin="0,0,525,0">
             <Label Name="NumberText" Content="1." FontSize="48"/>
             <Button Name="editButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="onButtonClickEdit" Style="{StaticResource CustomButtonStyle}">
                 <Image Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}"/>
             </Button>
         </-->
-        
 
-        <!--Label Name="NumberText" Content="1." FontSize="48" Margin="10,10,494,154.815"/>
+
+    <!--Label Name="NumberText" Content="1." FontSize="48" Margin="10,10,494,154.815"/>
         <Image Name="editIcon" Source="Images/editIcon.png" Margin="10,142,517,41.815" />
         <Image Name="foodPic" Margin="74,61,286,41.815"/>
         <Line Fill="Red" Height="25" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="25"/>
@@ -95,5 +143,5 @@
         <Label Name="desc" FontSize="24" Content="Food description!&#xD;&#xA;Blah blah blah!!!&#xD;&#xA;And Blah Blah!&#xD;&#xA;and blah&#xA;" Margin="290,82,82,24.815"/>
         <Image Name="shareIcon" Source="Images/shareIcon.png" Margin="499,186,10,19.815" /-->
 
-    </Grid>
+
 </UserControl>
