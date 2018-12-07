@@ -43,10 +43,13 @@
                 </Rectangle>
 
             </Grid>
-            <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Right" 
-                                Height="50" Click="onButtonClickEdit" Margin="26,23,0,0" VerticalAlignment="Top"
+            <Button x:Name="editButton" Background="Transparent" HorizontalAlignment="Right" 
+                                Height="50" Click="onButtonClickEdit" Margin="0,23,24,0" VerticalAlignment="Top"
                                 Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
                 <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
             </Button>
 
             <TextBlock x:Name="_recipeName" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold"/>
@@ -54,6 +57,21 @@
             <TextBlock Text="Rate" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Width="84" Margin="246,359,246,0"/>
             <TextBlock Text="Favourite" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Width="161" Margin="208,449,207,0"/>
             <TextBlock Text="Share" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Margin="240,549,241,0"/>
+
+            <Grid Margin="140,602,128,178">
+                <Button Background="Transparent" Margin="82,2,94,0" RenderTransformOrigin="0.5,0.5" Style="{StaticResource CustomButtonStyle}">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="305">
+                        <Image x:Name="shareIcon1" Source="{StaticResource share1Icon}" Width="50" Margin="50,3,127,0"/>
+                        <Image x:Name="shareIcon2" Source="{StaticResource share2Icon}" Width="50" Margin="160,-44,95,0"/>
+                    </StackPanel>
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+
+            </Grid>
+
+
             <local:CompletionPageRatingControl x:Name="rating" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, -20, 0, 0"/>
             <local:HeartButton x:Name="favHeart" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 175, 0, 0"/>
             <local:TransitionPageButton x:Name="_back" Grid.Row="6" Grid.Column="4" Width="90" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="90" Grid.ColumnSpan="2" Margin="0,0,10,20"/>
@@ -61,17 +79,17 @@
 
 
         </Grid>
-            <Border Name="signInBox"  Background="#FF9C3828" Height="250" Width="250" CornerRadius="20" 
+        <Border Name="signInBox"  Background="#FF9C3828" Height="250" Width="250" CornerRadius="20" 
                     BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
-                <StackPanel Height="250" Width="250">
-                   <TextBlock Text="You must be signed in to rate a recipe." FontSize="24" Margin="20,20,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A" TextWrapping="Wrap" VerticalAlignment="Center"/>
-                    <Button Name="_close" Content="Close" Height="50" Width="64" Margin="0,40,0,0" Click="_close_Click"/>
-                </StackPanel>
-            </Border>
+            <StackPanel Height="250" Width="250">
+                <TextBlock Text="You must be signed in to rate a recipe." FontSize="24" Margin="20,20,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                <Button Name="_close" Content="Close" Background="White" Height="50" Width="64" Margin="0,40,0,0" Click="_close_Click"/>
+            </StackPanel>
+        </Border>
 
-  
-            <Frame x:Name="completeMain" Height="880" Width="576" NavigationUIVisibility="Hidden"/>
-        
+
+        <Frame x:Name="completeMain" Height="880" Width="576" NavigationUIVisibility="Hidden"/>
+
     </Grid>
 
 
