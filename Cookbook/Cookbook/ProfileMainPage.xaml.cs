@@ -28,7 +28,6 @@ namespace Cookbook
         public BitmapImage preferencesButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButton.png"));
         public BitmapImage preferencesButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButtonDark.png"));
 
-        public string prefernce1;
         //private ProfileInfoPage profileInfoPage = new ProfileInfoPage(UserNameInput.Text); 
 
         public ProfileMainPage(string username, string email, string password, string pref1, string pref2)
@@ -77,6 +76,7 @@ namespace Cookbook
         {
             ProfilePage1 profilepage1 = new ProfilePage1();
             GlobalData.Instance.signedIn = false;
+            GlobalData.Instance.newAcc = false;
             this.NavigationService.Navigate(profilepage1);
         }
     }

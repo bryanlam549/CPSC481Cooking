@@ -381,10 +381,15 @@ namespace Cookbook
         public CurrentRecipePage1 currentRecipePage = new CurrentRecipePage1();
         public ProfilePage1 profilePage = new ProfilePage1();
 
-        public Boolean signedIn = false;
+        public bool signedIn = false;
 
         //Current recipe
         public Recipe currentRecipe;
+
+        public int test = 0;
+        public string preference1 = "";
+        public string preference2 = "";
+        public bool newAcc = false;
 
         //Store previous page...using this for back button for now. Unless better solution comes up
         public Page prevPage;

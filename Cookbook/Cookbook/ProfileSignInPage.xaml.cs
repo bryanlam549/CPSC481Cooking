@@ -53,6 +53,7 @@ namespace Cookbook
 
                 ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, accountList[(accountList.IndexOf(UserInput.Text)) + 1], PasswordInput.Password, accountList[(accountList.IndexOf(UserInput.Text)) + 3], accountList[(accountList.IndexOf(UserInput.Text)) + 4]);
                 GlobalData.Instance.signedIn = true;
+                GlobalData.Instance.newAcc = false;
                 signInMain.Content = profileMainPage;
             }
             else

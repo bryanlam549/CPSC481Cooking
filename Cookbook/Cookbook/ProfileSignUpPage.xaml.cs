@@ -62,6 +62,7 @@ namespace Cookbook
             {
                 ProfileMainPage profileMainPage = new ProfileMainPage(nameInput.Text, emailInput.Text, passwordInput.Password, "", "");
                 GlobalData.Instance.signedIn = true;
+                GlobalData.Instance.newAcc = true;
                 signUpMain.Content = profileMainPage;
             }
 
