@@ -41,8 +41,19 @@ namespace Cookbook
             accountList.Add("123456789123456789123456789");
             accountList.Add("2");
             accountList.Add("2");
+
+            Hyperlink link = new Hyperlink();
+            link.IsEnabled = true;
+            link.TextDecorations = null;
+            link.Inlines.Add("Forgot Password?");
+            link.Click += forgotPass;
+            _forgotPass.Inlines.Add(link);
         }
 
+        private void forgotPass(object sender, RoutedEventArgs e)
+        {
+            // password stuff here
+        }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {

@@ -46,6 +46,18 @@ namespace Cookbook
 
             _tempPref.Text = pref1;
             _weightPref.Text = pref2;
+
+            Hyperlink link = new Hyperlink();
+            link.IsEnabled = true;
+            link.TextDecorations = null;
+            link.Inlines.Add("Change Password");
+            link.Click += changePass;
+            _changePass.Inlines.Add(link);
+        }
+
+        private void changePass(object sender, RoutedEventArgs e)
+        {
+            // change password
         }
 
         private void ProfileInfoButton_Click(object sender, RoutedEventArgs e)
