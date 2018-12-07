@@ -37,9 +37,9 @@ namespace Cookbook
             InitializeComponent();
 
 
-            //_ingredient = new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "Milk"); EX OF ONE WITH UNITS
+            _ingredient = new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "Milk"); //EX OF ONE WITH UNITS
 
-            //_ingredient = new Ingredient(1, "1", Ingredient.UnitType.NONE, "NO UNIT", "Head of cabbage"); EX OF ONE WITH NO UNITS
+            //_ingredient = new Ingredient(1, "1", Ingredient.UnitType.NONE, "NO UNIT", "Head of cabbage"); //EX OF ONE WITH NO UNITS
 
 
             // init the TEXT (for measurement) + UNITCHANGER (visible unit) + TEXT (name)
