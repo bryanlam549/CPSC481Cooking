@@ -19,16 +19,14 @@
         <TextBlock Text="your preferences!" HorizontalAlignment="Left" Height="425" FontSize="30" Margin="0,231,0,224"/>
         <TextBlock Text="Temperature" HorizontalAlignment="Left" Height="175" FontSize="30"/>
         <StackPanel Margin="-5,342,5,-33">
-            <RadioButton Margin="5" Content="Celcius" FontSize="24"/>
-            <RadioButton Margin="5" Content="Fahrenheit" FontSize="24"/>
+            <RadioButton x:Name="_Cel" Margin="5" Content="Celcius" FontSize="24"/>
+            <RadioButton x:Name="_Fah" Margin="5" Content="Fahrenheit" FontSize="24"/>
         </StackPanel>
         <TextBlock Text="Weight" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="325" FontSize="30"/>
         <StackPanel Margin="-5,485,5,-33">
-            <RadioButton Margin="5" Content="Ounces" FontSize="24"/>
-            <RadioButton Margin="5" Content="Grams" FontSize="24"/>
+            <RadioButton x:Name="_Oun" Margin="5" Content="Ounces" FontSize="24"/>
+            <RadioButton x:Name="_Gram" Margin="5" Content="Grams" FontSize="24"/>
         </StackPanel>
-
-
 
 
     </Grid>
