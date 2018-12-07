@@ -1,0 +1,169 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+using System.Diagnostics;
+
+// loop over List<Ingredient> and generate an IngredientTab for every ingredient and initializing _ingredient 
+
+namespace Cookbook
+{
+    /// <summary>
+    /// Interaction logic for IngredientTab.xaml
+    /// </summary>
+    public partial class IngredientTab : UserControl
+    {
+
+        public Ingredient _ingredient; // gets set by auto-generation, set this befofre IngredientTab()
+
+        // cache global resources...
+        private BitmapImage uncheckedImage = (BitmapImage)Application.Current.Resources["uncheckedIcon"];
+        private BitmapImage checkedImage = (BitmapImage)Application.Current.Resources["checkedIcon"];
+
+
+        public IngredientTab()
+        {
+            InitializeComponent();
+
+
+            //_ingredient = new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "Milk"); EX OF ONE WITH UNITS
+
+            //_ingredient = new Ingredient(1, "1", Ingredient.UnitType.NONE, "NO UNIT", "Head of cabbage"); EX OF ONE WITH NO UNITS
+
+
+            // init the TEXT (for measurement) + UNITCHANGER (visible unit) + TEXT (name)
+            // have the unit drop down control be sorted alphabetically, highlight the currently selected unit
+
+            /*
+            primaryText.Text = _ingredient._primaryStr;
+
+            if (_ingredient._hasUnit)
+            {
+                unitChanger.Text = _ingredient._unitStr;
+                secondaryText.Text = _ingredient._secondaryStr;
+            }
+            else
+            {
+                unitChanger.Visibility = Visibility.Hidden;
+                unitChangerButton.Visibility = Visibility.Hidden;
+                secondaryText.Text = "";
+            }
+            */
+
+            primaryText.Text = _ingredient._primaryStr;
+            secondaryText.Text = _ingredient._secondaryStr;
+
+            if (_ingredient._hasUnit)
+            {
+                unitChanger.Text = _ingredient._unitStr;
+
+                // fill in combobox contents...
+                initUnitMenu();
+                //unitChanger.Items.Add();
+                
+            }
+            else
+            {
+                unitChanger.Visibility = Visibility.Hidden;
+                unitChangerButton.Visibility = Visibility.Hidden;
+            }
+
+        }
+
+
+        public void initUnitMenu()
+        {
+            if (_ingredient._unitType == Ingredient.UnitType.VOLUME) // volume
+            {
+                unitChanger.Items.Add(Ingredient.CUPS);
+                unitChanger.Items.Add(Ingredient.FLOZ);
+                unitChanger.Items.Add(Ingredient.ML);
+                unitChanger.Items.Add(Ingredient.L);
+                unitChanger.Items.Add(Ingredient.TBSP);
+                unitChanger.Items.Add(Ingredient.TSP);
+            }
+            else if (_ingredient._unitType == Ingredient.UnitType.MASS) // mass
+            {
+                unitChanger.Items.Add(Ingredient.G);
+                unitChanger.Items.Add(Ingredient.KG);
+                unitChanger.Items.Add(Ingredient.LBS);
+                unitChanger.Items.Add(Ingredient.MG);
+                unitChanger.Items.Add(Ingredient.OZ);
+            }
+            else if (_ingredient._unitType == Ingredient.UnitType.LENGTH)// length
+            {
+                unitChanger.Items.Add(Ingredient.CM);
+                unitChanger.Items.Add(Ingredient.IN);
+                unitChanger.Items.Add(Ingredient.M);
+                unitChanger.Items.Add(Ingredient.MM);
+            }
+        }
+
+
+
+        // in recipe profile page pageloaded event, loop over all IngredientTabs and call this... or just update this when user presses on change unit or substitute...
+        public void updateIngredient()
+        {
+
+        }
+
+        private void Checkbox_Click(object sender, RoutedEventArgs e)
+        {
+            _ingredient._isChecked = !_ingredient._isChecked;
+            if (_ingredient._isChecked)
+            {
+                checkboxImageBrush.ImageSource = checkedImage;
+            }
+            else
+            {
+                checkboxImageBrush.ImageSource = uncheckedImage;
+            }
+        }
+
+        private void unitChangerButton_Click(object sender, RoutedEventArgs e)
+        {
+            unitChanger.IsDropDownOpen = !unitChanger.IsDropDownOpen;
+        }
+
+
+        
+        private void unitChanger_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string oldUnitStr = _ingredient._unitStr;
+            //string newUnitStr = unitChanger.SelectedValue.ToString(); // THIS IS NULL WITH STRINGS
+            string newUnitStr = unitChanger.SelectedItem.ToString(); // THANK YOU
+
+            //Debug.WriteLine(oldUnitStr);
+            //Debug.WriteLine("=-=-=-=-=-=");
+            //Debug.WriteLine(newUnitStr);
+
+            if (oldUnitStr == newUnitStr)
+            {
+                return;
+            }
+            // ONLY call update if oldUnitStr != newUnitStr
+            // now update the measurement value
+            _ingredient.convertMeasurement(newUnitStr);
+            // then convert this value to str
+            // get this string and set the primary string to this (which is fine since no secondary string will exist)
+            //_ingredient._unitStr = newUnitStr;
+
+            primaryText.Text = _ingredient._measurementStr;
+            //Debug.WriteLine(primaryText.Text);
+            
+        }
+
+
+    }
+}

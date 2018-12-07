@@ -11,6 +11,7 @@
     <BitmapImage x:Key="backgroundIcon" UriSource="Images/background.png" />
     <BitmapImage x:Key="background1Icon" UriSource="Images/background1.png" />
     <BitmapImage x:Key="burgerIcon" UriSource="Images/burger.jpg" />
+    <BitmapImage x:Key="checkedIcon" UriSource="Images/checked.png" />
     <BitmapImage x:Key="chowmeinIcon" UriSource="Images/chowmein.jpg" />
     <BitmapImage x:Key="cookbookButtonIcon" UriSource="Images/cookbookButton.png" />
     <BitmapImage x:Key="cookbookButtonDarkIcon" UriSource="Images/cookbookButtonDark.png" />
@@ -43,6 +44,7 @@
     <BitmapImage x:Key="searchButtonDarkIcon" UriSource="Images/searchButtonDark.png" />
     <BitmapImage x:Key="shanghaiNoodlesIcon" UriSource="Images/shanghaiNoodles.png" />
     <BitmapImage x:Key="shareIconIcon" UriSource="Images/shareIcon.png" />
+    <BitmapImage x:Key="uncheckedIcon" UriSource="Images/unchecked.png" />
     <BitmapImage x:Key="unfillHeartIcon" UriSource="Images/unfillHeart.png" />
     <BitmapImage x:Key="unfillStarIcon" UriSource="Images/unfillStar.png" />
     <BitmapImage x:Key="backButton" UriSource="Images/back.png" />

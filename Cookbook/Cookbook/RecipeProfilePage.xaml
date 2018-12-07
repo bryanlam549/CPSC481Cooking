@@ -77,23 +77,12 @@
                     <Label Content="15m" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Margin="0,106,0,77" Grid.RowSpan="2"/>
                 </Grid>
                 <StackPanel>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
-                    <local:HeartButton/>
+                    <local:IngredientTab/>
+                    <local:IngredientTab/>
+                    <local:IngredientTab/>
+                    <local:IngredientTab/>
+                    <local:IngredientTab/>
+                    <local:IngredientTab/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

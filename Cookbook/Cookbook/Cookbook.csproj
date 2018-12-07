@@ -81,6 +81,9 @@
       <DependentUpon>HeartButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ingredient.cs" />
+    <Compile Include="IngredientTab.xaml.cs">
+      <DependentUpon>IngredientTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mod.xaml.cs">
       <DependentUpon>Mod.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IngredientTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -357,6 +364,12 @@
   <ItemGroup>
     <Resource Include="Images\chowmein.jpg" />
     <Resource Include="Images\salad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\unchecked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
