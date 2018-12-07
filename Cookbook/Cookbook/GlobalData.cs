@@ -168,7 +168,7 @@ namespace Cookbook
             _ingredients = new List<Ingredient> {darksoysauce, oystersauce, sugar, ginger, pork, eggnoodles, cookingoil, garlic, greenonions,
                 napacabbage, cornstarch, seasameoil, whitepepper},
             _equipment = new List<string> { "1 wok or heavy skillet", "stirring utensils" },
-            _steps = new List<string> { @"To make the <hyperLink>marinade</hyperLink>, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
+            _steps = new List<string> { @"To make the marinade, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
                                         +"Place the pork in the marinade and let sit for 10 minutes",
                                         @"Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside)."
                                         +"Remove the pork and set aside." +
@@ -177,8 +177,7 @@ namespace Cookbook
                                         "Cook for 30 seconds."+
                                         "Add the noodles and stir until combined."+
                                         "Add white pepper to taste."+
-                                        "Serve immediately.hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"+ 
-                "ihaknkjhkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"}
+                                        "Serve immediately."}
     };
         #endregion
 
@@ -372,6 +371,8 @@ namespace Cookbook
         public List<RecipeProfilePage> recipePageList = new List<RecipeProfilePage>(); //Used to access profile pages
         public List<RecipeProfilePage> modrecipePageList = new List<RecipeProfilePage>(); //Used to access modified profile pages
 
+        public  Dictionary<String, String> lookUpTerms = new Dictionary<String, String>(); //map of dictionary words
+
         public RecipeCompletionPage completionPage;
 
         //Main page
@@ -402,6 +403,8 @@ namespace Cookbook
                 recipePageList.Add(recipeProfilePage);
             }
 
+            lookUpTerms.Add("marinade", "To soak (meat, fish, or other food) in a marinade.A marinade is a sauce, typically made of oil, vinegar, spices, and herbs, in which meat, fish, or other food is soaked before cooking in order to flavor or soften it.");
+            lookUpTerms.Add("Chop", "cut into small pieces with repeated sharp blows a knife.");
         }
 
     }
