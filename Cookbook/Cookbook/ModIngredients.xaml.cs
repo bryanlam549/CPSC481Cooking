@@ -70,7 +70,7 @@ namespace Cookbook
         }
 
 
-
+        
         //-------------------------User control buttons--------------------------------
         private void Change_Click(object sender, RoutedEventArgs e)
         {
@@ -80,7 +80,6 @@ namespace Cookbook
             var _ingNum = sender as Button;
             ingNum = (int)_ingNum.Tag;        //This was set during initiation 
                                               //MessageBox.Show(resp.ToString());
-
 
             //Functional stuff make pop up display right info
             //And display which step it's on
@@ -109,8 +108,11 @@ namespace Cookbook
             AmountBox.Clear();
             modBox.IsEnabled = true;
             modBox.Visibility = System.Windows.Visibility.Visible;
-            AmountBox.Text = (_recipe._ingredients[ingNum]._measurement).ToString();
+            AmountBox.Text = (_recipe._ingredients[ingNum]._measurement).ToString("###, #.##");
+
+
             ingBox.Text = _recipe._ingredients[ingNum]._mainText.ToString();
+
 
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -126,7 +128,6 @@ namespace Cookbook
 
             //GlobalData.Instance.modRecipeList.Add(_recipe);
         }
-
 
         //----------------------------------------This pages buttons -----------------------------------------
 
@@ -164,11 +165,27 @@ namespace Cookbook
         //Incomplete
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            double d;
+            //Parse the amount box
+            double d = -1;
+            bool frac;
+            string[] amount = AmountBox.Text.Split('/');
+            for (int i = 0; i < amount.Length; i++)
+            {
+                amount[i].Trim();
+            }
+            if (amount.Length == 2 && Double.TryParse(amount[0].ToString(), out d) && Double.TryParse(amount[1].ToString(), out d))
+            {
+                frac = true;
+            }
+            else
+            {
+                frac = false;
+            }
 
             //Only do this when both are empty
             if (!string.IsNullOrWhiteSpace(ingBox.Text) && !string.IsNullOrWhiteSpace(AmountBox.Text) && measurementChanger.SelectedItem != null
-                && (unitChanger.SelectedItem  != null || measurementChanger.SelectedItem.ToString() == "NONE") && Double.TryParse(AmountBox.Text.ToString(), out d))
+            && (unitChanger.SelectedItem != null || measurementChanger.SelectedItem.ToString() == "NONE")
+            && (Double.TryParse(AmountBox.Text.ToString(), out d)) || frac == true) 
             {
                 //Exit the popup
                 modBox.IsEnabled = false;
@@ -177,7 +194,22 @@ namespace Cookbook
                 //When you are changing an item
                 if (!changeAddFlag)  
                 {
-                    _recipe._ingredients[ingNum]._measurement = d;//Convert.ToDouble(AmountBox.Text.ToString());
+                    if(frac == true)
+                    {
+                        //It's a fraction
+                        int num = Convert.ToInt32(amount[0]);
+                        int den = Convert.ToInt32(amount[1]);
+                        _recipe._ingredients[ingNum]._measurement = (double)num / (double)den;
+                    }
+                    else
+                    {
+                        //Double.TryParse(AmountBox.Text.ToString(), out d);
+                        _recipe._ingredients[ingNum]._measurement = d;
+                    }
+
+                    //_recipe._ingredients[ingNum]._measurement = d;//Convert.ToDouble(AmountBox.Text.ToString());
+
+
                     //Changer measurement number
                     //_recipe._ingredients[ingNum]._measurement = Convert.ToInt32(AmountBox.Text);
                     if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
@@ -218,7 +250,19 @@ namespace Cookbook
                     //You want to change ingredient name, amount, measurement type and units
                     Ingredient newIng = new Ingredient();
                     //need to be able to write fractions too right?
-                    newIng._measurement = Convert.ToDouble(AmountBox.Text.ToString());
+                    //newIng._measurement = Convert.ToDouble(AmountBox.Text.ToString());
+                    if (frac == true)
+                    {
+                        //It's a fraction
+                        int num = Convert.ToInt32(amount[0]);
+                        int den = Convert.ToInt32(amount[1]);
+                        newIng._measurement = (double)num / (double)den;
+                    }
+                    else
+                    {
+                        //Double.TryParse(AmountBox.Text.ToString(), out d);
+                        newIng._measurement = d;
+                    }
                     //TODO: measurement str
                     if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
                     {
@@ -274,8 +318,6 @@ namespace Cookbook
                 ((MainWindow)App.Current.MainWindow).Main.Content = doneUpdate;
             }
         }
-
-
 
         //DROP DOWN STUFF
         public void initUnitMenu()
@@ -347,7 +389,7 @@ namespace Cookbook
                     unitChanger.Items.Clear();
                     unitChanger.Text = "UNIT";
                     unitChanger.Items.Add("cloves");
-                    unitChanger.Items.Add("fillet");
+                    unitChanger.Items.Add("filet");
                     unitChanger.Items.Add("head");
                     unitChanger.IsEnabled = true;
 
