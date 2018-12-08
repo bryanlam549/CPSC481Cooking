@@ -185,7 +185,7 @@ namespace Cookbook
                 new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sesame oil"),
                 new Ingredient(0, "", Ingredient.UnitType.NONE, "NO UNIT", "ground white pepper"),
             },
-
+            //public Ingredient(double measurement, string measurementStr, UnitType unitType, string unitStr, string mainText)
 
             _equipment = new List<string> { "1 wok or heavy skillet", "stirring utensils" },
             _steps = new List<string> { @"To make the marinade, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
@@ -314,7 +314,7 @@ namespace Cookbook
         };
         #endregion
 
-        // 4.)
+        // 4.) Chow mein
         #region
         #region Ingredients
             /*
@@ -389,7 +389,7 @@ namespace Cookbook
 
         #endregion
 
-        // 5.)
+        // 5.) Salad
         #region
         #region Ingredients
             /*

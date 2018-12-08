@@ -70,34 +70,50 @@
         
         
         
-        <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,110.246" CornerRadius="20" 
+        <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,155.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
-                <Button Name="IncButton" Height="50" Width="50" Margin="192,10,0,0" 
-                        Click="IncButton_Click" Style="{StaticResource CustomButtonStyle}">
-                    <Button.Background>
-                        <ImageBrush x:Name="incrementBrush" ImageSource="{StaticResource incIcon}"/>
-                    </Button.Background>
-                </Button>
-                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <Label Name="stepTitle" Content="At Step:" FontSize="36" Margin="0,0,96,0" 
-                           FontWeight="DemiBold" Foreground="#FFC29A3A"/>
+                <Label Name="ingLabel" Content="Ingredient Name:" FontSize="36" 
+                       FontWeight="DemiBold" Foreground="#FFC29A3A"
+                       Margin="20,30,0,0" />
 
+                <TextBox x:Name="ingBox" FontSize="24" TextWrapping="Wrap" 
+                         Text="This is where steps are and stuff you know?" Margin="28,0,28,0" Height="65" />
+                <Label Content="Amount:" FontSize="36" Margin="20,50,0,0" 
+                       FontWeight="DemiBold" Foreground="#FFC29A3A"/>
+                
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
+                    <TextBox x:Name="AmountBox" FontSize="24" TextWrapping="Wrap" 
+                         Text="1" Margin="28,0,28,0" Height="58" Width="104"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    
+                    <ComboBox x:Name="measurementChanger" SelectedValuePath="Content" Text="MEAS" IsEditable="True" 
+                              IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,0,0" 
+                              VerticalAlignment="Center" Width="97" HorizontalContentAlignment="Center"
+                              VerticalContentAlignment="Center" FontSize="24" Height="60" 
+                              BorderThickness="2" SelectionChanged="measChanger_SelectionChanged">
+                    </ComboBox>
+                    <Button x:Name="measurementChangerButton" Width="97" Height="60" Margin="-97,0,0,0" HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" Background="White" BorderBrush="{x:Null}" 
+                            Foreground="{x:Null}" Click="measChangerButton_Click" 
+                            Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10"/>
 
-                    <TextBox x:Name="incBox"  Text="1" FontSize="24" TextWrapping="Wrap" 
-                           Width="64" HorizontalContentAlignment="Center" 
-                             VerticalContentAlignment="Center"/>
+                    <ComboBox x:Name="unitChanger" SelectedValuePath="Content" Text="UNIT" IsEditable="True" 
+                              IsReadOnly="True" HorizontalAlignment="Left" Margin="10,0,0,0" 
+                              VerticalAlignment="Center" Width="97" HorizontalContentAlignment="Center"
+                              VerticalContentAlignment="Center" FontSize="24" Height="60" 
+                              BorderThickness="2" SelectionChanged="unitChanger_SelectionChanged">
+                    </ComboBox>
+                    <Button x:Name="unitChangerButton" Width="97" Height="60" Margin="-97,0,0,0" HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" Background="White" BorderBrush="{x:Null}" 
+                            Foreground="{x:Null}" Click="unitChangerButton_Click" 
+                            Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10"/>
                 </StackPanel>
-                <Button Name="DecButton" Height="50" Width="50"  Margin="192,10,0,0" 
-                        Click="DecButton_Click" Style="{StaticResource CustomButtonStyle}">
-                    <Button.Background>
-                        <ImageBrush x:Name="decrementBrush" ImageSource="{StaticResource decIcon}"/>
-                    </Button.Background>
-                </Button>
 
-                <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
-                <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" 
-                         Text="This is where steps are" Margin="28,0,23.631,0" Height="166" />
+
+
+                
+
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
 

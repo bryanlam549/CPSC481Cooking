@@ -16,7 +16,12 @@
 
 
 
-        <ComboBox x:Name="unitChanger" SelectedValuePath="Content" Text="UNIT" IsEditable="True" IsReadOnly="True" HorizontalAlignment="Left" Margin="100,10,0,10" VerticalAlignment="Center" Width="97" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Height="60" BorderThickness="2" SelectionChanged="unitChanger_SelectionChanged">
+        <ComboBox x:Name="unitChanger" SelectedValuePath="Content" Text="UNIT" 
+                  IsEditable="True" IsReadOnly="True" HorizontalAlignment="Left" 
+                  Margin="100,10,0,10" VerticalAlignment="Center" Width="97" 
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                  FontSize="24" Height="60" BorderThickness="2" 
+SelectionChanged="unitChanger_SelectionChanged">
 
 
         </ComboBox>

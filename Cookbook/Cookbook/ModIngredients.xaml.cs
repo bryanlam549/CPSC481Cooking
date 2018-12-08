@@ -39,8 +39,18 @@ namespace Cookbook
             {
 
                 //MessageBox.Show(_recipe._ingredients[i]._name);
-                /*
-                ModUserControl ing = new ModUserControl(_recipe._ingredients[i]._name);
+                ModUserControl ing;
+                if (_recipe._ingredients[i]._unitStr != "NO UNIT")
+                {
+                    ing = new ModUserControl(_recipe._ingredients[i]._measurementStr + " " + _recipe._ingredients[i]._unitStr
+                        + " " + _recipe._ingredients[i]._mainText);
+                }
+                else
+                {
+                    ing = new ModUserControl(_recipe._ingredients[i]._measurementStr 
+                        + " " + _recipe._ingredients[i]._mainText);
+                }
+
                 ing.Change.Tag = i;    //This will be used to determine which user control is connected to which button
                 ing.Delete.Tag = i;    //Same as above to use it for delete button
                 //Instead of this...Use a user control...
@@ -55,10 +65,11 @@ namespace Cookbook
                 ing.Delete.Click += Delete_Click;
 
                 Ings.Children.Add(ing);
-                */
-
             }
+            initUnitMenu();
         }
+
+
 
         //-------------------------User control buttons--------------------------------
         private void Change_Click(object sender, RoutedEventArgs e)
@@ -69,31 +80,14 @@ namespace Cookbook
             var _ingNum = sender as Button;
             ingNum = (int)_ingNum.Tag;        //This was set during initiation 
                                                   //MessageBox.Show(resp.ToString());
-
+            
             //Functional stuff, make the popup, display the step that's going to be changed in the text box
             //And display which step it's on
-            stepBox.Clear();
+            AmountBox.Clear();
             modBox.IsEnabled = true;
             modBox.Visibility = System.Windows.Visibility.Visible;
-            incBox.Text = (ingNum + 1).ToString();
-            stepBox.Text = _recipe._ingredients[ingNum].ToString();
-
-            //Depending on which step its on, disable up and down arrow
-            if (ingNum + 1 == _recipe._ingredients.Count)
-            {
-                IncButton.IsEnabled = false;
-                incrementBrush.ImageSource = incfadeicon;
-                DecButton.IsEnabled = true;
-                decrementBrush.ImageSource = decicon;
-            }
-            else if (ingNum + 1 == 1)
-            {
-                DecButton.IsEnabled = false;
-                decrementBrush.ImageSource = decfadeicon;
-                IncButton.IsEnabled = true;
-                incrementBrush.ImageSource = incicon;
-            }
-
+            AmountBox.Text = (_recipe._ingredients[ingNum]._measurementStr).ToString();
+            ingBox.Text = _recipe._ingredients[ingNum]._mainText.ToString();
 
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -112,42 +106,38 @@ namespace Cookbook
 
 
         //----------------------------------------This pages buttons -----------------------------------------
+
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            
             mainGrid.IsEnabled = false;
             changeAddFlag = true;
             //Functional stuff, make the popup, display the step that's going to be changed in the text box
             //And display which step it's on
-            stepBox.Clear();
+            ingBox.Clear();
+            AmountBox.Clear();
             modBox.IsEnabled = true;
             modBox.Visibility = System.Windows.Visibility.Visible;
-            incBox.Text = ((_recipe._ingredients.Count) + 1).ToString();    //Always make increment box at the max
-            stepBox.Text = "";
-            IncButton.IsEnabled = false;
-            incrementBrush.ImageSource = incfadeicon;
-            if (_recipe._ingredients.Count == 0)
-            {
-                DecButton.IsEnabled = false;
-                decrementBrush.ImageSource = decfadeicon;
-            }
-
+            AmountBox.Text = "";
+            ingBox.Text = "";
+                       
         }
-
+        //Back button
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
         }
-
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             modBox.IsEnabled = false;
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
             mainGrid.IsEnabled = true;
         }
-
+        //Incomplete
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(stepBox.Text))
+            //Only do this when both are empty
+            if (!string.IsNullOrWhiteSpace(ingBox.Text) && !string.IsNullOrWhiteSpace(AmountBox.Text))
             {
                 //Exit the popup
                 modBox.IsEnabled = false;
@@ -155,124 +145,80 @@ namespace Cookbook
 
                 if (!changeAddFlag)  //When change flag is set
                 {
-                    //Change the step and place it accordingly
-                    _recipe._ingredients.RemoveAt(ingNum);
-                    //Steps.Children.RemoveAt(stepNum);
-                    int x = 0;
-                    if (Int32.TryParse(incBox.Text, out x))
-                    {
-                        x = Int32.Parse(incBox.Text) - 1;
-                    }
-                    //Need to instantiate an ingredient here
-                    //_recipe._ingredients.Insert(x, stepBox.Text);
+                    /*public double _measurement; // e.g. 1.5
+                    public string _measurementStr; // e.g. 1/2
+                    public UnitType _unitType;
+                    public string _unitStr; // starting unit text can be hardcoded (this is text that goes in combobox at start or in specialtext)
+                    public string _mainText;
+                    // -==-=-=-=-=-=-=-=
+                    public bool _isChecked = false;
+                    public bool _hasStandardUnit = false; // if true, then the unitChanger will be visible...
+                    public bool _hasSpecialUnit = false; // if true then the specialText will be visible...
+                    */         //_recipe._ingredients[ingNum]._measurement = Convert.ToInt32(AmountBox.Text);
 
-                    //Make the new step and add it in
-                    //ModUserControl changedStep = new ModUserControl(stepBox.Text);
-                    /*
-                    changedStep.Change.Tag = x;    //This will be used to determine which user control is connected to which button
-                    changedStep.Delete.Tag = x;    //Same as above to use it for delete button
-                    changedStep.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-                    changedStep.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-                    changedStep.Change.Click += Change_Click;
-                    changedStep.Delete.Click += Delete_Click;
-                    Steps.Children.Insert(x, changedStep);
-                    */
-                    //OR i can just update the page
+                    /*ing = new ModUserControl(_recipe._ingredients[i]._measurementStr + " " + _recipe._ingredients[i]._unitStr
+                        + " " + _recipe._ingredients[i]._mainText);*/
+
+                    //measurementChanger.SelectedItem.ToString()
+                    //You want to change ingredient name, amount, measurement type and units
+
+                    //_recipe._ingredients[ingNum]._measurement = Convert.ToInt32(AmountBox.Text);
+                    //_recipe._ingredients[ingNum].convertMeasurement(AmountBox.Text);
+
+                    //Change measurement
+                    _recipe._ingredients[ingNum]._measurement = Convert.ToInt32(AmountBox.Text);
+                    if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
+                    {
+                        _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.VOLUME;
+                    }
+                    else if (measurementChanger.SelectedItem.ToString() == "MASS") // mass
+                    {
+                        _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.MASS;
+                    }
+                    else if (measurementChanger.SelectedItem.ToString() == "LEN.")// length
+                    {
+                        _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.LENGTH;
+                    }
+                    else
+                    {
+
+                    }
+                    //_recipe._ingredients[ingNum]._measurementStr = _recipe._ingredients[ingNum].convertMeasurement();
+                    _recipe._ingredients[ingNum].convertMeasurement(unitChanger.SelectedItem.ToString());
+
+
+                    //_recipe._ingredients[ingNum]._unitType = 
+                    //_recipe._ingredients[ingNum]._measurementStr = AmountBox.Text;
+                    //Change uit
+
+                    _recipe._ingredients[ingNum]._unitStr = ingBox.Text;
+
+                     //change name
+                    _recipe._ingredients[ingNum]._mainText = ingBox.Text;
+                    //Probably actually want to change the actual data too
+
                 }
-                else
+                else //Don't delete, just add
                 {
-                    int x = 0;
-                    if (Int32.TryParse(incBox.Text, out x))
-                    {
-                        x = Int32.Parse(incBox.Text) - 1;
-                    }
-                    //_recipe._ingredients.Insert(x, stepBox.Text);
-
+                    //Instantiate more stuff tha this
+                    //You want to change ingredient name, amount, measurement type and units
+                    Ingredient newIng = new Ingredient();
+                    newIng._mainText = ingBox.Text;
+                    newIng._measurementStr = AmountBox.Text;
+                    //newIng._unitStr = ingBox.Text;
+                    _recipe._ingredients.Add(newIng);
                 }
                 ModIngredients updatePage = new ModIngredients(_recipe, recipeNum);
                 ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
                 mainGrid.IsEnabled = true;
-            }
-            else
-            {
-                MessageBox.Show("One does not simply put in an empty step!!!!!! You stupid Biiimbo");
-            }
 
-        }
-
-        private void IncButton_Click(object sender, RoutedEventArgs e)
-        {
-            int x = 0;
-            //If the textbox is an integer...
-            if (Int32.TryParse(incBox.Text, out x))
-            {
-
-                x = Int32.Parse(incBox.Text);
-                //If x is not maximum step then you can't increase anymore.
-                x++;
-                incBox.Text = x.ToString();
-                //When you are in change mode
-                if (!changeAddFlag)
-                {
-                    if (x == _recipe._ingredients.Count)
-                    {
-                        IncButton.IsEnabled = false;
-                        incrementBrush.ImageSource = incfadeicon;
-                        DecButton.IsEnabled = true;
-                        decrementBrush.ImageSource = decicon;
                     }
-                    else
-                    {
-                        DecButton.IsEnabled = true;
-                        decrementBrush.ImageSource = decicon;
-                    }
-                }
-                //When you are in add mode
                 else
                 {
-                    if (x == _recipe._ingredients.Count + 1)
-                    {
-                        IncButton.IsEnabled = false;
-                        incrementBrush.ImageSource = incfadeicon;
-                        DecButton.IsEnabled = true;
-                        decrementBrush.ImageSource = decicon;
-                    }
-                    else
-                    {
-                        DecButton.IsEnabled = true;
-                        incrementBrush.ImageSource = incicon;
-                    }
+                    MessageBox.Show("Cannot leave ingredient name/amount box empty");
                 }
-            }
+
         }
-
-        private void DecButton_Click(object sender, RoutedEventArgs e)
-        {
-            int x = 0;
-            //If the textbox is an integer...
-            if (Int32.TryParse(incBox.Text, out x))
-            {
-
-                x = Int32.Parse(incBox.Text);
-                //If x is not maximum step then you can't increase anymore.
-                x--;
-                incBox.Text = x.ToString();
-                if (x == 1)
-                {
-                    DecButton.IsEnabled = false;
-                    decrementBrush.ImageSource = decfadeicon;
-                    IncButton.IsEnabled = true;
-                    incrementBrush.ImageSource = incicon;
-                }
-                else
-                {
-                    IncButton.IsEnabled = true;
-                    incrementBrush.ImageSource = incicon;
-                }
-
-            }
-        }
-
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
             if (_recipe._ingredients.Count == 0)
@@ -288,5 +234,70 @@ namespace Cookbook
         }
 
 
+
+        //DROP DOWN STUFF
+        public void initUnitMenu()
+        {
+            measurementChanger.Items.Add("VOL.");
+            measurementChanger.Items.Add("MASS");
+            measurementChanger.Items.Add("LEN.");
+            unitChanger.IsEnabled = false;
+        }
+
+        private void unitChangerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(unitChanger.IsEnabled)
+                unitChanger.IsDropDownOpen = !unitChanger.IsDropDownOpen;
+        }
+
+        private void measChangerButton_Click(object sender, RoutedEventArgs e)
+        {
+            measurementChanger.IsDropDownOpen = !measurementChanger.IsDropDownOpen;
+        }
+
+        private void unitChanger_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Nothing here i guess
+        }
+        private void measChanger_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
+            {
+                unitChanger.Items.Clear();
+                unitChanger.Text = "UNIT";
+                unitChanger.Items.Add(Ingredient.CUPS);
+                unitChanger.Items.Add(Ingredient.FLOZ);
+                unitChanger.Items.Add(Ingredient.ML);
+                unitChanger.Items.Add(Ingredient.L);
+                unitChanger.Items.Add(Ingredient.TBSP);
+                unitChanger.Items.Add(Ingredient.TSP);
+                unitChanger.IsEnabled = true;
+            }
+            else if (measurementChanger.SelectedItem.ToString() == "MASS") // mass
+            {
+                unitChanger.Items.Clear();
+                unitChanger.Text = "UNIT";
+                unitChanger.Items.Add(Ingredient.G);
+                unitChanger.Items.Add(Ingredient.KG);
+                unitChanger.Items.Add(Ingredient.LBS);
+                unitChanger.Items.Add(Ingredient.MG);
+                unitChanger.Items.Add(Ingredient.OZ);
+                unitChanger.IsEnabled = true;
+            }
+            else if (measurementChanger.SelectedItem.ToString() == "LEN.")// length
+            {
+                unitChanger.Items.Clear();
+                unitChanger.Text = "UNIT";
+                unitChanger.Items.Add(Ingredient.CM);
+                unitChanger.Items.Add(Ingredient.IN);
+                unitChanger.Items.Add(Ingredient.M);
+                unitChanger.Items.Add(Ingredient.MM);
+                unitChanger.IsEnabled = true;
+            }
+            else
+            {
+                unitChanger.IsEnabled = false;
+            }
+        }
     }
 }
