@@ -167,8 +167,7 @@ namespace Cookbook
             _servings = 4,
             _ingredientCount = 14,
             _category = Recipe.Categories.CHINESE,
-            //_ingredients = new List<Ingredient> {darksoysauce, oystersauce, sugar, ginger, pork, eggnoodles, cookingoil, garlic, greenonions,
-            //  napacabbage, cornstarch, seasameoil, whitepepper},
+
             _ingredients = new List<Ingredient>
             {
                 new Ingredient((double)1/3, "1/3", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "dark soy sauce"),
@@ -185,8 +184,6 @@ namespace Cookbook
                 new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cornstarch"),
                 new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sesame oil"),
                 new Ingredient(0, "", Ingredient.UnitType.NONE, "NO UNIT", "ground white pepper"),
-
-
             },
 
 
@@ -248,7 +245,14 @@ namespace Cookbook
             _servings = 1,
             _ingredientCount = 3,
             _category = Recipe.Categories.BEEF,
-            //_ingredients = new List<Ingredient> { hambuns, hampatty, ketchup },
+
+            _ingredients = new List<Ingredient>
+            {
+                new Ingredient(2.0, "2", Ingredient.UnitType.NONE, "NO UNIT", "hamburger buns"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.NONE, "NO UNIT", "hamburger patties"),
+                new Ingredient(5.0, "5", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "ketchup"),
+            },
+
             _equipment = new List<string> { "Frying Pan", "Grill", "Oven" },
             _steps = new List<string> { @"Grill Patty",
                                         @"Fry Patty", @"Steam Patty for 10 minutes", @"Delicately Place on buns", @"Pour your entire 5 cups of ketchup"
@@ -292,6 +296,17 @@ namespace Cookbook
             _ingredientCount = 4,
             _category = Recipe.Categories.FISH,
             //_ingredients = new List<Ingredient> {mackeral, sage, garlic, cookingoil},
+
+            _ingredients = new List<Ingredient>
+            {
+                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "filets", "mackeral"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sage"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "cloves", "garlic"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cooking oil"),
+            },
+
+
+
             _equipment = new List<string> { "Oven", "4\" Chef Knife","Baking tray", "Blender" },
             _steps = new List<string> { @"Gut the Mackeral, if not already gutted", @"Chop some 2 cloves of garlic", @"Heat 2 TBSP of cooking oil and briefly,"
                                         + "fry with the garlic, sprig of sage and the fish", @"Place fish in the baking tray and cook at 350F",
@@ -353,7 +368,17 @@ namespace Cookbook
             _servings = 4,
             _ingredientCount = 6,
             _category = Recipe.Categories.CHINESE,
-            //_ingredients = new List<Ingredient> { chowmeinNoodles, bonelesschickenthighs, broth, seasameoil, darksoysauce, cornstarch },
+
+            _ingredients = new List<Ingredient>
+            {
+                new Ingredient(170, "170", Ingredient.UnitType.MASS, Ingredient.G, "chow mein noodles"),
+                new Ingredient(454, "454", Ingredient.UnitType.MASS, Ingredient.G, "chicken thighs"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "broth"),
+                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sesame oil"),
+                new Ingredient((double)1/3, "1/3", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "dark soy sauce"),
+                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cornstarch"),
+            },
+
             _equipment = new List<string> { "Whisk", "Non-Stick-Skillet" },
             _steps = new List<string> { @"In a small bowl, whisk together dark soy sauce, cornstarch and broth. Set aside.", @"Cook chow mein noodles according to package instructions",
                                         @"In a large non-stick skillet, heat oil over medium high heat. Add chicken and cook until chicken is browned. Stir in the carrots and cook for 2 minutes",
@@ -381,7 +406,7 @@ namespace Cookbook
         public Recipe _salad = new Recipe()
         {
             _isFavourite = true,
-            _name = "Head of Lettece",
+            _name = "Head of Lettuce",
             _image = (BitmapImage)Application.Current.Resources["saladIcon"],
             _difficulty = Recipe.Difficulties.EASY,
             _rating = 1,
@@ -391,6 +416,12 @@ namespace Cookbook
             _ingredientCount = 1,
             _category = Recipe.Categories.VEGETARIAN,
             //_ingredients = new List<Ingredient> { lettuce },
+
+            _ingredients = new List<Ingredient>
+            {
+                new Ingredient(1, "1", Ingredient.UnitType.SPECIAL, "head", "lettuce"),
+            },
+
             _equipment = new List<string> { },
             _steps = new List<string> { @"Wash head of lettece", @"Enjoy" }
         };

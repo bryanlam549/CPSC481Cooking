@@ -202,6 +202,9 @@ namespace Cookbook
         {
             // 1. convert to kg first
 
+            //Debug.WriteLine("HEREIAM");
+            //Debug.WriteLine(_measurement);
+
             double interMeasurement = 0;
 
             switch (_unitStr) // lookup current units by string
@@ -223,25 +226,27 @@ namespace Cookbook
                     break;
             }
 
+            //Debug.WriteLine(interMeasurement);
+
             // 2. now convert from kg to desired new unit...
             double newMeasurement = 0;
 
             switch (newUnitStr) // lookup new units by string
             {
                 case G:
-                    interMeasurement = 1000 * _measurement;
+                    newMeasurement = 1000 * interMeasurement;
                     break;
                 case KG:
-                    interMeasurement = _measurement;
+                    newMeasurement = interMeasurement;
                     break;
                 case LBS:
-                    interMeasurement = 2.20462 * _measurement;
+                    newMeasurement = 2.20462 * interMeasurement;
                     break;
                 case MG:
-                    interMeasurement = 1000000 * _measurement;
+                    newMeasurement = 1000000 * interMeasurement;
                     break;
                 case OZ:
-                    interMeasurement = 35.274 * _measurement;
+                    newMeasurement = 35.274 * interMeasurement;
                     break;
             }
 
@@ -287,16 +292,16 @@ namespace Cookbook
             switch (newUnitStr) // lookup new units by string
             {
                 case CM:
-                    interMeasurement = _measurement;
+                    newMeasurement = interMeasurement;
                     break;
                 case IN:
-                    interMeasurement = 0.393701 * _measurement;
+                    newMeasurement = 0.393701 * interMeasurement;
                     break;
                 case M:
-                    interMeasurement = 0.01 * _measurement;
+                    newMeasurement = 0.01 * interMeasurement;
                     break;
                 case MM:
-                    interMeasurement = 10 * _measurement;
+                    newMeasurement = 10 * interMeasurement;
                     break;
             }
 
@@ -316,6 +321,8 @@ namespace Cookbook
         private void updateMeasurementStr()
         {
             // take new _measurement value, convert to either fractional form (or decimal form if small)
+
+            //Debug.WriteLine(_measurement);
 
             double threshold = (double) 1 / 16;
 
@@ -448,8 +455,6 @@ namespace Cookbook
             {
                 fracTerm = "";
             }
-
-            // BUG: unitPart being set to 2... FIXED (by double div)
 
             //Debug.WriteLine(unitPart);
 
