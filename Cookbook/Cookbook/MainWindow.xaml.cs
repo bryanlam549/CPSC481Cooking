@@ -108,7 +108,12 @@ namespace Cookbook
             }
             else
             {
-                Main.Content = new RecipeProfilePage(GlobalData.Instance.currentRecipe);
+                // should not create new instance here
+                // Main.Content = new RecipeProfilePage(GlobalData.Instance.currentRecipe);
+                Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
+                RecipeProfilePage recipeProfile = recipes[GlobalData.Instance.currentRecipe._name];
+                Main.Content = recipeProfile;
+
             }
             
         }

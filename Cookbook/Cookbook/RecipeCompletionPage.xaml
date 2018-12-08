@@ -91,19 +91,18 @@
                     </Button.Effect>
                 </Button>
 
-                <TextBlock x:Name="_recipeName" Grid.Column="2" Grid.ColumnSpan="3"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0">
-                </TextBlock>
+                <TextBlock x:Name="_recipeName" Text="" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0"/>
 
-                <TextBlock Text="Recipe Complete!" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="70,0,0,0"/>
-                <TextBlock Text="Rate" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="66,70,0,0"/>
-                <TextBlock Text="Favourite" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="31,46,0,0"/>
-                <TextBlock Text="Share" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="58,28,0,0"/>
+                <TextBlock Text="Recipe Complete!" Grid.Row="3" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907"/>
+                <TextBlock Text="Rate" Grid.Row="3" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,70,0,0"/>
+                <TextBlock Text="Favourite" Grid.Row="4" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,46,0,0"/>
+                <TextBlock Text="Share" Grid.Row="5" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,28,0,0"/>
 
                 <local:TransitionPageButton x:Name="_back" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
                 <local:TransitionPageButton x:Name="_next" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" Grid.RowSpan="2"/>
             </Grid>
 
-            <local:CompletionPageRatingControl x:Name="rating" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="93" Margin="0, 40, 0, 0"/>
+            <local:CompletionPageRatingControl x:Name="rating" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="93" Margin="0, 42, 0, 0"/>
             <local:HeartButton x:Name="favHeart" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 228, 0, 0"/>
 
 

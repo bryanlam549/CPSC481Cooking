@@ -194,14 +194,15 @@ namespace Cookbook
             _steps = new List<string> { @"To make the marinade, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
                                         +"Place the pork in the marinade and let sit for 10 minutes",
                                         @"Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside)."
-                                        +"Remove the pork and set aside." +
-                                        "Next fry the white parts of the cabbage and green onions along with the garlic for 30 seconds or until tender." +
-                                        "Return the pork to the pan along with the reserved marinade, the sesame oil, chicken/cornstarch mixture and the green parts of the cabbage and green onions." +
+                                        +"Remove the pork and set aside.",
+                                        @"Next fry the white parts of the cabbage and green onions along with the garlic for 30 seconds or until tender.",
+                                        @"Return the pork to the pan along with the reserved marinade, the sesame oil, chicken/cornstarch mixture and the green parts of the cabbage and green onions." +
                                         "Cook for 30 seconds."+
                                         "Add the noodles and stir until combined."+
                                         "Add white pepper to taste."+
-                                        "Serve immediately."}
-    };
+                                        "Serve immediately."},
+            _timerValuesForSteps = new List<int> { 600, 60, 30, 30}
+        };
         #endregion
 
         // 2.) Burger:

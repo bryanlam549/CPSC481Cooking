@@ -39,7 +39,7 @@
             </Button.Effect>
         </Button>
 
-        <TextBlock Text="Change Password" HorizontalAlignment="Right" VerticalAlignment="top" FontSize="20" Margin="0,412,9,0"/>
+        <TextBlock x:Name="_changePass" HorizontalAlignment="Right" VerticalAlignment="top" FontSize="20" Margin="0,412,9,0"/>
 
         <TextBlock x:Name="_tempPref" Text="" HorizontalAlignment="Center" Height="175" FontSize="30" Visibility="Hidden"/>
         <TextBlock x:Name="_weightPref" Text="" HorizontalAlignment="Center" Height="175" FontSize="30" Visibility="Hidden"/>

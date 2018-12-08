@@ -41,8 +41,19 @@ namespace Cookbook
             accountList.Add("123456789123456789123456789");
             accountList.Add("2");
             accountList.Add("2");
+
+            Hyperlink link = new Hyperlink();
+            link.IsEnabled = true;
+            link.TextDecorations = null;
+            link.Inlines.Add("Forgot Password?");
+            link.Click += forgotPass;
+            _forgotPass.Inlines.Add(link);
         }
 
+        private void forgotPass(object sender, RoutedEventArgs e)
+        {
+            // password stuff here
+        }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
@@ -58,6 +69,8 @@ namespace Cookbook
             }
             else
             {
+                _name.Foreground = Brushes.Red;
+                _pass.Foreground = Brushes.Red;
                 invalidInput.Text = "Invalid username or password";
                
             }
@@ -67,11 +80,15 @@ namespace Cookbook
         private void UserInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             invalidInput.Text = "";
+            _name.Foreground = Brushes.Black;
+            _pass.Foreground = Brushes.Black;
         }
 
         private void PasswordInput_PasswordChanged(object sender, RoutedEventArgs e)
         {
             invalidInput.Text = "";
+            _pass.Foreground = Brushes.Black;
+            _name.Foreground = Brushes.Black;
         }
 
 

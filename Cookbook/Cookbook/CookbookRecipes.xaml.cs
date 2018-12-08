@@ -229,11 +229,16 @@ namespace Cookbook
                         }
                         RecipeProfilePage profile = _recipePageList[_recipeList[j]._name];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
 
-                        //resetting the start button to "START" since its changed to continue during navigation bak from steps
-                        profile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "START");
 
                         //Maybe set a flag? Also need to set something as current recipe
                         GlobalData.Instance.currentRecipe = _recipeList[j];
+
+                        //resetting the start button to "START" since its changed to continue during navigation bak from steps
+                        profile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "START");
+                        //resetting current step to zero when accessed from favourites page
+                        profile._currentStep = 0;
+                        profile._completionPage = null;
+
                         ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
                         ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
                         ((MainWindow)App.Current.MainWindow).Main.Content = profile;

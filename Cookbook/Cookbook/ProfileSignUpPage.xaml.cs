@@ -49,14 +49,22 @@ namespace Cookbook
                 
                 invalidInput.Text = "Highlighted field(s) are required.";
             }
+            else if (nameInput.Text.Length < 4)
+            {
+                invalidInput.Text = "Username needs to be at least 4 characters.";
+                nameText.Foreground = Brushes.Red;
+
+            }
             else if (passwordInput.Password.Length < 8)
             {
                 invalidInput.Text = "Password needs to be at least 8 characters.";
-                
+                passText.Foreground = Brushes.Red;
+
             }
             else if (!(passwordInput.Password.Contains("1") || passwordInput.Password.Contains("2") || passwordInput.Password.Contains("3") || passwordInput.Password.Contains("4") || passwordInput.Password.Contains("5") || passwordInput.Password.Contains("6") || passwordInput.Password.Contains("7") || passwordInput.Password.Contains("8") || passwordInput.Password.Contains("9") || passwordInput.Password.Contains("0")))
             {
                 invalidInput.Text = "Password needs to contain at least 1 digit.";
+                passText.Foreground = Brushes.Red;
             }
             else
             {
@@ -82,17 +90,23 @@ namespace Cookbook
         {
             invalidInput.Text = "";
             nameText.Foreground = Brushes.Black;
+            emailText.Foreground = Brushes.Black;
+            passText.Foreground = Brushes.Black;
         }
 
         private void EmailInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             invalidInput.Text = "";
+            nameText.Foreground = Brushes.Black;
             emailText.Foreground = Brushes.Black;
+            passText.Foreground = Brushes.Black;
         }
 
         private void PasswordInput_PasswordChanged(object sender, RoutedEventArgs e)
         {
             invalidInput.Text = "";
+            nameText.Foreground = Brushes.Black;
+            emailText.Foreground = Brushes.Black;
             passText.Foreground = Brushes.Black;
         }
     }
