@@ -33,128 +33,6 @@ namespace Cookbook
         // 1.) Shanghai Noodles:
         #region SHANGAI NOODLES
         // ~~~~~~init the ingredients and fill ingredients list here
-        #region //Ingredients
-            /*
-        public static Ingredient darksoysauce = new Ingredient()
-        {
-            //_name = "Dark Soy Sauce",
-            //_measurement = 1 / 3,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient oystersauce = new Ingredient()
-        {
-            //_name = "Oyster Sauce",
-            //_measurement = 1 / 4,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-
-        public static Ingredient sugar = new Ingredient()
-        {
-            //_name = "Sugar",
-            //_measurement = 2,
-            //_standardUnit = Ingredient.Units.TBSP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-
-        public static Ingredient ginger = new Ingredient()
-        {
-            //_name = "Fresh Ginger",
-            //_measurement = 1.5,
-            //_standardUnit = Ingredient.Units.TBSP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient pork = new Ingredient()
-        {
-            //_name = "Pork Tenderloin",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.LB,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient eggnoodles = new Ingredient()
-        {
-            //_name = "Chinese Egg Noodles",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.LB,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-
-        public static Ingredient cookingoil = new Ingredient()
-        {
-            //_name = "Cooking Oil",
-            //_measurement = 2,
-            //_standardUnit = Ingredient.Units.TBSP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-
-        public static Ingredient garlic = new Ingredient()
-        {
-            //_name = "garlic",
-            //_measurement = 2,
-            //_standardUnit = Ingredient.Units.CUP, //??? 
-            //_otherUnit = "Cloves"  
-            //Don't you need a list of substitutions here? empty if none?
-        };
-
-        public static Ingredient greenonions = new Ingredient()
-        {
-            //_name = "Green Onions",
-            //_measurement = 6,
-            //_standardUnit = Ingredient.Units.CUP, //???
-            //_otherUnit = "Whole"    //???
-            //Don't you need a list of substitutions here? empty if none?
-        };
-
-        public static Ingredient napacabbage = new Ingredient()
-        {
-            //_name = "Napa Cabbage",
-            //_measurement = 1/2,
-            //_standardUnit = Ingredient.Units.CUP, //???
-            //_otherUnit = "Head"  
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient chickenstock = new Ingredient()
-        {
-            //_name = "Chicken Stock",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient cornstarch= new Ingredient()
-        {
-            //_name = "Corn Starch",
-            //_measurement = 1.5,
-            //_standardUnit = Ingredient.Units.TBSP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient seasameoil = new Ingredient()
-        {
-            //_name = "Seasame Oil",
-            //_measurement = 1.5,
-            //_standardUnit = Ingredient.Units.TBSP,
-            //_otherUnit = ""  //I don't know what to put here
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient whitepepper = new Ingredient()
-        {
-            //_name = "Ground White Pepper",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = ""  //???
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        */
-        #endregion
         public Recipe _shanghaiNoodlesRecipe = new Recipe()
         {
             _isFavourite = true,
@@ -205,34 +83,6 @@ namespace Cookbook
         // 2.) Burger:
         #region BURGER
         // ~~~~~~init the ingredients and fill ingredients list here
-        #region //Ingredients
-            /*
-        public static Ingredient hambuns = new Ingredient()
-        {
-            //_name = "Hamburger Buns",
-            //_measurement = 2,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = "Whole"
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient hampatty = new Ingredient()
-        {
-            //_name = "Ham Patty",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = "Whole"
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient ketchup = new Ingredient()
-        {
-            //_name = "Ketchup",
-            //_measurement = 5,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = ""
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        */
-        #endregion
         public Recipe _burger = new Recipe()
         {
             _isFavourite = true,
@@ -261,27 +111,6 @@ namespace Cookbook
 
         // 3.) Holy Mackeral
         #region HOLY MACKERAL
-        #region Ingredients
-        //Will reuse cooking oil and cloves from Shanghai noodle recipe
-        /*
-        public static Ingredient mackeral = new Ingredient()
-        {
-            //_name = "Mackeral",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = "Whole"
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient sage = new Ingredient()
-        {
-            //_name = "Sage",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = "Sprig"
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        */
-        #endregion
         public Recipe _holymackeral = new Recipe()
         {
             _isFavourite = true,
@@ -315,45 +144,6 @@ namespace Cookbook
 
         // 4.) Chow mein
         #region
-        #region Ingredients
-            /*
-        //Will reuse cooking oil and cloves from Shanghai noodle recipe
-        public static Ingredient chowmeinNoodles = new Ingredient()
-        {
-            //_name = "Chow Mein Noodles",
-            //_measurement = 170,
-            //_standardUnit = Ingredient.Units.G,
-            //_otherUnit = ""
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        //Will reuse cooking oil and cloves from Shanghai noodle recipe
-        public static Ingredient chickenthighs = new Ingredient()
-        {
-            //_name = "ChickenThighs",
-            //_measurement = 454,
-            //_standardUnit = Ingredient.Units.G,
-            //_otherUnit = ""
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        public static Ingredient bonelesschickenthighs = new Ingredient()
-        {
-            //_name = "ChickenThighs",
-            //_measurement = 454,
-            //_standardUnit = Ingredient.Units.G,
-            //_otherUnit = ""
-            //Don't you need a list of substitutions here? empty if none?
-        };
-
-        public static Ingredient broth = new Ingredient()
-        {
-            //_name = "Broth",
-            //_measurement = 2,
-            //_standardUnit = Ingredient.Units.CUP,
-            //_otherUnit = ""
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        */
-        #endregion
 
         public Recipe _chowmein = new Recipe()
         {
@@ -390,18 +180,6 @@ namespace Cookbook
 
         // 5.) Salad
         #region
-        #region Ingredients
-            /*
-        public static Ingredient lettuce = new Ingredient()
-        {
-            //_name = "Lettece",
-            //_measurement = 1,
-            //_standardUnit = Ingredient.Units.CUP, //???
-            //_otherUnit = "Head"
-            //Don't you need a list of substitutions here? empty if none?
-        };
-        */
-        #endregion
         public Recipe _salad = new Recipe()
         {
             _isFavourite = true,

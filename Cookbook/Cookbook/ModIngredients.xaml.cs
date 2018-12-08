@@ -79,14 +79,37 @@ namespace Cookbook
             //This is important... Used to determine which step it's on
             var _ingNum = sender as Button;
             ingNum = (int)_ingNum.Tag;        //This was set during initiation 
-                                                  //MessageBox.Show(resp.ToString());
-            
-            //Functional stuff, make the popup, display the step that's going to be changed in the text box
+                                              //MessageBox.Show(resp.ToString());
+
+
+            //Functional stuff make pop up display right info
             //And display which step it's on
+            if (_recipe._ingredients[ingNum]._unitType.ToString() == "VOLUME")
+                measurementChanger.SelectedItem = "VOL.";
+            else if (_recipe._ingredients[ingNum]._unitType.ToString() == "MASS")
+                measurementChanger.SelectedItem = "MASS";
+            else if (_recipe._ingredients[ingNum]._unitType.ToString() == "LENGTH")
+                measurementChanger.SelectedItem = "LEN.";
+            else if (_recipe._ingredients[ingNum]._unitType.ToString() == "SPECIAL")
+                measurementChanger.SelectedItem = "SPEC.";
+            else if (_recipe._ingredients[ingNum]._unitType.ToString() == "NONE")
+                measurementChanger.SelectedItem = "NONE";
+            if (_recipe._ingredients[ingNum]._unitType.ToString() == "NONE")
+            {
+                unitChanger.Items.Clear();
+                unitChanger.Text = "N/A";
+                unitChanger.IsEnabled = false;
+            }
+            else
+            {
+                unitChanger.IsEnabled = true;
+                unitChanger.SelectedItem = _recipe._ingredients[ingNum]._unitStr;
+            }
+
             AmountBox.Clear();
             modBox.IsEnabled = true;
             modBox.Visibility = System.Windows.Visibility.Visible;
-            AmountBox.Text = (_recipe._ingredients[ingNum]._measurementStr).ToString();
+            AmountBox.Text = (_recipe._ingredients[ingNum]._measurement).ToString();
             ingBox.Text = _recipe._ingredients[ingNum]._mainText.ToString();
 
         }
@@ -116,6 +139,11 @@ namespace Cookbook
             //And display which step it's on
             ingBox.Clear();
             AmountBox.Clear();
+
+            //measurementChanger.SelectedItem = null;
+            measurementChanger.Text = "MEAS.";
+            unitChanger.Text = "UNIT";
+
             modBox.IsEnabled = true;
             modBox.Visibility = System.Windows.Visibility.Visible;
             AmountBox.Text = "";
@@ -136,37 +164,22 @@ namespace Cookbook
         //Incomplete
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            double d;
+
             //Only do this when both are empty
-            if (!string.IsNullOrWhiteSpace(ingBox.Text) && !string.IsNullOrWhiteSpace(AmountBox.Text))
+            if (!string.IsNullOrWhiteSpace(ingBox.Text) && !string.IsNullOrWhiteSpace(AmountBox.Text) && measurementChanger.SelectedItem != null
+                && (unitChanger.SelectedItem  != null || measurementChanger.SelectedItem.ToString() == "NONE") && Double.TryParse(AmountBox.Text.ToString(), out d))
             {
                 //Exit the popup
                 modBox.IsEnabled = false;
                 this.modBox.Visibility = System.Windows.Visibility.Hidden;
 
-                if (!changeAddFlag)  //When change flag is set
+                //When you are changing an item
+                if (!changeAddFlag)  
                 {
-                    /*public double _measurement; // e.g. 1.5
-                    public string _measurementStr; // e.g. 1/2
-                    public UnitType _unitType;
-                    public string _unitStr; // starting unit text can be hardcoded (this is text that goes in combobox at start or in specialtext)
-                    public string _mainText;
-                    // -==-=-=-=-=-=-=-=
-                    public bool _isChecked = false;
-                    public bool _hasStandardUnit = false; // if true, then the unitChanger will be visible...
-                    public bool _hasSpecialUnit = false; // if true then the specialText will be visible...
-                    */         //_recipe._ingredients[ingNum]._measurement = Convert.ToInt32(AmountBox.Text);
-
-                    /*ing = new ModUserControl(_recipe._ingredients[i]._measurementStr + " " + _recipe._ingredients[i]._unitStr
-                        + " " + _recipe._ingredients[i]._mainText);*/
-
-                    //measurementChanger.SelectedItem.ToString()
-                    //You want to change ingredient name, amount, measurement type and units
-
+                    _recipe._ingredients[ingNum]._measurement = d;//Convert.ToDouble(AmountBox.Text.ToString());
+                    //Changer measurement number
                     //_recipe._ingredients[ingNum]._measurement = Convert.ToInt32(AmountBox.Text);
-                    //_recipe._ingredients[ingNum].convertMeasurement(AmountBox.Text);
-
-                    //Change measurement
-                    _recipe._ingredients[ingNum]._measurement = Convert.ToInt32(AmountBox.Text);
                     if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
                     {
                         _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.VOLUME;
@@ -179,23 +192,24 @@ namespace Cookbook
                     {
                         _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.LENGTH;
                     }
+
+                    if (measurementChanger.SelectedItem.ToString() == "NONE")
+                    {
+                        _recipe._ingredients[ingNum]._unitStr = "";
+                        _recipe._ingredients[ingNum]._measurementStr = AmountBox.Text;
+                    }
+
                     else
                     {
-
+                        _recipe._ingredients[ingNum]._unitStr = unitChanger.SelectedItem.ToString();
+                        _recipe._ingredients[ingNum].convertMeasurement(unitChanger.SelectedItem.ToString());
                     }
-                    //_recipe._ingredients[ingNum]._measurementStr = _recipe._ingredients[ingNum].convertMeasurement();
-                    _recipe._ingredients[ingNum].convertMeasurement(unitChanger.SelectedItem.ToString());
 
-
-                    //_recipe._ingredients[ingNum]._unitType = 
-                    //_recipe._ingredients[ingNum]._measurementStr = AmountBox.Text;
-                    //Change uit
-
-                    _recipe._ingredients[ingNum]._unitStr = ingBox.Text;
-
-                     //change name
                     _recipe._ingredients[ingNum]._mainText = ingBox.Text;
-                    //Probably actually want to change the actual data too
+
+                    //measurement str
+                    
+
 
                 }
                 else //Don't delete, just add
@@ -203,20 +217,48 @@ namespace Cookbook
                     //Instantiate more stuff tha this
                     //You want to change ingredient name, amount, measurement type and units
                     Ingredient newIng = new Ingredient();
+                    //need to be able to write fractions too right?
+                    newIng._measurement = Convert.ToDouble(AmountBox.Text.ToString());
+                    //TODO: measurement str
+                    if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
+                    {
+                        newIng._unitType = Ingredient.UnitType.VOLUME;
+                    }
+                    else if (measurementChanger.SelectedItem.ToString() == "MASS") // mass
+                    {
+                        newIng._unitType = Ingredient.UnitType.MASS;
+                    }
+                    else if (measurementChanger.SelectedItem.ToString() == "LEN.")// length
+                    {
+                        newIng._unitType = Ingredient.UnitType.LENGTH;
+                    }
+
+                    if (measurementChanger.SelectedItem.ToString() == "NONE")
+                    {
+                        newIng._unitStr = "";
+                        newIng._measurementStr = AmountBox.Text;
+                    }
+
+                    else
+                    {
+                        newIng._unitStr = unitChanger.SelectedItem.ToString();
+                        newIng.convertMeasurement(unitChanger.SelectedItem.ToString());
+                    }
                     newIng._mainText = ingBox.Text;
-                    newIng._measurementStr = AmountBox.Text;
-                    //newIng._unitStr = ingBox.Text;
                     _recipe._ingredients.Add(newIng);
+
+                    //measurement str
+                    //_recipe._ingredients[ingNum].convertMeasurement(unitChanger.SelectedItem.ToString());
                 }
                 ModIngredients updatePage = new ModIngredients(_recipe, recipeNum);
                 ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
                 mainGrid.IsEnabled = true;
 
-                    }
-                else
-                {
-                    MessageBox.Show("Cannot leave ingredient name/amount box empty");
-                }
+            }
+            else
+            {
+                MessageBox.Show("Ingredient name/Amount is empty OR meas/unit is not selected OR amount not in decimals");
+            }
 
         }
         private void doneButton_Click(object sender, RoutedEventArgs e)
@@ -241,62 +283,85 @@ namespace Cookbook
             measurementChanger.Items.Add("VOL.");
             measurementChanger.Items.Add("MASS");
             measurementChanger.Items.Add("LEN.");
+            measurementChanger.Items.Add("SPEC.");
+            measurementChanger.Items.Add("NONE");
             unitChanger.IsEnabled = false;
         }
-
         private void unitChangerButton_Click(object sender, RoutedEventArgs e)
         {
             if(unitChanger.IsEnabled)
                 unitChanger.IsDropDownOpen = !unitChanger.IsDropDownOpen;
         }
-
         private void measChangerButton_Click(object sender, RoutedEventArgs e)
         {
             measurementChanger.IsDropDownOpen = !measurementChanger.IsDropDownOpen;
         }
-
         private void unitChanger_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Nothing here i guess
         }
         private void measChanger_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
+            if (measurementChanger.SelectedItem == null)
             {
-                unitChanger.Items.Clear();
-                unitChanger.Text = "UNIT";
-                unitChanger.Items.Add(Ingredient.CUPS);
-                unitChanger.Items.Add(Ingredient.FLOZ);
-                unitChanger.Items.Add(Ingredient.ML);
-                unitChanger.Items.Add(Ingredient.L);
-                unitChanger.Items.Add(Ingredient.TBSP);
-                unitChanger.Items.Add(Ingredient.TSP);
-                unitChanger.IsEnabled = true;
-            }
-            else if (measurementChanger.SelectedItem.ToString() == "MASS") // mass
-            {
-                unitChanger.Items.Clear();
-                unitChanger.Text = "UNIT";
-                unitChanger.Items.Add(Ingredient.G);
-                unitChanger.Items.Add(Ingredient.KG);
-                unitChanger.Items.Add(Ingredient.LBS);
-                unitChanger.Items.Add(Ingredient.MG);
-                unitChanger.Items.Add(Ingredient.OZ);
-                unitChanger.IsEnabled = true;
-            }
-            else if (measurementChanger.SelectedItem.ToString() == "LEN.")// length
-            {
-                unitChanger.Items.Clear();
-                unitChanger.Text = "UNIT";
-                unitChanger.Items.Add(Ingredient.CM);
-                unitChanger.Items.Add(Ingredient.IN);
-                unitChanger.Items.Add(Ingredient.M);
-                unitChanger.Items.Add(Ingredient.MM);
-                unitChanger.IsEnabled = true;
+                unitChanger.IsEnabled = false;
             }
             else
             {
-                unitChanger.IsEnabled = false;
+
+                if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
+                {
+                    unitChanger.Items.Clear();
+                    unitChanger.Text = "UNIT";
+                    unitChanger.Items.Add(Ingredient.CUPS);
+                    unitChanger.Items.Add(Ingredient.FLOZ);
+                    unitChanger.Items.Add(Ingredient.ML);
+                    unitChanger.Items.Add(Ingredient.L);
+                    unitChanger.Items.Add(Ingredient.TBSP);
+                    unitChanger.Items.Add(Ingredient.TSP);
+                    unitChanger.IsEnabled = true;
+                }
+                else if (measurementChanger.SelectedItem.ToString() == "MASS") // mass
+                {
+                    unitChanger.Items.Clear();
+                    unitChanger.Text = "UNIT";
+                    unitChanger.Items.Add(Ingredient.G);
+                    unitChanger.Items.Add(Ingredient.KG);
+                    unitChanger.Items.Add(Ingredient.LBS);
+                    unitChanger.Items.Add(Ingredient.MG);
+                    unitChanger.Items.Add(Ingredient.OZ);
+                    unitChanger.IsEnabled = true;
+                }
+                else if (measurementChanger.SelectedItem.ToString() == "LEN.")// length
+                {
+                    unitChanger.Items.Clear();
+                    unitChanger.Text = "UNIT";
+                    unitChanger.Items.Add(Ingredient.CM);
+                    unitChanger.Items.Add(Ingredient.IN);
+                    unitChanger.Items.Add(Ingredient.M);
+                    unitChanger.Items.Add(Ingredient.MM);
+                    unitChanger.IsEnabled = true;
+                }
+                else if (measurementChanger.SelectedItem.ToString() == "SPEC.") //Special
+                {
+                    unitChanger.Items.Clear();
+                    unitChanger.Text = "UNIT";
+                    unitChanger.Items.Add("cloves");
+                    unitChanger.Items.Add("fillet");
+                    unitChanger.Items.Add("head");
+                    unitChanger.IsEnabled = true;
+
+                }
+                else if (measurementChanger.SelectedItem.ToString() == "NONE") //Special
+                {
+                    unitChanger.Items.Clear();
+                    unitChanger.Text = "N/A";
+                    unitChanger.IsEnabled = false;
+                }
+                else
+                {
+                    unitChanger.IsEnabled = false;
+                }
             }
         }
     }
