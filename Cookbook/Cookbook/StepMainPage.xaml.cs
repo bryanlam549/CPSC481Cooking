@@ -21,12 +21,17 @@ namespace Cookbook
 
     public partial class StepPage : Page
     {
-       
+        public static List<StepByStepPage> allSteps = new List<StepByStepPage>();
         public StepPage(Recipe recipe)
         {
             InitializeComponent();
-            StepByStepPage step1 = new StepByStepPage(recipe, 0);
-            stepsMain.NavigationService.Navigate(step1); // start cookbook at favourite page all the time
+
+            for(int i = 0; i < recipe._steps.Count; i++)
+            {
+                StepByStepPage step = new StepByStepPage(recipe, i);
+                allSteps.Add(step);
+            }
+            stepsMain.NavigationService.Navigate(allSteps.ElementAt(0)); // start cookbook at favourite page all the time
         }
 
 

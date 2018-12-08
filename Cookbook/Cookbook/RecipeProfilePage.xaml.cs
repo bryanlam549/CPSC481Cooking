@@ -71,7 +71,7 @@ namespace Cookbook
             }
             else if(_completionPage == null && _currentStep > 0)
             {
-                StepByStepPage step = new StepByStepPage(_recipe, _currentStep);
+                StepByStepPage step = StepPage.allSteps.ElementAt(_currentStep);
                 this.NavigationService.Navigate(step);
             }else if(_completionPage != null)
             {
