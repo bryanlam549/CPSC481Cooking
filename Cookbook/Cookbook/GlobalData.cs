@@ -448,11 +448,7 @@ namespace Cookbook
         //Current recipe
         public Recipe currentRecipe;
 
-        public int test = 0;
-        public int test2 = 0;
-        public string preference1 = "";
-        public string preference2 = "";
-        public bool newAcc = false;
+        public List<string> accountList = new List<string>();
 
         //Store previous page...using this for back button for now. Unless better solution comes up
         public Page prevPage;
@@ -473,6 +469,18 @@ namespace Cookbook
 
             lookUpTerms.Add("marinade", "A marinade is a sauce, typically made of oil, vinegar, spices, and herbs, in which meat, fish, or other food is soaked before cooking in order to flavor or soften it.");
             lookUpTerms.Add("Chop", "cut into small pieces with repeated sharp blows a knife.");
+
+            accountList.Add("foodluver123");
+            accountList.Add("ilovefood456@food.com");
+            accountList.Add("123456789");
+            accountList.Add("1");
+            accountList.Add("2");
+
+            accountList.Add("foodisLIFE");
+            accountList.Add("burgers@food.com");
+            accountList.Add("123456789123456789123456789");
+            accountList.Add("2");
+            accountList.Add("2");
         }
 
     }

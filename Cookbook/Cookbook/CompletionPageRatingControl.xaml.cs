@@ -39,8 +39,6 @@ namespace Cookbook
             if (GlobalData.Instance.signedIn == false)
             {
                 // cannot rate
-                GlobalData.Instance.completionPage.favHeart.Visibility = System.Windows.Visibility.Hidden;
-                GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
                 GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
@@ -73,8 +71,6 @@ namespace Cookbook
             if (GlobalData.Instance.signedIn == false)
             {
                 // cannot rate
-                GlobalData.Instance.completionPage.favHeart.Visibility = System.Windows.Visibility.Hidden;
-                GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
                 GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
@@ -107,8 +103,6 @@ namespace Cookbook
             if (GlobalData.Instance.signedIn == false)
             {
                 // cannot rate
-                GlobalData.Instance.completionPage.favHeart.Visibility = System.Windows.Visibility.Hidden;
-                GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
                 GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
@@ -140,8 +134,6 @@ namespace Cookbook
             if (GlobalData.Instance.signedIn == false)
             {
                 // cannot rate
-                GlobalData.Instance.completionPage.favHeart.Visibility = System.Windows.Visibility.Hidden;
-                GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
                 GlobalData.Instance.completionPage.completionMain.IsEnabled = false;
@@ -173,8 +165,6 @@ namespace Cookbook
             if (GlobalData.Instance.signedIn == false)
             {
                 // cannot rate
-                GlobalData.Instance.completionPage.favHeart.Visibility = System.Windows.Visibility.Hidden;
-                GlobalData.Instance.completionPage.rating.Visibility = System.Windows.Visibility.Hidden;
                 GlobalData.Instance.completionPage.signInBox.IsEnabled = true;
                 GlobalData.Instance.completionPage.signInBox.Visibility = System.Windows.Visibility.Visible;
                 GlobalData.Instance.completionPage.completionMain.IsEnabled = false;

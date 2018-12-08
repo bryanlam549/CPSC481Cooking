@@ -35,7 +35,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Rectangle Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Stroke="Black" StrokeThickness="3" Margin="0,86,0,24">
+                <Rectangle Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Stroke="Black" StrokeThickness="3" Margin="0,100,0,10">
                     <Rectangle.Fill>
                         <ImageBrush x:Name="_recipeImageBrush"/>
                         <!-- just a placeholder image (will be overwritten)-->
@@ -48,10 +48,10 @@
 
 
             <Grid Margin="140,602,128,178">
-                <Button Background="Transparent" Margin="82,24,94,-22" RenderTransformOrigin="0.5,0.5" Style="{StaticResource CustomButtonStyle}">
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="304">
-                        <Image x:Name="shareIcon1" Source="{StaticResource share1Icon}" Width="50" Margin="50,3,127,0"/>
-                        <Image x:Name="shareIcon2" Source="{StaticResource share2Icon}" Width="50" Margin="160,-44,95,0"/>
+                <Button Background="Transparent" Margin="0,98,0,-96" RenderTransformOrigin="0.5,0.5" Style="{StaticResource CustomButtonStyle}">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="338">
+                        <Image x:Name="shareIcon1" Source="{StaticResource share1Icon}" Width="60" Margin="50,3,127,0"/>
+                        <Image x:Name="shareIcon2" Source="{StaticResource share2Icon}" Width="60" Margin="172,-54,106,0"/>
                     </StackPanel>
                     <Button.Effect>
                         <DropShadowEffect/>
@@ -83,35 +83,35 @@
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Left" 
-                            Height="50" Click="onEdit" Margin="26,23,0,0" VerticalAlignment="Top"
+                            Height="90" Click="onEdit" Margin="10,20,0,0" VerticalAlignment="Top"
                             Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
-                    <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
+                    <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" Height="74" Width="55" RenderTransformOrigin="1.133,0.7"/>
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
                 </Button>
 
-                <TextBlock x:Name="_recipeName" Text="" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0"/>
+                <TextBlock x:Name="_recipeName" Text="" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="46" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0"/>
 
-                <TextBlock Text="Recipe Complete!" Grid.Row="3" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907"/>
-                <TextBlock Text="Rate" Grid.Row="3" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,70,0,0"/>
-                <TextBlock Text="Favourite" Grid.Row="4" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,46,0,0"/>
-                <TextBlock Text="Share" Grid.Row="5" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,28,0,0"/>
+                <TextBlock Text="Recipe Complete!" Grid.Row="3" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="40" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907"/>
+                <TextBlock Text="Rate" Grid.Row="3" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="36" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,91,0,0" Grid.RowSpan="2"/>
+                <TextBlock Text="Favourite" Grid.Row="4" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="36" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,85,0,0" Grid.RowSpan="2"/>
+                <TextBlock Text="Share" Grid.Row="5" Grid.ColumnSpan="6"  Height="Auto" Width="576" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="36" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,91,0,0" Grid.RowSpan="2"/>
 
                 <local:TransitionPageButton x:Name="_back" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
                 <local:TransitionPageButton x:Name="_next" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" Grid.RowSpan="2"/>
             </Grid>
 
-            <local:CompletionPageRatingControl x:Name="rating" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" Height="93" Margin="0, 42, 0, 0"/>
-            <local:HeartButton x:Name="favHeart" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Margin="0, 228, 0, 0"/>
+            <local:CompletionPageRatingControl x:Name="rating" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Margin="0, 115, 0, 0"/>
+            <local:HeartButton x:Name="favHeart" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center" Height="92" Margin="0, 340, 0, 0"/>
 
 
         </Grid>
-        <Border Name="signInBox"  Background="#FF9C3828" Height="250" Width="250" CornerRadius="20" 
+        <Border Name="signInBox"  Background="#FF9C3828" Height="300" Width="300" CornerRadius="20" 
                     BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel Height="250" Width="250">
-                <TextBlock Text="You must be signed in to rate a recipe." FontSize="24" Margin="20,20,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A" TextWrapping="Wrap" VerticalAlignment="Center"/>
-                <Button Name="_close" Content="Close" Background="White" Height="50" Width="64" Margin="0,40,0,0" Click="_close_Click"/>
+                <TextBlock Text="You must be signed in to rate a recipe." FontSize="36" Margin="20,20,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                <Button Name="_close" Content="Close" FontSize="24" Background="White" Height="50" Width="64" Margin="0,40,0,0" Click="_close_Click"/>
             </StackPanel>
         </Border>
 

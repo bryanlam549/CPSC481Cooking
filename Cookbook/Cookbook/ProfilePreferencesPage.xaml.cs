@@ -20,101 +20,54 @@ namespace Cookbook
     /// </summary>
     public partial class ProfilePreferencesPage : Page
     {
-        public ProfilePreferencesPage(string pref1, string pref2)
+        public int i;
+
+        public ProfilePreferencesPage(string username)
         {
             InitializeComponent();
-            string tempPref = pref1;
-            string weightPref = pref2;
 
+            this.i = GlobalData.Instance.accountList.IndexOf(username);
+            string x = GlobalData.Instance.accountList[i + 3];
+            string y = GlobalData.Instance.accountList[i + 4];
 
-            if (GlobalData.Instance.test == 0 && GlobalData.Instance.newAcc == false)
+            if (x.Equals("1"))
             {
-                if (tempPref.Equals("1"))
-                {
-                    _Cel.IsChecked = true;
-                    GlobalData.Instance.preference1 = "1";
-                }
-                else if (tempPref.Equals("2"))
-                {
-                    _Fah.IsChecked = true;
-                    GlobalData.Instance.preference1 = "2";
-                }
-
-
-
-                if (weightPref.Equals("1"))
-                {
-                    _Oun.IsChecked = true;
-                    GlobalData.Instance.preference2 = "1";
-                }
-                else if (weightPref.Equals("2"))
-                {
-                    _Gram.IsChecked = true;
-                    GlobalData.Instance.preference2 = "2";
-                }
-
-                GlobalData.Instance.test = 1;
-                
+                _Cel.IsChecked = true;
             }
-            else if (GlobalData.Instance.newAcc == true && GlobalData.Instance.test2 == 0)
+            else if (x.Equals("2"))
             {
-                _Cel.IsChecked = false;
-                _Fah.IsChecked = false;
-
-                _Oun.IsChecked = false;
-                _Gram.IsChecked = false;
-
-                GlobalData.Instance.test2 = 1;
-
-            }
-            else
-            {
-                
-                if (GlobalData.Instance.preference1.Equals("1"))
-                {
-                    _Cel.IsChecked = true;
-                    GlobalData.Instance.preference1 = "1";
-                }
-                else if (GlobalData.Instance.preference1.Equals("2"))
-                {
-                    _Fah.IsChecked = true;
-                    GlobalData.Instance.preference1 = "2";
-                }
-                
-                if (GlobalData.Instance.preference2.Equals("1"))
-                {
-                    _Oun.IsChecked = true;
-                    GlobalData.Instance.preference2 = "1";
-                }
-                else if (GlobalData.Instance.preference2.Equals("2"))
-                {
-                    _Gram.IsChecked = true;
-                    GlobalData.Instance.preference2 = "2";
-                }
-                
+                _Fah.IsChecked = true;
             }
 
-            
+            if (y.Equals("1"))
+            {
+                _Oun.IsChecked = true;
+            }
+            else if (y.Equals("2"))
+            {
+                _Gram.IsChecked = true;
+            }
+
         }
 
         private void _Cel_Checked(object sender, RoutedEventArgs e)
         {
-            GlobalData.Instance.preference1 = "1";
+            GlobalData.Instance.accountList[i + 3] = "1";
         }
 
         private void _Fah_Checked(object sender, RoutedEventArgs e)
         {
-            GlobalData.Instance.preference1 = "2";
+            GlobalData.Instance.accountList[i + 3] = "2";
         }
 
         private void _Oun_Checked(object sender, RoutedEventArgs e)
         {
-            GlobalData.Instance.preference2 = "1";
+            GlobalData.Instance.accountList[i + 4] = "1";
         }
 
         private void _Gram_Checked(object sender, RoutedEventArgs e)
         {
-            GlobalData.Instance.preference2 = "2";
+            GlobalData.Instance.accountList[i + 4] = "2";
         }
     }
 }

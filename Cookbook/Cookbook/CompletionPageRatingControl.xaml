@@ -46,7 +46,5 @@
             </Button.Background>
         </Button>
 
-        <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
-
     </Grid>
 </UserControl>

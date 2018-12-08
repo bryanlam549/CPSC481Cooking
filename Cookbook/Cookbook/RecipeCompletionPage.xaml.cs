@@ -72,8 +72,6 @@ namespace Cookbook
         private void _close_Click(object sender, RoutedEventArgs e)
         {
             this.signInBox.Visibility = System.Windows.Visibility.Hidden;
-            favHeart.Visibility = System.Windows.Visibility.Visible;
-            rating.Visibility = System.Windows.Visibility.Visible;
             completionMain.IsEnabled = true;
         }
 

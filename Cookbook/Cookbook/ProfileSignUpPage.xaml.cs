@@ -20,7 +20,6 @@ namespace Cookbook
     /// </summary>
     public partial class ProfileSignUpPage : Page
     {
-        //private ProfileMainPage profileMainPage = new ProfileMainPage("");
 
         public ProfileSignUpPage()
         {
@@ -68,15 +67,16 @@ namespace Cookbook
             }
             else
             {
-                ProfileMainPage profileMainPage = new ProfileMainPage(nameInput.Text, emailInput.Text, passwordInput.Password, "", "");
+                ProfileMainPage profileMainPage = new ProfileMainPage(nameInput.Text, emailInput.Text, passwordInput.Password);
                 GlobalData.Instance.signedIn = true;
-                GlobalData.Instance.newAcc = true;
+                GlobalData.Instance.accountList.Add(nameInput.Text);
+                GlobalData.Instance.accountList.Add(emailInput.Text);
+                GlobalData.Instance.accountList.Add(passwordInput.Password);
+                GlobalData.Instance.accountList.Add("");
+                GlobalData.Instance.accountList.Add("");
                 signUpMain.Content = profileMainPage;
             }
 
-            
-            //RecipeCompletionPage rcpage = new RecipeCompletionPage();
-            //signUpMain.Content = rcpage;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

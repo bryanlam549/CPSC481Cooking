@@ -20,8 +20,6 @@ namespace Cookbook
     /// </summary>
     public partial class ProfileSignInPage : Page
     {
-        //private ProfileMainPage profileMainPage = new ProfileMainPage("", "", "");
-        private List<string> accountList = new List<string>();
 
         public ProfileSignInPage()
         {
@@ -29,18 +27,6 @@ namespace Cookbook
             _back.transitionPageButton.Click += Back_Click;
 
             _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
-
-            accountList.Add("foodluver123");
-            accountList.Add("ilovefood456@food.com");
-            accountList.Add("123456789");
-            accountList.Add("1");
-            accountList.Add("2");
-
-            accountList.Add("foodisLIFE");
-            accountList.Add("burgers@food.com");
-            accountList.Add("123456789123456789123456789");
-            accountList.Add("2");
-            accountList.Add("2");
 
             Hyperlink link = new Hyperlink();
             link.IsEnabled = true;
@@ -57,14 +43,13 @@ namespace Cookbook
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
+            int index = GlobalData.Instance.accountList.IndexOf(UserInput.Text);
 
-
-            if (accountList.Contains(UserInput.Text) && (PasswordInput.Password).Equals(accountList[(accountList.IndexOf(UserInput.Text)) + 2]))
+            if (GlobalData.Instance.accountList.Contains(UserInput.Text) && (PasswordInput.Password).Equals(GlobalData.Instance.accountList[index + 2]))
             {
 
-                ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, accountList[(accountList.IndexOf(UserInput.Text)) + 1], PasswordInput.Password, accountList[(accountList.IndexOf(UserInput.Text)) + 3], accountList[(accountList.IndexOf(UserInput.Text)) + 4]);
+                ProfileMainPage profileMainPage = new ProfileMainPage(UserInput.Text, GlobalData.Instance.accountList[index + 1], PasswordInput.Password);
                 GlobalData.Instance.signedIn = true;
-                GlobalData.Instance.newAcc = false;
                 signInMain.Content = profileMainPage;
             }
             else
