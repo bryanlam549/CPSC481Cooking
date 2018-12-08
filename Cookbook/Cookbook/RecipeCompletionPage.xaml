@@ -82,10 +82,12 @@
                     <ColumnDefinition Width="96" />
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Left" 
-                            Height="90" Click="onEdit" Margin="10,20,0,0" VerticalAlignment="Top"
-                            Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
-                    <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" Height="74" Width="55" RenderTransformOrigin="1.133,0.7"/>
+                <Button x:Name="editButton"  Grid.Column="5" HorizontalAlignment="Left" 
+                            Height="90" Width="65" Click="onEdit" Margin="10,20,0,0" VerticalAlignment="Top"
+                            Style="{StaticResource CustomButtonStyle}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="{StaticResource editIconIcon}"/>
+                    </Button.Background>
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
@@ -116,7 +118,7 @@
         </Border>
 
 
-        <Frame x:Name="completeMain" Height="880" Width="576" NavigationUIVisibility="Hidden"/>
+        <!--Frame x:Name="completeMain" Height="880" Width="576" NavigationUIVisibility="Hidden"/-->
 
     </Grid>
 
