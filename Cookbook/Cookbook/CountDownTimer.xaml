@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="Black" Margin="0,0,10,10">
-        <TextBlock x:Name="CountdownDisplay" Text="00:00:00" FontFamily="Calibri" FontSize="60" Foreground="Black" Margin="0,10,0,70" Background="#FF56BBB7"/>
+        <TextBlock x:Name="CountdownDisplay" Text="00:00:00" FontFamily="Calibri" FontSize="50" Foreground="Black" Margin="0,10,0,70" Background="#FF56BBB7"/>
         <Button x:Name="_start"  Content="Start" HorizontalAlignment="Left" Margin="105,118,0,0" VerticalAlignment="Top" Width="75" Click="_start_Click">
             <Button.RenderTransform>
                 <TransformGroup>

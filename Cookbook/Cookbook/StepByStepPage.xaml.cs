@@ -63,11 +63,9 @@ namespace Cookbook
             //setting a reference for the current step in recipeProfile everytime navigated to this step page 
             Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
             recipeProfilePage = recipes[currentRecipe._name];
-            recipeProfilePage._currentStep = currentStep;
-            recipeProfilePage._currentStep = currentStep;
             recipeProfilePage._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
 
-
+            _timer.setStepTime(currentRecipe._timerValuesForSteps.ElementAt(currentStep), currentStep + 1);
 
 
         }
@@ -136,8 +134,8 @@ namespace Cookbook
         {
             if (currentStep  < recipeSteps.Count - 1)
             {
-                StepByStepPage nextStep = new StepByStepPage(currentRecipe, currentStep + 1);
-                this.NavigationService.Navigate(nextStep);
+                recipeProfilePage._currentStep = currentStep + 1;
+                this.NavigationService.Navigate(StepPage.allSteps.ElementAt(currentStep + 1));
             }
             else
             {
@@ -153,7 +151,8 @@ namespace Cookbook
         {
             if(currentStep > 0)
             {
-                StepByStepPage prevStep = new StepByStepPage(currentRecipe, currentStep - 1);
+                recipeProfilePage._currentStep = currentStep - 1;
+                StepByStepPage prevStep = StepPage.allSteps.ElementAt(currentStep - 1);
                 this.NavigationService.Navigate(prevStep);
             }
         }
@@ -179,13 +178,6 @@ namespace Cookbook
             termDef.Visibility = System.Windows.Visibility.Visible;
             _lookupDef.Text = lookupDef;
             mainGrid.IsEnabled = false;
-
-
-        }
-
-        private void StartTimer(object sender, RoutedEventArgs e)
-        {
-          
 
 
         }

@@ -50,6 +50,7 @@ namespace Cookbook
 
         public bool modified = false;    //Set true if this is a modified recipe. Modified will NOT have substitutions, won't have favourites and won't be shown on recent.
 
+        public List<int> _timerValuesForSteps = new List<int>();
         public Recipe()
         {
             //_ingredientCount = _ingredients.Count; but make sure this happens after we initialize the list
