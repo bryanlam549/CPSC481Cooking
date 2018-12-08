@@ -68,23 +68,18 @@
                         </Rectangle.Fill>
                     </Rectangle>
 
-                    <Image Source="{StaticResource medIconIcon}" Grid.Row="2" HorizontalAlignment="Center" Margin="48,95,48,0" Width="96" Height="64" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Image x:Name="_difficultyImage" Source="{StaticResource medIconIcon}" Grid.Row="2" HorizontalAlignment="Center" Margin="48,95,48,0" Width="96" Height="64" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
-                    <local:RatingControl Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="64,44,64,0" Grid.RowSpan="2" Height="128" Width="256" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                    <local:RatingControl x:Name="_ratingControl" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="64,44,64,0" Grid.RowSpan="2" Height="128" Width="256" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
                     <Image Source="{StaticResource durationIconIcon}" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Width="48" Margin="0,85,0,0" Grid.RowSpan="2"/>
 
-                    <Label Content="15m" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Margin="0,106,0,77" Grid.RowSpan="2"/>
+                    <Label x:Name="_durationText" Content="15m" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Margin="0,106,0,77" Grid.RowSpan="2"/>
+
+                    <TextBlock x:Name="_descTextBlock" Text="DESCRIPTION" Grid.Column="0" Grid.ColumnSpan="6" FontSize="20" TextDecorations="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="48,30,48,0" Width="480" Height="80" Grid.Row="3" TextAlignment="Center" FontStyle="Italic" TextWrapping="Wrap"/>
                 </Grid>
                 <StackPanel x:Name="stackPanel">
-                    <!--
-                    <local:IngredientTab/>
-                    <local:IngredientTab/>
-                    <local:IngredientTab/>
-                    <local:IngredientTab/>
-                    <local:IngredientTab/>
-                    <local:IngredientTab/>
-                    -->
+
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

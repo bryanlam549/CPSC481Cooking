@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+// ~~~~~~~~~~~~~~~NOTE: make sure to actually update the recipe instance when something changes (or create new recipe and add to 
+
 namespace Cookbook
 {
     /// <summary>
@@ -21,7 +23,7 @@ namespace Cookbook
     public partial class RecipeProfilePage : Page
     {
         public Recipe _recipe;
-        public int _currentStep = 0 ;
+        public int _currentStep = 0;
         public Page _completionPage;
       
 
@@ -30,13 +32,14 @@ namespace Cookbook
             InitializeComponent();
 
             // init components...
-            //_heartButton._recipe = ... set based
 
-            _recipe = recipe; // ~~~~NOTE: set to proper recipe later on based on recipe clicked on, but hard coded this for testing
+            _recipe = recipe; 
 
             //This was done by me, BRYAN. I would've initialized heartButton user control so that it is filled if the recipe is fave or not. 
             //but I was running into problems there (i think because _recipe is null even though you make it equal to this _recipe...)
             //but it works if try it on this page. Had to add function in HeartButton.xaml and made isfilled public.
+
+            // FAVOURITE...
             _heartButton._recipe = _recipe;
             if (_recipe._isFavourite)
             {
@@ -49,17 +52,49 @@ namespace Cookbook
                 _heartButton._isFilled = false;
             }
 
+
+            // DIFFICULTY...
+            if (_recipe._difficulty == Recipe.Difficulties.EASY)
+            {
+                _difficultyImage.Source = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+            }
+            else if (_recipe._difficulty == Recipe.Difficulties.MEDIUM)
+            {
+                _difficultyImage.Source = (BitmapImage)Application.Current.Resources["medIconIcon"];
+            }
+            else
+            {
+                _difficultyImage.Source = (BitmapImage)Application.Current.Resources["hardIconIcon"];
+            }
+
+            // RATING...
+            _ratingControl.initStartingRating(_recipe._rating);
+
+            // DURATION...
+            _durationText.Content = _recipe._duration.ToString() + "m";
+
+
+            // NAME...
             _recipeNameTextBlock.Text = _recipe._name;
 
+            // IMAGE...
             _recipeImageBrush.ImageSource = _recipe._image;
 
-            _startButton.transitionPageButton.Click += StartButton_Click;
+            // DESCRIPTION...
+            _descTextBlock.Text = _recipe._description;
 
+
+            // TRANSITION BUTTONS...
             _backButton.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
 
             _startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "START");
 
+            _startButton.transitionPageButton.Click += StartButton_Click;
+
+
             AddIngredientTabs();
+
+            AddEquipmentList();
         }
 
 
@@ -84,12 +119,30 @@ namespace Cookbook
         
         private void AddIngredientTabs()
         {
+
+            TextBlock header = new TextBlock();
+            header.Text = "INGREDIENT CHECKLIST:";
+            header.TextAlignment = TextAlignment.Center;
+            header.FontSize = 24;
+            stackPanel.Children.Add(header);
+
             foreach(Ingredient ingredient in _recipe._ingredients)
             {
                 stackPanel.Children.Add(new IngredientTab(ingredient));
             }
 
         }
+
+
+        private void AddEquipmentList()
+        {
+            TextBlock header = new TextBlock();
+            header.Text = "EQUIPMENT LIST:";
+            header.TextAlignment = TextAlignment.Center;
+            header.FontSize = 24;
+            stackPanel.Children.Add(header);
+        }
+
 
 
 

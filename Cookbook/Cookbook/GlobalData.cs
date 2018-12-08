@@ -411,7 +411,7 @@ namespace Cookbook
             _difficulty = Recipe.Difficulties.EASY,
             _rating = 1,
             _duration = 5,
-            _description = "\"Literally a head of lettece\"",
+            _description = "\"Literally a head of lettuce\"",
             _servings = 2,
             _ingredientCount = 1,
             _category = Recipe.Categories.VEGETARIAN,
@@ -423,7 +423,7 @@ namespace Cookbook
             },
 
             _equipment = new List<string> { },
-            _steps = new List<string> { @"Wash head of lettece", @"Enjoy" }
+            _steps = new List<string> { @"Wash head of lettuce", @"Enjoy" }
         };
         #endregion
 

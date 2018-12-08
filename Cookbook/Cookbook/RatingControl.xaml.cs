@@ -31,30 +31,35 @@ namespace Cookbook
         {
             InitializeComponent();
 
-            // init the stars based on recipe data
         }
+
+
+        // init the stars based on recipe data
+        public void initStartingRating(int rating)
+        {
+            if (rating == 0)
+            {
+                Disable();
+            }
+            else
+            {
+                Enable(rating);
+            }
+        }
+
+
+
 
         private void StarButton1_Click(object sender, RoutedEventArgs e)
         {
+
             if (_currentRating != 1) // update to 1 star
             {
-                starButton1ImageBrush.ImageSource = fillStarImage;
-                starButton2ImageBrush.ImageSource = unfillStarImage;
-                starButton3ImageBrush.ImageSource = unfillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 1;
+                Enable(1);
             }
             else // disable
             {
-                starButton1ImageBrush.ImageSource = unfillStarImage;
-                starButton2ImageBrush.ImageSource = unfillStarImage;
-                starButton3ImageBrush.ImageSource = unfillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 0;
+                Disable();
             }
         }
 
@@ -62,23 +67,11 @@ namespace Cookbook
         {
             if (_currentRating != 2) // update to 2 star
             {
-                starButton1ImageBrush.ImageSource = fillStarImage;
-                starButton2ImageBrush.ImageSource = fillStarImage;
-                starButton3ImageBrush.ImageSource = unfillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 2;
+                Enable(2);
             }
             else // disable
             {
-                starButton1ImageBrush.ImageSource = unfillStarImage;
-                starButton2ImageBrush.ImageSource = unfillStarImage;
-                starButton3ImageBrush.ImageSource = unfillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 0;
+                Disable();
             }
         }
 
@@ -86,23 +79,11 @@ namespace Cookbook
         {
             if (_currentRating != 3) // update to 3 star
             {
-                starButton1ImageBrush.ImageSource = fillStarImage;
-                starButton2ImageBrush.ImageSource = fillStarImage;
-                starButton3ImageBrush.ImageSource = fillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 3;
+                Enable(3);
             }
             else // disable
             {
-                starButton1ImageBrush.ImageSource = unfillStarImage;
-                starButton2ImageBrush.ImageSource = unfillStarImage;
-                starButton3ImageBrush.ImageSource = unfillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 0;
+                Disable();
             }
         }
 
@@ -110,23 +91,11 @@ namespace Cookbook
         {
             if (_currentRating != 4) // update to 4 star
             {
-                starButton1ImageBrush.ImageSource = fillStarImage;
-                starButton2ImageBrush.ImageSource = fillStarImage;
-                starButton3ImageBrush.ImageSource = fillStarImage;
-                starButton4ImageBrush.ImageSource = fillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 4;
+                Enable(4);
             }
             else // disable
             {
-                starButton1ImageBrush.ImageSource = unfillStarImage;
-                starButton2ImageBrush.ImageSource = unfillStarImage;
-                starButton3ImageBrush.ImageSource = unfillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 0;
+                Disable();
             }
         }
 
@@ -134,24 +103,48 @@ namespace Cookbook
         {
             if (_currentRating != 5) // update to 5 star
             {
-                starButton1ImageBrush.ImageSource = fillStarImage;
-                starButton2ImageBrush.ImageSource = fillStarImage;
-                starButton3ImageBrush.ImageSource = fillStarImage;
-                starButton4ImageBrush.ImageSource = fillStarImage;
-                starButton5ImageBrush.ImageSource = fillStarImage;
-
-                _currentRating = 5;
+                Enable(5);
             }
             else // disable
             {
-                starButton1ImageBrush.ImageSource = unfillStarImage;
-                starButton2ImageBrush.ImageSource = unfillStarImage;
-                starButton3ImageBrush.ImageSource = unfillStarImage;
-                starButton4ImageBrush.ImageSource = unfillStarImage;
-                starButton5ImageBrush.ImageSource = unfillStarImage;
-
-                _currentRating = 0;
+                Disable();
             }
         }
+
+
+
+        private void Enable(int numOfStars)
+        {
+
+            if (numOfStars < 1 || numOfStars > 5)
+            {
+                return;
+            }
+
+            starButton1ImageBrush.ImageSource = fillStarImage;
+            starButton2ImageBrush.ImageSource = numOfStars >= 2 ? fillStarImage : unfillStarImage;
+            starButton3ImageBrush.ImageSource = numOfStars >= 3 ? fillStarImage : unfillStarImage;
+            starButton4ImageBrush.ImageSource = numOfStars >= 4 ? fillStarImage : unfillStarImage;
+            starButton5ImageBrush.ImageSource = numOfStars >= 5 ? fillStarImage : unfillStarImage;
+
+            _currentRating = numOfStars;
+
+        }
+
+
+
+        private void Disable()
+        {
+            starButton1ImageBrush.ImageSource = unfillStarImage;
+            starButton2ImageBrush.ImageSource = unfillStarImage;
+            starButton3ImageBrush.ImageSource = unfillStarImage;
+            starButton4ImageBrush.ImageSource = unfillStarImage;
+            starButton5ImageBrush.ImageSource = unfillStarImage;
+
+            _currentRating = 0;
+        }
+
+
+
     }
 }
