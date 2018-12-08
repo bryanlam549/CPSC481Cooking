@@ -390,5 +390,9 @@
     <Resource Include="Images\decrementfade.png" />
     <Resource Include="Images\incrementfade.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\servingminus.png" />
+    <Resource Include="Images\servingplus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

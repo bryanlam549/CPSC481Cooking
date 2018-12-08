@@ -9,6 +9,9 @@
     <Grid>
         <Rectangle Fill="#FFB9B194" RadiusX="10" RadiusY="10" Stroke="Black" StrokeThickness="3"/>
         <Button x:Name="checkbox" Content="" HorizontalAlignment="Right" Margin="408,0,10,0" VerticalAlignment="Center" Width="61" Height="61" BorderThickness="0" Click="Checkbox_Click" Style="{StaticResource CustomButtonStyle}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <ImageBrush x:Name="checkboxImageBrush" ImageSource="{StaticResource uncheckedIcon}"/>
             </Button.Background>
@@ -21,9 +24,7 @@
                   Margin="100,10,0,10" VerticalAlignment="Center" Width="97" 
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   FontSize="24" Height="60" BorderThickness="2" 
-SelectionChanged="unitChanger_SelectionChanged">
-
-
+                  SelectionChanged="unitChanger_SelectionChanged">
         </ComboBox>
 
         <Button x:Name="unitChangerButton" Width="97" Height="60" Margin="100,10,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="unitChangerButton_Click" Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10">

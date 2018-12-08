@@ -48,6 +48,8 @@
     <BitmapImage x:Key="saladIcon" UriSource="Images/salad.jpg" />
     <BitmapImage x:Key="searchButtonIcon" UriSource="Images/searchButton.png" />
     <BitmapImage x:Key="searchButtonDarkIcon" UriSource="Images/searchButtonDark.png" />
+    <BitmapImage x:Key="servingminusIcon" UriSource="Images/servingminus.png" />
+    <BitmapImage x:Key="servingplusIcon" UriSource="Images/servingplus.png" />
     <BitmapImage x:Key="shanghaiNoodlesIcon" UriSource="Images/shanghaiNoodles.png" />
     <BitmapImage x:Key="shareIconIcon" UriSource="Images/shareIcon.png" />
     <BitmapImage x:Key="uncheckedIcon" UriSource="Images/unchecked.png" />

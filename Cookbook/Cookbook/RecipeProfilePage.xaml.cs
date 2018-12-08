@@ -83,6 +83,9 @@ namespace Cookbook
             // DESCRIPTION...
             _descTextBlock.Text = _recipe._description;
 
+            // SERVINGS...
+            servingValueText.Text = _recipe._servings.ToString();
+
 
             // TRANSITION BUTTONS...
             _backButton.initAppearance(TransitionPageButton.Orientation.BACK, "BACK");
@@ -203,8 +206,16 @@ namespace Cookbook
 
         }
 
+        private void minusButton_Click(object sender, RoutedEventArgs e)
+        {
+            _recipe._servings = _recipe._servings > 1 ? _recipe._servings - 1 : 1;
+            servingValueText.Text = _recipe._servings.ToString();
+        }
 
-
-
+        private void plusButton_Click(object sender, RoutedEventArgs e)
+        {
+            _recipe._servings = _recipe._servings < 99 ? _recipe._servings + 1 : 99;
+            servingValueText.Text = _recipe._servings.ToString();
+        }
     }
 }

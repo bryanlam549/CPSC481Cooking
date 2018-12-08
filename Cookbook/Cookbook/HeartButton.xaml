@@ -8,6 +8,9 @@
              d:DesignHeight="128" d:DesignWidth="128">
     <Grid>
         <Button x:Name="heartButton" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="HeartButton_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <ImageBrush x:Name="heartButtonImageBrush" ImageSource="{StaticResource unfillHeartIcon}" Stretch="Uniform"/>
             </Button.Background>

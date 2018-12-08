@@ -38,6 +38,29 @@
 
         <Rectangle Grid.Row="6" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="500" Height="10" Margin="0,0,0,20" RadiusX="10" RadiusY="10" />
 
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="7" TextWrapping="Wrap" Text="SERVINGS" VerticalAlignment="Top" RenderTransformOrigin="-0.045,1.219" Width="192" Height="32" Grid.ColumnSpan="2" FontSize="24" TextAlignment="Center"/>
+
+        <Button x:Name="minusButton" Margin="0" Grid.Row="7" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="64" Height="64" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Click="minusButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource servingminusIcon}"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="plusButton" Margin="0" Grid.Row="7" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="64" Height="64" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" Click="plusButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource servingplusIcon}"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock x:Name="servingValueText" Grid.Column="1" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="7" TextWrapping="Wrap" Text="NUM" VerticalAlignment="Center" RenderTransformOrigin="-0.045,1.219" Width="100" Height="64" Grid.ColumnSpan="2" FontSize="36" TextAlignment="Center"/>
+
         <local:TransitionPageButton x:Name="_startButton" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" />
 
 
@@ -83,6 +106,7 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+        
 
 
     </Grid>
