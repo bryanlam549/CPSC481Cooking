@@ -189,15 +189,15 @@ namespace Cookbook
 
             _equipment = new List<string> { "1 wok or heavy skillet", "stirring utensils" },
             _steps = new List<string> { @"To make the marinade, combine the soy sauce, oyster sauce, sugar and ginger and stir until the sugar is dissolved."
-                                        +"Place the pork in the marinade and let sit for 10 minutes",
+                                        +" Place the pork in the marinade and let sit for 10 minutes.",
                                         @"Heat the oil in a wok or heavy skillet on high heat and fry the pork for one minute or until done (set the reserved aside)."
-                                        +"Remove the pork and set aside.",
+                                        +" Remove the pork and set aside.",
                                         @"Next fry the white parts of the cabbage and green onions along with the garlic for 30 seconds or until tender.",
                                         @"Return the pork to the pan along with the reserved marinade, the sesame oil, chicken/cornstarch mixture and the green parts of the cabbage and green onions." +
-                                        "Cook for 30 seconds."+
-                                        "Add the noodles and stir until combined."+
-                                        "Add white pepper to taste."+
-                                        "Serve immediately."},
+                                        " Cook for 30 seconds."+
+                                        " Add the noodles and stir until combined."+
+                                        " Add white pepper to taste."+
+                                        " Serve immediately."},
             _timerValuesForSteps = new List<int> { 600, 60, 30, 30}
         };
         #endregion
@@ -254,9 +254,8 @@ namespace Cookbook
             },
 
             _equipment = new List<string> { "Frying Pan", "Grill", "Oven" },
-            _steps = new List<string> { @"Grill Patty",
-                                        @"Fry Patty", @"Steam Patty for 10 minutes", @"Delicately Place on buns", @"Pour your entire 5 cups of ketchup"
-                                        +"all over for the finish!" }
+            _steps = new List<string> { @"Grill patty.",
+                                        @"Fry patty.", @"Steam patty for 10 minutes.", @"Delicately place on buns.", @"Pour your entire 5 cups of ketchup all over for the finish!" }
         };
         #endregion 
 
@@ -307,10 +306,10 @@ namespace Cookbook
 
 
 
-            _equipment = new List<string> { "Oven", "4\" Chef Knife","Baking tray", "Blender" },
-            _steps = new List<string> { @"Gut the Mackeral, if not already gutted", @"Chop some 2 cloves of garlic", @"Heat 2 TBSP of cooking oil and briefly,"
-                                        + "fry with the garlic, sprig of sage and the fish", @"Place fish in the baking tray and cook at 350F",
-                                        @"Once done, put the whole thing in the blender"}
+            _equipment = new List<string> { "Oven", "4\" Chef knife","Baking tray", "Blender" },
+            _steps = new List<string> { @"Gut the mackeral, if not already gutted.", @"Chop cloves of garlic", @"Heat cooking oil and briefly"
+                                        + " fry with the garlic, a sprig of sage and the fish.", @"Place fish on baking tray and cook at 350°F.",
+                                        @"Once done, put the whole thing in the blender."}
         };
         #endregion
 
@@ -380,8 +379,8 @@ namespace Cookbook
             },
 
             _equipment = new List<string> { "Whisk", "Non-Stick-Skillet" },
-            _steps = new List<string> { @"In a small bowl, whisk together dark soy sauce, cornstarch and broth. Set aside.", @"Cook chow mein noodles according to package instructions",
-                                        @"In a large non-stick skillet, heat oil over medium high heat. Add chicken and cook until chicken is browned. Stir in the carrots and cook for 2 minutes",
+            _steps = new List<string> { @"In a small bowl, whisk together dark soy sauce, cornstarch and broth. Set aside.", @"Cook chow mein noodles according to package instructions.",
+                                        @"In a large non-stick skillet, heat oil over medium high heat. Add chicken and cook until chicken is browned. Stir in the carrots and cook for 2 minutes.",
                                         @"Pour in broth mixture and bring to a boil. Cook until sauce is slightly thickened. Stir in seasame oil.",
                                         @"Spread noodles onto a platter and pour chicken mixture over top. Serve immediately."}
         };
@@ -423,7 +422,7 @@ namespace Cookbook
             },
 
             _equipment = new List<string> { },
-            _steps = new List<string> { @"Wash head of lettuce", @"Enjoy" }
+            _steps = new List<string> { @"Wash head of lettuce.", @"Enjoy." }
         };
         #endregion
 

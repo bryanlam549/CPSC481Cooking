@@ -92,9 +92,13 @@ namespace Cookbook
             _startButton.transitionPageButton.Click += StartButton_Click;
 
 
+            // NOTE: im assuming that every recipe has ingredients, equipment and steps (otherwise what is the point?)
+
             AddIngredientTabs();
 
             AddEquipmentList();
+
+            AddStepsList();
         }
 
 
@@ -136,11 +140,67 @@ namespace Cookbook
 
         private void AddEquipmentList()
         {
+            TextBlock padding = new TextBlock(); 
+            padding.Text = "==================";
+            padding.TextAlignment = TextAlignment.Center;
+            padding.FontSize = 40;
+            stackPanel.Children.Add(padding);
+
+
             TextBlock header = new TextBlock();
             header.Text = "EQUIPMENT LIST:";
             header.TextAlignment = TextAlignment.Center;
             header.FontSize = 24;
             stackPanel.Children.Add(header);
+
+            foreach(string eq in _recipe._equipment)
+            {
+                TextBlock eqText = new TextBlock();
+                eqText.Text = "• " + eq;
+                eqText.TextAlignment = TextAlignment.Left;
+                eqText.FontSize = 24;
+                eqText.Width = 500;
+                stackPanel.Children.Add(eqText);
+            }
+
+
+        }
+
+
+        private void AddStepsList()
+        {
+            TextBlock padding = new TextBlock(); 
+            padding.Text = "==================";
+            padding.TextAlignment = TextAlignment.Center;
+            padding.FontSize = 40;
+            stackPanel.Children.Add(padding);
+
+            TextBlock header = new TextBlock();
+            header.Text = "STEPS LIST:";
+            header.TextAlignment = TextAlignment.Center;
+            header.FontSize = 24;
+            stackPanel.Children.Add(header);
+
+            int stepNum = 1;
+            foreach (string step in _recipe._steps)
+            {
+                TextBlock stepText = new TextBlock();
+                stepText.Text = stepNum + ". " + step;
+                stepText.TextAlignment = TextAlignment.Left;
+                stepText.FontSize = 18;
+                stepText.TextWrapping = TextWrapping.Wrap;
+                stepText.Width = 500;
+                stackPanel.Children.Add(stepText);
+                stepNum++;
+
+                TextBlock smallPadding = new TextBlock();
+                smallPadding.Text = "";
+                smallPadding.FontSize = 10;
+                stackPanel.Children.Add(smallPadding);
+
+            }
+
+
         }
 
 
