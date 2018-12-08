@@ -32,12 +32,14 @@ namespace Cookbook
         private BitmapImage checkedImage = (BitmapImage)Application.Current.Resources["checkedIcon"];
 
 
-        public IngredientTab()
+        public IngredientTab(Ingredient ingredient)
         {
+            _ingredient = ingredient;
+
             InitializeComponent();
 
 
-            _ingredient = new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "Milk"); //EX OF ONE WITH UNITS
+            //_ingredient = new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "Milk"); //EX OF ONE WITH UNITS
 
             //_ingredient = new Ingredient(1, "1", Ingredient.UnitType.NONE, "NO UNIT", "Head of cabbage"); //EX OF ONE WITH NO UNITS
 
@@ -61,20 +63,30 @@ namespace Cookbook
             }
             */
 
-            primaryText.Text = _ingredient._primaryStr;
-            secondaryText.Text = _ingredient._secondaryStr;
+            //primaryText.Text = _ingredient._primaryStr;
+            primaryText.Text = _ingredient._measurementStr;
+            //secondaryText.Text = _ingredient._secondaryStr;
+            secondaryText.Text = _ingredient._mainText;
 
-            if (_ingredient._hasUnit)
+
+            if (_ingredient._hasStandardUnit)
             {
                 unitChanger.Text = _ingredient._unitStr;
-
                 // fill in combobox contents...
                 initUnitMenu();
-                //unitChanger.Items.Add();
-                
+
+                specialUnitText.Visibility = Visibility.Hidden;
+            }
+            else if (_ingredient._hasSpecialUnit)
+            {
+                specialUnitText.Text = _ingredient._unitStr;
+
+                unitChanger.Visibility = Visibility.Hidden;
+                unitChangerButton.Visibility = Visibility.Hidden;
             }
             else
             {
+                specialUnitText.Visibility = Visibility.Hidden;
                 unitChanger.Visibility = Visibility.Hidden;
                 unitChangerButton.Visibility = Visibility.Hidden;
             }

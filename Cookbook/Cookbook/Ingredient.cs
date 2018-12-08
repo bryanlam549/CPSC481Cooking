@@ -36,28 +36,11 @@ namespace Cookbook
 
         public enum UnitType
         {
-            NONE, VOLUME, MASS, LENGTH
+            NONE, SPECIAL, VOLUME, MASS, LENGTH
         }
-
-        /*
-        public enum VolumeUnits
-        {
-            NONE, TSP, TBSP, FLOZ, CUP, ML, L
-        }
-
-        public enum MassUnits
-        {
-            NONE, LB, OZ, MG, G, KG
-        }
-
-        public enum LengthUnits
-        {
-            NONE, MM, CM, M, INCH
-        }
-        */
         
 
-        // ~~~~~~~~NOTE: say scaling ends up with something like 1.73682, just use 1.7 if it cant be converted into fractional string form
+        
 
         public double _measurement; // e.g. 1.5
 
@@ -65,34 +48,22 @@ namespace Cookbook
 
         public UnitType _unitType;
 
-        public string _unitStr; // starting unit text can be hardcoded
+        public string _unitStr; // starting unit text can be hardcoded (this is text that goes in combobox at start or in specialtext)
 
         public string _mainText;
 
-        //public VolumeUnits _volUnit = VolumeUnits.NONE;
+       
 
-        //public MassUnits _massUnit = MassUnits.NONE;
-
-        //public LengthUnits _lengthUnit = LengthUnits.NONE;
-
-
-
-        //public Units _standardUnit;
-
-        //public string _otherUnit; // e.g. 'head' of cabbage
-
-        //public bool _isUnitStandard = true;
-
-
-        
-
+        // -==-=-=-=-=-=-=-=
         public bool _isChecked = false;
 
-        public bool _hasUnit = false; // if true, then the unitChanger will be visible...
+        public bool _hasStandardUnit = false; // if true, then the unitChanger will be visible...
 
-        public string _primaryStr;
+        public bool _hasSpecialUnit = false; // if true then the specialText will be visible...
 
-        public string _secondaryStr; // won't display if _hasUnit == false
+        //public string _primaryStr;
+
+        //public string _secondaryStr; // won't display if _hasUnit == false
 
         public Ingredient()
         {
@@ -109,10 +80,20 @@ namespace Cookbook
             _mainText = mainText;
 
             // make sure this gets called after the constructor initialization list
-            if (_unitType != UnitType.NONE)
+            if (_unitType == UnitType.VOLUME || _unitType == UnitType.MASS || _unitType == UnitType.LENGTH)
             {
-                _hasUnit = true;
+                _hasStandardUnit = true;
             }
+            else if (_unitType == UnitType.SPECIAL)
+            {
+                _hasSpecialUnit = true;
+            }
+
+
+            
+
+
+            /*
             // ~~~~~~~~init measurementStr from measurement
             if (_hasUnit)
             {
@@ -124,6 +105,7 @@ namespace Cookbook
                 _primaryStr = _measurementStr + " " + _mainText;
                 _secondaryStr = "";
             }
+            */
         }
 
 
@@ -335,7 +317,7 @@ namespace Cookbook
         {
             // take new _measurement value, convert to either fractional form (or decimal form if small)
 
-            double threshold = 1 / 16;
+            double threshold = (double) 1 / 16;
 
             if (_measurement >= threshold)
             {
@@ -356,7 +338,7 @@ namespace Cookbook
         private string convertDoubleToFraction(double value)
         {
 
-            Debug.WriteLine(value);
+            //Debug.WriteLine(value);
 
 
             string unitTerm;
@@ -364,11 +346,11 @@ namespace Cookbook
 
             int unitPart = (int) Math.Floor(value);
 
-            Debug.WriteLine(unitPart);
+            //Debug.WriteLine(unitPart);
 
             double fracPart = value - unitPart;
 
-            Debug.WriteLine(fracPart);
+            //Debug.WriteLine(fracPart);
 
 
             // now see which fraction value the fracPart is closest to...
@@ -397,7 +379,7 @@ namespace Cookbook
             if (fracPart > _15_16 + _1_32) // rounds up to next int (no frac term)
             {
 
-                Debug.WriteLine("HERE");
+                //Debug.WriteLine("HERE");
 
                 unitPart++;
                 fracTerm = "";
@@ -467,9 +449,9 @@ namespace Cookbook
                 fracTerm = "";
             }
 
-            // BUG: unitPart being set to 2...
+            // BUG: unitPart being set to 2... FIXED (by double div)
 
-            Debug.WriteLine(unitPart);
+            //Debug.WriteLine(unitPart);
 
             //Debug.WriteLine(unitPart.ToString());
 
