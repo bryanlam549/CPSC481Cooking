@@ -35,7 +35,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Rectangle Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Stroke="Black" StrokeThickness="3" Margin="0,86,0,24">
+                <Rectangle Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="4" Stroke="Black" StrokeThickness="3" Margin="0,100,0,10">
                     <Rectangle.Fill>
                         <ImageBrush x:Name="_recipeImageBrush"/>
                         <!-- just a placeholder image (will be overwritten)-->
