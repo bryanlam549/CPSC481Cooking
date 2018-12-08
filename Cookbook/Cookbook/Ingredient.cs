@@ -324,9 +324,17 @@ namespace Cookbook
 
             //Debug.WriteLine(_measurement);
 
-            double threshold = (double) 1 / 16;
+            double lowThreshold = (double) 1 / 16;
 
-            if (_measurement >= threshold)
+            double highThreshold = 100.0;
+
+            // maybe also have a super high thresold (where it dont fit on screen) and you just say like > 100000
+
+            if (_measurement >= highThreshold)
+            {
+                _measurementStr = Math.Round(_measurement).ToString();
+            }
+            else if (_measurement >= lowThreshold)
             {
                 // convert to fractional form
                 _measurementStr = convertDoubleToFraction(_measurement);
