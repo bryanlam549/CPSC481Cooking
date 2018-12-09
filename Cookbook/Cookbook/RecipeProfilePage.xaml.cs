@@ -331,5 +331,15 @@ namespace Cookbook
         {
 
         }
+
+        private void downloadButton_Click(object sender, RoutedEventArgs e)
+        {
+            downloadBox.Visibility = Visibility.Visible;
+        }
+
+        private void downloadCloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            downloadBox.Visibility = Visibility.Hidden;
+        }
     }
 }

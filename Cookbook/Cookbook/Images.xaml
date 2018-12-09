@@ -22,6 +22,7 @@
     <BitmapImage x:Key="decIcon" UriSource="Images/decrement.png"/>
     <BitmapImage x:Key="decfadeIcon" UriSource="Images/decrementfade.png"/>
     <BitmapImage x:Key="delIcon" UriSource="Images/del.png" />
+    <BitmapImage x:Key="downloadIcon" UriSource="Images/download.png" />
     <BitmapImage x:Key="durationIconIcon" UriSource="Images/durationIcon.png" />
     <BitmapImage x:Key="easyIconIcon" UriSource="Images/easyIcon.png" />
     <BitmapImage x:Key="editIconIcon" UriSource="Images/editIcon.png" />

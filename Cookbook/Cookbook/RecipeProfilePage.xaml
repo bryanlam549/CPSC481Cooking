@@ -41,6 +41,23 @@
             </Button.Background>
         </Button>
 
+        <Button Name="downloadButton" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Height="64" Margin="0,0,0,0" Width="64" Grid.Column="5" Click="downloadButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource downloadIcon}" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Border Name="downloadBox"  Background="#FF9C3828" Height="110" Width="384" CornerRadius="20" 
+                    BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden" Grid.RowSpan="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.Column="1" Panel.ZIndex="10">
+            <StackPanel Height="110" Width="384">
+                <TextBlock Text="Downloading page outside application..." FontSize="20" Margin="20,5,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                <Button x:Name="downloadCloseButton" Content="Close" FontSize="24" Background="#FFADADC0" Height="40" Width="64" Margin="0" Click="downloadCloseButton_Click"/>
+            </StackPanel>
+        </Border>
+
 
 
         <Rectangle Grid.Row="1" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Height="10" Margin="0,20,0,0" RadiusX="10" RadiusY="10" />
