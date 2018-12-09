@@ -113,7 +113,11 @@ namespace Cookbook
 
         private void onEdit(object sender, RoutedEventArgs e)
         {
-            for(int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
+            Window parentWindow = Window.GetWindow(this);
+            MainWindow x = parentWindow as MainWindow;
+            Page y = x.Main.Content as Page;
+            GlobalData.Instance.prevPage = y;
+            for (int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
             {
                 if (GlobalData.Instance.recipeList[i]._name == currentRecipe._name)
                 {

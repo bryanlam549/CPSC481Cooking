@@ -43,14 +43,15 @@ namespace Cookbook
         //private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage();
         //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage();
         //private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage();
-        private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage(GlobalData.Instance.recipeList);
-        private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage(GlobalData.Instance.recentList);
-        private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage(GlobalData.Instance.modRecipeList);
+        //private CookbookFavouritePage cookbookfavouritePage = new CookbookFavouritePage(GlobalData.Instance.recipeList);
+        //private CookbookRecentPage cookbookRecentPage = new CookbookRecentPage(GlobalData.Instance.recentList);
+        //private CookbookPersonalPage cookbookPersonalPage = new CookbookPersonalPage(GlobalData.Instance.modRecipeList);
 
         public CookbookPage1()
         {
             InitializeComponent();
-            cookMain.Content = cookbookfavouritePage; // start cookbook at favourite page all the time
+            CookbookFavouritePage startup= new CookbookFavouritePage(GlobalData.Instance.recipeList);
+            cookMain.Content = startup; // start cookbook at favourite page all the time
 
         }
         //heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
@@ -62,7 +63,8 @@ namespace Cookbook
             personaleButtonImageBrush.ImageSource = personalButtonImage;
             recentButtonImageBrush.ImageSource = recentRecipeButtonImage;
             //Switch content
-            cookMain.Content = cookbookfavouritePage;
+            CookbookFavouritePage cookbookfavouritepage = new CookbookFavouritePage(GlobalData.Instance.recipeList);
+            cookMain.Content = cookbookfavouritepage;
         }
 
         private void PersonalButton_Click(object sender, RoutedEventArgs e)
@@ -73,7 +75,8 @@ namespace Cookbook
             FavouriteButtonImageBrush.ImageSource = favouriteButtonImage;
             recentButtonImageBrush.ImageSource = recentRecipeButtonImage;
             //Switch content
-            cookMain.Content = cookbookPersonalPage;
+            CookbookPersonalPage cookbookpersonalpage = new CookbookPersonalPage(GlobalData.Instance.modRecipeList);
+            cookMain.Content = cookbookpersonalpage;
         }
 
         private void recentButton_Click(object sender, RoutedEventArgs e)
@@ -84,7 +87,8 @@ namespace Cookbook
             FavouriteButtonImageBrush.ImageSource = favouriteButtonImage;
             personaleButtonImageBrush.ImageSource = personalButtonImage;
             //Switch Content
-            cookMain.Content = cookbookRecentPage;
+            CookbookRecentPage cookbookrecentpage = new CookbookRecentPage(GlobalData.Instance.recentList);
+            cookMain.Content = cookbookrecentpage;
         }
     }
 }

@@ -119,8 +119,9 @@ namespace Cookbook
 
                 //Need to reload previous page, just gonna be hard coded to favourite page rn...
                 //Probably pass in previous page into this page. Or have "previous page" as a global data. and reload it when this button is pressed.
-                CookbookPage1 prevPage = new CookbookPage1();
-                ((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
+                //CookbookPage1 prevPage = new CookbookPage1();
+                //((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
+                this.NavigationService.Navigate(previousPage);
             }
             else
             {
@@ -132,8 +133,9 @@ namespace Cookbook
         {
             //Don't update the modList
             //Probably pass in previous page into this page. Or have "previous page" as a global data. and reload it when this button is pressed.
-            CookbookPage1 prevPage = new CookbookPage1();
-            ((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
+            //CookbookPage1 prevPage = new CookbookPage1();
+            //((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
+            this.NavigationService.Navigate(previousPage);
         }
 
         //This is for rename button
