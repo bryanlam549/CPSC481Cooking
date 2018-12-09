@@ -234,6 +234,8 @@ namespace Cookbook
 		public int durationFilter = -1;
 		public int ingredCountFilter = -1;
 
+		public bool isOnResults = false;
+
 
 		//Main page
 		public SearchPage1 search = new SearchPage1();

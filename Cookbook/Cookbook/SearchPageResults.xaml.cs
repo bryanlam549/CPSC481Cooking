@@ -30,6 +30,7 @@ namespace Cookbook
 		private void EditSearch_Click(object sender, RoutedEventArgs e)
 		{
 			// Return to the search page
+			GlobalData.Instance.isOnResults = false;
 			this.NavigationService.Navigate(GlobalData.Instance.search);
 		}
 	}
