@@ -394,5 +394,16 @@
     <Resource Include="Images\servingminus.png" />
     <Resource Include="Images\servingplus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\share3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\share4.png" />
+    <Resource Include="Images\share5.png" />
+    <Resource Include="Images\share6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\share7.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

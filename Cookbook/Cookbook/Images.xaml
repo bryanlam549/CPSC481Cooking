@@ -52,9 +52,14 @@
     <BitmapImage x:Key="servingplusIcon" UriSource="Images/servingplus.png" />
     <BitmapImage x:Key="shanghaiNoodlesIcon" UriSource="Images/shanghaiNoodles.png" />
     <BitmapImage x:Key="shareIconIcon" UriSource="Images/shareIcon.png" />
-    <BitmapImage x:Key="uncheckedIcon" UriSource="Images/unchecked.png" />
     <BitmapImage x:Key="share1Icon" UriSource="Images/share1.png" />
     <BitmapImage x:Key="share2Icon" UriSource="Images/share2.png" />
+    <BitmapImage x:Key="share3Icon" UriSource="Images/share3.png" />
+    <BitmapImage x:Key="share4Icon" UriSource="Images/share4.png" />
+    <BitmapImage x:Key="share5Icon" UriSource="Images/share5.png" />
+    <BitmapImage x:Key="share6Icon" UriSource="Images/share6.png" />
+    <BitmapImage x:Key="share7Icon" UriSource="Images/share7.png" />
+    <BitmapImage x:Key="uncheckedIcon" UriSource="Images/unchecked.png" />
     <BitmapImage x:Key="unfillHeartIcon" UriSource="Images/unfillHeart.png" />
     <BitmapImage x:Key="unfillStarIcon" UriSource="Images/unfillStar.png" />
     <BitmapImage x:Key="backButton" UriSource="Images/back.png" />

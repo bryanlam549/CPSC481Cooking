@@ -126,8 +126,9 @@
                 </Button.Effect>
 
                 <StackPanel Opacity="1" Width="50" Margin="0,25,0,0">
-                    <Image Name="share1" Source="{StaticResource share1Icon}"/>
-                    <Image Name="share2"  Source="{StaticResource share2Icon}" />
+
+                    <Image Name="share2"  Source="{StaticResource share7Icon}" Height="53" Margin="-7,0,-8.785,0" 
+                           />
                     <StackPanel Orientation="Horizontal" Height="25">
 
                     </StackPanel>

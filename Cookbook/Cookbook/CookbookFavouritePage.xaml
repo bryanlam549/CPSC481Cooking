@@ -11,6 +11,11 @@
     <Grid>
         <ScrollViewer Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Name="Recipes" Height="auto" Width="auto">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type local:CookbookRecipes}">
+                        <Setter Property="Margin" Value="0,0,0,15"/>
+                    </Style>
+                </StackPanel.Resources>
                 <!--local:CookbookRecipes Dur="10mins" DiffImage="Images/easyIcon.png" Title="blah"/-->
             </StackPanel>
         </ScrollViewer>
