@@ -32,7 +32,7 @@ namespace Cookbook
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-			SearchPage1.setCategory(categoryName, this);
+			SearchPage1.setCategory(this);
 			setPressed();
 		}
 

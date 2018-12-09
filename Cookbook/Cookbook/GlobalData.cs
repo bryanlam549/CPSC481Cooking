@@ -40,20 +40,20 @@ namespace Cookbook
 
             _ingredients = new List<Ingredient>
             {
-                new Ingredient((double)1/3, "1/3", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "dark soy sauce", new List<string> { }),
-                new Ingredient(0.25, "1/4", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "oyster sauce", new List<string> { "oyster sauce", "hoisin sauce"}),
-                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sugar", new List<string> { }),
-                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "fresh ginger", new List<string> { }),
-                new Ingredient(1.0, "1", Ingredient.UnitType.MASS, Ingredient.LBS, "pork tenderloin", new List<string> { }),
-                new Ingredient(1.0, "1", Ingredient.UnitType.MASS, Ingredient.LBS, "Chinese egg noodles", new List<string> { }),
-                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cooking oil", new List<string> { }),
-                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "cloves", "garlic", new List<string> { }),
-                new Ingredient(6.0, "6", Ingredient.UnitType.NONE, "NO UNIT", "green onions", new List<string> { }),
-                new Ingredient(0.5, "1/2", Ingredient.UnitType.SPECIAL, "head", "Napa cabbage", new List<string> { }),
-                new Ingredient(1.0, "1", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "chicken stock", new List<string> { }),
-                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cornstarch", new List<string> { }),
-                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sesame oil", new List<string> { }),
-                new Ingredient(0, "", Ingredient.UnitType.NONE, "NO UNIT", "ground white pepper", new List<string> { }),
+                new Ingredient((double)1/3, "1/3", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "dark soy sauce"),
+                new Ingredient(0.25, "1/4", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "oyster sauce"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sugar"),
+                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "fresh ginger"),
+                new Ingredient(1.0, "1", Ingredient.UnitType.MASS, Ingredient.LBS, "pork tenderloin"),
+                new Ingredient(1.0, "1", Ingredient.UnitType.MASS, Ingredient.LBS, "Chinese egg noodles"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cooking oil"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "cloves", "garlic"),
+                new Ingredient(6.0, "6", Ingredient.UnitType.NONE, "NO UNIT", "green onions"),
+                new Ingredient(0.5, "1/2", Ingredient.UnitType.SPECIAL, "head", "Napa cabbage"),
+                new Ingredient(1.0, "1", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "chicken stock"),
+                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cornstarch"),
+                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sesame oil"),
+                new Ingredient(0, "", Ingredient.UnitType.NONE, "NO UNIT", "ground white pepper"),
             },
             //public Ingredient(double measurement, string measurementStr, UnitType unitType, string unitStr, string mainText)
 
@@ -90,9 +90,9 @@ namespace Cookbook
 
             _ingredients = new List<Ingredient>
             {
-                new Ingredient(2.0, "2", Ingredient.UnitType.NONE, "NO UNIT", "hamburger buns", new List<string> { }),
-                new Ingredient(2.0, "2", Ingredient.UnitType.NONE, "NO UNIT", "hamburger patties", new List<string> { }),
-                new Ingredient(5.0, "5", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "ketchup", new List<string> { }),
+                new Ingredient(2.0, "2", Ingredient.UnitType.NONE, "NO UNIT", "hamburger buns"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.NONE, "NO UNIT", "hamburger patties"),
+                new Ingredient(5.0, "5", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "ketchup"),
             },
 
             _equipment = new List<string> { "Frying Pan", "Grill", "Oven" },
@@ -119,10 +119,10 @@ namespace Cookbook
 
             _ingredients = new List<Ingredient>
             {
-                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "filets", "mackeral", new List<string> { }),
-                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sage", new List<string> { }),
-                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "cloves", "garlic", new List<string> { }),
-                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cooking oil", new List<string> { }),
+                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "filets", "mackeral"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sage"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.SPECIAL, "cloves", "garlic"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cooking oil"),
             },
 
 
@@ -152,12 +152,12 @@ namespace Cookbook
 
             _ingredients = new List<Ingredient>
             {
-                new Ingredient(170, "170", Ingredient.UnitType.MASS, Ingredient.G, "chow mein noodles", new List<string> { }),
-                new Ingredient(454, "454", Ingredient.UnitType.MASS, Ingredient.G, "chicken thighs", new List<string> { }),
-                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "broth", new List<string> { }),
-                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sesame oil", new List<string> { }),
-                new Ingredient((double)1/3, "1/3", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "dark soy sauce", new List<string> { }),
-                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cornstarch", new List<string> { }),
+                new Ingredient(170, "170", Ingredient.UnitType.MASS, Ingredient.G, "chow mein noodles"),
+                new Ingredient(454, "454", Ingredient.UnitType.MASS, Ingredient.G, "chicken thighs"),
+                new Ingredient(2.0, "2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "broth"),
+                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "sesame oil"),
+                new Ingredient((double)1/3, "1/3", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "dark soy sauce"),
+                new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.TBSP, "cornstarch"),
             },
 
             _equipment = new List<string> { "Whisk", "Non-Stick-Skillet" },
@@ -188,7 +188,7 @@ namespace Cookbook
 
             _ingredients = new List<Ingredient>
             {
-                new Ingredient(1, "1", Ingredient.UnitType.SPECIAL, "head", "lettuce", new List<string> { }),
+                new Ingredient(1, "1", Ingredient.UnitType.SPECIAL, "head", "lettuce"),
             },
 
             _equipment = new List<string> { },
@@ -206,8 +206,22 @@ namespace Cookbook
 
         public RecipeCompletionPage completionPage;
 
-        //Main page
-        public SearchPage1 search = new SearchPage1();
+
+		// Search page
+		// Creating the list of categories
+		public Category allCat = new Category("All\nCategories");
+		public Category pastryCat = new Category("Pastries");
+		public Category seaCat = new Category("Seafood");
+		public Category pastaCat = new Category("Pastas");
+		public Category burgCat = new Category("Burgers");
+		public Category pizzaCat = new Category("Pizza");
+		public Category desCat = new Category("Desserts");
+
+		public Category selectedCategory = GlobalData.Instance.allCat;
+
+
+		//Main page
+		public SearchPage1 search = new SearchPage1();
         //public CookbookPage1 cookbookPage = new CookbookPage1();
         public CurrentRecipePage1 currentRecipePage = new CurrentRecipePage1();
         public ProfilePage1 profilePage = new ProfilePage1();
@@ -219,8 +233,9 @@ namespace Cookbook
 
         public List<string> accountList = new List<string>();
 
-        //Store previous page...using this for back button for now. Unless better solution comes up
-        public Page prevPage;
+
+		//Store previous page...using this for back button for now. Unless better solution comes up
+		public Page prevPage;
 
         private GlobalData()
         {
