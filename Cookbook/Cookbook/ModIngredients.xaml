@@ -32,18 +32,18 @@
                 <TextBlock Name="foodTitle"  FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"
                TextWrapping="Wrap" FontWeight="DemiBold">food title</TextBlock>
             </Viewbox>
-           
-            
+
+
             <!--Ingredients get populated here -->
             <ScrollViewer Name="scroller" PanningMode="VerticalOnly" 
-                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,265,46,130.246">
+                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,265,46,140.246">
                 <StackPanel Name="Ings" VerticalAlignment="Top">
 
                 </StackPanel>
             </ScrollViewer>
-            
-            
-            
+
+
+
             <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
                    VerticalAlignment="Bottom" Width="500" Height="10" Margin="0,0,0,130" RadiusX="10" RadiusY="10" />
 
@@ -64,13 +64,12 @@
                     FontWeight ="DemiBold" Width="200" Margin="150,775,140,35.246" FontSize="32"
                         Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
 
+            <Label Name="InvalidInputDone" Content="*Must at least have one equipment*" Foreground="Red"
+                       FontSize="24" Margin="0,0,0,150" HorizontalAlignment="Center" 
+                   VerticalAlignment="Bottom" Visibility="Hidden"/>
         </Grid>
 
-        
-        
-        
-        
-        <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,155.246" CornerRadius="20" 
+        <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,120.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
                 <Label Name="ingLabel" Content="Ingredient Name:" FontSize="36" 
@@ -79,14 +78,17 @@
 
                 <TextBox x:Name="ingBox" FontSize="24" TextWrapping="Wrap" 
                          Text="This is where steps are and stuff you know?" Margin="28,0,28,0" Height="65" />
+                <Label Name="InvalidInput" Content="*Please do not leave ingredient name empty*" Foreground="PaleVioletRed"
+                       FontSize="16" Margin="0,0,0,0" Visibility="Hidden"
+                       HorizontalAlignment="Center"/>
                 <Label Content="Amount:" FontSize="36" Margin="20,50,0,0" 
                        FontWeight="DemiBold" Foreground="#FFC29A3A"/>
-                
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
                     <TextBox x:Name="AmountBox" FontSize="24" TextWrapping="Wrap" 
                          Text="1" Margin="28,0,28,0" Height="58" Width="104"
                              HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    
+
                     <ComboBox x:Name="measurementChanger" SelectedValuePath="Content" Text="MEAS" IsEditable="True" 
                               IsReadOnly="True" HorizontalAlignment="Left" Margin="0,0,0,0" 
                               VerticalAlignment="Center" Width="97" HorizontalContentAlignment="Center"
@@ -109,23 +111,53 @@
                             Foreground="{x:Null}" Click="unitChangerButton_Click" 
                             Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10"/>
                 </StackPanel>
+                <Label Name="InvalidInput2" Content="*Please input amount box as decimal or fraction*" Foreground="PaleVioletRed"
+                       FontSize="16" Margin="0,0,0,0" Visibility="Hidden"
+                       HorizontalAlignment="Center"/>
+                <Label Name="InvalidInput3" Content="*And/or make selection for meas/units*" Foreground="PaleVioletRed"
+                       FontSize="16" Margin="0,0,0,0" Visibility="Hidden"
+                       HorizontalAlignment="Center"/>
 
 
 
-                
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
 
-
-                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
-
-                    <Button Name="Save" Content="Save"  Height="50" Width="64" Margin="0,0,50,0" Click="Save_Click"
+                    <Button Name="Cancel" Content="Cancel" Height="60" Width="100" Click="Cancel_Click" 
+                            FontWeight ="DemiBold" Background="Red"  Margin="0,0,50,0" FontSize="16" 
+                            Style="{StaticResource CustomButtonStyle}" />
+                    <Button Name="Save" Content="Save" Height="60" Width="100" Margin="0,0,0,0" Click="Save_Click"
                     FontWeight ="DemiBold" FontSize="16" Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
 
-                    <Button Name="Cancel" Content="Cancel" Height="50" Width="64" Click="Cancel_Click" 
-                            FontWeight ="DemiBold" Background="Red"  Margin="0,0,0,0" FontSize="16" 
-                            Style="{StaticResource CustomButtonStyle}" />
+
                 </StackPanel>
             </StackPanel>
         </Border>
 
+        <Border Name="confirmBox"  Background="#FF9C3828" Margin="96,225,96,90.246" CornerRadius="20" 
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
+            <Grid>
+                <Label Name="confirmLabel" Content="Are you sure?" FontSize="36" 
+                       Margin="0,0,0,0" FontWeight="DemiBold" 
+                       HorizontalAlignment="Center" Foreground="#FFC29A3A"/>
+                <TextBlock Name="confirmLabel2" Text="*Do you want to permanently delete this ingredient?*" 
+                       FontSize="24" Margin="12,56,23.308,-5.877" TextWrapping="Wrap" FontWeight="DemiBold"
+                       HorizontalAlignment="Center" Foreground="PaleVioletRed" Width="345" Height="486" VerticalAlignment="Top"/>
+
+                <TextBlock Name="confirmStepText" Text="Insert step here" 
+                       FontSize="24" Margin="12,138,23.308,108.569" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" Foreground="White" Width="345"/>
+
+                <Button Name="yesButton" Content="Yes"   
+                        FontWeight ="DemiBold" Width="150" Height="50" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="LightGreen" BorderBrush="#FF13DB95" 
+                        VerticalAlignment="Bottom" Margin="175,0,0,50" Click="yesButton_Click"/>
+                <Button Name="noButton" Content="No"   
+                        FontWeight ="DemiBold" Width="150" Height="50" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="Red" BorderBrush="#FF13DB95" 
+                        VerticalAlignment="Bottom" Margin="-175,0,0,50" Click="noButton_Click"/>
+            </Grid>
+        </Border>
     </Grid>
 </Page>
