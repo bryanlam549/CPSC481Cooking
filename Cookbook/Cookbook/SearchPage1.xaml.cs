@@ -20,24 +20,37 @@ namespace Cookbook
     /// </summary>
     public partial class SearchPage1 : Page
     {
+		private static Category selected;
+
         public SearchPage1()
         {
             InitializeComponent();
-			GlobalData.Instance.selectedCategory.setPressed();
 
 			// Creating the list of categories
-			var categories = new StackPanel()
+			Category allCat = new Category("All\nCategories", Recipe.Categories.ALL);
+			Category beefCat = new Category("Beef", Recipe.Categories.BEEF);
+			Category chickCat = new Category("Chicken", Recipe.Categories.CHICKEN);
+			 Category pastaCat = new Category("Pastas", Recipe.Categories.PASTA);
+			 Category fishCat = new Category("Fish", Recipe.Categories.FISH);
+			 Category chineseCat = new Category("Chinese", Recipe.Categories.CHINESE);
+			 Category vegCat = new Category("Vegetarian", Recipe.Categories.VEGETARIAN);
+
+			selected = allCat;
+
+
+		// Creating the list of categories
+		var categories = new StackPanel()
 			{
 				Orientation = Orientation.Horizontal,
 
 				Children = {
-					GlobalData.Instance.allCat,
-					GlobalData.Instance.beefCat,
-					GlobalData.Instance.chickCat,
-					GlobalData.Instance.pastaCat,
-					GlobalData.Instance.fishCat,
-					GlobalData.Instance.chineseCat,
-					GlobalData.Instance.vegCat,
+					allCat,
+					beefCat,
+					chickCat,
+					pastaCat,
+					fishCat,
+					chineseCat,
+					vegCat,
 				}
 			};
 
@@ -46,8 +59,8 @@ namespace Cookbook
 		}
 
 		public static void setCategory(Category newSelected){
-			GlobalData.Instance.selectedCategory.setUnpressed();
-			GlobalData.Instance.selectedCategory = newSelected;
+			selected.setUnpressed();
+			selected = newSelected;
 		}
 
 		

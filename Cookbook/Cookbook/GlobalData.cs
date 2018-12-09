@@ -226,17 +226,6 @@ namespace Cookbook
 
 
 		// Search page
-		// Creating the list of categories
-		public Category allCat = new Category("All\nCategories", Recipe.Categories.ALL);
-		public Category beefCat = new Category("Beef", Recipe.Categories.BEEF);
-		public Category chickCat = new Category("Chicken", Recipe.Categories.CHICKEN);
-		public Category pastaCat = new Category("Pastas", Recipe.Categories.PASTA);
-		public Category fishCat = new Category("Fish", Recipe.Categories.FISH);
-		public Category chineseCat = new Category("Chinese", Recipe.Categories.CHINESE);
-		public Category vegCat = new Category("Vegetarian", Recipe.Categories.VEGETARIAN);
-
-		public Category selectedCategory;
-
 		// Filter 
 		public string searchFilter = "";
 		public List<Ingredient> ingredFilter = new List<Ingredient>();
@@ -291,8 +280,7 @@ namespace Cookbook
             accountList.Add("123456789123456789123456789");
             accountList.Add("2");
             accountList.Add("2");
-
-            selectedCategory = allCat;
+			
         }
 
     }
