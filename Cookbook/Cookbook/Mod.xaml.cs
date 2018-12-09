@@ -99,6 +99,17 @@ namespace Cookbook
                     recipeMod.modified = true;  //Flag as modified recipe
                     globalModRecipeList.Add(recipeMod);   //Add it into the modified recipe list
                                                           //Also make an instance of a profile page for later access
+                    bool nameInRecipe = false;
+                    for(int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
+                    {
+                        if(recipeMod._name == GlobalData.Instance.recipeList[i]._name)
+                        {
+                            nameInRecipe = true;
+                        }
+                    }
+                    if (nameInRecipe)
+                        recipeMod._name = "*" + recipeMod._name;
+
                     RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
                     globalModPageList.Add(modProfilePage);
 
