@@ -34,7 +34,7 @@ namespace Cookbook
 
         private List<IngredientTab> ingredientTabs = new List<IngredientTab>(); // my workaround for the recipes not referring to proper tabs (IDK WHATS GOING ON)
 
-      
+        public StepMainPage mainStep;
 
         public RecipeProfilePage(Recipe recipe)
         {
@@ -138,14 +138,14 @@ namespace Cookbook
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+
             if (_completionPage == null && _currentStep == 0 )
-            {
-                StepPage mainStep = new StepPage(_recipe);
-                this.NavigationService.Navigate(mainStep);
+            { 
+                this.NavigationService.Navigate(GetStepMainPage().allSteps.ElementAt(0));
             }
             else if(_completionPage == null && _currentStep > 0)
             {
-                StepByStepPage step = StepPage.allSteps.ElementAt(_currentStep);
+                StepByStepPage step = GetStepMainPage().allSteps.ElementAt(_currentStep);
                 this.NavigationService.Navigate(step);
             }
             else if(_completionPage != null)
@@ -153,6 +153,16 @@ namespace Cookbook
                 this.NavigationService.Navigate(_completionPage);
             }
             
+        }
+
+        private StepMainPage GetStepMainPage()
+        {
+            if(mainStep == null)
+            {
+                mainStep = new StepMainPage(_recipe);
+            }
+
+            return mainStep;
         }
 
         

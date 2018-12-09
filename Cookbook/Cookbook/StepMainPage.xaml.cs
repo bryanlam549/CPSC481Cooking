@@ -16,13 +16,13 @@ using System.Windows.Shapes;
 namespace Cookbook
 {
     /// <summary>
-    /// Interaction logic for StepPage.xaml
+    /// Interaction logic for StepMainPage.xaml
     /// </summary>
 
-    public partial class StepPage : Page
+    public partial class StepMainPage : Page
     {
-        public static List<StepByStepPage> allSteps = new List<StepByStepPage>();
-        public StepPage(Recipe recipe)
+        public  List<StepByStepPage> allSteps = new List<StepByStepPage>();
+        public StepMainPage(Recipe recipe)
         {
             InitializeComponent();
 
@@ -31,7 +31,6 @@ namespace Cookbook
                 StepByStepPage step = new StepByStepPage(recipe, i);
                 allSteps.Add(step);
             }
-            stepsMain.NavigationService.Navigate(allSteps.ElementAt(0)); // start cookbook at favourite page all the time
         }
 
 

@@ -135,7 +135,7 @@ namespace Cookbook
             if (currentStep  < recipeSteps.Count - 1)
             {
                 recipeProfilePage._currentStep = currentStep + 1;
-                this.NavigationService.Navigate(StepPage.allSteps.ElementAt(currentStep + 1));
+                this.NavigationService.Navigate(recipeProfilePage.mainStep.allSteps.ElementAt(currentStep + 1));
             }
             else
             {
@@ -152,7 +152,7 @@ namespace Cookbook
             if(currentStep > 0)
             {
                 recipeProfilePage._currentStep = currentStep - 1;
-                StepByStepPage prevStep = StepPage.allSteps.ElementAt(currentStep - 1);
+                StepByStepPage prevStep = recipeProfilePage.mainStep.allSteps.ElementAt(currentStep - 1);
                 this.NavigationService.Navigate(prevStep);
             }
         }

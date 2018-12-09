@@ -77,7 +77,7 @@ namespace Cookbook
             recipeProfile._currentStep = currentRecipe._steps.Count - 1;
             recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
 
-            StepByStepPage step = StepPage.allSteps.ElementAt(currentRecipe._steps.Count - 1);
+            StepByStepPage step = recipeProfile.mainStep.allSteps.ElementAt(currentRecipe._steps.Count - 1);
 
             this.NavigationService.Navigate(step);
         }
