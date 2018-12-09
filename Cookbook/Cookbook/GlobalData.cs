@@ -206,8 +206,22 @@ namespace Cookbook
 
         public RecipeCompletionPage completionPage;
 
-        //Main page
-        public SearchPage1 search = new SearchPage1();
+
+		// Search page
+		// Creating the list of categories
+		public Category allCat = new Category("All\nCategories");
+		public Category pastryCat = new Category("Pastries");
+		public Category seaCat = new Category("Seafood");
+		public Category pastaCat = new Category("Pastas");
+		public Category burgCat = new Category("Burgers");
+		public Category pizzaCat = new Category("Pizza");
+		public Category desCat = new Category("Desserts");
+
+		public Category selectedCategory = GlobalData.Instance.allCat;
+
+
+		//Main page
+		public SearchPage1 search = new SearchPage1();
         //public CookbookPage1 cookbookPage = new CookbookPage1();
         public CurrentRecipePage1 currentRecipePage = new CurrentRecipePage1();
         public ProfilePage1 profilePage = new ProfilePage1();
@@ -219,8 +233,9 @@ namespace Cookbook
 
         public List<string> accountList = new List<string>();
 
-        //Store previous page...using this for back button for now. Unless better solution comes up
-        public Page prevPage;
+
+		//Store previous page...using this for back button for now. Unless better solution comes up
+		public Page prevPage;
 
         private GlobalData()
         {
