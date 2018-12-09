@@ -21,8 +21,9 @@ namespace Cookbook
     public partial class SearchPage1 : Page
     {
 		private static Category selected;
+		private SearchPageResults results;
 
-        public SearchPage1()
+		public SearchPage1()
         {
             InitializeComponent();
 
@@ -71,9 +72,18 @@ namespace Cookbook
 			// TODO filter recipes
 
 			// Display recipes resulting from search
-			SearchPageResults results = new SearchPageResults(recipes);
+			GlobalData.Instance.isOnResults = true;
+			results = new SearchPageResults(recipes);
 			this.NavigationService.Navigate(results);
 		}
-		
+
+		public SearchPageResults getResults(){
+			// If the results haven't been created yet, just return all recipes
+			if (results == null)
+				return new SearchPageResults(GlobalData.Instance.recipeList);
+			return results;
+		}
+
+
 	}
 }

@@ -67,20 +67,30 @@ namespace Cookbook
             this.DragMove();
         }
 
-        //heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
-        private void SearchPageButton_Click(object sender, RoutedEventArgs e)
-        {
+		//heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+		private void SearchPageButton_Click(object sender, RoutedEventArgs e)
+		{
 
-            searchPageButtonImageBrush.ImageSource = searchButtonDarkImage; // dark
+			searchPageButtonImageBrush.ImageSource = searchButtonDarkImage; // dark
 
-            cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage; // light
-            currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonImage;
-            profilePageButtonImageBrush.ImageSource = profileButtonImage;
+			cookbookPageButtonImageBrush.ImageSource = cookbookButtonImage; // light
+			currentRecipePageButtonImageBrush.ImageSource = currentRecipeButtonImage;
+			profilePageButtonImageBrush.ImageSource = profileButtonImage;
 
 
 
-           // Main.Content = GlobalData.Instance.search;
-           Main.Content = searchPage1;
+			// Main.Content = GlobalData.Instance.search;
+
+			// If results have been made and we're not currently looking at the searchpage, return to results
+			if (GlobalData.Instance.isOnResults)
+			{
+				Main.Content = searchPage1.getResults();
+			}
+			else
+			{
+				Main.Content = searchPage1;
+				GlobalData.Instance.isOnResults = false;
+			}
         }
 
         private void CookbookPageButton_Click(object sender, RoutedEventArgs e)
