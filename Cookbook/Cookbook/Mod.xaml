@@ -114,6 +114,31 @@
                 
 
             </Border>
+            <Border Name="unsavedPopup"  Background="#FF9C3828" HorizontalAlignment="Center" VerticalAlignment="Center"
+                CornerRadius="20"  Width="300" Height="300"
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
+                <Grid>
+                    <Label Name="unsavedLabel" Content="Are you sure?" FontSize="36" 
+                       Margin="0,20,0,0" FontWeight="DemiBold" 
+                       HorizontalAlignment="Center" Foreground="#FFC29A3A"/>
+                    <TextBlock Name="unsavedStepText" Text="*Leave changes unsaved?*" 
+                       FontSize="24" Margin="10,88,6.123,158.123" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" Foreground="Yellow" Width="280"/>
+                    <Button Name="unsavedYesButton" Content="Yes" Click="unsavedYesButton_Click"
+                        FontWeight ="DemiBold" Height="57" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="LightGreen" BorderBrush="#FF13DB95" 
+                        VerticalAlignment="Bottom" Margin="160.123,0,5,43.123"/>
+                    <Button Name="unsaved_noButton" Content="No"   
+                        FontWeight ="DemiBold" Height="57" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="Red" BorderBrush="#FF13DB95" Click="unsaved_noButton_Click"
+                        VerticalAlignment="Bottom" Margin="5,0,160.123,43.123" />
+                </Grid>
+
+            </Border>
+            
+
             <Label Name="error1" Foreground="Red" FontSize="16" VerticalAlignment="Center"
                            Content= "*Name is already in your personal list, please rename!*" HorizontalAlignment="Center" Margin="0,123,0,725.246"
                            Visibility="Hidden"/>

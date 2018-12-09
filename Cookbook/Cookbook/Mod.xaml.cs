@@ -46,7 +46,10 @@ namespace Cookbook
         //Back button
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(previousPage);
+            unsavedPopup.Visibility = System.Windows.Visibility.Visible;
+            mainGrid.IsEnabled = false;
+
+            //this.NavigationService.Navigate(previousPage);
         }
 
         private void ingButton_Click(object sender, RoutedEventArgs e)
@@ -184,5 +187,20 @@ namespace Cookbook
             mainGrid.IsEnabled = true;
             error.Visibility = System.Windows.Visibility.Hidden;
         }
+
+        private void unsavedYesButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            unsavedPopup.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
+            this.NavigationService.Navigate(previousPage);
+        }
+
+        private void unsaved_noButton_Click(object sender, RoutedEventArgs e)
+        {
+            unsavedPopup.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
+        }
+
     }
 }
