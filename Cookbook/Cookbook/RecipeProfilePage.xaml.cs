@@ -24,10 +24,13 @@ namespace Cookbook
     /// </summary>
     public partial class RecipeProfilePage : Page
     {
+        public enum BackPage { SEARCH, COOKBOOK };
+
         public Recipe _recipe;
         public int _currentStep = 0;
         public Page _completionPage;
 
+        public BackPage backPage;
 
         private List<IngredientTab> ingredientTabs = new List<IngredientTab>(); // my workaround for the recipes not referring to proper tabs (IDK WHATS GOING ON)
 
@@ -100,6 +103,8 @@ namespace Cookbook
 
             _startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "START");
 
+            _backButton.transitionPageButton.Click += BackButton_Click;
+
             _startButton.transitionPageButton.Click += StartButton_Click;
 
 
@@ -113,6 +118,23 @@ namespace Cookbook
         }
 
 
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (backPage == BackPage.COOKBOOK)
+            {
+                NavigationService nav = NavigationService.GetNavigationService(this);
+                nav.Navigate(new Uri("CookbookPage1.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else if (backPage == BackPage.SEARCH)
+            {
+                // TODO after i know what the search page is called
+            }
+        }
+
+
+
+
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             if (_completionPage == null && _currentStep == 0 )
@@ -124,7 +146,8 @@ namespace Cookbook
             {
                 StepByStepPage step = StepPage.allSteps.ElementAt(_currentStep);
                 this.NavigationService.Navigate(step);
-            }else if(_completionPage != null)
+            }
+            else if(_completionPage != null)
             {
                 this.NavigationService.Navigate(_completionPage);
             }
@@ -258,5 +281,7 @@ namespace Cookbook
 
             }
         }
+
+        
     }
 }

@@ -228,7 +228,7 @@ namespace Cookbook
                             _recentList.Add(_recipeList[j]);
                         }
                         RecipeProfilePage profile = _recipePageList[_recipeList[j]._name];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
-
+                        profile.backPage = RecipeProfilePage.BackPage.COOKBOOK;
 
                         //Maybe set a flag? Also need to set something as current recipe
                         GlobalData.Instance.currentRecipe = _recipeList[j];
@@ -271,6 +271,19 @@ namespace Cookbook
                 }*/
             //}
 
+
+
+/*
+        private Page getPage()
+        {
+            var parent = VisualTreeHelper.GetParent(this);
+            while (!(parent is Page))
+            {
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+            return (parent as Page);
+        }
+*/
 
     }
 
