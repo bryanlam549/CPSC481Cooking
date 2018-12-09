@@ -27,9 +27,18 @@
                   SelectionChanged="unitChanger_SelectionChanged">
         </ComboBox>
 
-        <Button x:Name="unitChangerButton" Width="97" Height="60" Margin="100,10,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="unitChangerButton_Click" Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10">
+        <Button x:Name="unitChangerButton" Width="97" Height="60" Margin="100,10,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="unitChangerButton_Click" Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10"/>
 
-        </Button>
+
+        <ComboBox x:Name="subChanger" SelectedValuePath="Content" Text="INGREDIENT" 
+                  IsEditable="True" IsReadOnly="True" HorizontalAlignment="Left" 
+                  Margin="197,10,0,10" VerticalAlignment="Center" Width="303" 
+                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" 
+                  FontSize="24" Height="60" BorderThickness="2">
+        </ComboBox>
+
+        <Button x:Name="subChangerButton" Width="303" Height="60" Margin="197,10,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="subChangerButton_Click" Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10"/>
+
 
         <TextBlock x:Name="primaryText" Text="VALUE" HorizontalAlignment="Left" VerticalAlignment="Center" Height="32" FontSize="24" Margin="10,24,0,24" Width="85" TextAlignment="Center"/>
 

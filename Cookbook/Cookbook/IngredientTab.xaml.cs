@@ -40,34 +40,12 @@ namespace Cookbook
 
 
 
-            //_ingredient = new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "Milk"); //EX OF ONE WITH UNITS
-
-            //_ingredient = new Ingredient(1, "1", Ingredient.UnitType.NONE, "NO UNIT", "Head of cabbage"); //EX OF ONE WITH NO UNITS
-
-
             // init the TEXT (for measurement) + UNITCHANGER (visible unit) + TEXT (name)
             // have the unit drop down control be sorted alphabetically, highlight the currently selected unit
 
-            /*
-            primaryText.Text = _ingredient._primaryStr;
+            
 
-            if (_ingredient._hasUnit)
-            {
-                unitChanger.Text = _ingredient._unitStr;
-                secondaryText.Text = _ingredient._secondaryStr;
-            }
-            else
-            {
-                unitChanger.Visibility = Visibility.Hidden;
-                unitChangerButton.Visibility = Visibility.Hidden;
-                secondaryText.Text = "";
-            }
-            */
-
-            //primaryText.Text = _ingredient._primaryStr;
             primaryText.Text = _ingredient._measurementStr;
-            //secondaryText.Text = _ingredient._secondaryStr;
-            secondaryText.Text = _ingredient._mainText;
 
 
             if (_ingredient._hasStandardUnit)
@@ -91,6 +69,22 @@ namespace Cookbook
                 unitChanger.Visibility = Visibility.Hidden;
                 unitChangerButton.Visibility = Visibility.Hidden;
             }
+
+
+
+            if (_ingredient._substitutions.Count > 0)
+            {
+                secondaryText.Visibility = Visibility.Hidden;
+                subChanger.Text = _ingredient._mainText;
+                initSubMenu();
+            }
+            else // no substitutions...
+            {
+                subChanger.Visibility = Visibility.Hidden;
+                subChangerButton.Visibility = Visibility.Hidden;
+                secondaryText.Text = _ingredient._mainText;
+            }
+
 
         }
 
@@ -124,12 +118,23 @@ namespace Cookbook
         }
 
 
+        public void initSubMenu()
+        {
+            foreach(string sub in _ingredient._substitutions)
+            {
+                subChanger.Items.Add(sub);
+            }
+        }
 
+
+
+        /*
         // in recipe profile page pageloaded event, loop over all IngredientTabs and call this... or just update this when user presses on change unit or substitute...
         public void updateIngredient()
         {
 
         }
+        */
 
         private void Checkbox_Click(object sender, RoutedEventArgs e)
         {
@@ -151,6 +156,14 @@ namespace Cookbook
 
 
         
+
+        private void subChangerButton_Click(object sender, RoutedEventArgs e)
+        {
+            subChanger.IsDropDownOpen = !subChanger.IsDropDownOpen;
+        }
+
+
+
         private void unitChanger_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string oldUnitStr = _ingredient._unitStr;
@@ -176,6 +189,7 @@ namespace Cookbook
             //Debug.WriteLine(primaryText.Text);
             
         }
+
 
 
     }

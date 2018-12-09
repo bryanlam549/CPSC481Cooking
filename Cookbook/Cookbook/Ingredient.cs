@@ -52,6 +52,8 @@ namespace Cookbook
 
         public string _mainText;
 
+        public List<string> _substitutions;
+
        
 
         // -==-=-=-=-=-=-=-=
@@ -71,13 +73,14 @@ namespace Cookbook
         }
 
 
-        public Ingredient(double measurement, string measurementStr, UnitType unitType, string unitStr, string mainText)
+        public Ingredient(double measurement, string measurementStr, UnitType unitType, string unitStr, string mainText, List<string> substitutions)
         {
             _measurement = measurement;
             _measurementStr = measurementStr;
             _unitType = unitType;
             _unitStr = unitStr;
             _mainText = mainText;
+            _substitutions = substitutions;
 
             // make sure this gets called after the constructor initialization list
             if (_unitType == UnitType.VOLUME || _unitType == UnitType.MASS || _unitType == UnitType.LENGTH)

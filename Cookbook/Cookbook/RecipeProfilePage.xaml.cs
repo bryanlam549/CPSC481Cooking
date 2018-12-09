@@ -284,12 +284,16 @@ namespace Cookbook
 
         private void Scroller_ScrollChanged(object sender, ScrollChangedEventArgs e)
         {
-            
-            foreach(IngredientTab tab in ingredientTabs)
+            foreach (IngredientTab tab in ingredientTabs)
             {
-                if (tab.unitChanger.IsDropDownOpen)
+                if (tab.unitChanger.IsVisible && tab.unitChanger.IsDropDownOpen)
                 {
                     tab.unitChanger.IsDropDownOpen = false;
+                }
+
+                if (tab.subChanger.IsVisible && tab.subChanger.IsDropDownOpen)
+                {
+                    tab.subChanger.IsDropDownOpen = false;
                 }
             }
             
