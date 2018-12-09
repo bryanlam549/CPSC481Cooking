@@ -9,7 +9,6 @@ using System.Windows;
 
 
 
-
 namespace Cookbook
 {
     public class GlobalData
@@ -20,13 +19,6 @@ namespace Cookbook
         {
             get { return instance; }
         }
-
-
-        //public Recipe recipe1 = new Recipe(); // something like this, then each component like a HeartButton could have a field set to 1 recipe.
-        //public Recipe recipe2 = new Recipe();
-
-        //public Page page1 = new Page();
-        //public SearchPage1 search;
 
 
         // RECIPES:
@@ -210,7 +202,7 @@ namespace Cookbook
         public Dictionary<String, RecipeProfilePage> recipePageList = new Dictionary<string, RecipeProfilePage>(); //Used to access profile pages
         public List<RecipeProfilePage> modrecipePageList = new List<RecipeProfilePage>(); //Used to access modified profile pages
 
-        public  Dictionary<String, String> lookUpTerms = new Dictionary<String, String>(); //map of dictionary words
+        public Dictionary<String, String> lookUpTerms = new Dictionary<String, String>(); //map of dictionary words
 
         public RecipeCompletionPage completionPage;
 

@@ -9,6 +9,6 @@
       Title="CurrentRecipePage1">
 
     <Grid>
-        <TextBlock Text="PAGE3" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="You have no recipe in progress! Find a new one through the search page or re-live the experience of cooking one of your favourites in your cookbook!" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Width="400" TextAlignment="Center"/>
     </Grid>
 </Page>

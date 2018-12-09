@@ -38,7 +38,7 @@ namespace Cookbook
         {
             NONE, SPECIAL, VOLUME, MASS, LENGTH
         }
-        
+
 
         
 
@@ -318,8 +318,15 @@ namespace Cookbook
 
         }
 
-        private void updateMeasurementStr()
+        public void updateMeasurementStr()
         {
+
+            if (_unitType == UnitType.NONE)
+            {
+                _measurementStr = "";
+                return;
+            }
+
             // take new _measurement value, convert to either fractional form (or decimal form if small)
 
             //Debug.WriteLine(_measurement);
@@ -352,125 +359,80 @@ namespace Cookbook
         // only use this when value >= 1/16
         private string convertDoubleToFraction(double value)
         {
-
-            //Debug.WriteLine(value);
-
-
             string unitTerm;
-            string fracTerm;
+            string fracTerm = "";
 
             int unitPart = (int) Math.Floor(value);
-
-            //Debug.WriteLine(unitPart);
-
             double fracPart = value - unitPart;
-
-            //Debug.WriteLine(fracPart);
-
 
             // now see which fraction value the fracPart is closest to...
 
+            // WE NEED MORE FRACTIONS! 
+            // 1
+            // 1/2
+            // 1/3, 2/3
+            // 1/4, 3/4
+            // 1/5, 2/5, 3/5, 4/5
+            // 1/6, 5/6
+            // 1/8, 3/8, 5/8, 7/8
+            // 1/16, 3/16, 5/16, 7/16, 9/16, 11/16, 13/16, 15/16
 
-            // 15/16, 7/8, 13/16, 3/4, 11/16, 5/8, 9/16, 1/2, 7/16, 3/8, 5/16, 1/4, 3/16, 1/8, 1/16
+            double _0 = 0.0; // lower bound
+            double _1 = 1.0; // upper bound
+            double _1_2 = 0.5;
+            double _1_3 = (double)1 / 3;
+            double _2_3 = (double)2 / 3;
+            double _1_4 = 0.25;
+            double _3_4 = 0.75;
+            double _1_5 = 0.2;
+            double _2_5 = 0.4;
+            double _3_5 = 0.6;
+            double _4_5 = 0.8;
+            double _1_6 = (double)1 / 6;
+            double _5_6 = (double)5 / 6;
+            double _1_8 = 0.125;
+            double _3_8 = 0.375;
+            double _5_8 = 0.625;
+            double _7_8 = 0.875;
+            double _1_16 = 0.0625;
+            double _3_16 = 0.1875;
+            double _5_16 = 0.3125;
+            double _7_16 = 0.4375;
+            double _9_16 = 0.5625;
+            double _11_16 = 0.6875;
+            double _13_16 = 0.8125;
+            double _15_16 = 0.9375;
 
-            double _15_16 = (double) 15 / 16;
-            double _7_8 = (double) 7 / 8;
-            double _13_16 = (double) 13 / 16;
-            double _3_4 = (double) 3 / 4;
-            double _11_16 = (double) 11 / 16;
-            double _5_8 = (double) 5 / 8;
-            double _9_16 = (double) 9 / 16;
-            double _1_2 = (double) 1 / 2;
-            double _7_16 = (double) 7 / 16;
-            double _3_8 = (double) 3 / 8;
-            double _5_16 = (double) 5 / 16;
-            double _1_4 = (double) 1 / 4;
-            double _3_16 = (double) 3 / 16;
-            double _1_8 = (double) 1 / 8;
-            double _1_16 = (double) 1 / 16;
+            List<double> fractions = new List<double> { _0, _1, _1_2, _1_3, _2_3, _1_4, _3_4, _1_5, _2_5, _3_5, _4_5, _1_6,_5_6, _1_8, _3_8, _5_8, _7_8, _1_16, _3_16, _5_16, _7_16, _9_16, _11_16, _13_16, _15_16};
+            double closest = fractions.Aggregate((x, y) => Math.Abs(x - fracPart) < Math.Abs(y - fracPart) ? x : y);
 
-            double _1_32 = (double) 1 / 32; // for rounding...
-
-            if (fracPart > _15_16 + _1_32) // rounds up to next int (no frac term)
-            {
-
-                //Debug.WriteLine("HERE");
-
-                unitPart++;
-                fracTerm = "";
-            }
-            else if (fracPart > _7_8 + _1_32)
-            {
-                fracTerm = "15/16";
-            }
-            else if (fracPart > _13_16 + _1_32)
-            {
-                fracTerm = "7/8";
-            }
-            else if (fracPart > _3_4 + _1_32)
-            {
-                fracTerm = "13/16";
-            }
-            else if (fracPart > _11_16 + _1_32)
-            {
-                fracTerm = "3/4";
-            }
-            else if (fracPart > _5_8 + _1_32)
-            {
-                fracTerm = "11/16";
-            }
-            else if (fracPart > _9_16 + _1_32)
-            {
-                fracTerm = "5/8";
-            }
-            else if (fracPart > _1_2 + _1_32)
-            {
-                fracTerm = "9/16";
-            }
-            else if (fracPart > _7_16 + _1_32)
-            {
-                fracTerm = "1/2";
-            }
-            else if (fracPart > _3_8 + _1_32)
-            {
-                fracTerm = "7/16";
-            }
-            else if (fracPart > _5_16 + _1_32)
-            {
-                fracTerm = "3/8";
-            }
-            else if (fracPart > _1_4 + _1_32)
-            {
-                fracTerm = "5/16";
-            }
-            else if (fracPart > _3_16 + _1_32)
-            {
-                fracTerm = "1/4";
-            }
-            else if (fracPart > _1_8 + _1_32)
-            {
-                fracTerm = "3/16";
-            }
-            else if (fracPart > _1_16 + _1_32)
-            {
-                fracTerm = "1/8";
-            }
-            else if (fracPart > _1_32)
-            {
-                fracTerm = "1/16";
-            }
-            else
-            {
-                fracTerm = "";
-            }
-
-            //Debug.WriteLine(unitPart);
-
-            //Debug.WriteLine(unitPart.ToString());
+            if (Math.Abs(closest - _0) < 0.0001) { fracTerm = ""; }
+            else if (Math.Abs(closest - _1) < 0.0001) { unitPart++; fracTerm = ""; }
+            else if (Math.Abs(closest - _1_2) < 0.0001) { fracTerm = "1/2"; }
+            else if (Math.Abs(closest - _1_3) < 0.0001) { fracTerm = "1/3"; }
+            else if (Math.Abs(closest - _2_3) < 0.0001) { fracTerm = "2/3"; }
+            else if (Math.Abs(closest - _1_4) < 0.0001) { fracTerm = "1/4"; }
+            else if (Math.Abs(closest - _3_4) < 0.0001) { fracTerm = "3/4"; }
+            else if (Math.Abs(closest - _1_5) < 0.0001) { fracTerm = "1/5"; }
+            else if (Math.Abs(closest - _2_5) < 0.0001) { fracTerm = "2/5"; }
+            else if (Math.Abs(closest - _3_5) < 0.0001) { fracTerm = "3/5"; }
+            else if (Math.Abs(closest - _4_5) < 0.0001) { fracTerm = "4/5"; }
+            else if (Math.Abs(closest - _1_6) < 0.0001) { fracTerm = "1/6"; }
+            else if (Math.Abs(closest - _5_6) < 0.0001) { fracTerm = "5/6"; }
+            else if (Math.Abs(closest - _1_8) < 0.0001) { fracTerm = "1/8"; }
+            else if (Math.Abs(closest - _3_8) < 0.0001) { fracTerm = "3/8"; }
+            else if (Math.Abs(closest - _5_8) < 0.0001) { fracTerm = "5/8"; }
+            else if (Math.Abs(closest - _7_8) < 0.0001) { fracTerm = "7/8"; }
+            else if (Math.Abs(closest - _1_16) < 0.0001) { fracTerm = "1/16"; }
+            else if (Math.Abs(closest - _3_16) < 0.0001) { fracTerm = "3/16"; }
+            else if (Math.Abs(closest - _5_16) < 0.0001) { fracTerm = "5/16"; }
+            else if (Math.Abs(closest - _7_16) < 0.0001) { fracTerm = "7/16"; }
+            else if (Math.Abs(closest - _9_16) < 0.0001) { fracTerm = "9/16"; }
+            else if (Math.Abs(closest - _11_16) < 0.0001) { fracTerm = "11/16"; }
+            else if (Math.Abs(closest - _13_16) < 0.0001) { fracTerm = "13/16"; }
+            else if (Math.Abs(closest - _15_16) < 0.0001) { fracTerm = "15/16"; }
 
             unitTerm = unitPart >= 1 ? unitPart.ToString() : "";
-
-            //Debug.WriteLine(unitTerm);
 
             string fullTerm = unitTerm + " " + fracTerm;
 
@@ -478,6 +440,7 @@ namespace Cookbook
 
         }
 
+        
 
     }
 

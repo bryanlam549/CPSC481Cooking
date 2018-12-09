@@ -43,8 +43,8 @@ namespace Cookbook
         private ProfilePage1 profilePage1 = GlobalData.Instance.profilePage;
 
         //Recipes
-        public static RecipeProfilePage shanghaiProfile = new RecipeProfilePage(GlobalData.Instance._shanghaiNoodlesRecipe);
-        public static RecipeProfilePage burgerprofile = new RecipeProfilePage(GlobalData.Instance._burger);
+        //public static RecipeProfilePage shanghaiProfile = new RecipeProfilePage(GlobalData.Instance._shanghaiNoodlesRecipe);
+        //public static RecipeProfilePage burgerprofile = new RecipeProfilePage(GlobalData.Instance._burger);
         //public static Recipe burgerProperties = GlobalData.Instance._burger; //Doesn't work unless I call this in main?!
         //public static Boolean burgerFave = GlobalData.Instance._burger._isFavourite;
 

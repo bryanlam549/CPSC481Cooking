@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Diagnostics;
+
 // ~~~~~~~~~~~~~~~NOTE: make sure to actually update the recipe instance when something changes (or create new recipe and add to 
 
 namespace Cookbook
@@ -25,11 +27,17 @@ namespace Cookbook
         public Recipe _recipe;
         public int _currentStep = 0;
         public Page _completionPage;
+
+
+        private List<IngredientTab> ingredientTabs = new List<IngredientTab>(); // my workaround for the recipes not referring to proper tabs (IDK WHATS GOING ON)
+
       
 
         public RecipeProfilePage(Recipe recipe)
         {
             InitializeComponent();
+
+
 
             // init components...
 
@@ -135,7 +143,9 @@ namespace Cookbook
 
             foreach(Ingredient ingredient in _recipe._ingredients)
             {
-                stackPanel.Children.Add(new IngredientTab(ingredient));
+                IngredientTab nextIngredientTab = new IngredientTab(ingredient);
+                ingredientTabs.Add(nextIngredientTab);
+                stackPanel.Children.Add(nextIngredientTab);
             }
 
         }
@@ -208,14 +218,45 @@ namespace Cookbook
 
         private void minusButton_Click(object sender, RoutedEventArgs e)
         {
-            _recipe._servings = _recipe._servings > 1 ? _recipe._servings - 1 : 1;
-            servingValueText.Text = _recipe._servings.ToString();
+            int oldServings = _recipe._servings;
+            if (oldServings > 1)
+            {
+                _recipe._servings--;
+                int newServings = _recipe._servings;
+                servingValueText.Text = newServings.ToString();
+                double scalar = (double) newServings / oldServings;
+
+                Debug.WriteLine(scalar);
+
+                foreach(IngredientTab tab in ingredientTabs)
+                {
+                    tab._ingredient._measurement *= scalar;
+                    tab._ingredient.updateMeasurementStr();
+                    tab.primaryText.Text = tab._ingredient._measurementStr;
+                }
+
+            }
+
         }
 
         private void plusButton_Click(object sender, RoutedEventArgs e)
         {
-            _recipe._servings = _recipe._servings < 99 ? _recipe._servings + 1 : 99;
-            servingValueText.Text = _recipe._servings.ToString();
+            int oldServings = _recipe._servings;
+            if (oldServings < 20)
+            {
+                _recipe._servings++;
+                int newServings = _recipe._servings;
+                servingValueText.Text = newServings.ToString();
+                double scalar = (double) newServings / oldServings;
+
+                foreach (IngredientTab tab in ingredientTabs)
+                {
+                    tab._ingredient._measurement *= scalar;
+                    tab._ingredient.updateMeasurementStr();
+                    tab.primaryText.Text = tab._ingredient._measurementStr;
+                }
+
+            }
         }
     }
 }

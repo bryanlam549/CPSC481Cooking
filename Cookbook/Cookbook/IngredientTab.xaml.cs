@@ -31,12 +31,13 @@ namespace Cookbook
         private BitmapImage uncheckedImage = (BitmapImage)Application.Current.Resources["uncheckedIcon"];
         private BitmapImage checkedImage = (BitmapImage)Application.Current.Resources["checkedIcon"];
 
-
         public IngredientTab(Ingredient ingredient)
         {
-            _ingredient = ingredient;
 
             InitializeComponent();
+
+            _ingredient = ingredient;
+
 
 
             //_ingredient = new Ingredient(1.5, "1 1/2", Ingredient.UnitType.VOLUME, Ingredient.CUPS, "Milk"); //EX OF ONE WITH UNITS
