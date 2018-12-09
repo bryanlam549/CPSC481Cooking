@@ -128,13 +128,7 @@ namespace Cookbook
 
 
 
-        /*
-        // in recipe profile page pageloaded event, loop over all IngredientTabs and call this... or just update this when user presses on change unit or substitute...
-        public void updateIngredient()
-        {
 
-        }
-        */
 
         private void Checkbox_Click(object sender, RoutedEventArgs e)
         {
@@ -190,7 +184,9 @@ namespace Cookbook
             
         }
 
-
-
+        private void subChanger_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _ingredient._mainText = subChanger.SelectedItem.ToString();
+        }
     }
 }

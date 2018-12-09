@@ -22,114 +22,25 @@ namespace Cookbook
     {
         public int recipeNum;
         Page previousPage = GlobalData.Instance.prevPage;
-        public Recipe recipeMod = new Recipe();
+        //public Recipe recipeMod = new Recipe();
+        public Recipe recipeMod;
+
+        // _recipe is the recipe to copy...
         public Mod(Recipe _recipe, int _recipeNum)
         {
             InitializeComponent();
             recipeNum = _recipeNum;  //This is used to determine which recipe to replace when the  recipe being edited is already modified
-            //recipe = _recipe;
-            //COPY the recipe...Might not actually be a copy....
-            //I NEEEED A DEEP COPY!
-            /*This doesn't do it!
-            Recipe deepCopy = new Recipe()
-            {
-                _isFavourite = _recipe._isFavourite,
-                _name = _recipe._name,
-                _image = _recipe._image,
-                _difficulty = _recipe._difficulty,
-                _rating = _recipe._rating,
-                _duration = _recipe._duration,
-                _description = _recipe._description,
-                _servings = _recipe._servings,
-                _ingredientCount = _recipe._ingredientCount,
-                _category = _recipe._category,
-                _equipment = _recipe._equipment,
-                _steps = _recipe._steps
-            };
-            recipeMod = deepCopy;*/
 
+            // deep copy recipe...
 
-            //This doesn't do it either for some reason....
+            recipeMod = new Recipe(_recipe);
 
-            
-            bool tempFave = _recipe._isFavourite;
-            recipeMod._isFavourite = tempFave;
-
-            string tempName = _recipe._name;
-            recipeMod._name = tempName;
-
-            BitmapImage tempImage = _recipe._image;
-            recipeMod._image = tempImage;
-
-            int tempRating = _recipe._rating;
-            recipeMod._rating = tempRating;
-
-            int tempDuration = _recipe._duration;
-            recipeMod._duration = tempDuration;
-
-            Recipe.Difficulties tempDiff = _recipe._difficulty;
-            recipeMod._difficulty = tempDiff;
-
-            string tempDesc = _recipe._description;
-            recipeMod._description = tempDesc;
-
-            int tempServe = _recipe._servings;
-            recipeMod._servings = tempServe;
-
-            int tempIngCount = _recipe._ingredientCount;
-            recipeMod._ingredientCount = tempIngCount;
-
-            Recipe.Categories tempCategories = _recipe._category;
-            recipeMod._category = tempCategories;
-
-            bool tempModified = _recipe.modified;
-            recipeMod.modified = tempModified;
-
-            List<Ingredient> tempIngredients = new List<Ingredient>();
-            for(int i = 0; i < _recipe._ingredients.Count; i++)
-            {
-                tempIngredients.Add(_recipe._ingredients[i]);
-                recipeMod._ingredients.Add(tempIngredients[i]);
-            }
-            
-            List<string> tempEquip = new List<string>();
-            for (int i = 0; i < _recipe._equipment.Count; i++)
-            {
-                tempEquip.Add(_recipe._equipment[i]);
-                recipeMod._equipment.Add(tempEquip[i]);
-            }
-            
-            List<string> tempSteps = new List<string>();
-            for (int i = 0; i < _recipe._steps.Count; i++)
-            {
-                tempSteps.Add(_recipe._steps[i]);
-                recipeMod._steps.Add(tempSteps[i]);
-            }
-            
-
-            /*
-            recipeMod._isFavourite = _recipe._isFavourite;
-            recipeMod._name = _recipe._name;
-            recipeMod._image = _recipe._image;
-            recipeMod._rating = _recipe._rating;
-            recipeMod._duration = _recipe._duration;
-            recipeMod._difficulty = _recipe._difficulty;
-            recipeMod._description = _recipe._description;
-            recipeMod._servings = _recipe._servings;
-            recipeMod._ingredientCount = _recipe._ingredientCount;
-            recipeMod._category = _recipe._category;
-            recipeMod._ingredients = _recipe._ingredients;
-            recipeMod._equipment = _recipe._equipment;
-            recipeMod._steps = _recipe._steps;
-            */
             modTitle.Text = recipeMod._name;
-            //modTitle.Text = recipeMod._steps.Count.ToString();
         }
 
         //Back button
         private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
         {
-            //this.NavigationService.GoBack();
             this.NavigationService.Navigate(previousPage);
         }
 

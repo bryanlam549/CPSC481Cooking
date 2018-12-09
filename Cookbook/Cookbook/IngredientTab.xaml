@@ -34,7 +34,7 @@
                   IsEditable="True" IsReadOnly="True" HorizontalAlignment="Left" 
                   Margin="197,10,0,10" VerticalAlignment="Center" Width="303" 
                   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" 
-                  FontSize="24" Height="60" BorderThickness="2">
+                  FontSize="24" Height="60" BorderThickness="2" SelectionChanged="subChanger_SelectionChanged">
         </ComboBox>
 
         <Button x:Name="subChangerButton" Width="303" Height="60" Margin="197,10,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="subChangerButton_Click" Style="{StaticResource CustomButtonStyle}" Opacity="0" Panel.ZIndex="10"/>

@@ -326,5 +326,10 @@ namespace Cookbook
             _ratingControl.initStartingRating(_recipe._rating);
 
         }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

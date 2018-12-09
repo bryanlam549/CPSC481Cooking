@@ -28,6 +28,7 @@ namespace Cookbook
         public int recipeNum;
         int ingNum;
         bool changeAddFlag; //falsefor change, true for add
+
         public ModIngredients(Recipe recipe, int _recipeNum)
         {
             InitializeComponent();
@@ -37,8 +38,6 @@ namespace Cookbook
             recipeNum = _recipeNum;
             for (int i = 0; i < _recipe._ingredients.Count; i++)
             {
-
-                //MessageBox.Show(_recipe._ingredients[i]._name);
                 ModUserControl ing;
                 if (_recipe._ingredients[i]._unitStr != "NO UNIT")
                 {
