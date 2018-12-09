@@ -21,7 +21,7 @@ namespace Cookbook
 	{
 
 		private string categoryName;
-		Recipe.Categories category;
+		public Recipe.Categories category;
 
 
 		public Category(string categoryName, Recipe.Categories category)
@@ -36,7 +36,6 @@ namespace Cookbook
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			SearchPage1.setCategory(this);
-			setPressed();
 		}
 
 		public void setPressed()

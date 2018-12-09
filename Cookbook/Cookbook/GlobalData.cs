@@ -237,6 +237,7 @@ namespace Cookbook
 		public int ratingFilter = -1;
 		public int durationFilter = -1;
 		public int ingredCountFilter = -1;
+		public Recipe.Categories categoryFilter = Recipe.Categories.ALL;
 
 		public bool isOnResults = false;
 
