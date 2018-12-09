@@ -13,11 +13,29 @@ namespace Cookbook
 {
     public class GlobalData
     {
+        
+        /*
         private static GlobalData instance = new GlobalData();
 
         public static GlobalData Instance
         {
             get { return instance; }
+        }
+        */
+
+        private static GlobalData instance = null;
+
+        public static GlobalData Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GlobalData();
+                }
+                return instance;
+            }
+            
         }
 
 
@@ -209,6 +227,8 @@ namespace Cookbook
 
 		// Search page
 		// Creating the list of categories
+        
+        
 		public Category allCat = new Category("All\nCategories");
 		public Category pastryCat = new Category("Pastries");
 		public Category seaCat = new Category("Seafood");
@@ -216,9 +236,10 @@ namespace Cookbook
 		public Category burgCat = new Category("Burgers");
 		public Category pizzaCat = new Category("Pizza");
 		public Category desCat = new Category("Desserts");
+        
 
-		public Category selectedCategory = GlobalData.Instance.allCat;
-
+        public Category selectedCategory;
+        
 
 		//Main page
 		public SearchPage1 search = new SearchPage1();
@@ -265,6 +286,8 @@ namespace Cookbook
             accountList.Add("123456789123456789123456789");
             accountList.Add("2");
             accountList.Add("2");
+
+            selectedCategory = allCat;
         }
 
     }
