@@ -128,6 +128,10 @@ namespace Cookbook
         {
               
             _recipe._steps.RemoveAt(stepNum);
+
+            // need to delete corresponding time for step
+            _recipe._timerValuesForSteps.RemoveAt(stepNum);
+
             //Steps.Children.RemoveAt(stepNum);
             //Or i can update the page
             ModSteps updatePage = new ModSteps(_recipe, recipeNum);
