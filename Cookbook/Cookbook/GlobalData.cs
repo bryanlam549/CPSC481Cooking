@@ -247,6 +247,7 @@ namespace Cookbook
 
         //Current recipe
         public Recipe currentRecipe;
+        public Recipe currentlyModifying;
 
         public List<string> accountList = new List<string>();
 
@@ -284,6 +285,68 @@ namespace Cookbook
             accountList.Add("2");
 			
         }
+        public Recipe copy(Recipe recipeOG)
+        {
+            Recipe _copy = new Recipe();
 
+            //MessageBox.Show(recipeOG.ToString());
+            bool tempFave = recipeOG._isFavourite;
+            _copy._isFavourite = tempFave;
+
+            string tempName = recipeOG._name;
+            _copy._name = tempName;
+
+            BitmapImage tempImage = recipeOG._image;
+            _copy._image = tempImage;
+
+            int tempRating = recipeOG._rating;
+            _copy._rating = tempRating;
+
+            int tempDuration = recipeOG._duration;
+            _copy._duration = tempDuration;
+
+            Recipe.Difficulties tempDiff = recipeOG._difficulty;
+            _copy._difficulty = tempDiff;
+
+            string tempDesc = recipeOG._description;
+            _copy._description = tempDesc;
+
+            int tempServe = recipeOG._servings;
+            _copy._servings = tempServe;
+
+            int tempIngCount = recipeOG._ingredientCount;
+            _copy._ingredientCount = tempIngCount;
+
+            Recipe.Categories tempCategories = recipeOG._category;
+            _copy._category = tempCategories;
+
+            bool tempModified = recipeOG.modified;
+            _copy.modified = tempModified;
+
+            List<Ingredient> tempIngredients = new List<Ingredient>();
+            for (int i = 0; i < recipeOG._ingredients.Count; i++)
+            {
+                tempIngredients.Add(recipeOG._ingredients[i]);
+                _copy._ingredients.Add(tempIngredients[i]);
+            }
+
+            List<string> tempEquip = new List<string>();
+            for (int i = 0; i < recipeOG._equipment.Count; i++)
+            {
+                tempEquip.Add(recipeOG._equipment[i]);
+                _copy._equipment.Add(tempEquip[i]);
+            }
+
+            List<string> tempSteps = new List<string>();
+            for (int i = 0; i < recipeOG._steps.Count; i++)
+            {
+                tempSteps.Add(recipeOG._steps[i]);
+                _copy._steps.Add(tempSteps[i]);
+            }
+
+            return _copy;
+
+
+        }
     }
 }

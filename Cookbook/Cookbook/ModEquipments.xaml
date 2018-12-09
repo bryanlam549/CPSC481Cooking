@@ -9,13 +9,18 @@
       Title="ModEquipments">
 
     <Grid>
+        <Label Content="Back" HorizontalAlignment="Left" Margin="45,215,0,5.246"
+               FontSize="22"></Label>
         <Grid Name="mainGrid">
             <Rectangle  Fill="#FF7C2F1F" HorizontalAlignment="Center"
                    VerticalAlignment="Top" Width="500" Height="10" Margin="0,250,0,0" RadiusX="10" RadiusY="10" />
 
-            <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="38,155,0,0" 
+            <Button x:Name="backButton" Content="" HorizontalAlignment="Left" Margin="38,155,0,0" 
                 VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
-                Style="{StaticResource CustomButtonStyle}" Click="cookbookPageButton_Click" >
+                Style="{StaticResource CustomButtonStyle}" Click="BackButton_Click" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
                 <Button.Background>
                     <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
                 </Button.Background>
@@ -52,22 +57,33 @@
             </Button>
             <Label Name="buttonLabel" Content="Add" HorizontalAlignment="Right" 
                    VerticalAlignment="Bottom" Margin="0,0,45,20.246"
-                   FontWeight="DemiBold" FontSize="16"/>
+                   FontWeight="DemiBold" FontSize="16">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
 
             <Button Name="saveButton" Content="Done"   Click="doneButton_Click" 
                     FontWeight ="DemiBold" Width="200" Margin="150,775,140,35.246" FontSize="32"
-                        Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
-            
+                        Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+
             <Label Name="InvalidInputDone" Content="*Must at least have one equipment*" Foreground="Red"
                        FontSize="24" Margin="0,0,0,150" HorizontalAlignment="Center" 
                    VerticalAlignment="Bottom" Visibility="Hidden"/>
         </Grid>
 
-        <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,110.246" CornerRadius="20" 
+        <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,95.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
                 <Button Name="IncButton" Height="50" Width="50" Margin="192,10,0,0" 
                         Click="IncButton_Click" Style="{StaticResource CustomButtonStyle}">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
                     <Button.Background>
                         <ImageBrush x:Name="incrementBrush" ImageSource="{StaticResource incIcon}"/>
                     </Button.Background>
@@ -83,6 +99,9 @@
                 </StackPanel>
                 <Button Name="DecButton" Height="50" Width="50"  Margin="192,10,0,0" 
                         Click="DecButton_Click" Style="{StaticResource CustomButtonStyle}">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
                     <Button.Background>
                         <ImageBrush x:Name="decrementBrush" ImageSource="{StaticResource decIcon}"/>
                     </Button.Background>
@@ -91,21 +110,31 @@
                 <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
                 <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" 
                          Text="This is where steps are" Margin="28,0,28,0" Height="166" />
-                <Label Name="InvalidInput" Content="*Do not leave equipment box empty*" Foreground="PaleVioletRed"
+                <Label Name="InvalidInput" Content="*Do not leave equipment box empty*" Foreground="Yellow"
                        FontSize="16" Margin="0,0,0,0" Visibility="Hidden"
                        HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
 
-                    <Button Name="Cancel" Content="Cancel" Height="60" Width="100" Click="Cancel_Click" 
-                            FontWeight ="DemiBold" Background="Red"  Margin="0,0,50,0" FontSize="16" 
-                            Style="{StaticResource CustomButtonStyle}" />
-                    <Button Name="Save" Content="Save" Height="60" Width="100" Margin="0,0,0,0" Click="Save_Click"
-                    FontWeight ="DemiBold" FontSize="16" Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
-
+                    <Button Name="Cancel" Content="Cancel" Height="57" Width="96" FontSize="32" 
+                            Click="Cancel_Click" 
+                            FontWeight ="DemiBold" Background="Red" 
+                            Style="{StaticResource CustomButtonStyle}" >
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <Button Name="Save" Content="Save"  Height="57" Width="96"  FontSize="32"
+                            Click="Save_Click" Margin="25,0,0,0"
+                            FontWeight ="DemiBold" Style="{StaticResource CustomButtonStyle}" 
+                            Background="LightGreen" BorderBrush="#FF13DB95">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
                 </StackPanel>
             </StackPanel>
         </Border>
-        
+
         <Border Name="confirmBox"  Background="#FF9C3828" Margin="96,225,96,90.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <Grid>
@@ -113,24 +142,57 @@
                        Margin="0,0,0,0" FontWeight="DemiBold" 
                        HorizontalAlignment="Center" Foreground="#FFC29A3A"/>
                 <TextBlock Name="confirmLabel2" Text="*Do you want to permanently delete this equipment?*" 
-                       FontSize="24" Margin="12,56,23.308,-5.877" TextWrapping="Wrap" FontWeight="DemiBold"
-                       HorizontalAlignment="Center" Foreground="PaleVioletRed" Width="345" Height="486" VerticalAlignment="Top"/>
+                       FontSize="24" Margin="12,67,23.308,0" TextWrapping="Wrap" FontWeight="DemiBold"
+                       HorizontalAlignment="Center" Foreground="Yellow" Width="345" Height="486" VerticalAlignment="Top"/>
 
                 <TextBlock Name="confirmStepText" Text="Insert equipment here" 
-                       FontSize="24" Margin="12,138,23.308,108.569" TextWrapping="Wrap"
+                       FontSize="24" Margin="12,158,23.308,88.231" TextWrapping="Wrap"
                        HorizontalAlignment="Center" Foreground="White" Width="345"/>
 
                 <Button Name="yesButton" Content="Yes"   
-                        FontWeight ="DemiBold" Width="150" Height="50" FontSize="32"
+                        FontWeight ="DemiBold" Width="150" Height="57" FontSize="32" Margin="170.123,0,5,43.123"
                             Style="{StaticResource CustomButtonStyle}"
                         Background="LightGreen" BorderBrush="#FF13DB95" 
-                        VerticalAlignment="Bottom" Margin="175,0,0,50" Click="yesButton_Click"/>
+                        VerticalAlignment="Bottom"  Click="yesButton_Click">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
                 <Button Name="noButton" Content="No"   
-                        FontWeight ="DemiBold" Width="150" Height="50" FontSize="32"
+                        FontWeight ="DemiBold" Width="150" Height="57" FontSize="32" Margin="5,0,170.123,43.123"
                             Style="{StaticResource CustomButtonStyle}"
                         Background="Red" BorderBrush="#FF13DB95" 
-                        VerticalAlignment="Bottom" Margin="-175,0,0,50" Click="noButton_Click"/>
+                        VerticalAlignment="Bottom" Click="noButton_Click">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
             </Grid>
         </Border>
+
+        <Border Name="unsavedPopup"  Background="#FF9C3828" HorizontalAlignment="Center" VerticalAlignment="Center"
+                CornerRadius="20"  Width="300" Height="300"
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
+            <Grid>
+                <Label Name="unsavedLabel" Content="Are you sure?" FontSize="36" 
+                       Margin="0,20,0,0" FontWeight="DemiBold" 
+                       HorizontalAlignment="Center" Foreground="#FFC29A3A"/>
+                <TextBlock Name="unsavedStepText" Text="*Leave changes unsaved?*" 
+                       FontSize="24" Margin="10,88,6.123,158.123" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" Foreground="Yellow" Width="280"/>
+                <Button Name="unsavedYesButton" Content="Yes" Click="unsavedYesButton_Click"
+                        FontWeight ="DemiBold" Height="57" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="LightGreen" BorderBrush="#FF13DB95" 
+                        VerticalAlignment="Bottom" Margin="160.123,0,5,43.123"/>
+                <Button Name="unsaved_noButton" Content="No"   
+                        FontWeight ="DemiBold" Height="57" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="Red" BorderBrush="#FF13DB95" Click="unsaved_noButton_Click"
+                        VerticalAlignment="Bottom" Margin="5,0,160.123,43.123" />
+            </Grid>
+
+        </Border>
+
     </Grid>
 </Page>

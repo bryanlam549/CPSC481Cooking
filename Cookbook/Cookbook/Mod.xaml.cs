@@ -23,6 +23,7 @@ namespace Cookbook
         public int recipeNum;
         Page previousPage = GlobalData.Instance.prevPage;
         public Recipe recipeMod = new Recipe();
+        public Recipe copy = new Recipe();
         public Mod(Recipe _recipe, int _recipeNum)
         {
             InitializeComponent();
@@ -135,18 +136,21 @@ namespace Cookbook
 
         private void ingButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
             ModIngredients modIngPg = new ModIngredients(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modIngPg;
         }
 
         private void equipButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
             ModEquipments modEquipPg = new ModEquipments(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modEquipPg;
         }
 
         private void stepsButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
             ModSteps modStepsPg = new ModSteps(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modStepsPg;
         }

@@ -9,6 +9,8 @@
       Title="Mod">
 
     <Grid>
+        <Label Content="Back" HorizontalAlignment="Left" Margin="45,215,0,5.246"
+               FontSize="22"></Label>
         <Grid Name="mainGrid">
             <!--Button Content="Hello" Height="124.506" FontSize="36" Background="#9c3828"  
                 Foreground="#c29a3a" BorderBrush="#c29a3a" BorderThickness="3"
@@ -21,11 +23,18 @@
             </Viewbox>
             <Button Content="Rename" Background="BlanchedAlmond" BorderBrush="#c29a3a" Foreground="#c29a3a" BorderThickness="3" FontStyle="Oblique"
                     Margin="495,50,10,795.246" RenderTransformOrigin="0.427,0.708" FontSize="16"
-                    Style="{StaticResource CustomButtonStyle}" Click="Button_Click"/>
+                    Style="{StaticResource CustomButtonStyle}" Click="Button_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
 
-            <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,155,0,0" 
+            <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="38,155,0,0" 
                 VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
                 Style="{StaticResource CustomButtonStyle}" Click="cookbookPageButton_Click" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
                 <Button.Background>
                     <ImageBrush x:Name="cookbookPageButtonImageBrush" ImageSource="{StaticResource backButton}"/>
                 </Button.Background>
@@ -35,21 +44,41 @@
             <StackPanel Margin="0,230,0,0" Height="604">
                 <Button Name="ingButton" Content="Ingredients" FontWeight ="Medium" Height="75" Width="375" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,50,0,80"
-                    Style="{StaticResource CustomButtonStyle}" Click="ingButton_Click"/>
+                    Style="{StaticResource CustomButtonStyle}" Click="ingButton_Click">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
 
                 <Button Name="equipButton" Content="Equipment" FontWeight ="DemiBold" Height="75" Width="375" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,0,0,80"
-                    Style="{StaticResource CustomButtonStyle}" Click="equipButton_Click"/>
+                    Style="{StaticResource CustomButtonStyle}" Click="equipButton_Click">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
                 <Button Name="stepsButton" Content="Steps" FontWeight ="DemiBold" Height="75" Width="376" FontSize="32"
                     Background="White" HorizontalAlignment="Center" Margin="0,0,0,80"
-                    Style="{StaticResource CustomButtonStyle}" Click="stepsButton_Click"/>
+                    Style="{StaticResource CustomButtonStyle}" Click="stepsButton_Click">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="60" Margin="0,0">
                     <Button Name="saveButton" Content="Save" FontWeight ="DemiBold" Width="200" Margin="0,0,80,0" FontSize="32"
-                        Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95" Click="saveButton_Click"/>
+                        Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95" Click="saveButton_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
 
                     <Button Name="cancelButton" Content="Cancel" FontWeight ="DemiBold" Width="200"
                         Background="Red"  Margin="0,0,0,0" FontSize="32"
-                        Style="{StaticResource CustomButtonStyle}" Click="cancelButton_Click"/>
+                        Style="{StaticResource CustomButtonStyle}" Click="cancelButton_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
                 </StackPanel>
             </StackPanel>
             <!--Label Content="MODIFICATION" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center"/-->
