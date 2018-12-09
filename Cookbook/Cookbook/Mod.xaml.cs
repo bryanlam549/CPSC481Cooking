@@ -210,17 +210,37 @@ namespace Cookbook
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(foodBox.Text))
+            bool nameTaken = false;
+            for(int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
             {
-                recipeMod._name = foodBox.Text;
-                this.modBox.Visibility = System.Windows.Visibility.Hidden;
-                Mod updatePage = new Mod(recipeMod,recipeNum);
-                ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
-                mainGrid.IsEnabled = true;
+                if (recipeMod._name == GlobalData.Instance.modRecipeList[i]._name)
+                {
+                    nameTaken = true;
+                }
+            }
+
+            if (!nameTaken)
+            {
+                if (!string.IsNullOrWhiteSpace(foodBox.Text))
+                {
+                    recipeMod._name = foodBox.Text;
+                    this.modBox.Visibility = System.Windows.Visibility.Hidden;
+                    Mod updatePage = new Mod(recipeMod, recipeNum);
+                    ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+                    mainGrid.IsEnabled = true;
+                    error.Visibility = System.Windows.Visibility.Hidden;
+                }
+                else
+                {
+                    error.Visibility = System.Windows.Visibility.Visible;
+                    error.Content = "*Please do not leave blank*";
+
+                }
             }
             else
             {
-                MessageBox.Show("Can't leave blank.");
+                error.Visibility = System.Windows.Visibility.Visible;
+                error.Content = "*Name already in your personal list*";
             }
         }
 
@@ -228,6 +248,7 @@ namespace Cookbook
         {
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
             mainGrid.IsEnabled = true;
+            error.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }

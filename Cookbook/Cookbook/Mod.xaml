@@ -104,6 +104,9 @@
                     <Button Name="Cancel" Content="Cancel" FontWeight ="DemiBold" Height="50" Width="200"
                         Background="Red"  HorizontalAlignment="Center" FontSize="16" Margin="92,5.569,88.308,48.554"
                         Style="{StaticResource CustomButtonStyle}" Click="Cancel_Click" Grid.Row="1"/>
+                    <Label Name="error" Foreground="yellow" FontSize="16" VerticalAlignment="Center"
+                           Content="*Please do not leave blank*" HorizontalAlignment="Center" Margin="0,90,0,0"
+                           Visibility="Hidden"/>
 
                 </Grid>
 

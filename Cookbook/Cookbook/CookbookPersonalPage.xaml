@@ -9,6 +9,9 @@
       Title="CookbookPersonalPage">
 
     <Grid>
+        <TextBlock Name="noText" Text="You have no recipes in your personal list! Edit recipes that you've favourited and they will be added here!" FontSize="36" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   TextWrapping="Wrap" Width="400" TextAlignment="Center" Visibility="Hidden"/>
         <ScrollViewer Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Name="Recipes" Height="auto" Width="auto">
                 <!--local:CookbookRecipes Dur="10mins" DiffImage="Images/easyIcon.png" Title="blah"/-->
