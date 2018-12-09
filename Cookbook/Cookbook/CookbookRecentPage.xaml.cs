@@ -95,6 +95,15 @@ namespace Cookbook
                 Recipes.Children.Insert(0,recipe);
 
             }
+            if (Recipes.Children.Count == 0)
+            {
+                noText.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                noText.Visibility = System.Windows.Visibility.Hidden;
+
+            }
         }
     }
 }

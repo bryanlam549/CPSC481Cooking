@@ -94,8 +94,16 @@ namespace Cookbook
                 recipe.Modified = recipeList[i].modified;   //Mark this thing as modified!
                 Recipes.Children.Add(recipe);
             }
+            if (Recipes.Children.Count == 0)
+            {
+                noText.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                noText.Visibility = System.Windows.Visibility.Hidden;
 
             }
+        }
 
         }
     }

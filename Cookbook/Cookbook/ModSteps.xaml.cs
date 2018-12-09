@@ -25,6 +25,7 @@ namespace Cookbook
         public ImageSource incicon = (BitmapImage)Application.Current.Resources["incIcon"];
         public ImageSource decicon = (BitmapImage)Application.Current.Resources["decIcon"];
         public Recipe _recipe;
+        public Recipe _copy;
         public int recipeNum;
         int stepNum;
         bool changeAddFlag; //falsefor change, true for add
@@ -33,6 +34,7 @@ namespace Cookbook
             InitializeComponent();
             //mainGrid.IsEnabled = true;
             _recipe = recipe;
+            _copy = GlobalData.Instance.copy(recipe);
             foodTitle.Text = _recipe._name;
             recipeNum = _recipeNum;
             for(int i = 0; i < _recipe._steps.Count; i++)
@@ -148,9 +150,12 @@ namespace Cookbook
 
         }
 
-        private void cookbookPageButton_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            //this.NavigationService.GoBack();
+            unsavedPopup.Visibility = System.Windows.Visibility.Visible;
+            mainGrid.IsEnabled = false;
+            
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -306,6 +311,19 @@ namespace Cookbook
             }
         }
 
+        private void unsavedYesButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            unsavedPopup.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
+            Mod modGoBack = new Mod(GlobalData.Instance.currentlyModifying, recipeNum);
+            this.NavigationService.Navigate(modGoBack);
+        }
 
+        private void unsaved_noButton_Click(object sender, RoutedEventArgs e)
+        {
+            unsavedPopup.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
+        }
     }
 }

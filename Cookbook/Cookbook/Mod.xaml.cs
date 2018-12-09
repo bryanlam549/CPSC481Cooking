@@ -26,6 +26,8 @@ namespace Cookbook
         public Recipe recipeMod;
 
         // _recipe is the recipe to copy...
+        //public Recipe recipeMod = new Recipe();
+        //public Recipe copy = new Recipe();
         public Mod(Recipe _recipe, int _recipeNum)
         {
             InitializeComponent();
@@ -46,18 +48,21 @@ namespace Cookbook
 
         private void ingButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
             ModIngredients modIngPg = new ModIngredients(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modIngPg;
         }
 
         private void equipButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
             ModEquipments modEquipPg = new ModEquipments(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modEquipPg;
         }
 
         private void stepsButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
             ModSteps modStepsPg = new ModSteps(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modStepsPg;
         }
@@ -117,17 +122,37 @@ namespace Cookbook
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(foodBox.Text))
+            bool nameTaken = false;
+            for(int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
             {
-                recipeMod._name = foodBox.Text;
-                this.modBox.Visibility = System.Windows.Visibility.Hidden;
-                Mod updatePage = new Mod(recipeMod,recipeNum);
-                ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
-                mainGrid.IsEnabled = true;
+                if (recipeMod._name == GlobalData.Instance.modRecipeList[i]._name)
+                {
+                    nameTaken = true;
+                }
+            }
+
+            if (!nameTaken)
+            {
+                if (!string.IsNullOrWhiteSpace(foodBox.Text))
+                {
+                    recipeMod._name = foodBox.Text;
+                    this.modBox.Visibility = System.Windows.Visibility.Hidden;
+                    Mod updatePage = new Mod(recipeMod, recipeNum);
+                    ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+                    mainGrid.IsEnabled = true;
+                    error.Visibility = System.Windows.Visibility.Hidden;
+                }
+                else
+                {
+                    error.Visibility = System.Windows.Visibility.Visible;
+                    error.Content = "*Please do not leave blank*";
+
+                }
             }
             else
             {
-                MessageBox.Show("Can't leave blank.");
+                error.Visibility = System.Windows.Visibility.Visible;
+                error.Content = "*Name already in your personal list*";
             }
         }
 
@@ -135,6 +160,7 @@ namespace Cookbook
         {
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
             mainGrid.IsEnabled = true;
+            error.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }
