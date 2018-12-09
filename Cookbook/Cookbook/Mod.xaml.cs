@@ -48,21 +48,24 @@ namespace Cookbook
 
         private void ingButton_Click(object sender, RoutedEventArgs e)
         {
-            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
+            //GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
+            GlobalData.Instance.currentlyModifying = new Recipe(recipeMod);
             ModIngredients modIngPg = new ModIngredients(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modIngPg;
         }
 
         private void equipButton_Click(object sender, RoutedEventArgs e)
         {
-            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
+            //GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
+            GlobalData.Instance.currentlyModifying = new Recipe(recipeMod);
             ModEquipments modEquipPg = new ModEquipments(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modEquipPg;
         }
 
         private void stepsButton_Click(object sender, RoutedEventArgs e)
         {
-            GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
+            //GlobalData.Instance.currentlyModifying = GlobalData.Instance.copy(recipeMod);
+            GlobalData.Instance.currentlyModifying = new Recipe(recipeMod);
             ModSteps modStepsPg = new ModSteps(recipeMod, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = modStepsPg;
         }

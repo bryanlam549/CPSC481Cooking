@@ -34,7 +34,8 @@ namespace Cookbook
             InitializeComponent();
             //mainGrid.IsEnabled = true;
             _recipe = recipe;
-            _copy = GlobalData.Instance.copy(recipe);
+            //_copy = GlobalData.Instance.copy(recipe);
+            _copy = new Recipe(recipe);
             foodTitle.Text = _recipe._name;
             recipeNum = _recipeNum;
             for(int i = 0; i < _recipe._steps.Count; i++)
