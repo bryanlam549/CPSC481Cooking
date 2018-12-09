@@ -260,30 +260,35 @@ namespace Cookbook
                 ((MainWindow)App.Current.MainWindow).Main.Content = modprofile;
             }
         }
-            /*
-            private void onButtonClickProfile(object sender, RoutedEventArgs e)
-            {
-                //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
 
-                /*if (this.Click != null)
-                {
-                    this.Click(this, e);
-                }*/
-            //}
-
-
-
-/*
-        private Page getPage()
+        private void shareButton_Click(object sender, RoutedEventArgs e)
         {
-            var parent = VisualTreeHelper.GetParent(this);
-            while (!(parent is Page))
-            {
-                parent = VisualTreeHelper.GetParent(parent);
-            }
-            return (parent as Page);
+            System.Diagnostics.Process.Start("https://en-gb.facebook.com/login/");
         }
-*/
+        /*
+private void onButtonClickProfile(object sender, RoutedEventArgs e)
+{
+   //((MainWindow)App.Current.MainWindow).Test.Text = "This is simply a test";
+
+   /*if (this.Click != null)
+   {
+       this.Click(this, e);
+   }*/
+        //}
+
+
+
+        /*
+                private Page getPage()
+                {
+                    var parent = VisualTreeHelper.GetParent(this);
+                    while (!(parent is Page))
+                    {
+                        parent = VisualTreeHelper.GetParent(parent);
+                    }
+                    return (parent as Page);
+                }
+        */
 
     }
 

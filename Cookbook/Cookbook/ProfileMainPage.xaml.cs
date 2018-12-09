@@ -55,6 +55,7 @@ namespace Cookbook
             // change password
         }
 
+        /*
         private void ProfileInfoButton_Click(object sender, RoutedEventArgs e)
         {
             //Selected
@@ -66,7 +67,7 @@ namespace Cookbook
             ProfileInfoPage profileInfoPage = new ProfileInfoPage(UserNameInput.Text, EmailInput.Text, PasswordInput.Text);
             profileMain.Content = profileInfoPage;
         }
-
+        
         private void ProfilePreferencesButton_Click(object sender, RoutedEventArgs e)
         {
             //Selected
@@ -78,7 +79,7 @@ namespace Cookbook
             ProfilePreferencesPage profilePreferencesPage = new ProfilePreferencesPage(UserNameInput.Text);
             profileMain.Content = profilePreferencesPage;
         }
-
+        */
         private void SignOut_Click(object sender, RoutedEventArgs e)
         {
             ProfilePage1 profilepage1 = new ProfilePage1();

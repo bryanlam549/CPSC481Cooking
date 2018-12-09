@@ -12,25 +12,13 @@
         <ImageBrush ImageSource="Images/background.png"/>
     </Page.Background>
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="124.506" VerticalAlignment="Top">
-            <Button x:Name="InfoPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="288" Height="124.506" BorderThickness="0" Click="ProfileInfoButton_Click" Style="{StaticResource CustomButtonStyle}">
-                <Button.Background>
-                    <ImageBrush x:Name="InfoButtonImageBrush" ImageSource="Images/InfoButtonDark.png" />
-                </Button.Background>
-            </Button>
-            <Button x:Name="PreferencesPageButton" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="288" Height="124.506" BorderThickness="0" Click="ProfilePreferencesButton_Click" Style="{StaticResource CustomButtonStyle}">
-                <Button.Background>
-                    <ImageBrush x:Name="PreferencesButtonImageBrush" ImageSource="Images/PreferencesButton.png"/>
-                </Button.Background>
-            </Button>
-        </StackPanel>
-        <TextBlock Text="Information" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="116,125,124,0"/>
-        <TextBlock Text="Username:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="0,257,397,0"/>
-        <TextBlock Text="Email:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="0,305,474,0"/>
-        <TextBlock Text="Password:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="Bold" Margin="0,358,407,0"/>
-        <TextBlock x:Name="UserNameInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,257,10,575" Width="363" RenderTransformOrigin="0.129,-6.016"/>
-        <TextBlock x:Name="EmailInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,305,10,527" Width="363" RenderTransformOrigin="0.129,-6.016" TextWrapping="Wrap"/>
-        <TextBlock x:Name="PasswordInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,374,10,474" Width="363" RenderTransformOrigin="0.129,-6.016"/>
+        <TextBlock Text="Account Information" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="45" TextAlignment="Center" FontWeight ="Bold" Margin="0,65,0,0" Width="576"/>
+        <TextBlock Text="Username:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="DemiBold" Margin="3,197,400,0"/>
+        <TextBlock Text="Email:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="DemiBold" Margin="3,245,477,0"/>
+        <TextBlock Text="Password:" HorizontalAlignment="Center" VerticalAlignment="top" FontSize="36" FontWeight ="DemiBold" Margin="4,298,411,0"/>
+        <TextBlock x:Name="UserNameInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,205,10,642" Width="363" RenderTransformOrigin="0.129,-6.016"/>
+        <TextBlock x:Name="EmailInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,253,10,594" Width="363" RenderTransformOrigin="0.129,-6.016" TextWrapping="Wrap"/>
+        <TextBlock x:Name="PasswordInput" HorizontalAlignment="Center" VerticalAlignment="CENTER" FontSize="25" Margin="203,314,10,533" Width="363" RenderTransformOrigin="0.129,-6.016"/>
 
         <Button Content="SIGN OUT" FontWeight="DemiBold" Height="75" FontSize="32" Width="376" Background="Red" HorizontalAlignment="Center" 
                 VerticalAlignment="Bottom" Click="SignOut_Click" Style="{StaticResource CustomButtonStyle}" Margin="100,0,100,71">
@@ -39,11 +27,10 @@
             </Button.Effect>
         </Button>
 
-        <TextBlock x:Name="_changePass" HorizontalAlignment="Right" VerticalAlignment="top" FontSize="20" Margin="0,412,9,0"/>
+        <TextBlock x:Name="_changePass" HorizontalAlignment="Right" VerticalAlignment="top" FontSize="20" Margin="0,352,9,0"/>
 
         <TextBlock x:Name="_tempPref" Text="" HorizontalAlignment="Center" Height="175" FontSize="30" Visibility="Hidden"/>
         <TextBlock x:Name="_weightPref" Text="" HorizontalAlignment="Center" Height="175" FontSize="30" Visibility="Hidden"/>
 
-        <Frame x:Name="profileMain" Margin="0,125,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
