@@ -33,7 +33,7 @@
                TextWrapping="Wrap" FontWeight="DemiBold">food title</TextBlock>
             </Viewbox>
             <ScrollViewer Name="scroller" PanningMode="VerticalOnly" 
-                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,265,46,130.246">
+                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="45,265,46,140.246">
                 <StackPanel Name="Equips" VerticalAlignment="Top">
 
                 </StackPanel>
@@ -57,7 +57,10 @@
             <Button Name="saveButton" Content="Done"   Click="doneButton_Click" 
                     FontWeight ="DemiBold" Width="200" Margin="150,775,140,35.246" FontSize="32"
                         Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
-
+            
+            <Label Name="InvalidInputDone" Content="*Must at least have one equipment*" Foreground="Red"
+                       FontSize="24" Margin="0,0,0,150" HorizontalAlignment="Center" 
+                   VerticalAlignment="Bottom" Visibility="Hidden"/>
         </Grid>
 
         <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,110.246" CornerRadius="20" 
@@ -88,18 +91,46 @@
                 <Label Content="Step:" FontSize="36" Margin="20,0,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A"/>
                 <TextBox x:Name="stepBox" FontSize="24" TextWrapping="Wrap" 
                          Text="This is where steps are" Margin="28,0,28,0" Height="166" />
-
+                <Label Name="InvalidInput" Content="*Do not leave equipment box empty*" Foreground="PaleVioletRed"
+                       FontSize="16" Margin="0,0,0,0" Visibility="Hidden"
+                       HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
 
-                    <Button Name="Save" Content="Save"  Height="50" Width="64" Margin="0,0,50,0" Click="Save_Click"
+                    <Button Name="Cancel" Content="Cancel" Height="60" Width="100" Click="Cancel_Click" 
+                            FontWeight ="DemiBold" Background="Red"  Margin="0,0,50,0" FontSize="16" 
+                            Style="{StaticResource CustomButtonStyle}" />
+                    <Button Name="Save" Content="Save" Height="60" Width="100" Margin="0,0,0,0" Click="Save_Click"
                     FontWeight ="DemiBold" FontSize="16" Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95"/>
 
-                    <Button Name="Cancel" Content="Cancel" Height="50" Width="64" Click="Cancel_Click" 
-                            FontWeight ="DemiBold" Background="Red"  Margin="0,0,0,0" FontSize="16" 
-                            Style="{StaticResource CustomButtonStyle}" />
                 </StackPanel>
             </StackPanel>
         </Border>
+        
+        <Border Name="confirmBox"  Background="#FF9C3828" Margin="96,225,96,90.246" CornerRadius="20" 
+                BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
+            <Grid>
+                <Label Name="confirmLabel" Content="Are you sure?" FontSize="36" 
+                       Margin="0,0,0,0" FontWeight="DemiBold" 
+                       HorizontalAlignment="Center" Foreground="#FFC29A3A"/>
+                <TextBlock Name="confirmLabel2" Text="*Do you want to permanently delete this equipment?*" 
+                       FontSize="24" Margin="12,56,23.308,-5.877" TextWrapping="Wrap" FontWeight="DemiBold"
+                       HorizontalAlignment="Center" Foreground="PaleVioletRed" Width="345" Height="486" VerticalAlignment="Top"/>
 
+                <TextBlock Name="confirmStepText" Text="Insert equipment here" 
+                       FontSize="24" Margin="12,138,23.308,108.569" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" Foreground="White" Width="345"/>
+
+                <Button Name="yesButton" Content="Yes"   
+                        FontWeight ="DemiBold" Width="150" Height="50" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="LightGreen" BorderBrush="#FF13DB95" 
+                        VerticalAlignment="Bottom" Margin="175,0,0,50" Click="yesButton_Click"/>
+                <Button Name="noButton" Content="No"   
+                        FontWeight ="DemiBold" Width="150" Height="50" FontSize="32"
+                            Style="{StaticResource CustomButtonStyle}"
+                        Background="Red" BorderBrush="#FF13DB95" 
+                        VerticalAlignment="Bottom" Margin="-175,0,0,50" Click="noButton_Click"/>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

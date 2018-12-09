@@ -119,16 +119,27 @@ namespace Cookbook
         {
             var _ingNum = sender as Button;
             ingNum = (int)_ingNum.Tag;        //This was set during initiation 
-            _recipe._ingredients.RemoveAt(ingNum);
+            confirmBox.Visibility = System.Windows.Visibility.Visible;
+            confirmStepText.Text = (ingNum + 1).ToString() + ".) " + _recipe._ingredients[ingNum]._mainText;
+            mainGrid.IsEnabled = false;
+        }
+        private void noButton_Click(object sender, RoutedEventArgs e)
+        {
+            confirmBox.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
+        }
+        private void yesButton_Click(object sender, RoutedEventArgs e)
+        {
 
+            _recipe._ingredients.RemoveAt(ingNum);
             //Steps.Children.RemoveAt(stepNum);
             //Or i can update the page
-            ModIngredients updatePage = new ModIngredients(_recipe, recipeNum);
+            ModIngredients updatePage = new ModIngredients(_recipe, ingNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+            mainGrid.IsEnabled = true;
 
             //GlobalData.Instance.modRecipeList.Add(_recipe);
         }
-
         //----------------------------------------This pages buttons -----------------------------------------
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -161,6 +172,9 @@ namespace Cookbook
             modBox.IsEnabled = false;
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
             mainGrid.IsEnabled = true;
+            InvalidInput.Visibility = System.Windows.Visibility.Hidden;
+            InvalidInput2.Visibility = System.Windows.Visibility.Hidden;
+            InvalidInput3.Visibility = System.Windows.Visibility.Hidden;
         }
         //Incomplete
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -297,11 +311,23 @@ namespace Cookbook
                 ModIngredients updatePage = new ModIngredients(_recipe, recipeNum);
                 ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
                 mainGrid.IsEnabled = true;
-
+                InvalidInput.Visibility = System.Windows.Visibility.Hidden;
+                InvalidInput2.Visibility = System.Windows.Visibility.Hidden;
+                InvalidInput3.Visibility = System.Windows.Visibility.Hidden;
             }
             else
             {
-                MessageBox.Show("Ingredient name/Amount is empty OR meas/unit is not selected OR amount not in decimals");
+                if (string.IsNullOrWhiteSpace(ingBox.Text))
+                {
+                    InvalidInput.Visibility = System.Windows.Visibility.Visible;
+                }
+                if (string.IsNullOrWhiteSpace(AmountBox.Text) || measurementChanger.SelectedItem != null
+            || (unitChanger.SelectedItem != null || measurementChanger.SelectedItem.ToString() == "NONE"))
+                {
+                    InvalidInput2.Visibility = System.Windows.Visibility.Visible;
+                    InvalidInput3.Visibility = System.Windows.Visibility.Visible;
+                }
+                //MessageBox.Show("Ingredient name/Amount is empty OR meas/unit is not selected OR amount not in decimals");
             }
 
         }
@@ -309,7 +335,8 @@ namespace Cookbook
         {
             if (_recipe._ingredients.Count == 0)
             {
-                MessageBox.Show("Uh. You need at least one step stoopud human.");
+                //MessageBox.Show("Uh. You need at least one step stoopud human.");
+                InvalidInputDone.Visibility = System.Windows.Visibility.Visible;
             }
             else
             {

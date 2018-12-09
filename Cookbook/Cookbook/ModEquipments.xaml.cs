@@ -100,19 +100,30 @@ namespace Cookbook
 
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
-        {
+        {        
             var _equipNum = sender as Button;
             equipNum = (int)_equipNum.Tag;        //This was set during initiation 
-            _recipe._equipment.RemoveAt(equipNum);
+            confirmBox.Visibility = System.Windows.Visibility.Visible;
+            confirmStepText.Text = (equipNum + 1).ToString() + ".) " + _recipe._equipment[equipNum];
+            mainGrid.IsEnabled = false;
+        }
+        private void noButton_Click(object sender, RoutedEventArgs e)
+        {
+            confirmBox.Visibility = System.Windows.Visibility.Hidden;
+            mainGrid.IsEnabled = true;
+        }
+        private void yesButton_Click(object sender, RoutedEventArgs e)
+        {
 
+            _recipe._equipment.RemoveAt(equipNum);
             //Steps.Children.RemoveAt(stepNum);
             //Or i can update the page
             ModEquipments updatePage = new ModEquipments(_recipe, recipeNum);
             ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
+            mainGrid.IsEnabled = true;
 
             //GlobalData.Instance.modRecipeList.Add(_recipe);
         }
-
 
         //----------------------------------------This pages buttons -----------------------------------------
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -146,6 +157,7 @@ namespace Cookbook
             modBox.IsEnabled = false;
             this.modBox.Visibility = System.Windows.Visibility.Hidden;
             mainGrid.IsEnabled = true;
+            InvalidInput.Visibility = System.Windows.Visibility.Hidden;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -194,10 +206,12 @@ namespace Cookbook
                 ModEquipments updatePage = new ModEquipments(_recipe, recipeNum);
                 ((MainWindow)App.Current.MainWindow).Main.Content = updatePage;
                 mainGrid.IsEnabled = true;
+                InvalidInput.Visibility = System.Windows.Visibility.Hidden;
             }
             else
             {
-                MessageBox.Show("One does not simply put in an empty step!!!!!! You stupid Biiimbo");
+                InvalidInput.Visibility = System.Windows.Visibility.Visible;
+                //MessageBox.Show("One does not simply put in an empty step!!!!!! You stupid Biiimbo");
             }
 
         }
@@ -279,7 +293,8 @@ namespace Cookbook
         {
             if (_recipe._equipment.Count == 0)
             {
-                MessageBox.Show("Uh. You need at least one step stoopud human.");
+                //MessageBox.Show("Uh. You need at least one step stoopud human.");
+                InvalidInputDone.Visibility = System.Windows.Visibility.Visible;
             }
             else
             {

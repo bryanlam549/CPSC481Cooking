@@ -20,7 +20,8 @@
                Foreground="#c29a3a" TextWrapping="Wrap">Food Title</TextBlock>
             </Viewbox>
             <Button Content="Rename" Background="BlanchedAlmond" BorderBrush="#c29a3a" Foreground="#c29a3a" BorderThickness="3" FontStyle="Oblique"
-                Margin="495,50,10,795.246" RenderTransformOrigin="0.427,0.708" Style="{StaticResource CustomButtonStyle}" Click="Button_Click"/>
+                    Margin="495,50,10,795.246" RenderTransformOrigin="0.427,0.708" FontSize="16"
+                    Style="{StaticResource CustomButtonStyle}" Click="Button_Click"/>
 
             <Button x:Name="cookbookPageButton" Content="" HorizontalAlignment="Left" Margin="10,155,0,0" 
                 VerticalAlignment="Top" Width="65" Height="65" BorderThickness="0" 
