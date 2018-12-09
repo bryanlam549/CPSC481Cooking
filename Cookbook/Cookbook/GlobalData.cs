@@ -227,19 +227,18 @@ namespace Cookbook
 
 		// Search page
 		// Creating the list of categories
-        
-        
-		public Category allCat = new Category("All\nCategories");
-		public Category pastryCat = new Category("Pastries");
-		public Category seaCat = new Category("Seafood");
-		public Category pastaCat = new Category("Pastas");
-		public Category burgCat = new Category("Burgers");
-		public Category pizzaCat = new Category("Pizza");
-		public Category desCat = new Category("Desserts");
-        
+		public Category allCat = new Category("All\nCategories", Recipe.Categories.ALL);
+		public Category beefCat = new Category("Beef", Recipe.Categories.BEEF);
+		public Category chickCat = new Category("Chicken", Recipe.Categories.CHICKEN);
+		public Category pastaCat = new Category("Pastas", Recipe.Categories.PASTA);
+		public Category fishCat = new Category("Fish", Recipe.Categories.FISH);
+		public Category chineseCat = new Category("Chinese", Recipe.Categories.CHINESE);
+		public Category vegCat = new Category("Vegetarian", Recipe.Categories.VEGETARIAN);
 
-        public Category selectedCategory;
-        
+		public Category selectedCategory;
+
+		// Filter 
+
 
 		//Main page
 		public SearchPage1 search = new SearchPage1();
