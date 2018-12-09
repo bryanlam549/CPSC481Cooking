@@ -70,40 +70,56 @@ namespace Cookbook
             ((MainWindow)App.Current.MainWindow).Main.Content = modStepsPg;
         }
 
+
+
         public List<Recipe> globalModRecipeList = GlobalData.Instance.modRecipeList;
         public List<RecipeProfilePage> globalModPageList = GlobalData.Instance.modrecipePageList;
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            //If the recipe is an original, then add it into the modified tab
-            if (recipeMod.modified == false)
+            bool nameTaken = false;
+            for (int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
             {
-                //Need to add into ModList
-                recipeMod.modified = true;  //Flag as modified recipe
-                globalModRecipeList.Add(recipeMod);   //Add it into the modified recipe list
-                                                                    //Also make an instance of a profile page for later access
-                RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
-                globalModPageList.Add(modProfilePage);
-
-                
+                if (recipeMod._name == GlobalData.Instance.modRecipeList[i]._name)
+                {
+                    nameTaken = true;
+                }
             }
-            //If the recipe is modified, then the edits will just replace it
+            if (!nameTaken || recipeMod.modified)
+            {
+                //If the recipe is an original, then add it into the modified tab
+                if (recipeMod.modified == false)
+                {
+                    //Need to add into ModList
+                    recipeMod.modified = true;  //Flag as modified recipe
+                    globalModRecipeList.Add(recipeMod);   //Add it into the modified recipe list
+                                                          //Also make an instance of a profile page for later access
+                    RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
+                    globalModPageList.Add(modProfilePage);
+
+
+                }
+                //If the recipe is modified, then the edits will just replace it
+                else
+                {
+                    //I need to know the one i'm replacing
+                    globalModRecipeList.RemoveAt(recipeNum);
+                    globalModPageList.RemoveAt(recipeNum);
+
+                    globalModRecipeList.Insert(recipeNum, recipeMod);
+                    RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
+                    globalModPageList.Insert(recipeNum, modProfilePage);
+
+                }
+
+                //Need to reload previous page, just gonna be hard coded to favourite page rn...
+                //Probably pass in previous page into this page. Or have "previous page" as a global data. and reload it when this button is pressed.
+                CookbookPage1 prevPage = new CookbookPage1();
+                ((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
+            }
             else
             {
-                //I need to know the one i'm replacing
-                globalModRecipeList.RemoveAt(recipeNum);
-                globalModPageList.RemoveAt(recipeNum);
-
-                globalModRecipeList.Insert(recipeNum, recipeMod);
-                RecipeProfilePage modProfilePage = new RecipeProfilePage(recipeMod);
-                globalModPageList.Insert(recipeNum, modProfilePage);
-
+                error1.Visibility = System.Windows.Visibility.Visible;
             }
-
-            //Need to reload previous page, just gonna be hard coded to favourite page rn...
-            //Probably pass in previous page into this page. Or have "previous page" as a global data. and reload it when this button is pressed.
-            CookbookPage1 prevPage = new CookbookPage1();
-            ((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -120,21 +136,21 @@ namespace Cookbook
             mainGrid.IsEnabled = false;
             foodBox.Text = recipeMod._name;
             modBox.Visibility = System.Windows.Visibility.Visible;
-            
+
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             bool nameTaken = false;
-            for(int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
+            for (int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
             {
-                if (recipeMod._name == GlobalData.Instance.modRecipeList[i]._name)
+                if (foodBox.Text == GlobalData.Instance.modRecipeList[i]._name)
                 {
                     nameTaken = true;
                 }
             }
 
-            if (!nameTaken)
+            if (!nameTaken || recipeMod.modified)
             {
                 if (!string.IsNullOrWhiteSpace(foodBox.Text))
                 {

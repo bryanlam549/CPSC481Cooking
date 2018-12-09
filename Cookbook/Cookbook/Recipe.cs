@@ -71,6 +71,7 @@ namespace Cookbook
             _servings = template._servings;
             _ingredientCount = template._ingredientCount;
             _category = template._category;
+            modified = template.modified;
 
             // ~~~~~~~BE CAREFUL, if an ingredient instance changes somewhere then ill have to write a copy constructor for ingredient as well... 
 

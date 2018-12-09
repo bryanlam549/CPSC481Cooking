@@ -107,10 +107,13 @@
                     <Label Name="error" Foreground="yellow" FontSize="16" VerticalAlignment="Center"
                            Content="*Please do not leave blank*" HorizontalAlignment="Center" Margin="0,90,0,0"
                            Visibility="Hidden"/>
-
                 </Grid>
+                
 
             </Border>
+            <Label Name="error1" Foreground="Red" FontSize="16" VerticalAlignment="Center"
+                           Content= "*Name is already in your personal list, please rename!*" HorizontalAlignment="Center" Margin="0,123,0,725.246"
+                           Visibility="Hidden"/>
         </Grid>
     </Grid>
 </Page>
