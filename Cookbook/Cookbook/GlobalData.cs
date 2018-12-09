@@ -115,7 +115,8 @@ namespace Cookbook
 
             _equipment = new List<string> { "Frying Pan", "Grill", "Oven" },
             _steps = new List<string> { @"Grill patty.",
-                                        @"Fry patty.", @"Steam patty for 10 minutes.", @"Delicately place on buns.", @"Pour your entire 5 cups of ketchup all over for the finish!" }
+                                        @"Fry patty.", @"Steam patty for 10 minutes.", @"Delicately place on buns.", @"Pour your entire 5 cups of ketchup all over for the finish!" },
+             _timerValuesForSteps = new List<int> { 0, 0, 600, 0,0 }
         };
         #endregion 
 
@@ -148,7 +149,8 @@ namespace Cookbook
             _equipment = new List<string> { "Oven", "4\" Chef knife","Baking tray", "Blender" },
             _steps = new List<string> { @"Gut the mackeral, if not already gutted.", @"Chop cloves of garlic", @"Heat cooking oil and briefly"
                                         + " fry with the garlic, a sprig of sage and the fish.", @"Place fish on baking tray and cook at 350°F.",
-                                        @"Once done, put the whole thing in the blender."}
+                                        @"Once done, put the whole thing in the blender."},
+             _timerValuesForSteps = new List<int> { 0, 0, 0, 0, 0 }
         };
         #endregion
 
@@ -182,7 +184,8 @@ namespace Cookbook
             _steps = new List<string> { @"In a small bowl, whisk together dark soy sauce, cornstarch and broth. Set aside.", @"Cook chow mein noodles according to package instructions.",
                                         @"In a large non-stick skillet, heat oil over medium high heat. Add chicken and cook until chicken is browned. Stir in the carrots and cook for 2 minutes.",
                                         @"Pour in broth mixture and bring to a boil. Cook until sauce is slightly thickened. Stir in seasame oil.",
-                                        @"Spread noodles onto a platter and pour chicken mixture over top. Serve immediately."}
+                                        @"Spread noodles onto a platter and pour chicken mixture over top. Serve immediately."},
+             _timerValuesForSteps = new List<int> { 0, 0, 120, 0,0}
         };
 
 
@@ -210,7 +213,8 @@ namespace Cookbook
             },
 
             _equipment = new List<string> { },
-            _steps = new List<string> { @"Wash head of lettuce.", @"Enjoy." }
+            _steps = new List<string> { @"Wash head of lettuce.", @"Enjoy." },
+             _timerValuesForSteps = new List<int> { 0, 0}
         };
         #endregion
 
