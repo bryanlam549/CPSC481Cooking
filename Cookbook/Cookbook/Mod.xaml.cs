@@ -32,11 +32,14 @@ namespace Cookbook
         {
             InitializeComponent();
             recipeNum = _recipeNum;  //This is used to determine which recipe to replace when the  recipe being edited is already modified
-
+            
             // deep copy recipe...
 
             recipeMod = new Recipe(_recipe);
 
+
+            if (recipeMod.modified)
+                Explaination.Content = "*Any changes replaces the recipe in the personal list!*";
             modTitle.Text = recipeMod._name;
         }
 

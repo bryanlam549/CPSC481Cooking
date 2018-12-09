@@ -86,6 +86,9 @@
 
 
         <Grid>
+            <Label Name="Explaination" Content="*Any changes will create another recipe in the personal list!*"
+                   FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,350"
+                   FontStyle="Italic"/>
             <Border Name="modBox"  Background="#FF9C3828" Margin="96,265,96,215.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
                 <Grid>
