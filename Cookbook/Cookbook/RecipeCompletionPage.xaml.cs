@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Diagnostics;
+
 namespace Cookbook
 {
     /// <summary>
@@ -23,26 +25,37 @@ namespace Cookbook
     public partial class RecipeCompletionPage : Page
     {
 
-        Recipe currentRecipe;
+        public Recipe currentRecipe;
 
         public RecipeCompletionPage(Recipe recipe)
         {
             InitializeComponent();
-            this.currentRecipe = recipe;
-            _back.transitionPageButton.Click += Back_Click;
-            _next.transitionPageButton.Click += Next_Click;
-            _recipeImageBrush.ImageSource = recipe._image;
-            _recipeName.Text = recipe._name;
 
-            _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK TO STEPS");
-            _next.initAppearance(TransitionPageButton.Orientation.FORWARD, "GO TO RECIPE PAGE");
+            currentRecipe = recipe;
 
             favHeart._recipe = currentRecipe;
-            if (recipe._isFavourite)
+            if (currentRecipe._isFavourite)
             {
                 favHeart.HeartIconImage = (BitmapImage)Application.Current.Resources["heartIcon"];
                 favHeart._isFilled = true;
             }
+            else
+            {
+                favHeart.HeartIconImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+                favHeart._isFilled = false;
+            }
+
+            rating._completionPage = this;
+            rating.initStartingRating(currentRecipe._rating);
+
+            _recipeImageBrush.ImageSource = currentRecipe._image;
+            _recipeName.Text = currentRecipe._name;
+
+            _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK TO STEPS");
+            _next.initAppearance(TransitionPageButton.Orientation.FORWARD, "GO TO RECIPE PAGE");
+
+            _back.transitionPageButton.Click += Back_Click;
+            _next.transitionPageButton.Click += Next_Click;
 
         }
 
@@ -52,7 +65,7 @@ namespace Cookbook
             RecipeProfilePage recipeProfile = recipes[currentRecipe._name];
             recipeProfile._completionPage = this;
             recipeProfile._currentStep = 0;
-            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "To RECIPE COMPLETION PAGE");
+            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "TO RECIPE COMPLETION PAGE");
             this.NavigationService.Navigate(recipeProfile);
         }
 
@@ -116,6 +129,26 @@ namespace Cookbook
         private void shareButton_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://en-gb.facebook.com/login/");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            // update data that could have changed...
+
+            // FAVOURITE...
+            if (currentRecipe._isFavourite)
+            {
+                favHeart.HeartIconImage = (BitmapImage)Application.Current.Resources["heartIcon"];
+                favHeart._isFilled = true;
+            }
+            else
+            {
+                favHeart.HeartIconImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+                favHeart._isFilled = false;
+            }
+
+            // RATING...
+            rating.initStartingRating(currentRecipe._rating);
         }
     }
 

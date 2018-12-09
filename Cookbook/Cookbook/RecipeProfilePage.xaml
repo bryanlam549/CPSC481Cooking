@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Cookbook"
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="576"
-      Title="RecipeProfilePage">
+      Title="RecipeProfilePage" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions >

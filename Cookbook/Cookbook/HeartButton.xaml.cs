@@ -25,15 +25,9 @@ namespace Cookbook
         // cache global resources...
         private BitmapImage unfillHeartImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
         private BitmapImage heartImage = (BitmapImage)Application.Current.Resources["heartIcon"];
-
-        public Recipe _recipe; // ~~~~~~~~~~~~~~gets set by page
-
-
-        // ~~~~~~~LATER ON: have a Recipe (instance of Recipe class) field here (set by the page) so this button can be applied to a specific recipe
-
-        //Changed this to public: BRYAN
         public bool _isFilled; // unfilled heart or filled heart?
 
+        public Recipe _recipe; // gets set by page
 
         public HeartButton()
         {
@@ -41,17 +35,18 @@ namespace Cookbook
 
         }
 
+        
         //Heart icon image, either filled or unfilled when page is open: made by BRYAN
         private ImageSource hearticonimage;
         public ImageSource HeartIconImage
         {
-            get { return hearticonimage; }
             set
             {
                 hearticonimage = value;
-                this.heartButtonImageBrush.ImageSource = this.heartImage;
+                heartButtonImageBrush.ImageSource = hearticonimage;
             }
         }
+        
         
 
         //Button

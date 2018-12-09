@@ -79,6 +79,7 @@ namespace Cookbook
             }
 
             // RATING...
+            _ratingControl._recipeProfilePage = this;
             _ratingControl.initStartingRating(_recipe._rating);
 
             // DURATION...
@@ -107,7 +108,6 @@ namespace Cookbook
 
             _startButton.transitionPageButton.Click += StartButton_Click;
 
-            _ratingControl._recipeProfilePage = this;
 
             // NOTE: im assuming that every recipe has ingredients, equipment and steps (otherwise what is the point?)
 
@@ -306,6 +306,25 @@ namespace Cookbook
             signInBox.Visibility = Visibility.Hidden;
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            // update data that could have changed...
+           
+            // FAVOURITE...
+            if (_recipe._isFavourite)
+            {
+                _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["heartIcon"];
+                _heartButton._isFilled = true;
+            }
+            else
+            {
+                _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+                _heartButton._isFilled = false;
+            }
+            
+            // RATING...
+            _ratingControl.initStartingRating(_recipe._rating);
 
+        }
     }
 }

@@ -24,7 +24,6 @@ namespace Cookbook
         // cache global resources...
         private BitmapImage unfillStarImage = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
         private BitmapImage fillStarImage = (BitmapImage)Application.Current.Resources["fillStarIcon"];
-
         private int _currentRating = 0; // 0 = not-rated
 
         public RecipeProfilePage _recipeProfilePage;
@@ -171,6 +170,8 @@ namespace Cookbook
 
             _currentRating = numOfStars;
 
+            _recipeProfilePage._recipe._rating = _currentRating;
+
         }
 
 
@@ -184,6 +185,9 @@ namespace Cookbook
             starButton5ImageBrush.ImageSource = unfillStarImage;
 
             _currentRating = 0;
+
+            _recipeProfilePage._recipe._rating = _currentRating;
+
         }
 
 
