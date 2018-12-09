@@ -13,11 +13,29 @@ namespace Cookbook
 {
     public class GlobalData
     {
+        
+        /*
         private static GlobalData instance = new GlobalData();
 
         public static GlobalData Instance
         {
             get { return instance; }
+        }
+        */
+
+        private static GlobalData instance = null;
+
+        public static GlobalData Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GlobalData();
+                }
+                return instance;
+            }
+            
         }
 
 
@@ -217,7 +235,7 @@ namespace Cookbook
 		public Category chineseCat = new Category("Chinese", Recipe.Categories.CHINESE);
 		public Category vegCat = new Category("Vegetarian", Recipe.Categories.VEGETARIAN);
 
-		public Category selectedCategory = GlobalData.Instance.allCat;
+		public Category selectedCategory;
 
 		// Filter 
 		public string searchFilter = "";
@@ -273,6 +291,8 @@ namespace Cookbook
             accountList.Add("123456789123456789123456789");
             accountList.Add("2");
             accountList.Add("2");
+
+            selectedCategory = allCat;
         }
 
     }
