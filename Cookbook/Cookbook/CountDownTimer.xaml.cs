@@ -38,8 +38,16 @@ namespace Cookbook
         {
             stepTime = seconds;
             currentStep = stepNum;
-            TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
-            CountdownDisplay.Text = initialTime.ToString("c");
+            if (stepTime > 0)
+            {
+                TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
+                CountdownDisplay.Text = initialTime.ToString("c");
+            }
+            else
+            {
+                this.Visibility = System.Windows.Visibility.Hidden;
+                this.IsEnabled = false;
+            }
         }
     public void StartCountdown(double countDown)
     {
@@ -49,6 +57,7 @@ namespace Cookbook
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
+                CountdownDisplay.Text = _time.ToString("c");
                 if (_time == TimeSpan.Zero)
                 {
                     _timer.Stop();
