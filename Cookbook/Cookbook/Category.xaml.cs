@@ -21,11 +21,14 @@ namespace Cookbook
 	{
 
 		private string categoryName;
+		Recipe.Categories category;
 
-		public Category(string categoryName)
+
+		public Category(string categoryName, Recipe.Categories category)
         {
             InitializeComponent();
 			this.categoryName = categoryName;
+			this.category = category;
 			Button.Content = categoryName;
 
         }
