@@ -50,8 +50,7 @@
             <Grid Margin="140,602,128,178">
                 <Button Background="Transparent" Margin="0,98,0,-96" RenderTransformOrigin="0.5,0.5" Style="{StaticResource CustomButtonStyle}">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="338">
-                        <Image x:Name="shareIcon1" Source="{StaticResource share1Icon}" Width="60" Margin="50,3,127,0"/>
-                        <Image x:Name="shareIcon2" Source="{StaticResource share2Icon}" Width="60" Margin="172,-54,106,0"/>
+                        <Image Name="share2"  Source="{StaticResource share7Icon}" Height="68" Margin="-13,0,-3,0"></Image>
                     </StackPanel>
                     <Button.Effect>
                         <DropShadowEffect/>
