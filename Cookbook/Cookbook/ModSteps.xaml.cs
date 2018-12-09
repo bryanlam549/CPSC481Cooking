@@ -84,7 +84,14 @@ namespace Cookbook
             stepBox.Text = _recipe._steps[stepNum];
 
             //Depending on which step its on, disable up and down arrow
-            if (stepNum+1 == _recipe._steps.Count)
+            if (stepNum + 1 == _recipe._steps.Count && stepNum + 1 == 1)
+            {
+                IncButton.IsEnabled = false;
+                incrementBrush.ImageSource = incfadeicon;
+                DecButton.IsEnabled = false;
+                decrementBrush.ImageSource = decfadeicon;
+            }
+            else if (stepNum+1 == _recipe._steps.Count)
             {
                 IncButton.IsEnabled = false;
                 incrementBrush.ImageSource = incfadeicon;

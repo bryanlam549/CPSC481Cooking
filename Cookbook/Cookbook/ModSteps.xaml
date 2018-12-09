@@ -139,11 +139,11 @@
                 <Label Name="confirmLabel" Content="Are you sure?" FontSize="36" 
                        Margin="0,0,0,0" FontWeight="DemiBold" 
                        HorizontalAlignment="Center" Foreground="#FFC29A3A"/>
-                <TextBlock Name="confirmLabel2" Text="*Do you want to permanently delete this equipment?*" 
+                <TextBlock Name="confirmLabel2" Text="*Do you want to permanently delete this step?*" 
                        FontSize="24" Margin="12,67,23.308,0" TextWrapping="Wrap" FontWeight="DemiBold"
                        HorizontalAlignment="Center" Foreground="Yellow" Width="345" Height="486" VerticalAlignment="Top"/>
 
-                <TextBlock Name="confirmStepText" Text="Insert equipment here" 
+                <TextBlock Name="confirmStepText" Text="Insert step here" 
                        FontSize="24" Margin="12,158,23.308,88.231" TextWrapping="Wrap"
                        HorizontalAlignment="Center" Foreground="White" Width="345"/>
 
