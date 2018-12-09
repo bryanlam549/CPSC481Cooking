@@ -19,7 +19,7 @@ namespace Cookbook
 
         public enum Categories // ~~~~~KEEP ADDING MORE WHEN NEEDED
         {
-            BEEF, CHICKEN, FISH, PASTA, CHINESE, VEGETARIAN
+            ALL, BEEF, CHICKEN, FISH, PASTA, CHINESE, VEGETARIAN
         }
 
         public bool _isFavourite;
