@@ -65,7 +65,7 @@ namespace Cookbook
             recipeProfilePage = recipes[currentRecipe._name];
             recipeProfilePage._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
 
-            //_timer.setStepTime(currentRecipe._timerValuesForSteps.ElementAt(currentStep), currentStep + 1);
+            _timer.setStepTime(currentRecipe._timerValuesForSteps.ElementAt(currentStep), currentStep + 1);
 
 
         }

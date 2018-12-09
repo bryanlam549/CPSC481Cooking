@@ -31,42 +31,24 @@ namespace Cookbook
         public CountdownTimer()
         {
             InitializeComponent();
-           // MouseDoubleClick += (o, args) => StartCountdown(CountdownDisplay);
-         }
+        }
 
 
         public void setStepTime(int seconds, int stepNum)
         {
             stepTime = seconds;
             currentStep = stepNum;
+            TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
+            CountdownDisplay.Text = initialTime.ToString("c");
         }
     public void StartCountdown(double countDown)
     {
-        var countdownAnimation = new StringAnimationUsingKeyFrames();
-            /*
-        for (var i = 5; i > 0; i--)
-        {
-            var keyTime = TimeSpan.FromSeconds(5 - i);
-            var frame = new DiscreteStringKeyFrame(i.ToString(), KeyTime.FromTimeSpan(keyTime));
-            countdownAnimation.KeyFrames.Add(frame);
-        }
-        countdownAnimation.KeyFrames.Add(new DiscreteStringKeyFrame(" ", KeyTime.FromTimeSpan(TimeSpan.FromSeconds(6))));
-        Storyboard.SetTargetName(countdownAnimation, target.Name);
-        Storyboard.SetTargetProperty(countdownAnimation, new PropertyPath(TextBlock.TextProperty));
-
-        var countdownStoryboard = new Storyboard();
-        countdownStoryboard.Children.Add(countdownAnimation);
-        countdownStoryboard.Completed += CountdownTimer_Completed;
-        countdownStoryboard.Begin(this);
-        */
-
             // this part of  code taken from https://stackoverflow.com/questions/16748371/how-to-make-a-wpf-countdown-timer
            
             _time = TimeSpan.FromSeconds(countDown);
 
             _timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
-                CountdownDisplay.Text = _time.ToString("c");
                 if (_time == TimeSpan.Zero)
                 {
                     _timer.Stop();
@@ -81,13 +63,13 @@ namespace Cookbook
     private void CountdownTimer_Completed()
     {
            _time = TimeSpan.FromSeconds(stepTime);
-            _start.Content = "Start";
+            _startTimer.Content = "Start";
             MessageBox.Show("Time's up form Step " + currentStep  + " !");
     }
 
         private void _start_Click(object sender, RoutedEventArgs e)
         {
-            if (_start.Content.Equals("Start"))
+            if (_startTimer.Content.Equals("START TIMER"))
             { 
                 if(_time == TimeSpan.Zero)
                 {
@@ -97,14 +79,14 @@ namespace Cookbook
                 {
                     StartCountdown(_time.TotalSeconds);
                 }
-                
-                _start.Content = "Stop";
+
+                _startTimer.Content = "STOP TIMER";
             }
             else
             {
                 //stop timer
                 _timer.Stop();
-                _start.Content = "Start";
+                _startTimer.Content = "START TIMER";
             }
         }
     }

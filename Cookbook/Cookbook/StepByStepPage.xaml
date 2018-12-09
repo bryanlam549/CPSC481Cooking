@@ -56,18 +56,8 @@
             <Rectangle Grid.Row="6" Grid.ColumnSpan="6" Fill="#FF7C2F1F" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="500" Height="10" Margin="38,0,38,20" RadiusX="10" RadiusY="10" />
             <local:TransitionPageButton x:Name="_previousStep" Grid.Row="7" Width="90" Height="90" HorizontalAlignment="Left" Margin="36,0,0,20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
             <local:TransitionPageButton x:Name="_nextStep" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" Grid.RowSpan="2" />
-            <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" Width="200" Height="150" Margin="0,40,88,30" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="3" >
-                <local:CountdownTimer x:Name="_timer" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5">
-                    <local:CountdownTimer.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="0.511"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </local:CountdownTimer.RenderTransform>
-                </local:CountdownTimer>
-            </StackPanel>
+            <local:CountdownTimer x:Name="_timer" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" Grid.RowSpan="4" Height="150" Width="150" >
+            </local:CountdownTimer>
         </Grid>
         <Border Name="termDef"  Background="#FF9C3828" Margin="114,285,119,325" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
