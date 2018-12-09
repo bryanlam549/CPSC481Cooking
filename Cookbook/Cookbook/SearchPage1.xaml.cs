@@ -49,6 +49,18 @@ namespace Cookbook
 			GlobalData.Instance.selectedCategory.setUnpressed();
 			GlobalData.Instance.selectedCategory = newSelected;
 		}
+
+		
+		private void Search_Click(object sender, RoutedEventArgs e)
+		{
+			// Get results from recipes
+			List<Recipe> recipes = GlobalData.Instance.recipeList;
+			// TODO filter recipes
+
+			// Display recipes resulting from search
+			SearchPageResults results = new SearchPageResults(recipes);
+			this.NavigationService.Navigate(results);
+		}
 		
 	}
 }

@@ -220,6 +220,12 @@ namespace Cookbook
 		public Category selectedCategory = GlobalData.Instance.allCat;
 
 		// Filter 
+		public string searchFilter = "";
+		public List<Ingredient> ingredFilter = new List<Ingredient>();
+		public Recipe.Difficulties difficultyFilter = Recipe.Difficulties.NONE;
+		public int ratingFilter = -1;
+		public int durationFilter = -1;
+		public int ingredCountFilter = -1;
 
 
 		//Main page

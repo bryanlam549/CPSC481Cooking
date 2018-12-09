@@ -14,7 +14,7 @@ namespace Cookbook
     {
 
         public enum Difficulties {
-            EASY, MEDIUM, HARD
+            NONE, EASY, MEDIUM, HARD
         }
 
         public enum Categories // ~~~~~KEEP ADDING MORE WHEN NEEDED
