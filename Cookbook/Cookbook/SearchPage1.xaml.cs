@@ -20,28 +20,44 @@ namespace Cookbook
     /// </summary>
     public partial class SearchPage1 : Page
     {
-        //public BitmapImage fillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/heart.png"));
-        //public BitmapImage unfillHeart = new BitmapImage(new Uri("pack://application:,,,/Images/unfillHeart.png"));
+		private static string onCategory = "All Categories";
+		private static Category selected = null;
+
         public SearchPage1()
         {
             InitializeComponent();
 
-            HeartButton hb = new HeartButton();
+			Category firstCat = new Category("All\nCategories");
+			selected = firstCat;
+			firstCat.setPressed();
 
-        }
+			// Creating the list of categories
+			var categories = new StackPanel()
+			{
+				Orientation = Orientation.Horizontal,
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            /*if (this.fav.Source == fillHeart)
-            {
-                this.fav.Source = unfillHeart;
-                MainWindow.burgerFave = false;
-            }
-            else
-            {
-                this.fav.Source = fillHeart;
-                MainWindow.burgerFave = true;
-            }*/
-        }
-    }
+				Children = {
+					firstCat,
+					new Category("Pastries"),
+					new Category("Seafood"),
+					new Category("Pastas"),
+					new Category("Burgers"),
+					new Category("Pizza"),
+					new Category("Desserts"),
+				}
+			};
+
+			scroll1.Content = categories;
+			
+		}
+
+		
+
+		public static void setCategory(string toSet, Category newSelected){
+			onCategory = toSet;
+			selected.setUnpressed();
+			SearchPage1.selected = newSelected;
+		}
+		
+	}
 }

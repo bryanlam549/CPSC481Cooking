@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Cookbook.Category"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cookbook"
+        mc:Ignorable="d"
+        Height="120" Width="120">
+    <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto" />
+
+        </Grid.ColumnDefinitions>
+        <
+            
+            Rectangle Height="65" Stroke="#FFD4A63B" Width="2" Fill="#FFD4A63B" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+
+        <Button x:Name="Button" Grid.ColumnSpan="2" Margin="0,0,0,0.5" Background="#FF9D3828" Foreground="#FFC29A3A" Click="Button_Click" FontSize="20" BorderThickness="5" BorderBrush="#FFC29A3A" Style="{StaticResource CustomButtonStyle}">
+   
+        </Button>
+    </Grid>
+</UserControl>
