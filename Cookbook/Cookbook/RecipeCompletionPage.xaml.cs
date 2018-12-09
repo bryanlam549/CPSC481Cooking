@@ -100,10 +100,22 @@ namespace Cookbook
 
         private void onEdit(object sender, RoutedEventArgs e)
         {
+            for(int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
+            {
+                if (GlobalData.Instance.recipeList[i]._name == currentRecipe._name)
+                {
+                    Mod mod = new Mod(currentRecipe, i);
+                    ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                }
+            }
+            
+            
 
-            Mod mod = new Mod(currentRecipe, 0);
-            ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+        }
 
+        private void shareButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://en-gb.facebook.com/login/");
         }
     }
 

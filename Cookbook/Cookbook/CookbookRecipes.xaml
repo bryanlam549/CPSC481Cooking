@@ -120,7 +120,7 @@
         </Button>
         <Grid Name="ShareGrid" HorizontalAlignment="Right" Width="70">
             <Button Name="shareButton" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Style="{StaticResource CustomButtonStyle}" Height="200" Margin="-1,25,6,26.815" Width="65">
+                    Style="{StaticResource CustomButtonStyle}" Height="200" Margin="-1,25,6,26.815" Width="65" Click="shareButton_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
