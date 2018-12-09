@@ -38,6 +38,9 @@
             <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Left" 
                             Height="50" Click="onButtonClickEdit" Margin="26,23,0,0" VerticalAlignment="Top"
                             Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
                 <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
             </Button>
 

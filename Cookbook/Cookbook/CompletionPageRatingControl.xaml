@@ -17,30 +17,45 @@
         </Grid.ColumnDefinitions>
 
         <Button x:Name="starButton1" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton1_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <ImageBrush x:Name="starButton1ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
         <Button x:Name="starButton2" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton2_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="1">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <ImageBrush x:Name="starButton2ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
         <Button x:Name="starButton3" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton3_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="2">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <ImageBrush x:Name="starButton3ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
         <Button x:Name="starButton4" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton4_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="3">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <ImageBrush x:Name="starButton4ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
         <Button x:Name="starButton5" Content="" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" Click="StarButton5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{StaticResource CustomButtonStyle}" Grid.Column="4">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <ImageBrush x:Name="starButton5ImageBrush" ImageSource="{StaticResource unfillStarIcon}" Stretch="Uniform"/>
             </Button.Background>

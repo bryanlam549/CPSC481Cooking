@@ -27,6 +27,8 @@ namespace Cookbook
 
         private int _currentRating = 0; // 0 = not-rated
 
+        public RecipeProfilePage _recipeProfilePage;
+
         public RatingControl()
         {
             InitializeComponent();
@@ -52,63 +54,103 @@ namespace Cookbook
 
         private void StarButton1_Click(object sender, RoutedEventArgs e)
         {
+            if (!GlobalData.Instance.signedIn)
+            {
+                _recipeProfilePage.signInBox.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                if (_currentRating != 1) // update to 1 star
+                {
+                    Enable(1);
+                }
+                else // disable
+                {
+                    Disable();
+                }
+            }
 
-            if (_currentRating != 1) // update to 1 star
-            {
-                Enable(1);
-            }
-            else // disable
-            {
-                Disable();
-            }
         }
 
         private void StarButton2_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentRating != 2) // update to 2 star
+            if (!GlobalData.Instance.signedIn)
             {
-                Enable(2);
+                _recipeProfilePage.signInBox.Visibility = Visibility.Visible;
             }
-            else // disable
+            else
             {
-                Disable();
+                if (_currentRating != 2) // update to 2 star
+                {
+                    Enable(2);
+                }
+                else // disable
+                {
+                    Disable();
+                }
             }
+
         }
 
         private void StarButton3_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentRating != 3) // update to 3 star
+            if (!GlobalData.Instance.signedIn)
             {
-                Enable(3);
+                _recipeProfilePage.signInBox.Visibility = Visibility.Visible;
             }
-            else // disable
+            else
             {
-                Disable();
+                if (_currentRating != 3) // update to 3 star
+                {
+                    Enable(3);
+                }
+                else // disable
+                {
+                    Disable();
+                }
             }
+
         }
 
         private void StarButton4_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentRating != 4) // update to 4 star
+            if (!GlobalData.Instance.signedIn)
             {
-                Enable(4);
+                _recipeProfilePage.signInBox.Visibility = Visibility.Visible;
             }
-            else // disable
+            else
             {
-                Disable();
+                if (_currentRating != 4) // update to 4 star
+                {
+                    Enable(4);
+                }
+                else // disable
+                {
+                    Disable();
+                }
             }
+
+            
         }
 
         private void StarButton5_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentRating != 5) // update to 5 star
+            if (!GlobalData.Instance.signedIn)
             {
-                Enable(5);
+                _recipeProfilePage.signInBox.Visibility = Visibility.Visible;
             }
-            else // disable
+            else
             {
-                Disable();
+                if (_currentRating != 5) // update to 5 star
+                {
+                    Enable(5);
+                }
+                else // disable
+                {
+                    Disable();
+                }
             }
+
         }
 
 

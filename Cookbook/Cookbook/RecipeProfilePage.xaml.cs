@@ -107,6 +107,7 @@ namespace Cookbook
 
             _startButton.transitionPageButton.Click += StartButton_Click;
 
+            _ratingControl._recipeProfilePage = this;
 
             // NOTE: im assuming that every recipe has ingredients, equipment and steps (otherwise what is the point?)
 
@@ -298,5 +299,13 @@ namespace Cookbook
             }
             
         }
+
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            signInBox.Visibility = Visibility.Hidden;
+        }
+
+
     }
 }

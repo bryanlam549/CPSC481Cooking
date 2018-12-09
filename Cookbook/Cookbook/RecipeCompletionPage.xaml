@@ -112,7 +112,7 @@
                     BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel Height="250" Width="250">
                 <TextBlock Text="You must be signed in to rate a recipe." FontSize="36" Margin="20,20,0,0" FontWeight="DemiBold" Foreground="#FFC29A3A" TextWrapping="Wrap" VerticalAlignment="Center"/>
-                <Button Name="_close" Content="Close" FontSize="24" Background="White" Height="50" Width="64" Margin="0,40,0,0" Click="_close_Click"/>
+                <Button Name="_close" Content="Close" FontSize="24" Background="#FFADADC0" Height="50" Width="64" Margin="0,40,0,0" Click="_close_Click"/>
             </StackPanel>
         </Border>
 
