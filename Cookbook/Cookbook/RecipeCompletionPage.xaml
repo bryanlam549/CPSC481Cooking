@@ -82,10 +82,10 @@
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="editButton"  Grid.Column="5" HorizontalAlignment="Left" 
-                            Height="90" Width="65" Click="onEdit" Margin="10,20,0,0" VerticalAlignment="Top"
-                            Style="{StaticResource CustomButtonStyle}">
+                            Height="64" Width="64" Click="onEdit" Margin="10,20,0,0" VerticalAlignment="Center"
+                            Style="{StaticResource CustomButtonStyle}" Panel.ZIndex="10">
                     <Button.Background>
-                        <ImageBrush ImageSource="{StaticResource editIconIcon}"/>
+                        <ImageBrush ImageSource="{StaticResource editIconIcon}" Stretch="Uniform"/>
                     </Button.Background>
                     <Button.Effect>
                         <DropShadowEffect/>
