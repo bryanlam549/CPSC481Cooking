@@ -32,12 +32,12 @@ namespace Cookbook
 
 				Children = {
 					GlobalData.Instance.allCat,
-					GlobalData.Instance.pastryCat,
-					GlobalData.Instance.seaCat,
-					GlobalData.Instance.burgCat,
+					GlobalData.Instance.beefCat,
+					GlobalData.Instance.chickCat,
 					GlobalData.Instance.pastaCat,
-					GlobalData.Instance.pizzaCat,
-					GlobalData.Instance.desCat,
+					GlobalData.Instance.fishCat,
+					GlobalData.Instance.chineseCat,
+					GlobalData.Instance.vegCat,
 				}
 			};
 

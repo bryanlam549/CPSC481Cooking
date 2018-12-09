@@ -210,7 +210,7 @@ namespace Cookbook
 		// Search page
 		// Creating the list of categories
 		public Category allCat = new Category("All\nCategories", Recipe.Categories.ALL);
-		public Category BeefCat = new Category("Beef", Recipe.Categories.BEEF);
+		public Category beefCat = new Category("Beef", Recipe.Categories.BEEF);
 		public Category chickCat = new Category("Chicken", Recipe.Categories.CHICKEN);
 		public Category pastaCat = new Category("Pastas", Recipe.Categories.PASTA);
 		public Category fishCat = new Category("Fish", Recipe.Categories.FISH);

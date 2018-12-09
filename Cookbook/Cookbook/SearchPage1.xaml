@@ -7,9 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="576"
       Title="SearchPage1">
-	
-	<Grid>
-		<ScrollViewer x:Name="scroll1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="576" PanningMode="HorizontalOnly" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden"/>
+
+    <Grid>
+        <ScrollViewer x:Name="scroll1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="576" PanningMode="HorizontalOnly" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden"/>
         <Label x:Name="test" Content="Label" HorizontalAlignment="Left" Margin="467,142,0,0" VerticalAlignment="Top"/>
+        <Button Content="Find Recipes" HorizontalAlignment="Left" Margin="185,555,0,0" VerticalAlignment="Top" Width="254" Height="125" Background="#FFAF413B" Click="Search_Click" FontSize="36" Style="{StaticResource CustomButtonStyle}"/>
     </Grid>
 </Page>
