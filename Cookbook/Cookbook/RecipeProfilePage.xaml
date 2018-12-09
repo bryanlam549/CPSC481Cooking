@@ -64,7 +64,7 @@
         <local:TransitionPageButton x:Name="_startButton" Grid.Row="7" Grid.Column="4" Width="90" Height="90" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="68,0,0,0" />
 
 
-        <ScrollViewer Name="scroller" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Grid.ColumnSpan="6" HorizontalAlignment="Left" Height="589" Margin="0,36,0,0" Grid.Row="1" Grid.RowSpan="6" VerticalAlignment="Top" Width="576">
+        <ScrollViewer Name="scroller" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Grid.ColumnSpan="6" HorizontalAlignment="Left" Height="589" Margin="0,36,0,0" Grid.Row="1" Grid.RowSpan="6" VerticalAlignment="Top" Width="576" ScrollChanged="Scroller_ScrollChanged">
             <StackPanel Name="stacker" Height="auto" Width="auto">
                 <Grid>
                     <Grid.RowDefinitions >

@@ -282,6 +282,17 @@ namespace Cookbook
             }
         }
 
-        
+        private void Scroller_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            
+            foreach(IngredientTab tab in ingredientTabs)
+            {
+                if (tab.unitChanger.IsDropDownOpen)
+                {
+                    tab.unitChanger.IsDropDownOpen = false;
+                }
+            }
+            
+        }
     }
 }
