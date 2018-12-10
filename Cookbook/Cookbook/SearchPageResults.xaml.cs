@@ -24,11 +24,16 @@ namespace Cookbook
 		{
 			InitializeComponent();
 
+			if (recipes.Count == 0){
+				errorMsg.Visibility = System.Windows.Visibility.Visible;
+			} else {
 
-
-			// Set content 
-			foreach (Recipe recip in recipes){
-				Recipes.Children.Add(new ResultsRecipe(recip));
+				errorMsg.Visibility = System.Windows.Visibility.Hidden;
+				// Set content 
+				foreach (Recipe recip in recipes)
+				{
+					Recipes.Children.Add(new ResultsRecipe(recip));
+				}
 			}
 		}
 
