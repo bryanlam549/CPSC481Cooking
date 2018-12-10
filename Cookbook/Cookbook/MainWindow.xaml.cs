@@ -120,9 +120,27 @@ namespace Cookbook
             {
                 // should not create new instance here
                 // Main.Content = new RecipeProfilePage(GlobalData.Instance.currentRecipe);
-                Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
-                RecipeProfilePage recipeProfile = recipes[GlobalData.Instance.currentRecipe._name];
-                Main.Content = recipeProfile;
+                if (!GlobalData.Instance.currentRecipe.modified)
+                {
+                    Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
+                    RecipeProfilePage recipeProfile = recipes[GlobalData.Instance.currentRecipe._name];
+                    Main.Content = recipeProfile;
+                }
+                else
+                {
+                    for (int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
+                    {
+                        MessageBox.Show(GlobalData.Instance.currentRecipe._name);
+                        if  (GlobalData.Instance.currentRecipe._name == GlobalData.Instance.modRecipeList[i]._name)
+                        {
+                            RecipeProfilePage recipeProfile = GlobalData.Instance.modrecipePageList[i];
+                            Main.Content = recipeProfile;
+                            break;
+                        }
+                    }
+                    
+                    
+                }
 
             }
             
