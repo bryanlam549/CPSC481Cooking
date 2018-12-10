@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Cookbook"
       mc:Ignorable="d" 
       d:DesignHeight="734.494" d:DesignWidth="576"
-      Title="CookbookRecentPage">
+      Title="CookbookRecentPage" Loaded="Page_Loaded">
 
     <Grid>
         <TextBlock Name="noText" Text="You have no recipes in your recent list! Any recently viewed recipes will be added here!" FontSize="36" 

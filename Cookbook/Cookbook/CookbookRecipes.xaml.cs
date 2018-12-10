@@ -26,6 +26,8 @@ namespace Cookbook
         public Dictionary<String, RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
         public List<RecipeProfilePage> _modrecipePageList = GlobalData.Instance.modrecipePageList;
 
+        RecipeProfilePage.BackPage _backPageTag; 
+
         //if it's a modified recipe. Not really shown on this page but is a hidde value that will be used to determine if it shows up
         //in personal,recent or favourites
         private bool modified;
@@ -165,9 +167,11 @@ namespace Cookbook
 
 
         //Need to do ratings too...
-        public CookbookRecipes()
+        public CookbookRecipes(RecipeProfilePage.BackPage backPageTag)
         {
             InitializeComponent();
+
+            _backPageTag = backPageTag;
         }
 
         //public event RoutedEventHandler Click;
@@ -228,7 +232,7 @@ namespace Cookbook
                             _recentList.Add(_recipeList[j]);
                         }
                         RecipeProfilePage profile = _recipePageList[_recipeList[j]._name];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
-                        profile.backPage = RecipeProfilePage.BackPage.COOKBOOK;
+                        //profile.backPage = _backPageTag;
 
                         //Maybe set a flag? Also need to set something as current recipe
                         GlobalData.Instance.currentRecipe = _recipeList[j];

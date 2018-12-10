@@ -20,19 +20,25 @@ namespace Cookbook
     /// </summary>
     public partial class CookbookFavouritePage : Page
     {
-        //public List<Recipe> _recipeList;
         private BitmapImage fillStarImage = (BitmapImage) Application.Current.Resources["fillStarIcon"];
         private BitmapImage unfillStarImage = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
+
+        private List<Recipe> _recipeList;
+
         //Pass in a LIST of recipes. 
         public CookbookFavouritePage(List<Recipe> recipeList)
         {
             InitializeComponent();
+
+            _recipeList = recipeList;
+
+            /*
             int num = 0;
             for (int i = 0; i < recipeList.Count; i++)
             {
                 if (recipeList[i]._isFavourite)
                 {
-                    CookbookRecipes recipe = new CookbookRecipes();
+                    CookbookRecipes recipe = new CookbookRecipes(RecipeProfilePage.BackPage.FAV);
                     num++;
                     recipe.Number = num.ToString();
                     recipe.Title = recipeList[i]._name;
@@ -101,9 +107,100 @@ namespace Cookbook
                     continue;
                 }
             }
+            */
+
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdatePage();
+            GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
+        }
+
+
+        private void UpdatePage()
+        {
+            Recipes.Children.Clear();
+
+            int num = 0;
+            for (int i = 0; i < _recipeList.Count; i++)
+            {
+                if (_recipeList[i]._isFavourite)
+                {
+                    CookbookRecipes recipe = new CookbookRecipes(RecipeProfilePage.BackPage.FAV);
+                    num++;
+                    recipe.Number = num.ToString();
+                    recipe.Title = _recipeList[i]._name;
+                    recipe.Dur = _recipeList[i]._duration.ToString() + "m";
+                    recipe.ingNum.Content = _recipeList[i]._ingredients.Count.ToString() + " Ingredients";
+                    recipe.FoodImage = _recipeList[i]._image;
+
+
+
+                    if (_recipeList[i]._difficulty == Recipe.Difficulties.EASY)
+                        recipe.DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
+                    else if (_recipeList[i]._difficulty == Recipe.Difficulties.MEDIUM)
+                        recipe.DiffImage = (BitmapImage)Application.Current.Resources["medIconIcon"];
+                    else if (_recipeList[i]._difficulty == Recipe.Difficulties.HARD)
+                        recipe.DiffImage = (BitmapImage)Application.Current.Resources["hardIconIcon"];
+
+                    //recipe.editButton.Click += editButton_Click;
+                    //recipe.foodProfileButton.Click += foodProfileButton_Click;
+
+                    //Still need to add ratings
+                    if (_recipeList[i]._rating == 1)
+                    {
+                        recipe.Rate1Image = fillStarImage;
+                        recipe.Rate2Image = unfillStarImage;
+                        recipe.Rate3Image = unfillStarImage;
+                        recipe.Rate4Image = unfillStarImage;
+                        recipe.Rate5Image = unfillStarImage;
+                    }
+                    else if (_recipeList[i]._rating == 2)
+                    {
+                        recipe.Rate1Image = fillStarImage;
+                        recipe.Rate2Image = fillStarImage;
+                        recipe.Rate3Image = unfillStarImage;
+                        recipe.Rate4Image = unfillStarImage;
+                        recipe.Rate5Image = unfillStarImage;
+                    }
+                    else if (_recipeList[i]._rating == 3)
+                    {
+                        recipe.Rate1Image = fillStarImage;
+                        recipe.Rate2Image = fillStarImage;
+                        recipe.Rate3Image = fillStarImage;
+                        recipe.Rate4Image = unfillStarImage;
+                        recipe.Rate5Image = unfillStarImage;
+                    }
+                    else if (_recipeList[i]._rating == 4)
+                    {
+                        recipe.Rate1Image = fillStarImage;
+                        recipe.Rate2Image = fillStarImage;
+                        recipe.Rate3Image = fillStarImage;
+                        recipe.Rate4Image = fillStarImage;
+                        recipe.Rate5Image = unfillStarImage;
+                    }
+                    else if (_recipeList[i]._rating == 5)
+                    {
+                        recipe.Rate1Image = fillStarImage;
+                        recipe.Rate2Image = fillStarImage;
+                        recipe.Rate3Image = fillStarImage;
+                        recipe.Rate4Image = fillStarImage;
+                        recipe.Rate5Image = fillStarImage;
+                    }
+                    recipe.Modified = _recipeList[i].modified;
+                    Recipes.Children.Add(recipe);
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+
+
 
     }
-}
     /*
 _faveList = faveList;
 for(int i = 0; i < _faveList.Count; i++)

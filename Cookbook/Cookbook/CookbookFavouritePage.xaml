@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Cookbook"
       mc:Ignorable="d" 
       d:DesignHeight="734.494" d:DesignWidth="576"
-      Title="CookbookFavouritePage">
+      Title="CookbookFavouritePage" Loaded="Page_Loaded">
 
     <Grid>
         <ScrollViewer Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">

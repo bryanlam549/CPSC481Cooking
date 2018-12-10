@@ -218,6 +218,10 @@ namespace Cookbook
         };
         #endregion
 
+
+        public Object savedMainWindowContent; // used for Aaron's recipe prifile page back button
+
+
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
         public List<Recipe> modRecipeList = new List<Recipe>(); //List of MODIFIED recipes

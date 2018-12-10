@@ -24,7 +24,7 @@ namespace Cookbook
     /// </summary>
     public partial class RecipeProfilePage : Page
     {
-        public enum BackPage { SEARCH, COOKBOOK };
+        public enum BackPage { SEARCH, FAV, PERSONAL, RECENT };
 
         public Recipe _recipe;
         public int _currentStep = 0;
@@ -122,15 +122,47 @@ namespace Cookbook
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            if (backPage == BackPage.COOKBOOK)
-            {
-                NavigationService nav = NavigationService.GetNavigationService(this);
-                nav.Navigate(new Uri("CookbookPage1.xaml", UriKind.RelativeOrAbsolute));
-            }
-            else if (backPage == BackPage.SEARCH)
-            {
-                // TODO after i know what the search page is called
-            }
+            ((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.savedMainWindowContent;
+
+            //if (backPage == BackPage.FAV)
+            //{
+            /*
+            CookbookPage1 cookbookPage = new CookbookPage1();
+            cookbookPage.cookMain.Content = new CookbookFavouritePage(GlobalData.Instance.recipeList);
+            ((MainWindow)App.Current.MainWindow).Main.Content = cookbookPage;
+
+            ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+            ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonDarkIcon"];
+            */
+            //}
+
+            //else if (backPage == BackPage.PERSONAL)
+            //{
+            /*
+            CookbookPage1 cookbookPage = new CookbookPage1();
+            cookbookPage.cookMain.Content = new CookbookPersonalPage(GlobalData.Instance.modRecipeList);
+            ((MainWindow)App.Current.MainWindow).Main.Content = cookbookPage;
+
+            ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+            ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonDarkIcon"];
+            */
+            //}
+            //else if (backPage == BackPage.RECENT)
+            //{
+            /*
+            CookbookPage1 cookbookPage = new CookbookPage1();
+            cookbookPage.cookMain.Content = new CookbookPersonalPage(GlobalData.Instance.recentList);
+            ((MainWindow)App.Current.MainWindow).Main.Content = cookbookPage;
+
+            ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+            ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonDarkIcon"];
+            */
+            //}
+            //else if (backPage == BackPage.SEARCH)
+            //{
+            // TODO after i know what the search page is called
+            //}
+
         }
 
 
