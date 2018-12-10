@@ -15,7 +15,7 @@
                 <ComboBoxItem Content="Sort by INGREDIENT COUNT"/>
                 <ComboBoxItem Content="Sort by TIME"/>
             </ComboBox>
-            <Button Margin="0,0,0,20.5" Width="62" Style="{StaticResource CustomButtonStyle}" Click="Direction_Click" Background="IndianRed">
+            <Button x:Name="sortButton" Margin="0,0,0,20.5" Width="62" Style="{StaticResource CustomButtonStyle}" Click="Direction_Click" Background="IndianRed">
                 <Grid >
                     <Rectangle x:Name="arrowUp" Fill="IndianRed" Width="3" Margin="-4,-19,21,-21" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
                         <Rectangle.RenderTransform>

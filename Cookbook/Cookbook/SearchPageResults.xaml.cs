@@ -28,6 +28,9 @@ namespace Cookbook
 
 			this.recipes = recipes;
 			populateRecipes(recipes);
+
+            sortBar.resultsPage = this;
+
 		}
 
 		private void populateRecipes(List<Recipe> recipes){

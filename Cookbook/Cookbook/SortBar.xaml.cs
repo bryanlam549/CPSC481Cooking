@@ -24,6 +24,8 @@ namespace Cookbook
 
 		public bool sortUpdate = false;
 
+        public SearchPageResults resultsPage;
+
 		public SortBar()
 		{
 			InitializeComponent();
@@ -42,6 +44,8 @@ namespace Cookbook
 				arrowDown.Fill = Brushes.DarkRed;
 
 				GlobalData.Instance.sortAsc = false;
+
+                // call resultsPage.function to sort ascending
 			} else{
 				ascSort = true;
 
@@ -52,9 +56,12 @@ namespace Cookbook
 				arrowDown.Fill = Brushes.IndianRed;
 
 				GlobalData.Instance.sortAsc = true;
-			}
 
-			sortUpdate = true;
+                // call resultsPage.function to sort ascending
+
+            }
+
+            sortUpdate = true;
 		}
 
 		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
