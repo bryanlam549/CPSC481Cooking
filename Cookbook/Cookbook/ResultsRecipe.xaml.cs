@@ -143,7 +143,7 @@ namespace Cookbook
 			FoodImage = recip._image;
 			Dur = recip._duration.ToString() + "m";
 			ingNum.Content = recip._ingredients.Count.ToString() + " Ingredients";
-			Recipe = recipe;
+			Recipe = recip;
 
 			if (recip._difficulty == Recipe.Difficulties.EASY)
 				DiffImage = (BitmapImage)Application.Current.Resources["easyIconIcon"];
@@ -206,7 +206,6 @@ namespace Cookbook
 				GlobalData.Instance.recentList.Add(recipe);
 			}
 			RecipeProfilePage profile = GlobalData.Instance.recipePageList[Title];
-			profile.backPage = RecipeProfilePage.BackPage.SEARCH;
 
 			//Maybe set a flag? Also need to set something as current recipe
 			GlobalData.Instance.currentRecipe = recipe;
@@ -218,7 +217,7 @@ namespace Cookbook
 			profile._completionPage = null;
 
 			((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
-			((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
+			((MainWindow)App.Current.MainWindow).searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["searchButtonIcon"];
 			((MainWindow)App.Current.MainWindow).Main.Content = profile;
 
 		}
