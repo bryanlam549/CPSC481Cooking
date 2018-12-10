@@ -142,6 +142,9 @@
     <Compile Include="SearchPageResults.xaml.cs">
       <DependentUpon>SearchPageResults.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SortBar.xaml.cs">
+      <DependentUpon>SortBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TransitionPageButton.xaml.cs">
       <DependentUpon>TransitionPageButton.xaml</DependentUpon>
     </Compile>
@@ -279,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchPageResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SortBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

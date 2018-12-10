@@ -20,9 +20,11 @@ namespace Cookbook
 	/// </summary>
 	public partial class SearchPageResults : Page
 	{
-		public SearchPageResults(List<Recipe> recipes)
+		public SearchPageResults(List<Recipe> recipes, FilterBar filterBar)
 		{
+			this.filterBar = filterBar;
 			InitializeComponent();
+
 
 			if (recipes.Count == 0){
 				errorMsg.Visibility = System.Windows.Visibility.Visible;

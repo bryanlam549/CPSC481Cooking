@@ -34,11 +34,6 @@ namespace Cookbook
 			timeChoice.Visibility = Visibility.Hidden;
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
 		private void Diffculty_Click(object sender, RoutedEventArgs e)
 		{
 			// Close if showing these options already, otherwise switch to/open

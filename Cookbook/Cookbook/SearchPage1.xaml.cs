@@ -103,14 +103,14 @@ namespace Cookbook
 
 			// Display recipes resulting from search
 			GlobalData.Instance.isOnResults = true;
-			results = new SearchPageResults(filteredRecipes);
+			results = new SearchPageResults(filteredRecipes, filterBar);
 			this.NavigationService.Navigate(results);
 		}
 
 		public SearchPageResults getResults(){
 			// If the results haven't been created yet, just return all recipes
 			if (results == null)
-				return new SearchPageResults(GlobalData.Instance.recipeList);
+				return new SearchPageResults(GlobalData.Instance.recipeList, filterBar);
 			return results;
 		}
 
