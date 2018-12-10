@@ -324,9 +324,16 @@ namespace Cookbook
         public void updateMeasurementStr()
         {
 
+            /*
             if (_unitType == UnitType.NONE)
             {
                 _measurementStr = "";
+                return;
+            }
+            */
+
+            if (_measurementStr.Equals(""))
+            {
                 return;
             }
 
