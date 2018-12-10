@@ -66,6 +66,7 @@ namespace Cookbook
             }
             else
             {
+                
                 CookbookFavouritePage startup = new CookbookFavouritePage(GlobalData.Instance.faveList);
                 cookMain.Content = startup; // start cookbook at favourite page all the time
             }
