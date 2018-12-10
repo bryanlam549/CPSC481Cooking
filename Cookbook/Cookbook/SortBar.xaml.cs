@@ -22,8 +22,6 @@ namespace Cookbook
 	{
 		private bool ascSort = false;
 
-		public bool sortUpdate = false;
-
         public SearchPageResults resultsPage;
 
 		public SortBar()
@@ -45,7 +43,6 @@ namespace Cookbook
 
 				GlobalData.Instance.sortAsc = false;
 
-                // call resultsPage.function to sort ascending
 			} else{
 				ascSort = true;
 
@@ -56,12 +53,11 @@ namespace Cookbook
 				arrowDown.Fill = Brushes.IndianRed;
 
 				GlobalData.Instance.sortAsc = true;
+				
+			}
 
-                // call resultsPage.function to sort ascending
-
-            }
-
-            sortUpdate = true;
+			if (resultsPage != null)
+				resultsPage.sort();
 		}
 
 		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -86,7 +82,9 @@ namespace Cookbook
 				GlobalData.Instance.sortBy = "Time";
 			}
 
-			sortUpdate = true;
+			if (resultsPage != null)
+				resultsPage.sort();
+
 		}
 	}
 }

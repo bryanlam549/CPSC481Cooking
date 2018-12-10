@@ -40,10 +40,10 @@ namespace Cookbook
 			allCat = new Category("All\nCategories", Recipe.Categories.ALL);
 			beefCat = new Category("Beef", Recipe.Categories.BEEF);
 			chickCat = new Category("Chicken", Recipe.Categories.CHICKEN);
-			 pastaCat = new Category("Pastas", Recipe.Categories.PASTA);
-			 fishCat = new Category("Fish", Recipe.Categories.FISH);
-			 chineseCat = new Category("Chinese", Recipe.Categories.CHINESE);
-			 vegCat = new Category("Vegetarian", Recipe.Categories.VEGETARIAN);
+			pastaCat = new Category("Pastas", Recipe.Categories.PASTA);
+			fishCat = new Category("Fish", Recipe.Categories.FISH);
+			chineseCat = new Category("Chinese", Recipe.Categories.CHINESE);
+			vegCat = new Category("Vegetarian", Recipe.Categories.VEGETARIAN);
 
 			selected = allCat;
 			selected.setPressed();
@@ -70,6 +70,23 @@ namespace Cookbook
 			
 		}
 
+		public void removeIngr(IngredientTag tag)
+		{
+			ingredients.Remove(tag.name.Text);
+			
+			if (ingredients.Count >= 3)
+			{
+				if (Fridge.Visibility != Visibility.Visible)
+					FridgeOpen.Visibility = Visibility.Visible;
+				
+			}
+			else
+			{
+				FridgeOpen.Visibility = Visibility.Collapsed;
+			}
+			IngredientTags.Children.Remove(this);
+		}
+
 		public static void setCategory(Category newSelected){
 			selected.setUnpressed();
 			selected = newSelected;
@@ -90,6 +107,10 @@ namespace Cookbook
 
 			System.Diagnostics.Debug.WriteLine(GlobalData.Instance.durationFilter);
 			System.Diagnostics.Debug.WriteLine(GlobalData.Instance.ingredCountFilter);
+
+			foreach (String ingr in ingredients){
+				GlobalData.Instance.ingredFilter.Add(ingr);
+			}
 
 			// Get results from recipes
 			List<Recipe> recipes = GlobalData.Instance.recipeList;
@@ -141,6 +162,7 @@ namespace Cookbook
 			searchBar.Text = "";
 			ingredients.Clear();
 
+			IngredientTags.Children.Clear();
 			
 			filterBar.ratingNum.Content = "";
 			filterBar.ratingChoice.Visibility = Visibility.Hidden;
@@ -164,7 +186,17 @@ namespace Cookbook
 			{
 				if (!ingredients.Contains(ingredsearchBar.Text.Trim()) && !ingredsearchBar.Text.Equals("")) {
 					ingredients.Add(ingredsearchBar.Text.Trim());
-					// Create new ingredient tag
+					
+					if (ingredients.Count >= 3){
+						FridgeOpen.Visibility = Visibility.Visible;
+
+					}
+					else
+					{
+						FridgeOpen.Visibility = Visibility.Collapsed;
+					}
+
+					IngredientTags.Children.Insert(0, new IngredientTag(ingredsearchBar.Text.Trim(), this));
 				}
 
 				ingredsearchBar.Text = "";
@@ -199,5 +231,43 @@ namespace Cookbook
 			return true;
 		}
 
+		private void closeFridge_Click(object sender, RoutedEventArgs e)
+		{
+			Fridge.Visibility = Visibility.Collapsed;
+			FridgeBack.Visibility = Visibility.Collapsed;
+			FridgeClose.Visibility = Visibility.Collapsed;
+
+			if (ingredients.Count >= 3)
+				FridgeOpen.Visibility = Visibility.Visible;
+
+			IngredientTags.Children.Clear();			
+
+			foreach (String ingr in ingredients)
+			{
+				IngredientTags.Children.Add(new IngredientTag(ingr, this));
+			}
+		}
+
+		private void openFridge_Click(object sender, RoutedEventArgs e)
+		{
+			// Creating the list in fridge
+			var fridge = new StackPanel()
+			{
+				Orientation = Orientation.Vertical,
+
+			};
+
+			foreach (String ingr in ingredients){
+				fridge.Children.Add(new IngredientTag(ingr, this));
+			}
+
+			Fridge.Content = fridge;
+
+			Fridge.Visibility = Visibility.Visible;
+			FridgeBack.Visibility = Visibility.Visible;
+			FridgeClose.Visibility = Visibility.Visible;
+
+			FridgeOpen.Visibility = Visibility.Collapsed;
+		}
 	}
 }

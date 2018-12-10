@@ -9,17 +9,28 @@
       Title="SearchPage1">
 
     <Grid>
+
+
+
         <ScrollViewer x:Name="scroll1" HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="576" PanningMode="HorizontalOnly" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden"/>
         <Button Content="Find Recipes" HorizontalAlignment="Left" Margin="163,711,0,0" VerticalAlignment="Top" Width="254" Height="125" Background="#FFAF413B" Click="Search_Click" FontSize="36" Style="{StaticResource CustomButtonStyle}"/>
         <TextBox x:Name="searchBar" HorizontalAlignment="Left" Height="39" Margin="70,123,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="228" FontSize="20"/>
         <TextBox x:Name="ingredsearchBar" HorizontalAlignment="Left" Height="39" Margin="319,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="20" KeyDown="OnKeyDownHandler"/>
-        <StackPanel HorizontalAlignment="Left" Height="58" Margin="70,183,0,0" VerticalAlignment="Top" Width="424"/>
+        <StackPanel x:Name="IngredientTags" Orientation="Horizontal" HorizontalAlignment="Left" Height="58" Margin="70,183,0,0" VerticalAlignment="Top" Width="367">
+
+        </StackPanel>
         <Label Content="Search" HorizontalAlignment="Left" Margin="70,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.783,0.308" Width="228"/>
         <Label Content="Ingrediant Search" HorizontalAlignment="Left" Margin="319,97,0,0" VerticalAlignment="Top" Width="175"/>
         <Button x:Name="resetButton" Content="Reset Search" HorizontalAlignment="Left" Margin="389,434,0,0" VerticalAlignment="Top" Width="105" Height="34" FontSize="16" Click="Reset_Click"/>
         <local:FilterBar x:Name="filterBar" HorizontalAlignment="Left" Height="102" Margin="70,278,0,0" VerticalAlignment="Top" Width="424"/>
         <Label Content="Filter" HorizontalAlignment="Left" Margin="70,251,0,0" VerticalAlignment="Top" Height="27" Width="100"/>
         <local:SortBar HorizontalAlignment="Left" Margin="111,414,0,0" VerticalAlignment="Top" Height="98" Width="273"/>
+
+
+        <Rectangle x:Name="FridgeBack"  Fill="Tan" HorizontalAlignment="Left" Height="453" Margin="70,183,0,0" VerticalAlignment="Top" Width="424" Visibility="Collapsed"/>
+        <ScrollViewer x:Name="Fridge" HorizontalAlignment="Left" Height="453" Margin="70,183,0,0" VerticalAlignment="Top" Width="424" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Visibility="Collapsed"/>
+        <Button x:Name="FridgeClose" Content="Close" HorizontalAlignment="Left" Margin="419,183,0,0" VerticalAlignment="Top" Width="75" Height="29" Style="{StaticResource CustomButtonStyle}" Click="closeFridge_Click" Visibility="Collapsed"/>
+        <Button x:Name="FridgeOpen" Background="LightGoldenrodYellow" Content="More" HorizontalAlignment="Left" Margin="437,183,0,0" VerticalAlignment="Top" Width="57" Height="58" Style="{StaticResource CustomButtonStyle}" Click="openFridge_Click" Visibility="Collapsed"/>
 
     </Grid>
 </Page>

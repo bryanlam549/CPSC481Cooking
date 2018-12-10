@@ -65,27 +65,28 @@ namespace Cookbook
             //GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.SEARCH;
         }
 
-		/*private void checkForUpdates(object sender, RoutedEventArgs e)
+		public void sort()
 		{
-			if (sortBar.sortUpdate){
-				
-				// Sort
-				if (GlobalData.Instance.sortBy.Equals("Difficulty"))
-					recipes = recipes.OrderBy(r => r._difficulty).ToList();
-				if (GlobalData.Instance.sortBy.Equals("Rating"))
-					recipes = recipes.OrderBy(r => r._rating).ToList();
-				if (GlobalData.Instance.sortBy.Equals("Ingredient Count"))
-					recipes = recipes.OrderBy(r => r._ingredientCount).ToList();
-				if (GlobalData.Instance.sortBy.Equals("Time"))
-					recipes = recipes.OrderBy(r => r._duration).ToList();
 
-				if (!GlobalData.Instance.sortAsc)
-					recipes.Reverse();
+			System.Diagnostics.Debug.WriteLine(GlobalData.Instance.sortBy);
 
-				populateRecipes(recipes);
+			// Sort
+			if (GlobalData.Instance.sortBy.Equals("Difficulty"))
+				recipes = recipes.OrderBy(r => r._difficulty).ToList();
+			if (GlobalData.Instance.sortBy.Equals("Rating"))
+				recipes = recipes.OrderBy(r => r._rating).ToList();
+			if (GlobalData.Instance.sortBy.Equals("Ingredient Count"))
+				recipes = recipes.OrderBy(r => r._ingredientCount).ToList();
+			if (GlobalData.Instance.sortBy.Equals("Time"))
+				recipes = recipes.OrderBy(r => r._duration).ToList();
+
+			if (!GlobalData.Instance.sortAsc)
+				recipes.Reverse();
+
+			populateRecipes(recipes);
 				
-			}
-		}*/
+			
+		}
 
 	}
 }

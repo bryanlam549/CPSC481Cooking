@@ -90,6 +90,9 @@
     <Compile Include="IngredientTab.xaml.cs">
       <DependentUpon>IngredientTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IngredientTag.xaml.cs">
+      <DependentUpon>IngredientTag.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mod.xaml.cs">
       <DependentUpon>Mod.xaml</DependentUpon>
     </Compile>
@@ -202,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IngredientTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IngredientTag.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
