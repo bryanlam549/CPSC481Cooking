@@ -36,5 +36,11 @@ namespace Cookbook
 			GlobalData.Instance.isOnResults = false;
 			this.NavigationService.Navigate(GlobalData.Instance.search);
 		}
-	}
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
+            GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.SEARCH;
+        }
+    }
 }

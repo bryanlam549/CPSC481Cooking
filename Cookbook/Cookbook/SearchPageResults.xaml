@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Cookbook"
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="576"
-      Title="SearchPageResults">
+      Title="SearchPageResults" Loaded="Page_Loaded">
 
     <Grid>
         <Button Content="Edit Search" HorizontalAlignment="Left" Margin="174,0,0,0" VerticalAlignment="Top" Width="249" Height="54" Background="#FFAF413B" Click="EditSearch_Click" FontSize="36" Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="0.725,-0.293"/>
