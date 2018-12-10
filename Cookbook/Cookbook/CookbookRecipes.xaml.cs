@@ -259,6 +259,10 @@ namespace Cookbook
                 RecipeProfilePage modprofile = _modrecipePageList[i];//new RecipeProfilePage(GlobalData.Instance.recipeList[i]);
                 //Maybe set a flag. Also need to set something as current recipe
                 GlobalData.Instance.currentRecipe = _modrecipeList[i];
+
+                GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
+                GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.COOKBOOK;
+
                 ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
                 ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
                 ((MainWindow)App.Current.MainWindow).Main.Content = modprofile;
