@@ -41,7 +41,8 @@
             </Button.Background>
         </Button>
 
-            <Button Name="editButton" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Height="64" Margin="0,0,0,0" Width="64" Click="editButton_Click" Grid.Column="4">
+            <Button Name="editButton" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Height="64" Margin="0,0,0,0" Width="64" 
+                    Click="editButton_Click" Grid.Column="4">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
