@@ -147,7 +147,7 @@ namespace Cookbook
 
 
             _equipment = new List<string> { "Oven", "4\" Chef knife","Baking tray", "Blender" },
-            _steps = new List<string> { @"Gut the mackeral, if not already gutted.", @"Chop cloves of garlic", @"Heat cooking oil and briefly"
+            _steps = new List<string> { @"Gut the mackeral, if not already gutted.", @"Mince cloves of garlic", @"Heat cooking oil and briefly"
                                         + " fry with the garlic, a sprig of sage and the fish.", @"Place fish on baking tray and cook at 350°F.",
                                         @"Once done, put the whole thing in the blender."},
              _timerValuesForSteps = new List<int> { 0, 0, 0, 0, 0 }
@@ -284,7 +284,7 @@ namespace Cookbook
             }
 
             lookUpTerms.Add("marinade", "A marinade is a sauce, typically made of oil, vinegar, spices, and herbs, in which meat, fish, or other food is soaked before cooking in order to flavor or soften it.");
-            lookUpTerms.Add("Chop", "cut into small pieces with repeated sharp blows a knife.");
+            lookUpTerms.Add("Mince", "Cut up or grind into very small pieces, typically using grinder but can be done using knife");
 
             accountList.Add("foodluver123");
             accountList.Add("ilovefood456@food.com");

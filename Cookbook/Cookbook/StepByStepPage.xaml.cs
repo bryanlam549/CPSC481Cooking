@@ -7,6 +7,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
 
 namespace Cookbook
 {
@@ -207,9 +208,11 @@ namespace Cookbook
             Console.WriteLine("The link works!");
             // String word = GlobalData.Instance.lookUpTerms.at("marinade");
             string lookupDef = GlobalData.Instance.lookUpTerms[currentLookUpWord];
-            termDef.Visibility = System.Windows.Visibility.Visible;
             _lookupDef.Text = lookupDef;
+            
+            _termImage.Source = (ImageSource)Application.Current.Resources[currentLookUpWord.ToLower()];
             mainGrid.IsEnabled = false;
+            termDef.Visibility = System.Windows.Visibility.Visible;
 
 
         }
