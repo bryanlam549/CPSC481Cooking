@@ -433,6 +433,7 @@ namespace Cookbook
         //Trash stuff 
         private void _trashButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentRecipe = null;
             //MessageBox.Show(backPage.ToString());
             for(int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
             {
