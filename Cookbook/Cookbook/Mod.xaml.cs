@@ -148,6 +148,7 @@ namespace Cookbook
                 //CookbookPage1 prevPage = new CookbookPage1();
                 //((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
                 //this.NavigationService.Navigate(previousPage);
+                GlobalData.Instance.currentRecipe = null;
                 GlobalData.Instance.goBackToPersonal = true;
                 CookbookPage1 x = new CookbookPage1();
                 ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
