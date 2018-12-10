@@ -28,6 +28,26 @@
                 </Setter>
             </Style>
 
+            <Style x:Key="BorderButtonStyle" TargetType="Button">
+                <!-- should get applied to all buttons in app by default?-->
+                <Setter Property="OverridesDefaultStyle" Value="True" />
+                <Setter Property="Cursor" Value="None" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Name="border" BorderThickness="1" BorderBrush="Black" Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="0.8" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
     

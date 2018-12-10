@@ -95,6 +95,15 @@ namespace Cookbook
                 tempSteps.Add(template._steps[i]);
             }
             _steps = tempSteps;
+
+            // adding the same time values as the template
+            List<int> timeValuesForStep = new List<int>();
+            for (int i = 0; i < template._timerValuesForSteps.Count; i++)
+            {
+                timeValuesForStep.Add(template._timerValuesForSteps[i]);
+            }
+
+            _timerValuesForSteps = timeValuesForStep;
         }
 
 

@@ -98,5 +98,18 @@ namespace Cookbook
                 _startTimer.Content = "START TIMER";
             }
         }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            //stop timer
+            _timer.Stop();
+            _startTimer.Content = "START TIMER";
+            if (stepTime > 0)
+            {
+                TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
+                CountdownDisplay.Text = initialTime.ToString("c");
+            }
+
+        }
     }
 }

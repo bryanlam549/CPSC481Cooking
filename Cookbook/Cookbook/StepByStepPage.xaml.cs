@@ -61,13 +61,32 @@ namespace Cookbook
 
 
             //setting a reference for the current step in recipeProfile everytime navigated to this step page 
-            Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
-            recipeProfilePage = recipes[currentRecipe._name];
+           
+            recipeProfilePage = GetRecipeProfilePage();
             recipeProfilePage._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
 
             _timer.setStepTime(currentRecipe._timerValuesForSteps.ElementAt(currentStep), currentStep + 1);
 
 
+        }
+
+        private RecipeProfilePage GetRecipeProfilePage()
+        {
+            if (currentRecipe.modified)
+            {
+                for(int i = 0; i < GlobalData.Instance.modrecipePageList.Count; i++)
+                {
+                    if (GlobalData.Instance.modrecipePageList.ElementAt(i)._recipe._name.Equals(currentRecipe._name))
+                    {
+                        return GlobalData.Instance.modrecipePageList.ElementAt(i);
+                    }
+                }
+            }
+        
+                //setting a reference for the current step in recipeProfile everytime navigated to this step page 
+                Dictionary<String, RecipeProfilePage> recipes = GlobalData.Instance.recipePageList;
+                return recipes[currentRecipe._name];
+          
         }
 
         private void setStepBody(String step)

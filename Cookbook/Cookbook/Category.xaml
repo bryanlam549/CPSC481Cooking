@@ -15,9 +15,8 @@
         </Grid.ColumnDefinitions>
         <!--Rectangle Height="65" Stroke="#FFD4A63B" Width="2" Fill="#FFD4A63B" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.RowSpan="2"-->
 
-
         <Button x:Name="Button" Grid.ColumnSpan="2" Margin="0,0,0,0.5" Background="#FF9D3828" Foreground="#FFC29A3A" Click="Button_Click" FontSize="20" BorderThickness="6" BorderBrush="#FFC29A3A" Style="{StaticResource CustomButtonStyle}">
-   
+
         </Button>
     </Grid>
 </UserControl>

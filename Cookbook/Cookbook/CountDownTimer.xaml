@@ -8,13 +8,15 @@
                  d:DesignHeight="150" d:DesignWidth="150">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-        <Ellipse Grid.Row="0" Fill="#FF9C3828" HorizontalAlignment="Center" Height="120" Stroke="Black" VerticalAlignment="Top" Width="133.521" Margin="6.479,0,10,0"/>
-        <Button x:Name="_startTimer" Click="_start_Click" Content="START TIMER"  HorizontalContentAlignment="Center" FontSize="15"  Background="White" Margin="10,116.436,13.283,3.564" Grid.RowSpan="2"/>
-        <TextBlock x:Name="CountdownDisplay" TextWrapping="Wrap" TextAlignment="Center" Text="00:00:00" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="24" Foreground="#FFC29A3A"/>
+        <Ellipse Grid.Row="1" Fill="#FF9C3828" HorizontalAlignment="Center" Height="100" Stroke="Black" VerticalAlignment="Top" Width="114" Margin="17,0,19,0"/>
+        <Button x:Name="_startTimer" Click="_start_Click" Content="START TIMER"  HorizontalContentAlignment="Center" FontSize="15"  Background="White" Grid.Row="2"/>
+        <TextBlock Grid.Row="1" x:Name="CountdownDisplay" TextWrapping="Wrap" TextAlignment="Center" Text="00:00:00" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="24" Foreground="#FFC29A3A"/>
+        <Button x:Name="_resetTimer" Content="RESET TIMER" HorizontalContentAlignment="Center" Margin="37,5,38,0" VerticalAlignment="Top" Width="75"  FontSize="12"  Background="White" Click="Reset_Click"/>
     </Grid>
 
 
