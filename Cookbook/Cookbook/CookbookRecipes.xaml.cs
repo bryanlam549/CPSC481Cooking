@@ -240,6 +240,9 @@ namespace Cookbook
                         profile._currentStep = 0;
                         profile._completionPage = null;
 
+                        GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
+                        GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.COOKBOOK;
+
                         ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
                         ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonIcon"];
                         ((MainWindow)App.Current.MainWindow).Main.Content = profile;

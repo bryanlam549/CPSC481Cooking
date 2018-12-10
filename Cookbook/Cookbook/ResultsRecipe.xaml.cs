@@ -206,6 +206,8 @@ namespace Cookbook
 				GlobalData.Instance.recentList.Add(recipe);
 			}
 			RecipeProfilePage profile = GlobalData.Instance.recipePageList[Title];
+			//profile.backPage = RecipeProfilePage.BackPage.SEARCH;
+
 
 			//Maybe set a flag? Also need to set something as current recipe
 			GlobalData.Instance.currentRecipe = recipe;
@@ -218,6 +220,8 @@ namespace Cookbook
 
 			((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonDarkIcon"];
 			((MainWindow)App.Current.MainWindow).searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["searchButtonIcon"];
+            GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
+            GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.SEARCH;
 			((MainWindow)App.Current.MainWindow).Main.Content = profile;
 
 		}
