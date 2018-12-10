@@ -178,6 +178,8 @@ namespace Cookbook
 			filterBar.ingrCountChoice.Visibility = Visibility.Hidden;
 			filterBar.timeChoice.Visibility = Visibility.Hidden;
 
+			FridgeOpen.Visibility = Visibility.Collapsed;
+
 		}
 
 		private void OnKeyDownHandler(object sender, KeyEventArgs e)
