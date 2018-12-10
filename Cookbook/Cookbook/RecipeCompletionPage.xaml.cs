@@ -51,8 +51,8 @@ namespace Cookbook
             _recipeImageBrush.ImageSource = currentRecipe._image;
             _recipeName.Text = currentRecipe._name;
 
-            _back.initAppearance(TransitionPageButton.Orientation.BACK, "BACK TO STEPS");
-            _next.initAppearance(TransitionPageButton.Orientation.FORWARD, "GO TO RECIPE PAGE");
+            _back.initAppearance(TransitionPageButton.Orientation.BACK, "STEPS");
+            _next.initAppearance(TransitionPageButton.Orientation.FORWARD, "RECIPE PAGE");
 
             _back.transitionPageButton.Click += Back_Click;
             _next.transitionPageButton.Click += Next_Click;
@@ -83,7 +83,7 @@ namespace Cookbook
             RecipeProfilePage recipeProfile = GetRecipeProfilePage();
             recipeProfile._completionPage = this;
             recipeProfile._currentStep = 0;
-            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "TO RECIPE COMPLETION PAGE");
+            recipeProfile._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "COMPLETION PAGE");
             this.NavigationService.Navigate(recipeProfile);
         }
 
