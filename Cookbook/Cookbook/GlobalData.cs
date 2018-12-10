@@ -45,7 +45,7 @@ namespace Cookbook
         // ~~~~~~init the ingredients and fill ingredients list here
         public Recipe _shanghaiNoodlesRecipe = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Shanghai Noodles",
             _image = (BitmapImage)Application.Current.Resources["shanghaiNoodlesIcon"],
             _difficulty = Recipe.Difficulties.HARD,
@@ -95,7 +95,7 @@ namespace Cookbook
         // ~~~~~~init the ingredients and fill ingredients list here
         public Recipe _burger = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Steamed Hams",
             _image = (BitmapImage)Application.Current.Resources["burgerIcon"],
             _difficulty = Recipe.Difficulties.EASY,
@@ -124,7 +124,7 @@ namespace Cookbook
         #region HOLY MACKERAL
         public Recipe _holymackeral = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Holy Mackeral",
             _image = (BitmapImage)Application.Current.Resources["holymackeralIcon"],
             _difficulty = Recipe.Difficulties.MEDIUM,
@@ -159,7 +159,7 @@ namespace Cookbook
 
         public Recipe _chowmein = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Chicken Chow Mein",
             _image = (BitmapImage)Application.Current.Resources["chowmeinIcon"],
             _difficulty = Recipe.Difficulties.MEDIUM,
@@ -195,7 +195,7 @@ namespace Cookbook
         #region
         public Recipe _salad = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Head of Lettuce",
             _image = (BitmapImage)Application.Current.Resources["saladIcon"],
             _difficulty = Recipe.Difficulties.EASY,
@@ -223,7 +223,7 @@ namespace Cookbook
         public Object savedMainWindowContent; // used for Aaron's recipe prifile page back button
         public RecipeProfilePage.BackPage backPageTag; // for setting lower button dark color
 
-
+        public List<Recipe> faveList = new List<Recipe>();
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
         public List<Recipe> modRecipeList = new List<Recipe>(); //List of MODIFIED recipes
@@ -277,6 +277,12 @@ namespace Cookbook
             recipeList.Add(_holymackeral);
             recipeList.Add(_chowmein);
             recipeList.Add(_salad);
+
+           /* faveList.Add(_shanghaiNoodlesRecipe);
+            faveList.Add(_burger);
+            faveList.Add(_holymackeral);
+            faveList.Add(_chowmein);
+            faveList.Add(_salad);*/
             //Adds a profile page for each recipe
             for (int i = 0; i < recipeList.Count; i++)
             {

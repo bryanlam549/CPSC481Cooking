@@ -66,7 +66,7 @@ namespace Cookbook
             }
             else
             {
-                CookbookFavouritePage startup = new CookbookFavouritePage(GlobalData.Instance.recipeList);
+                CookbookFavouritePage startup = new CookbookFavouritePage(GlobalData.Instance.faveList);
                 cookMain.Content = startup; // start cookbook at favourite page all the time
             }
 
@@ -82,7 +82,7 @@ namespace Cookbook
             personaleButtonImageBrush.ImageSource = personalButtonImage;
             recentButtonImageBrush.ImageSource = recentRecipeButtonImage;
             //Switch content
-            CookbookFavouritePage cookbookfavouritepage = new CookbookFavouritePage(GlobalData.Instance.recipeList);
+            CookbookFavouritePage cookbookfavouritepage = new CookbookFavouritePage(GlobalData.Instance.faveList);
             cookMain.Content = cookbookfavouritepage;
         }
 
