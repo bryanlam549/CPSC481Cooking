@@ -20,15 +20,25 @@ namespace Cookbook
 	/// </summary>
 	public partial class SearchPageResults : Page
 	{
+		List<Recipe> recipes;
+
 		public SearchPageResults(List<Recipe> recipes, FilterBar filterBar)
 		{
-			this.filterBar = filterBar;
 			InitializeComponent();
 
+			this.recipes = recipes;
+			populateRecipes(recipes);
+		}
 
-			if (recipes.Count == 0){
+		private void populateRecipes(List<Recipe> recipes){
+			Recipes.Children.Clear();
+			
+			if (recipes.Count == 0)
+			{
 				errorMsg.Visibility = System.Windows.Visibility.Visible;
-			} else {
+			}
+			else
+			{
 
 				errorMsg.Visibility = System.Windows.Visibility.Hidden;
 				// Set content 
@@ -51,5 +61,28 @@ namespace Cookbook
             //GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
             //GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.SEARCH;
         }
-    }
+
+		/*private void checkForUpdates(object sender, RoutedEventArgs e)
+		{
+			if (sortBar.sortUpdate){
+				
+				// Sort
+				if (GlobalData.Instance.sortBy.Equals("Difficulty"))
+					recipes = recipes.OrderBy(r => r._difficulty).ToList();
+				if (GlobalData.Instance.sortBy.Equals("Rating"))
+					recipes = recipes.OrderBy(r => r._rating).ToList();
+				if (GlobalData.Instance.sortBy.Equals("Ingredient Count"))
+					recipes = recipes.OrderBy(r => r._ingredientCount).ToList();
+				if (GlobalData.Instance.sortBy.Equals("Time"))
+					recipes = recipes.OrderBy(r => r._duration).ToList();
+
+				if (!GlobalData.Instance.sortAsc)
+					recipes.Reverse();
+
+				populateRecipes(recipes);
+				
+			}
+		}*/
+
+	}
 }

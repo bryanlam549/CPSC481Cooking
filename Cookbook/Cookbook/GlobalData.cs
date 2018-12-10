@@ -246,8 +246,8 @@ namespace Cookbook
 		public Recipe.Categories categoryFilter = Recipe.Categories.ALL;
 
 		// Sort
-		public int sortBy = -1;
-		public bool sortAsc = true;
+		public string sortBy = "None";
+		public bool sortAsc = false;
 
 		public bool isOnResults = false;
 

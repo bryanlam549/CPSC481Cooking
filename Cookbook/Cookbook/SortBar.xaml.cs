@@ -20,9 +20,66 @@ namespace Cookbook
 	/// </summary>
 	public partial class SortBar : UserControl
 	{
+		private bool ascSort = false;
+
+		public bool sortUpdate = false;
+
 		public SortBar()
 		{
 			InitializeComponent();
+			
+		}
+
+		private void Direction_Click(object sender, RoutedEventArgs e)
+		{
+			if (ascSort){
+				ascSort = false;
+
+				arrowHeadUp.Fill = Brushes.IndianRed;
+				arrowUp.Fill = Brushes.IndianRed;
+
+				arrowHeadDown.Fill = Brushes.DarkRed;
+				arrowDown.Fill = Brushes.DarkRed;
+
+				GlobalData.Instance.sortAsc = false;
+			} else{
+				ascSort = true;
+
+				arrowHeadUp.Fill = Brushes.DarkRed;
+				arrowUp.Fill = Brushes.DarkRed;
+
+				arrowHeadDown.Fill = Brushes.IndianRed;
+				arrowDown.Fill = Brushes.IndianRed;
+
+				GlobalData.Instance.sortAsc = true;
+			}
+
+			sortUpdate = true;
+		}
+
+		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (comboBox.Text.Equals("Sort by NONE")){
+				GlobalData.Instance.sortBy = "None";
+			}
+			else if (comboBox.Text.Equals("Sort by DIFFICULTY"))
+			{
+				GlobalData.Instance.sortBy = "Difficulty";
+			}
+			else if (comboBox.Text.Equals("Sort by RATING"))
+			{
+				GlobalData.Instance.sortBy = "Rating";
+			}
+			else if (comboBox.Text.Equals("Sort by INGREDIENT COUNT"))
+			{
+				GlobalData.Instance.sortBy = "Ingredient";
+			}
+			else if (comboBox.Text.Equals("Sort by TIME"))
+			{
+				GlobalData.Instance.sortBy = "Time";
+			}
+
+			sortUpdate = true;
 		}
 	}
 }

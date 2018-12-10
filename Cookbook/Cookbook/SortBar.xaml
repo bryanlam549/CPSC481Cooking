@@ -4,9 +4,75 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cookbook"
-             mc:Ignorable="d" Height="82.016" Width="206.705">
-    <Grid>
-        <Rectangle Fill="IndianRed" HorizontalAlignment="Left" Height="82" Stroke="Black" VerticalAlignment="Top" Width="206"/>
+             mc:Ignorable="d" Height="99.516" Width="210.705">
+    <Grid Margin="0,0,-35.5,43.5">
+        <Rectangle Fill="IndianRed" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="247" Margin="0,0,-56,-22.5"/>
+        <StackPanel Orientation="Horizontal" Margin="0,0,-22,-22">
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="184" Height="58" Background="IndianRed" SelectionChanged="ComboBox_SelectionChanged" FontSize="12">
+                <ComboBoxItem Content="Sort by NONE" IsSelected="True"/>
+                <ComboBoxItem Content="Sort by DIFFICULTY"/>
+                <ComboBoxItem Content="Sort by RATING"/>
+                <ComboBoxItem Content="Sort by INGREDIENT COUNT"/>
+                <ComboBoxItem Content="Sort by TIME"/>
+            </ComboBox>
+            <Button Margin="0,0,0,20.5" Width="62" Style="{StaticResource CustomButtonStyle}" Click="Direction_Click" Background="IndianRed">
+                <Grid >
+                    <Rectangle x:Name="arrowUp" Fill="IndianRed" Width="3" Margin="-4,-19,21,-21" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="-48.366"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-1.688"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Canvas>
+                        <Polygon x:Name="arrowHeadUp" 
+                        Points="0,0 12,0 0,20"   
+                        StrokeThickness="2" Canvas.Top="-24" Canvas.Left="-22" Height="20" Width="21" RenderTransformOrigin="0.5,0.5">
+                            <Polygon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-178.905"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Polygon.RenderTransform>
+                            <Polygon.Fill>
+                                <SolidColorBrush Color="IndianRed"/>
+                            </Polygon.Fill>
+                        </Polygon>
+                        <Polygon x:Name="arrowHeadDown"
+                        Points="0,0 12,0 0,20"   
+                        StrokeThickness="2" Canvas.Top="3" Canvas.Left="22" Height="20" Width="21" RenderTransformOrigin="0.5,0.5">
+                            <Polygon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.145"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Polygon.RenderTransform>
+                            <Polygon.Fill>
+                                <SolidColorBrush Color="DarkRed"/>
+                            </Polygon.Fill>
+                        </Polygon>
+                    </Canvas>
+                    <Rectangle x:Name="arrowDown" Fill="DarkRed" Width="3" Margin="0,-19,-5,-20" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="-48.366"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-1.688"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                </Grid>
+            </Button>
+        </StackPanel>
+
 
     </Grid>
 </UserControl>

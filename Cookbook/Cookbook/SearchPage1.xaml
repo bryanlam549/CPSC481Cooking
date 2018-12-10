@@ -16,9 +16,10 @@
         <StackPanel HorizontalAlignment="Left" Height="58" Margin="70,183,0,0" VerticalAlignment="Top" Width="424"/>
         <Label Content="Search" HorizontalAlignment="Left" Margin="70,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.783,0.308" Width="228"/>
         <Label Content="Ingrediant Search" HorizontalAlignment="Left" Margin="319,97,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button x:Name="resetButton" Content="Reset Search" HorizontalAlignment="Left" Margin="377,434,0,0" VerticalAlignment="Top" Width="117" Height="34" FontSize="16" Click="Reset_Click"/>
+        <Button x:Name="resetButton" Content="Reset Search" HorizontalAlignment="Left" Margin="389,434,0,0" VerticalAlignment="Top" Width="105" Height="34" FontSize="16" Click="Reset_Click"/>
         <local:FilterBar x:Name="filterBar" HorizontalAlignment="Left" Height="102" Margin="70,278,0,0" VerticalAlignment="Top" Width="424"/>
         <Label Content="Filter" HorizontalAlignment="Left" Margin="70,251,0,0" VerticalAlignment="Top" Height="27" Width="100"/>
+        <local:SortBar HorizontalAlignment="Left" Margin="111,414,0,0" VerticalAlignment="Top" Height="98" Width="273"/>
 
     </Grid>
 </Page>

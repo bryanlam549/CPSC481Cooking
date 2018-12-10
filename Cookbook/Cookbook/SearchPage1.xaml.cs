@@ -99,7 +99,19 @@ namespace Cookbook
 				if (matchesFilter(recip))
 					filteredRecipes.Add(recip);
 			}
-			
+
+			// Sort
+			if (GlobalData.Instance.sortBy.Equals("Difficulty"))
+				filteredRecipes = filteredRecipes.OrderBy(r => r._difficulty).ToList();
+			if (GlobalData.Instance.sortBy.Equals("Rating"))
+				filteredRecipes = filteredRecipes.OrderBy(r => r._rating).ToList();
+			if (GlobalData.Instance.sortBy.Equals("Ingredient Count"))
+				filteredRecipes = filteredRecipes.OrderBy(r => r._ingredientCount).ToList();
+			if (GlobalData.Instance.sortBy.Equals("Time"))
+				filteredRecipes = filteredRecipes.OrderBy(r => r._duration).ToList();
+
+			if (!GlobalData.Instance.sortAsc)
+				filteredRecipes.Reverse();
 
 			// Display recipes resulting from search
 			GlobalData.Instance.isOnResults = true;
