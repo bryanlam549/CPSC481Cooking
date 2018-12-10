@@ -142,8 +142,8 @@ namespace Cookbook
                 _ellipse.Fill = Brushes.White;
                 if (stepTime > 0)
                 {
-                    TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
-                    CountdownDisplay.Text = initialTime.ToString("c");
+                    _time = TimeSpan.FromSeconds(stepTime);
+                    CountdownDisplay.Text = _time.ToString("c");
                 }
             }
 
