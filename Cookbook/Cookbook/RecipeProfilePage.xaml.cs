@@ -391,6 +391,7 @@ namespace Cookbook
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
+            
             Window parentWindow = Window.GetWindow(this);
             MainWindow x = parentWindow as MainWindow;
             Page y = x.Main.Content as Page;
