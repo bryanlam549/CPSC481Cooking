@@ -232,7 +232,7 @@ namespace Cookbook
 		// Search page
 		// Filter 
 		public string searchFilter = "";
-		public List<Ingredient> ingredFilter = new List<Ingredient>();
+		public List<String> ingredFilter = new List<String>();
 		public Recipe.Difficulties difficultyFilter = Recipe.Difficulties.NONE;
 		public int ratingFilter = -1;
 		public int durationFilter = -1;
