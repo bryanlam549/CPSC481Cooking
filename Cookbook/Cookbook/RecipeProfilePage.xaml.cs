@@ -440,6 +440,7 @@ namespace Cookbook
                 if(_recipe._name == GlobalData.Instance.modRecipeList[i]._name)
                 {
                     GlobalData.Instance.modRecipeList.RemoveAt(i);
+                    GlobalData.Instance.modrecipePageList.RemoveAt(i);
 
                     //Insert back here!
                     //Comment these out
