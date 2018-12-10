@@ -117,8 +117,8 @@ namespace Cookbook
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             UpdatePage();
-            GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
-            GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.COOKBOOK;
+            //GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
+            //GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.COOKBOOK;
         }
 
 
