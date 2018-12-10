@@ -13,7 +13,7 @@
         <ScrollViewer Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="0,214,0,0">
             <StackPanel Name="Recipes" Height="auto" Width="auto">
                 <StackPanel.Resources>
-                    <Style TargetType="{x:Type local:CookbookRecipes}">
+                    <Style TargetType="{x:Type local:ResultsRecipe}">
                         <Setter Property="Margin" Value="0,0,0,15"/>
                     </Style>
                 </StackPanel.Resources>
@@ -21,5 +21,6 @@
             </StackPanel>
         </ScrollViewer>
         <local:FilterBar HorizontalAlignment="Left" Margin="84,67,0,0" VerticalAlignment="Top" Width="424" Height="74"/>
+        <Rectangle Fill="#FFAF413B" HorizontalAlignment="Left" Height="6" Margin="54,208,0,0" VerticalAlignment="Top" Width="486" RadiusY="4.833" RadiusX="4.833"/>
     </Grid>
 </Page>

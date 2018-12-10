@@ -35,16 +35,6 @@
 
             <local:TransitionPageButton x:Name="_backButton" Width="90" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,23,66,107" Height="90" Grid.RowSpan="2" />
 
-            <Button x:Name="editButton"  Grid.Column="5" Background="Transparent" HorizontalAlignment="Left" 
-                            Height="50" Click="onButtonClickEdit" Margin="26,23,0,0" VerticalAlignment="Top"
-                            Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="1.333,0.54">
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-                <Image x:Name="editIcon" VerticalAlignment="Bottom" Source="{StaticResource editIconIcon}" RenderTransformOrigin="1.133,0.7"/>
-            </Button>
-
-
             <TextBlock x:Name="_recipeName" Grid.Column="2" Grid.ColumnSpan="3"  Height="Auto" Width="Auto" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontSize="30" FontWeight ="Bold" VerticalAlignment="Top" RenderTransformOrigin="-0.088,0.907" Margin="0,23,0,0" Foreground="#FF363232">
             </TextBlock>
             <TextBlock x:Name="_stepNumber" Grid.Column ="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="Step 1 of 10"  TextAlignment="Center" FontSize="30" FontWeight ="Bold" Height="37" Width="210"  VerticalAlignment="Bottom" HorizontalAlignment="Center"   Grid.RowSpan="2" Margin="78,0,0,105"/>
