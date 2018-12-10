@@ -56,7 +56,10 @@ namespace Cookbook
 
             _back.transitionPageButton.Click += Back_Click;
             _next.transitionPageButton.Click += Next_Click;
-
+            if (currentRecipe.modified)
+            {
+                favHeart.Visibility = System.Windows.Visibility.Hidden;
+            }
         }
 
         private RecipeProfilePage GetRecipeProfilePage()

@@ -200,16 +200,16 @@ namespace Cookbook
             //Only do this when both are empty
             if (!string.IsNullOrWhiteSpace(ingBox.Text) && !string.IsNullOrWhiteSpace(AmountBox.Text) && measurementChanger.SelectedItem != null
             && (unitChanger.SelectedItem != null || measurementChanger.SelectedItem.ToString() == "NONE")
-            && (Double.TryParse(AmountBox.Text.ToString(), out d)) || frac == true) 
+            && (Double.TryParse(AmountBox.Text.ToString(), out d)) || frac == true)
             {
                 //Exit the popup
                 modBox.IsEnabled = false;
                 this.modBox.Visibility = System.Windows.Visibility.Hidden;
 
                 //When you are changing an item
-                if (!changeAddFlag)  
+                if (!changeAddFlag)
                 {
-                    if(frac == true)
+                    if (frac == true)
                     {
                         //It's a fraction
                         int num = Convert.ToInt32(amount[0]);
@@ -230,14 +230,40 @@ namespace Cookbook
                     if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
                     {
                         _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.VOLUME;
+                        _recipe._ingredients[ingNum]._hasStandardUnit = true;
+                        _recipe._ingredients[ingNum]._hasSpecialUnit = false;
+
                     }
                     else if (measurementChanger.SelectedItem.ToString() == "MASS") // mass
                     {
                         _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.MASS;
+                        _recipe._ingredients[ingNum]._hasStandardUnit = true;
+                        _recipe._ingredients[ingNum]._hasSpecialUnit = false;
+
+
                     }
                     else if (measurementChanger.SelectedItem.ToString() == "LEN.")// length
                     {
                         _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.LENGTH;
+                        _recipe._ingredients[ingNum]._hasStandardUnit = true;
+                        _recipe._ingredients[ingNum]._hasSpecialUnit = false;
+
+
+                    }
+                    else if (measurementChanger.SelectedItem.ToString() == "SPEC.")
+                    {
+                        _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.SPECIAL;
+                        _recipe._ingredients[ingNum]._hasStandardUnit = false;
+                        _recipe._ingredients[ingNum]._hasSpecialUnit = true;
+
+                    }
+                    else
+                    {
+                        _recipe._ingredients[ingNum]._unitType = Ingredient.UnitType.NONE;
+                        _recipe._ingredients[ingNum]._hasStandardUnit = false;
+                        _recipe._ingredients[ingNum]._hasSpecialUnit = false;
+
+
                     }
 
                     if (measurementChanger.SelectedItem.ToString() == "NONE")
@@ -255,7 +281,7 @@ namespace Cookbook
                     _recipe._ingredients[ingNum]._mainText = ingBox.Text;
 
                     //measurement str
-                    
+
 
 
                 }
@@ -263,47 +289,73 @@ namespace Cookbook
                 {
                     //Instantiate more stuff tha this
                     //You want to change ingredient name, amount, measurement type and units
-                    Ingredient newIng = new Ingredient();
+                    //List<string> _substitutions = new List<string> { };
+                    //Ingredient newIng = new Ingredient(0, "0", Ingredient.UnitType.NONE,"", "", _substitutions);
                     //need to be able to write fractions too right?
                     //newIng._measurement = Convert.ToDouble(AmountBox.Text.ToString());
+
+                    Ingredient newIng;
+
+                    double measurement;
+                    string measurementStr;
+                    Ingredient.UnitType unitType;
+                    string unitStr;
+                    string mainText;
+                    List<string> substitutions = new List<string> { };
+
                     if (frac == true)
                     {
                         //It's a fraction
                         int num = Convert.ToInt32(amount[0]);
                         int den = Convert.ToInt32(amount[1]);
-                        newIng._measurement = (double)num / (double)den;
+                        measurement = (double)num / (double)den;
+                        measurementStr = num.ToString() + "/" + den.ToString();
                     }
                     else
                     {
                         //Double.TryParse(AmountBox.Text.ToString(), out d);
-                        newIng._measurement = d;
+                        measurement = d;
+                        measurementStr = measurement.ToString();
                     }
                     //TODO: measurement str
                     if (measurementChanger.SelectedItem.ToString() == "VOL.") // volume
                     {
-                        newIng._unitType = Ingredient.UnitType.VOLUME;
+                        unitType = Ingredient.UnitType.VOLUME;
                     }
                     else if (measurementChanger.SelectedItem.ToString() == "MASS") // mass
                     {
-                        newIng._unitType = Ingredient.UnitType.MASS;
+                        unitType = Ingredient.UnitType.MASS;
                     }
                     else if (measurementChanger.SelectedItem.ToString() == "LEN.")// length
                     {
-                        newIng._unitType = Ingredient.UnitType.LENGTH;
+                        unitType = Ingredient.UnitType.LENGTH;
                     }
+                    else if (measurementChanger.SelectedItem.ToString() == "SPEC.")
+                    {
+                        unitType = Ingredient.UnitType.SPECIAL;
+                    }
+                    else
+                    {
+                        unitType = Ingredient.UnitType.NONE;
+                    }
+
+                    mainText = ingBox.Text;
+
+
 
                     if (measurementChanger.SelectedItem.ToString() == "NONE")
                     {
-                        newIng._unitStr = "";
-                        newIng._measurementStr = AmountBox.Text;
+                        unitStr = "";
+                        measurementStr = AmountBox.Text;
+                        newIng = new Ingredient(measurement, measurementStr, unitType, unitStr, mainText, substitutions);
                     }
-
                     else
                     {
-                        newIng._unitStr = unitChanger.SelectedItem.ToString();
+                        unitStr = unitChanger.SelectedItem.ToString();
+                        newIng = new Ingredient(measurement, measurementStr, unitType, unitStr, mainText, substitutions);
                         newIng.convertMeasurement(unitChanger.SelectedItem.ToString());
                     }
-                    newIng._mainText = ingBox.Text;
+
                     _recipe._ingredients.Add(newIng);
 
                     //measurement str
