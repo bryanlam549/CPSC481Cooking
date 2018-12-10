@@ -5,10 +5,35 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cookbook"
              mc:Ignorable="d" Height="100" Width="424">
-    <Grid Margin="0,0,0,-49">
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="difficultyButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="IndianRed" Click="Diffculty_Click">
             <Grid Height="57" Width="95">
-                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="41*"/>
+                    <RowDefinition Height="16*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Difficulty" VerticalAlignment="Top" Height="27" FontSize="14" RenderTransformOrigin="0.448,0.489" HorizontalAlignment="Left" Width="78"/>
+                <Canvas Margin="62,10,33,31.25" >
+                    <Polygon  
+                        Points="0,0 20,0 10,20"   
+                        StrokeThickness="2" Canvas.Top="10" Canvas.Left="10">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Polygon.Fill>
+                    </Polygon>
+                </Canvas>
+                <Grid Margin="18,27,33,3" Grid.RowSpan="2" >
+                    <Image x:Name="difficultyChoice" />
+                </Grid>
+            </Grid>
+        </Button>
+        <Button x:Name="ratingButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="IndianRed" Click="Rating_Click" Margin="106,0,0,0">
+            <Grid Height="57" Width="95">
+                <Label Content="Rating" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
                 <Canvas Margin="62,10,105,87" >
                     <Polygon  
                         Points="0,0 20,0 10,20"   
@@ -18,11 +43,18 @@
                         </Polygon.Fill>
                     </Polygon>
                 </Canvas>
+
+                <Grid x:Name="ratingChoice" Margin="18,27,33,3" Visibility="Hidden">
+                    <Image Source="{StaticResource fillStarIcon}" Margin="20,0,0,5"/>
+                    <Label x:Name="ratingNum" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="20" FontWeight="Bold"/>
+                </Grid>
             </Grid>
         </Button>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click" Margin="106,0,0,0">
+        <Button x:Name="ingrCountButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="IndianRed" Click="IngredCount_Click" Margin="212,0,0,0" Grid.ColumnSpan="2">
             <Grid Height="57" Width="95">
-                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="41" Width="85" RenderTransformOrigin="0.448,0.489">
+                    <TextBlock>Ingredients<LineBreak/>Count</TextBlock>
+                </Label>
                 <Canvas Margin="62,10,105,87" >
                     <Polygon  
                         Points="0,0 20,0 10,20"   
@@ -32,11 +64,15 @@
                         </Polygon.Fill>
                     </Polygon>
                 </Canvas>
+
+                <Grid Margin="18,27,33,3" >
+                    <Label x:Name="ingrCountChoice" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Height="23" Width="44" FontWeight="Bold" Visibility="Hidden"/>
+                </Grid>
             </Grid>
         </Button>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click" Margin="212,0,0,0">
+        <Button x:Name="timeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="IndianRed" Click="Time_Click" Margin="105.75,0,0,0" Grid.Column="1">
             <Grid Height="57" Width="95">
-                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
+                <Label Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
                 <Canvas Margin="62,10,105,87" >
                     <Polygon  
                         Points="0,0 20,0 10,20"   
@@ -46,22 +82,108 @@
                         </Polygon.Fill>
                     </Polygon>
                 </Canvas>
+
+                <Grid Margin="10,22,21,3" >
+                    <Label x:Name="timeChoice" Content="hello" HorizontalAlignment="Left" Margin="-4,5,-6,-4" VerticalAlignment="Top" Height="31" Width="74" FontWeight="Bold" Visibility="Hidden"/>
+                </Grid>
             </Grid>
         </Button>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click" Margin="318,0,0,0">
-            <Grid Height="57" Width="95">
-                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
-                <Canvas Margin="62,10,105,87" >
-                    <Polygon  
-                        Points="0,0 20,0 10,20"   
-                        StrokeThickness="2" Canvas.Top="10" Canvas.Left="10">
-                        <Polygon.Fill>
-                            <SolidColorBrush Color="Black" Opacity="0.4"/>
-                        </Polygon.Fill>
-                    </Polygon>
-                </Canvas>
-            </Grid>
-        </Button>
+
+        <Rectangle HorizontalAlignment="Left" Height="55" Margin="104,0,0,0" StrokeThickness="2" VerticalAlignment="Top" Width="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="55" Margin="210,0,0,0" StrokeThickness="2" VerticalAlignment="Top" Width="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="55" Margin="106,0,0,0" StrokeThickness="2" VerticalAlignment="Top" Width="2" Grid.Column="1">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid x:Name="options" HorizontalAlignment="Left" Height="45" Margin="0,55,0,0" VerticalAlignment="Top" Width="424" Grid.ColumnSpan="2" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="14*"/>
+                <ColumnDefinition Width="39*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle HorizontalAlignment="Left" Height="45" StrokeThickness="2" VerticalAlignment="Top" Width="424" Grid.ColumnSpan="2">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="DarkRed"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <StackPanel x:Name="difficultyOptions" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="424" Visibility="Hidden" Grid.ColumnSpan="2">
+                <Button Height="45" Margin="0,0,0,0" Width="125" Click="easySelect_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="22" Width="87">
+                        <Image Source="{StaticResource easyIconIcon}"/>
+                    </Grid>
+                </Button>
+                <Button Height="45" Margin="0,0,0,0" Width="125" Click="medSelect_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="22" Width="87">
+                        <Image Source="{StaticResource medIconIcon}"/>
+                    </Grid>
+                </Button>
+                <Button Height="45" Margin="0,0,0,0" Width="125" Click="hardSelect_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="22" Width="87">
+                        <Image Source="{StaticResource hardIconIcon}"/>
+                    </Grid>
+                </Button>
+
+                <Button Content="X" Margin="4,0,0,0" Width="46" Background="{x:Null}" FontSize="36" Click="clearDifficulty_Click" Style="{StaticResource CustomButtonStyle}"/>
+            </StackPanel>
+
+            <StackPanel x:Name="ratingOptions" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="424" Visibility="Hidden" Grid.ColumnSpan="2">
+                <Button Height="45" Margin="0,0,0,0" Width="70.66" Click="oneStar_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="35" Width="94">
+                        <Image x:Name="oneStar" Source="{StaticResource unfillStarIcon}"/>
+                    </Grid>
+                </Button>
+                <Button Height="45" Margin="0,0,0,0" Width="70.66" Click="twoStar_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="35" Width="94">
+                        <Image x:Name="twoStar" Source="{StaticResource unfillStarIcon}"/>
+                    </Grid>
+                </Button>
+                <Button Height="45" Margin="0,0,0,0" Width="70.66" Click="threeStar_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="35" Width="94">
+                        <Image x:Name="threeStar" Source="{StaticResource unfillStarIcon}"/>
+                    </Grid>
+                </Button>
+                <Button Height="45" Margin="0,0,0,0" Width="70.66" Click="fourStar_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="35" Width="94">
+                        <Image x:Name="fourStar" Source="{StaticResource unfillStarIcon}"/>
+                    </Grid>
+                </Button>
+                <Button Height="45" Margin="0,0,0,0" Width="70.66" Click="fiveStar_Click" Style="{StaticResource CustomButtonStyle}">
+
+                    <Grid Height="35" Width="94">
+                        <Image x:Name="fiveStar" Source="{StaticResource unfillStarIcon}"/>
+                    </Grid>
+                </Button>
+                <Button Content="X" Margin="25,0,0,0" Width="46" Background="{x:Null}" FontSize="36" Click="clearRating_Click" Style="{StaticResource CustomButtonStyle}"/>
+            </StackPanel>
+
+            <StackPanel x:Name="ingrCountOptions" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="424" Visibility="Hidden" Grid.ColumnSpan="2">
+                <Slider x:Name="ingrCountSlider" Width="354" Margin="5,10,15,0" Minimum="1" Maximum="25" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True"  ValueChanged="ingrCountSlider_Change"/>
+                <Button Content="X" Width="50" Background="{x:Null}" FontSize="36" Click="clearIngrCount_Click" Style="{StaticResource CustomButtonStyle}"/>
+
+            </StackPanel>
+
+
+            <StackPanel x:Name="timeOptions" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="424" Visibility="Hidden" Grid.ColumnSpan="2">
+                <Slider x:Name="timeSlider" Width="354" Margin="5,10,15,0" Minimum="5" Maximum="120" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" ValueChanged="timeSlider_Change"/>
+                <Button Content="X" Width="50" Background="{x:Null}" FontSize="36" Click="clearTime_Click" Style="{StaticResource CustomButtonStyle}"/>
+
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </UserControl>

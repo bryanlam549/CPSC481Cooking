@@ -81,7 +81,16 @@ namespace Cookbook
 		private void Search_Click(object sender, RoutedEventArgs e)
 		{
 			GlobalData.Instance.searchFilter = searchBar.Text.Trim();
-			
+
+			if (filterBar.timeChoice.Visibility == Visibility.Visible)
+				GlobalData.Instance.durationFilter = Convert.ToInt32(filterBar.timeSlider.Value);
+
+			if (filterBar.ingrCountChoice.Visibility == Visibility.Visible)
+				GlobalData.Instance.ingredCountFilter = Convert.ToInt32(filterBar.ingrCountSlider.Value);
+
+			System.Diagnostics.Debug.WriteLine(GlobalData.Instance.durationFilter);
+			System.Diagnostics.Debug.WriteLine(GlobalData.Instance.ingredCountFilter);
+
 			// Get results from recipes
 			List<Recipe> recipes = GlobalData.Instance.recipeList;
 			List<Recipe> filteredRecipes = new List<Recipe>();
@@ -120,6 +129,21 @@ namespace Cookbook
 			searchBar.Text = "";
 			ingredients.Clear();
 
+			
+			filterBar.ratingNum.Content = "";
+			filterBar.ratingChoice.Visibility = Visibility.Hidden;
+
+			filterBar.oneStar.Source = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
+			filterBar.twoStar.Source = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
+			filterBar.threeStar.Source = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
+			filterBar.fourStar.Source = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
+			filterBar.fiveStar.Source = (BitmapImage)Application.Current.Resources["unfillStarIcon"];
+
+			filterBar.difficultyChoice.Source = null;
+
+			filterBar.ingrCountChoice.Visibility = Visibility.Hidden;
+			filterBar.timeChoice.Visibility = Visibility.Hidden;
+
 		}
 
 		private void OnKeyDownHandler(object sender, KeyEventArgs e)
@@ -129,20 +153,21 @@ namespace Cookbook
 				if (!ingredients.Contains(ingredsearchBar.Text.Trim()) && !ingredsearchBar.Text.Equals("")) {
 					ingredients.Add(ingredsearchBar.Text.Trim());
 					// Create new ingredient tag
-					ingredsearchBar.Text = "";
 				}
+
+				ingredsearchBar.Text = "";
 			}
 		}
 
 		public bool matchesFilter(Recipe recip){
 			// If any of the following conditions fails to hold, return false, but if they all hold, return true
-			if (GlobalData.Instance.durationFilter != -1 && GlobalData.Instance.durationFilter != recip._duration)
+			if (GlobalData.Instance.durationFilter != -1 && GlobalData.Instance.durationFilter < recip._duration)
 				return false;
-			if (GlobalData.Instance.ingredCountFilter != -1 && GlobalData.Instance.ingredCountFilter != recip._ingredientCount)
+			if (GlobalData.Instance.ingredCountFilter != -1 && GlobalData.Instance.ingredCountFilter < recip._ingredientCount)
 				return false;
 			if (GlobalData.Instance.difficultyFilter != Recipe.Difficulties.NONE && GlobalData.Instance.difficultyFilter != recip._difficulty)
 				return false;
-			if (GlobalData.Instance.ratingFilter != -1 && GlobalData.Instance.ratingFilter != recip._rating)
+			if (GlobalData.Instance.ratingFilter != -1 && GlobalData.Instance.ratingFilter < recip._rating)
 				return false;
 			if (!recip._name.ToLower().Contains(GlobalData.Instance.searchFilter.ToLower()) && !recip._description.ToLower().Contains(GlobalData.Instance.searchFilter.ToLower()))
 				return false;

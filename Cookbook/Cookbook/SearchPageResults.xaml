@@ -20,7 +20,8 @@
                 <!--local:CookbookRecipes Dur="10mins" DiffImage="Images/easyIcon.png" Title="blah"/-->
             </StackPanel>
         </ScrollViewer>
-        <local:FilterBar HorizontalAlignment="Left" Margin="84,67,0,0" VerticalAlignment="Top" Width="424" Height="74"/>
+        <local:FilterBar HorizontalAlignment="Left" Margin="84,67,0,0" VerticalAlignment="Top" Width="422" Height="104"/>
         <Rectangle Fill="#FFAF413B" HorizontalAlignment="Left" Height="6" Margin="54,208,0,0" VerticalAlignment="Top" Width="486" RadiusY="4.833" RadiusX="4.833"/>
+        <TextBlock x:Name="errorMsg" HorizontalAlignment="Left" Margin="157,322,0,0" TextWrapping="Wrap" Text="Your search gave back no recipes! Try editing your search?" VerticalAlignment="Top" Height="188" Width="285" FontSize="36" Visibility="Hidden"/>
     </Grid>
 </Page>
