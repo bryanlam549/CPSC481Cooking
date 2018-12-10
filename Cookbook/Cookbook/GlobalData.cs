@@ -101,7 +101,7 @@ namespace Cookbook
             _difficulty = Recipe.Difficulties.EASY,
             _rating = 2,
             _duration = 20,
-            _description = "\"Blah blah blah!\"",
+            _description = "\"Hamburgers. An Albany, New York expression, its not to be confused with steamed clams.\"",
             _servings = 1,
             _ingredientCount = 3,
             _category = Recipe.Categories.BEEF,
