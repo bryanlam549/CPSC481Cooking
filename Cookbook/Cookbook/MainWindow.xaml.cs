@@ -146,5 +146,10 @@ namespace Cookbook
                 Close();
             }
         }
+
+        private void notificationBoxClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.notificationBox.Visibility = System.Windows.Visibility.Hidden;
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 
 namespace Cookbook
@@ -66,7 +67,7 @@ namespace Cookbook
             recipeProfilePage = GetRecipeProfilePage();
             recipeProfilePage._startButton.initAppearance(TransitionPageButton.Orientation.FORWARD, "CONTINUE");
 
-            _timer.setStepTime(currentRecipe._timerValuesForSteps.ElementAt(currentStep), currentStep + 1);
+            _timer.setStepTime(currentRecipe._timerValuesForSteps.ElementAt(currentStep), currentStep + 1, currentRecipe._name);
 
 
         }
@@ -128,16 +129,6 @@ namespace Cookbook
 
                         _stepBody.Inlines.Add(textBeforeLookup);
                         _stepBody.Inlines.Add(" ");
-
-                        /*
-                        Hyperlink link = new Hyperlink();
-                        link.IsEnabled = true;
-                        link.Inlines.Add(keyList.ElementAt(i));
-                        link.TextDecorations = TextDecorations.T;
-                        link.Background = System.Windows.Media.Brushes.White;
-                        link.Foreground = System.Windows.Media.Brushes.Black;
-                        link.Click += handleLookUpWord;
-                        */
 
                         Button linkBtn = new Button();
                         linkBtn.IsEnabled = true;

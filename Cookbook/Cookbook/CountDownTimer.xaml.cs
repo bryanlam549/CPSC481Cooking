@@ -27,6 +27,8 @@ namespace Cookbook
         TimeSpan _time = TimeSpan.Zero;
         int stepTime = 0;
         int currentStep = 0;
+        String recipeName;
+
 
         public CountdownTimer()
         {
@@ -34,10 +36,35 @@ namespace Cookbook
         }
 
 
-        public void setStepTime(int seconds, int stepNum)
+        public void TriggerNotification()
+        {
+            // have the notification box in mainWindow so that it appears from any tab
+           ((MainWindow)App.Current.MainWindow).notificationMessage.Text = "Timer is up for step #" + currentStep + " of " + recipeName; 
+           ((MainWindow)App.Current.MainWindow).notificationBox.Visibility = System.Windows.Visibility.Visible;
+
+            var a = new DoubleAnimation
+            {
+                From = 1.0,
+                To = 0.0,
+                FillBehavior = FillBehavior.Stop,
+                BeginTime = TimeSpan.FromSeconds(2),
+                Duration = new Duration(TimeSpan.FromSeconds(5))
+            };
+            var storyboard = new Storyboard();
+
+            storyboard.Children.Add(a);
+            Storyboard.SetTarget(a, ((MainWindow)App.Current.MainWindow).notificationBox);
+            Storyboard.SetTargetProperty(a, new PropertyPath(OpacityProperty));
+            storyboard.Completed += delegate { ((MainWindow)App.Current.MainWindow).notificationBox.Visibility = System.Windows.Visibility.Hidden; };
+            storyboard.Begin();
+        }
+
+
+        public void setStepTime(int seconds, int stepNum, String recipeName)
         {
             stepTime = seconds;
             currentStep = stepNum;
+            this.recipeName = recipeName;
             if (stepTime > 0)
             {
                 TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
@@ -72,8 +99,8 @@ namespace Cookbook
     private void CountdownTimer_Completed()
     {
            _time = TimeSpan.FromSeconds(stepTime);
-            _startTimer.Content = "Start";
-            MessageBox.Show("Time's up form Step " + currentStep  + " !");
+            _startTimer.Content = "START TIMER";
+            TriggerNotification();
     }
 
         private void _start_Click(object sender, RoutedEventArgs e)
