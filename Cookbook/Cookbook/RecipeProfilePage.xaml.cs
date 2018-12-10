@@ -138,7 +138,7 @@ namespace Cookbook
             else
             {
                 ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
-                ((MainWindow)App.Current.MainWindow).searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["serachButtonDarkIcon"];
+                ((MainWindow)App.Current.MainWindow).searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["searchButtonDarkIcon"];
             }
 
 
