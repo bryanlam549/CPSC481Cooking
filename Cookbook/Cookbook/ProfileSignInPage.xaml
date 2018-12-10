@@ -12,11 +12,11 @@
         <ImageBrush ImageSource="Images/background.png"/>
     </Page.Background>
     <Grid>
-        <TextBlock Text="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight ="Bold" Margin="220,25,220,0"/>
-        <TextBlock x:Name="_name" Text="Username" HorizontalAlignment="Left" Height="700" FontSize="36" FontWeight ="Bold" Margin="28,115,0,65"/>
-        <TextBlock x:Name="_pass" Text="Password" HorizontalAlignment="Left" Height="400" FontSize="36" FontWeight ="Bold" Margin="28,273,0,207"/>
-        <TextBox x:Name ="UserInput" HorizontalAlignment="Center" Height="39" Margin="28,164,42,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" FontSize="28" MaxLength="12" TextBoxBase.TextChanged="UserInput_TextChanged"/>
-        <PasswordBox x:Name ="PasswordInput" HorizontalAlignment="Center" Height="39" Margin="28,322,42,0" VerticalAlignment="Top" Width="506" FontSize="28" PasswordChar="*" PasswordBox.PasswordChanged="PasswordInput_PasswordChanged"/>
+        <TextBlock Text="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="46" FontWeight ="Bold" Margin="0,25,0,0" Width="576" TextAlignment="Center"/>
+        <TextBlock x:Name="_name" Text="Username" HorizontalAlignment="Left" Height="700" FontSize="40" FontWeight ="DemiBold" Margin="28,115,0,65"/>
+        <TextBlock x:Name="_pass" Text="Password" HorizontalAlignment="Left" Height="400" FontSize="40" FontWeight ="DemiBold" Margin="28,273,0,207"/>
+        <TextBox x:Name ="UserInput" HorizontalAlignment="Center" Height="55" Margin="28,164,42,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" FontSize="38" MaxLength="12" TextBoxBase.TextChanged="UserInput_TextChanged"/>
+        <PasswordBox x:Name ="PasswordInput" HorizontalAlignment="Center" Height="55" Margin="28,322,42,0" VerticalAlignment="Top" Width="506" FontSize="38" PasswordChar="*" PasswordBox.PasswordChanged="PasswordInput_PasswordChanged"/>
         <Button Content="SIGN IN" FontWeight ="DemiBold" FontSize="32" Height="75" Width="380" Background="White" Margin="96,0,100,150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SignIn_Click" Style="{StaticResource CustomButtonStyle}">
             <Button.Effect>
                 <DropShadowEffect/>

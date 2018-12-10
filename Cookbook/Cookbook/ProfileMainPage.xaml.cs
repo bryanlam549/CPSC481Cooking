@@ -27,11 +27,13 @@ namespace Cookbook
 
         public BitmapImage preferencesButtonImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButton.png"));
         public BitmapImage preferencesButtonDarkImage = new BitmapImage(new Uri("pack://application:,,,/Images/PreferencesButtonDark.png"));
+        public string name;
 
         public ProfileMainPage(string username, string email, string password)
         {
             InitializeComponent();
             UserNameInput.Text = username;
+            this.name = username;
             EmailInput.Text = email;
             //PasswordInput.Text = password;
             string x = "";
@@ -48,6 +50,15 @@ namespace Cookbook
             link.Inlines.Add("Change Password");
             link.Click += changePass;
             _changePass.Inlines.Add(link);
+
+            /*
+            if (username.Equals("foodluver123"))
+            {
+                GlobalData.Instance.recipeList.Add(GlobalData.Instance._chowmein);
+                GlobalData.Instance.recipeList.Add(GlobalData.Instance._salad);
+            }
+            */
+
         }
 
         private void changePass(object sender, RoutedEventArgs e)
@@ -84,6 +95,13 @@ namespace Cookbook
         {
             ProfilePage1 profilepage1 = new ProfilePage1();
             GlobalData.Instance.signedIn = false;
+            /*
+            if (this.name.Equals("foodluver123"))
+            {
+                GlobalData.Instance.recipeList.Remove(GlobalData.Instance._chowmein);
+                GlobalData.Instance.recipeList.Remove(GlobalData.Instance._salad);
+            }
+            */
             this.NavigationService.Navigate(profilepage1);
         }
     }
