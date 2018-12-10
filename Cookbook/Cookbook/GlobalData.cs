@@ -219,6 +219,7 @@ namespace Cookbook
         #endregion
 
 
+        public bool goBackToPersonal = false; //Used for bryan's sloppy code to get back from edit to personal page when saved
         public Object savedMainWindowContent; // used for Aaron's recipe prifile page back button
         public RecipeProfilePage.BackPage backPageTag; // for setting lower button dark color
 

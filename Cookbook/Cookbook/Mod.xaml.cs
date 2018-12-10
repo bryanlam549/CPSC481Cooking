@@ -147,7 +147,11 @@ namespace Cookbook
                 //Probably pass in previous page into this page. Or have "previous page" as a global data. and reload it when this button is pressed.
                 //CookbookPage1 prevPage = new CookbookPage1();
                 //((MainWindow)App.Current.MainWindow).Main.Content = prevPage;
-                this.NavigationService.Navigate(previousPage);
+                //this.NavigationService.Navigate(previousPage);
+                GlobalData.Instance.goBackToPersonal = true;
+                CookbookPage1 x = new CookbookPage1();
+                this.NavigationService.Navigate(x);
+
             }
             else
             {
