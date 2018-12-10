@@ -200,16 +200,16 @@ namespace Cookbook
             //Only do this when both are empty
             if (!string.IsNullOrWhiteSpace(ingBox.Text) && !string.IsNullOrWhiteSpace(AmountBox.Text) && measurementChanger.SelectedItem != null
             && (unitChanger.SelectedItem != null || measurementChanger.SelectedItem.ToString() == "NONE")
-            && (Double.TryParse(AmountBox.Text.ToString(), out d)) || frac == true) 
+            && (Double.TryParse(AmountBox.Text.ToString(), out d)) || frac == true)
             {
                 //Exit the popup
                 modBox.IsEnabled = false;
                 this.modBox.Visibility = System.Windows.Visibility.Hidden;
 
                 //When you are changing an item
-                if (!changeAddFlag)  
+                if (!changeAddFlag)
                 {
-                    if(frac == true)
+                    if (frac == true)
                     {
                         //It's a fraction
                         int num = Convert.ToInt32(amount[0]);
@@ -255,7 +255,7 @@ namespace Cookbook
                     _recipe._ingredients[ingNum]._mainText = ingBox.Text;
 
                     //measurement str
-                    
+
 
 
                 }
@@ -263,7 +263,8 @@ namespace Cookbook
                 {
                     //Instantiate more stuff tha this
                     //You want to change ingredient name, amount, measurement type and units
-                    Ingredient newIng = new Ingredient();
+                    List<string> _substitutions = new List<string> { };
+                    Ingredient newIng = new Ingredient(0, "0", Ingredient.UnitType.NONE,"", "", _substitutions);
                     //need to be able to write fractions too right?
                     //newIng._measurement = Convert.ToDouble(AmountBox.Text.ToString());
                     if (frac == true)
