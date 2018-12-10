@@ -115,6 +115,7 @@ namespace Cookbook
         {
             UpdatePage();
             GlobalData.Instance.savedMainWindowContent = ((MainWindow)App.Current.MainWindow).Main.Content;
+            GlobalData.Instance.backPageTag = RecipeProfilePage.BackPage.COOKBOOK;
         }
 
 
@@ -127,7 +128,7 @@ namespace Cookbook
             {
                 if (_recipeList[i]._isFavourite)
                 {
-                    CookbookRecipes recipe = new CookbookRecipes(RecipeProfilePage.BackPage.FAV);
+                    CookbookRecipes recipe = new CookbookRecipes();
                     num++;
                     recipe.Number = num.ToString();
                     recipe.Title = _recipeList[i]._name;

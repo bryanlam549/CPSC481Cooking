@@ -220,6 +220,7 @@ namespace Cookbook
 
 
         public Object savedMainWindowContent; // used for Aaron's recipe prifile page back button
+        public RecipeProfilePage.BackPage backPageTag; // for setting lower button dark color
 
 
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe

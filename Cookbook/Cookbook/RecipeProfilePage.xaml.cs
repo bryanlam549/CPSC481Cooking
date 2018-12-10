@@ -24,13 +24,12 @@ namespace Cookbook
     /// </summary>
     public partial class RecipeProfilePage : Page
     {
-        public enum BackPage { SEARCH, FAV, PERSONAL, RECENT };
+        public enum BackPage { SEARCH, COOKBOOK };
 
         public Recipe _recipe;
         public int _currentStep = 0;
         public Page _completionPage;
 
-        public BackPage backPage;
 
         private List<IngredientTab> ingredientTabs = new List<IngredientTab>(); // my workaround for the recipes not referring to proper tabs (IDK WHATS GOING ON)
 
@@ -130,6 +129,20 @@ namespace Cookbook
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.savedMainWindowContent;
+
+            if (GlobalData.Instance.backPageTag == BackPage.COOKBOOK)
+            {
+                ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+                ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonDarkIcon"];
+            }
+            else
+            {
+                ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+                ((MainWindow)App.Current.MainWindow).searchPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["serachButtonDarkIcon"];
+            }
+
+
+            //Application.Current.MainWindow.Content = GlobalData.Instance.savedMainWindowContent;
 
             //if (backPage == BackPage.FAV)
             //{
@@ -403,8 +416,14 @@ namespace Cookbook
 
                     //Insert back here!
                     //Comment these out
-                    CookbookPage1 personalpage = new CookbookPage1();
-                    this.NavigationService.Navigate(personalpage);
+                    //CookbookPage1 personalpage = new CookbookPage1();
+                    //this.NavigationService.Navigate(personalpage);
+
+                    ((MainWindow)App.Current.MainWindow).Main.Content = GlobalData.Instance.savedMainWindowContent;
+                    ((MainWindow)App.Current.MainWindow).currentRecipePageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["currentRecipeButtonIcon"];
+                    ((MainWindow)App.Current.MainWindow).cookbookPageButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["cookbookButtonDarkIcon"];
+                    
+                   
 
                     //Don't comment that out
                     break;
