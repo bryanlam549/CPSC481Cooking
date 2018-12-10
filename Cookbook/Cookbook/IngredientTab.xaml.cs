@@ -72,7 +72,13 @@ namespace Cookbook
 
 
 
-            if (_ingredient._substitutions.Count > 0)
+            if (_ingredient._substitutions == null)
+            {
+                subChanger.Visibility = Visibility.Hidden;
+                subChangerButton.Visibility = Visibility.Hidden;
+                secondaryText.Text = _ingredient._mainText;
+            }
+            else if (_ingredient._substitutions.Count > 0)
             {
                 secondaryText.Visibility = Visibility.Hidden;
                 subChanger.Text = _ingredient._mainText;
