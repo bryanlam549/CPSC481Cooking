@@ -65,16 +65,17 @@
                     </Button.Effect>
                 </Button>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="60" Margin="0,0">
-                    <Button Name="saveButton" Content="Save" FontWeight ="DemiBold" Width="200" Margin="0,0,80,0" FontSize="32"
-                        Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95" Click="saveButton_Click">
+                    
+
+                    <Button Name="cancelButton" Content="Cancel" FontWeight ="DemiBold" Width="200"
+                        Background="Red"  Margin="0,0,80,0" FontSize="32"
+                        Style="{StaticResource CustomButtonStyle}" Click="cancelButton_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                     </Button>
-
-                    <Button Name="cancelButton" Content="Cancel" FontWeight ="DemiBold" Width="200"
-                        Background="Red"  Margin="0,0,0,0" FontSize="32"
-                        Style="{StaticResource CustomButtonStyle}" Click="cancelButton_Click">
+                    <Button Name="saveButton" Content="Save" FontWeight ="DemiBold" Width="200" Margin="0,0,0,0" FontSize="32"
+                        Style="{StaticResource CustomButtonStyle}" Background="LightGreen" BorderBrush="#FF13DB95" Click="saveButton_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>

@@ -130,7 +130,6 @@ namespace Cookbook
                 {
                     for (int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
                     {
-                        MessageBox.Show(GlobalData.Instance.currentRecipe._name);
                         if  (GlobalData.Instance.currentRecipe._name == GlobalData.Instance.modRecipeList[i]._name)
                         {
                             RecipeProfilePage recipeProfile = GlobalData.Instance.modrecipePageList[i];
