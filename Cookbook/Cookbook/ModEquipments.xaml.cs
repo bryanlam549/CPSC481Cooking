@@ -21,10 +21,10 @@ namespace Cookbook
     public partial class ModEquipments : Page
     {
 
-        public ImageSource incfadeicon = (BitmapImage)Application.Current.Resources["incfadeIcon"];
-        public ImageSource decfadeicon = (BitmapImage)Application.Current.Resources["decfadeIcon"];
-        public ImageSource incicon = (BitmapImage)Application.Current.Resources["incIcon"];
-        public ImageSource decicon = (BitmapImage)Application.Current.Resources["decIcon"];
+        public ImageSource incfadeicon = (BitmapImage)Application.Current.Resources["servingplusIcon"];
+        public ImageSource decfadeicon = (BitmapImage)Application.Current.Resources["servingminusIcon"];
+        public ImageSource incicon = (BitmapImage)Application.Current.Resources["servingplusIcon"];
+        public ImageSource decicon = (BitmapImage)Application.Current.Resources["servingminusIcon"];
         public Recipe _recipe;
         public int recipeNum;
         int equipNum;

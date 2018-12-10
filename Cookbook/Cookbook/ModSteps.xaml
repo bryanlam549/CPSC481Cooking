@@ -80,10 +80,13 @@
         <Border Name="modBox"  Background="#FF9C3828" Margin="96,245,96,95.246" CornerRadius="20" 
                 BorderBrush="#FFC29A3A" BorderThickness="2" Visibility="Hidden">
             <StackPanel>
-                <Button Name="IncButton" Height="50" Width="50" Margin="192,10,0,0" 
+                <Button Name="IncButton" Height="55" Width="55" Margin="192,10,0,0" 
                         Click="IncButton_Click" Style="{StaticResource CustomButtonStyle}">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
                     <Button.Background>
-                        <ImageBrush x:Name="incrementBrush" ImageSource="{StaticResource incIcon}"/>
+                        <ImageBrush x:Name="incrementBrush" ImageSource="{StaticResource servingplusIcon}"/>
                     </Button.Background>
                 </Button>
                 <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
@@ -95,10 +98,13 @@
                            Width="64" HorizontalContentAlignment="Center" 
                              VerticalContentAlignment="Center"/>
                 </StackPanel>
-                <Button Name="DecButton" Height="50" Width="50"  Margin="192,10,0,0" 
+                <Button Name="DecButton" Height="55" Width="55"  Margin="192,10,0,0" 
                         Click="DecButton_Click" Style="{StaticResource CustomButtonStyle}">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
                     <Button.Background>
-                        <ImageBrush x:Name="decrementBrush" ImageSource="{StaticResource decIcon}"/>
+                        <ImageBrush x:Name="decrementBrush" ImageSource="{StaticResource servingminusIcon}"/>
                     </Button.Background>
                 </Button>
 
