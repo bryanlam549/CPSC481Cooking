@@ -26,7 +26,6 @@ namespace Cookbook
         public Dictionary<String, RecipeProfilePage> _recipePageList = GlobalData.Instance.recipePageList;
         public List<RecipeProfilePage> _modrecipePageList = GlobalData.Instance.modrecipePageList;
 
-        RecipeProfilePage.BackPage _backPageTag; 
 
         //if it's a modified recipe. Not really shown on this page but is a hidde value that will be used to determine if it shows up
         //in personal,recent or favourites
@@ -167,11 +166,9 @@ namespace Cookbook
 
 
         //Need to do ratings too...
-        public CookbookRecipes(RecipeProfilePage.BackPage backPageTag)
+        public CookbookRecipes()
         {
             InitializeComponent();
-
-            _backPageTag = backPageTag;
         }
 
         //public event RoutedEventHandler Click;

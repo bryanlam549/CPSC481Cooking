@@ -37,8 +37,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
             <Button.Background>
-                <ImageBrush x:Name="heartButtonImageBrush" ImageSource="{StaticResource delIcon}" 
-                            Stretch="Uniform" />
+                <ImageBrush ImageSource="{StaticResource delIcon}" Stretch="Uniform" />
             </Button.Background>
         </Button>
 
