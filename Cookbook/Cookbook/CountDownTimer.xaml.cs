@@ -78,9 +78,13 @@ namespace Cookbook
 
         private void _start_Click(object sender, RoutedEventArgs e)
         {
+            //#FF9C3828
             if (_startTimer.Content.Equals("START TIMER"))
-            { 
-                if(_time == TimeSpan.Zero)
+            {
+                _startTimer.Background = Brushes.White;
+                _startTimer.Foreground = Brushes.Black;
+                _ellipse.Fill = new SolidColorBrush(Color.FromRgb(156, 56, 40));
+                if (_time == TimeSpan.Zero)
                 {
                     StartCountdown(stepTime);
                 }
@@ -102,12 +106,18 @@ namespace Cookbook
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
             //stop timer
-            _timer.Stop();
-            _startTimer.Content = "START TIMER";
-            if (stepTime > 0)
+            if (_timer != null)
             {
-                TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
-                CountdownDisplay.Text = initialTime.ToString("c");
+                _timer.Stop();
+                _startTimer.Content = "START TIMER";
+                _startTimer.Background = new SolidColorBrush(Color.FromRgb(156, 56, 40));
+                _startTimer.Foreground = Brushes.Black;
+                _ellipse.Fill = Brushes.White;
+                if (stepTime > 0)
+                {
+                    TimeSpan initialTime = TimeSpan.FromSeconds(stepTime);
+                    CountdownDisplay.Text = initialTime.ToString("c");
+                }
             }
 
         }
