@@ -244,6 +244,10 @@ namespace Cookbook
 		public int ingredCountFilter = -1;
 		public Recipe.Categories categoryFilter = Recipe.Categories.ALL;
 
+		// Sort
+		public int sortBy = -1;
+		public bool sortAsc = true;
+
 		public bool isOnResults = false;
 
 

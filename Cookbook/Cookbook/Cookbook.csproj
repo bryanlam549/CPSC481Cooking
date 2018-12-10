@@ -133,6 +133,9 @@
     <Compile Include="RecipeProfilePage.xaml.cs">
       <DependentUpon>RecipeProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ResultsRecipe.xaml.cs">
+      <DependentUpon>ResultsRecipe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchPage1.xaml.cs">
       <DependentUpon>SearchPage1.xaml</DependentUpon>
     </Compile>
@@ -264,6 +267,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RecipeProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResultsRecipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,6 +25,9 @@ namespace Cookbook
 			InitializeComponent();
 
 			// Set content 
+			foreach (Recipe recip in recipes){
+				Recipes.Children.Add(new ResultsRecipe(recip));
+			}
 		}
 
 		private void EditSearch_Click(object sender, RoutedEventArgs e)
