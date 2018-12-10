@@ -9,7 +9,17 @@
       Title="SearchPageResults">
 
     <Grid>
-        <Button Content="Edit Search" HorizontalAlignment="Left" Margin="178,0,0,0" VerticalAlignment="Top" Width="271" Height="74" Background="#FFAF413B" Click="EditSearch_Click" FontSize="36" Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="0.725,-0.293"/>
-         
+        <Button Content="Edit Search" HorizontalAlignment="Left" Margin="174,0,0,0" VerticalAlignment="Top" Width="249" Height="54" Background="#FFAF413B" Click="EditSearch_Click" FontSize="36" Style="{StaticResource CustomButtonStyle}" RenderTransformOrigin="0.725,-0.293"/>
+        <ScrollViewer Name="scroller" Height="auto" PanningMode="VerticalOnly" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="0,214,0,0">
+            <StackPanel Name="Recipes" Height="auto" Width="auto">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type local:CookbookRecipes}">
+                        <Setter Property="Margin" Value="0,0,0,15"/>
+                    </Style>
+                </StackPanel.Resources>
+                <!--local:CookbookRecipes Dur="10mins" DiffImage="Images/easyIcon.png" Title="blah"/-->
+            </StackPanel>
+        </ScrollViewer>
+        <local:FilterBar HorizontalAlignment="Left" Margin="84,67,0,0" VerticalAlignment="Top" Width="424" Height="74"/>
     </Grid>
 </Page>

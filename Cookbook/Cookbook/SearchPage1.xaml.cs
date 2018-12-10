@@ -30,6 +30,7 @@ namespace Cookbook
 
 		public static Category selected;
 		private SearchPageResults results;
+		private List<String> ingredients;
 
 		public SearchPage1()
         {
@@ -47,6 +48,7 @@ namespace Cookbook
 			selected = allCat;
 			selected.setPressed();
 
+			ingredients = new List<String>();
 
 			// Creating the list of categories
 			var categories = new StackPanel()
@@ -78,11 +80,12 @@ namespace Cookbook
 		
 		private void Search_Click(object sender, RoutedEventArgs e)
 		{
+			GlobalData.Instance.searchFilter = searchBar.Text.Trim();
+			
 			// Get results from recipes
 			List<Recipe> recipes = GlobalData.Instance.recipeList;
 			List<Recipe> filteredRecipes = new List<Recipe>();
 
-			// Create superficial clone
 			foreach (Recipe recip in recipes) {
 				if (matchesFilter(recip))
 					filteredRecipes.Add(recip);
@@ -115,12 +118,23 @@ namespace Cookbook
 			setCategory(allCat);
 			ingredsearchBar.Text = "";
 			searchBar.Text = "";
-
+			ingredients.Clear();
 
 		}
 
+		private void OnKeyDownHandler(object sender, KeyEventArgs e)
+		{
+			if (e.Key == Key.Return)
+			{
+				if (!ingredients.Contains(ingredsearchBar.Text.Trim()) && !ingredsearchBar.Text.Equals("")) {
+					ingredients.Add(ingredsearchBar.Text.Trim());
+					// Create new ingredient tag
+					ingredsearchBar.Text = "";
+				}
+			}
+		}
 
-			public bool matchesFilter(Recipe recip){
+		public bool matchesFilter(Recipe recip){
 			// If any of the following conditions fails to hold, return false, but if they all hold, return true
 			if (GlobalData.Instance.durationFilter != -1 && GlobalData.Instance.durationFilter != recip._duration)
 				return false;
@@ -138,8 +152,9 @@ namespace Cookbook
 			{
 				if (GlobalData.Instance.ingredFilter.Count > recip._ingredients.Count)
 					return false;
-				foreach (Ingredient ingr in GlobalData.Instance.ingredFilter){
-					if (!recip._ingredients.Contains(ingr))
+				foreach (String ingr in GlobalData.Instance.ingredFilter){
+					int index = recip._ingredients.FindIndex(i => i._mainText.Equals(ingr));
+					if (index < 0)
 						return false;
 				}
 			}

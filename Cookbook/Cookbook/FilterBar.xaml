@@ -4,8 +4,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cookbook"
-             mc:Ignorable="d" Height="138" Width="761">
-    <Grid>
-            
+             mc:Ignorable="d" Height="100" Width="424">
+    <Grid Margin="0,0,0,-49">
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click">
+            <Grid Height="57" Width="95">
+                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
+                <Canvas Margin="62,10,105,87" >
+                    <Polygon  
+                        Points="0,0 20,0 10,20"   
+                        StrokeThickness="2" Canvas.Top="10" Canvas.Left="10">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Polygon.Fill>
+                    </Polygon>
+                </Canvas>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click" Margin="106,0,0,0">
+            <Grid Height="57" Width="95">
+                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
+                <Canvas Margin="62,10,105,87" >
+                    <Polygon  
+                        Points="0,0 20,0 10,20"   
+                        StrokeThickness="2" Canvas.Top="10" Canvas.Left="10">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Polygon.Fill>
+                    </Polygon>
+                </Canvas>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click" Margin="212,0,0,0">
+            <Grid Height="57" Width="95">
+                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
+                <Canvas Margin="62,10,105,87" >
+                    <Polygon  
+                        Points="0,0 20,0 10,20"   
+                        StrokeThickness="2" Canvas.Top="10" Canvas.Left="10">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Polygon.Fill>
+                    </Polygon>
+                </Canvas>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Height="55" Style="{StaticResource CustomButtonStyle}" Background="#FFB15151" Click="Button_Click" Margin="318,0,0,0">
+            <Grid Height="57" Width="95">
+                <Label Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="78" FontSize="14" RenderTransformOrigin="0.448,0.489"/>
+                <Canvas Margin="62,10,105,87" >
+                    <Polygon  
+                        Points="0,0 20,0 10,20"   
+                        StrokeThickness="2" Canvas.Top="10" Canvas.Left="10">
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Polygon.Fill>
+                    </Polygon>
+                </Canvas>
+            </Grid>
+        </Button>
+
     </Grid>
 </UserControl>

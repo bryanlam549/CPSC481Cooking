@@ -134,12 +134,26 @@ namespace Cookbook
             MainWindow x = parentWindow as MainWindow;
             Page y = x.Main.Content as Page;
             GlobalData.Instance.prevPage = y;
-            for (int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
+            if (!currentRecipe.modified)
             {
-                if (GlobalData.Instance.recipeList[i]._name == currentRecipe._name)
+                for (int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
                 {
-                    Mod mod = new Mod(currentRecipe, i);
-                    ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                    if (GlobalData.Instance.recipeList[i]._name == currentRecipe._name)
+                    {
+                        Mod mod = new Mod(currentRecipe, i);
+                        ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
+                {
+                    if (GlobalData.Instance.modRecipeList[i]._name == currentRecipe._name)
+                    {
+                        Mod mod = new Mod(currentRecipe, i);
+                        ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                    }
                 }
             }
             

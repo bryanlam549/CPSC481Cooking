@@ -44,25 +44,32 @@ namespace Cookbook
 
             // init components...
 
-            _recipe = recipe; 
+            _recipe = recipe;
 
             //This was done by me, BRYAN. I would've initialized heartButton user control so that it is filled if the recipe is fave or not. 
             //but I was running into problems there (i think because _recipe is null even though you make it equal to this _recipe...)
             //but it works if try it on this page. Had to add function in HeartButton.xaml and made isfilled public.
 
-            // FAVOURITE...
-            _heartButton._recipe = _recipe;
-            if (_recipe._isFavourite)
+            // FAVOURITE...Only do this if recipe is NOT modified
+            if (!_recipe.modified)
             {
-                _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["heartIcon"];
-                _heartButton._isFilled = true;
+                _heartButton._recipe = _recipe;
+                if (_recipe._isFavourite)
+                {
+                    _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["heartIcon"];
+                    _heartButton._isFilled = true;
+                }
+                else
+                {
+                    _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
+                    _heartButton._isFilled = false;
+                }
             }
-            else
+            else //If recipe IS modified then you would make it int oa trash can
             {
-                _heartButton.HeartIconImage = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
-                _heartButton._isFilled = false;
+                _heartButton.Visibility = System.Windows.Visibility.Hidden;
+                _trashButton.Visibility = System.Windows.Visibility.Visible;
             }
-
 
             // DIFFICULTY...
             if (_recipe._difficulty == Recipe.Difficulties.EASY)
@@ -382,6 +389,27 @@ namespace Cookbook
         private void downloadCloseButton_Click(object sender, RoutedEventArgs e)
         {
             downloadBox.Visibility = Visibility.Hidden;
+        }
+
+        //Trash stuff 
+        private void _trashButton_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(backPage.ToString());
+            for(int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
+            {
+                if(_recipe._name == GlobalData.Instance.modRecipeList[i]._name)
+                {
+                    GlobalData.Instance.modRecipeList.RemoveAt(i);
+
+                    //Insert back here!
+                    //Comment these out
+                    CookbookPage1 personalpage = new CookbookPage1();
+                    this.NavigationService.Navigate(personalpage);
+
+                    //Don't comment that out
+                    break;
+                }
+            }
         }
     }
 }
