@@ -64,5 +64,7 @@
     <BitmapImage x:Key="unfillHeartIcon" UriSource="Images/unfillHeart.png" />
     <BitmapImage x:Key="unfillStarIcon" UriSource="Images/unfillStar.png" />
     <BitmapImage x:Key="backButton" UriSource="Images/back.png" />
+    <BitmapImage x:Key="marinade" UriSource="Images/marinade.png" />
+    <BitmapImage x:Key="mince" UriSource="Images/mince.png" />
 
 </ResourceDictionary>

@@ -50,8 +50,28 @@ namespace Cookbook
         public CookbookPage1()
         {
             InitializeComponent();
-            CookbookFavouritePage startup= new CookbookFavouritePage(GlobalData.Instance.recipeList);
-            cookMain.Content = startup; // start cookbook at favourite page all the time
+
+            if (GlobalData.Instance.goBackToPersonal)
+            {
+                //Selected
+                personaleButtonImageBrush.ImageSource = personalButtonDarkImage;
+                //Unselected
+                FavouriteButtonImageBrush.ImageSource = favouriteButtonImage;
+                recentButtonImageBrush.ImageSource = recentRecipeButtonImage;
+
+                CookbookPersonalPage startup = new CookbookPersonalPage(GlobalData.Instance.modRecipeList);
+                cookMain.Content = startup; // start cookbook at favourite page all the time
+                GlobalData.Instance.goBackToPersonal = false;
+
+            }
+            else
+            {
+                
+                CookbookFavouritePage startup = new CookbookFavouritePage(GlobalData.Instance.faveList);
+                cookMain.Content = startup; // start cookbook at favourite page all the time
+            }
+
+            
 
         }
         //heartButtonImageBrush.ImageSource = (BitmapImage)Application.Current.Resources["unfillHeartIcon"];
@@ -63,7 +83,7 @@ namespace Cookbook
             personaleButtonImageBrush.ImageSource = personalButtonImage;
             recentButtonImageBrush.ImageSource = recentRecipeButtonImage;
             //Switch content
-            CookbookFavouritePage cookbookfavouritepage = new CookbookFavouritePage(GlobalData.Instance.recipeList);
+            CookbookFavouritePage cookbookfavouritepage = new CookbookFavouritePage(GlobalData.Instance.faveList);
             cookMain.Content = cookbookfavouritepage;
         }
 

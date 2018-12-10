@@ -45,7 +45,7 @@ namespace Cookbook
         // ~~~~~~init the ingredients and fill ingredients list here
         public Recipe _shanghaiNoodlesRecipe = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Shanghai Noodles",
             _image = (BitmapImage)Application.Current.Resources["shanghaiNoodlesIcon"],
             _difficulty = Recipe.Difficulties.HARD,
@@ -95,13 +95,13 @@ namespace Cookbook
         // ~~~~~~init the ingredients and fill ingredients list here
         public Recipe _burger = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Steamed Hams",
             _image = (BitmapImage)Application.Current.Resources["burgerIcon"],
             _difficulty = Recipe.Difficulties.EASY,
             _rating = 2,
             _duration = 20,
-            _description = "\"Blah blah blah!\"",
+            _description = "\"Hamburgers. An Albany, New York expression, its not to be confused with steamed clams.\"",
             _servings = 1,
             _ingredientCount = 3,
             _category = Recipe.Categories.BEEF,
@@ -124,7 +124,7 @@ namespace Cookbook
         #region HOLY MACKERAL
         public Recipe _holymackeral = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Holy Mackeral",
             _image = (BitmapImage)Application.Current.Resources["holymackeralIcon"],
             _difficulty = Recipe.Difficulties.MEDIUM,
@@ -147,7 +147,7 @@ namespace Cookbook
 
 
             _equipment = new List<string> { "Oven", "4\" Chef knife","Baking tray", "Blender" },
-            _steps = new List<string> { @"Gut the mackeral, if not already gutted.", @"Chop cloves of garlic", @"Heat cooking oil and briefly"
+            _steps = new List<string> { @"Gut the mackeral, if not already gutted.", @"Mince cloves of garlic", @"Heat cooking oil and briefly"
                                         + " fry with the garlic, a sprig of sage and the fish.", @"Place fish on baking tray and cook at 350°F.",
                                         @"Once done, put the whole thing in the blender."},
              _timerValuesForSteps = new List<int> { 0, 0, 0, 0, 0 }
@@ -159,7 +159,7 @@ namespace Cookbook
 
         public Recipe _chowmein = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Chicken Chow Mein",
             _image = (BitmapImage)Application.Current.Resources["chowmeinIcon"],
             _difficulty = Recipe.Difficulties.MEDIUM,
@@ -195,7 +195,7 @@ namespace Cookbook
         #region
         public Recipe _salad = new Recipe()
         {
-            _isFavourite = true,
+            _isFavourite = false,
             _name = "Head of Lettuce",
             _image = (BitmapImage)Application.Current.Resources["saladIcon"],
             _difficulty = Recipe.Difficulties.EASY,
@@ -219,10 +219,11 @@ namespace Cookbook
         #endregion
 
 
+        public bool goBackToPersonal = false; //Used for bryan's sloppy code to get back from edit to personal page when saved
         public Object savedMainWindowContent; // used for Aaron's recipe prifile page back button
         public RecipeProfilePage.BackPage backPageTag; // for setting lower button dark color
 
-
+        public List<Recipe> faveList = new List<Recipe>();
         public List<Recipe> recentList = new List<Recipe>(); //List of recently viewed recipe
         public List<Recipe> recipeList = new List<Recipe>(); //List of recipes
         public List<Recipe> modRecipeList = new List<Recipe>(); //List of MODIFIED recipes
@@ -276,6 +277,12 @@ namespace Cookbook
             recipeList.Add(_holymackeral);
             recipeList.Add(_chowmein);
             recipeList.Add(_salad);
+
+           /* faveList.Add(_shanghaiNoodlesRecipe);
+            faveList.Add(_burger);
+            faveList.Add(_holymackeral);
+            faveList.Add(_chowmein);
+            faveList.Add(_salad);*/
             //Adds a profile page for each recipe
             for (int i = 0; i < recipeList.Count; i++)
             {
@@ -284,7 +291,7 @@ namespace Cookbook
             }
 
             lookUpTerms.Add("marinade", "A marinade is a sauce, typically made of oil, vinegar, spices, and herbs, in which meat, fish, or other food is soaked before cooking in order to flavor or soften it.");
-            lookUpTerms.Add("Chop", "cut into small pieces with repeated sharp blows a knife.");
+            lookUpTerms.Add("Mince", "Cut up or grind into very small pieces, typically using grinder but can be done using knife");
 
             accountList.Add("foodluver123");
             accountList.Add("ilovefood456@food.com");

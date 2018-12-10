@@ -312,7 +312,7 @@ namespace Cookbook
                 servingValueText.Text = newServings.ToString();
                 double scalar = (double) newServings / oldServings;
 
-                Debug.WriteLine(scalar);
+                //Debug.WriteLine(scalar);
 
                 foreach(IngredientTab tab in ingredientTabs)
                 {
@@ -391,7 +391,33 @@ namespace Cookbook
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            Window parentWindow = Window.GetWindow(this);
+            MainWindow x = parentWindow as MainWindow;
+            Page y = x.Main.Content as Page;
+            GlobalData.Instance.prevPage = y;
+            if (!_recipe.modified)
+            {
+                for (int i = 0; i < GlobalData.Instance.recipeList.Count; i++)
+                {
+                    if (GlobalData.Instance.recipeList[i]._name == _recipe._name)
+                    {
+                        Mod mod = new Mod(_recipe, i);
+                        ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
+                {
+                    if (GlobalData.Instance.modRecipeList[i]._name == _recipe._name)
+                    {
+                        Mod mod = new Mod(_recipe, i);
+                        ((MainWindow)App.Current.MainWindow).Main.Content = mod;
+                    }
+                }
+            }
         }
 
         private void downloadButton_Click(object sender, RoutedEventArgs e)
@@ -407,12 +433,14 @@ namespace Cookbook
         //Trash stuff 
         private void _trashButton_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.Instance.currentRecipe = null;
             //MessageBox.Show(backPage.ToString());
             for(int i = 0; i < GlobalData.Instance.modRecipeList.Count; i++)
             {
                 if(_recipe._name == GlobalData.Instance.modRecipeList[i]._name)
                 {
                     GlobalData.Instance.modRecipeList.RemoveAt(i);
+                    GlobalData.Instance.modrecipePageList.RemoveAt(i);
 
                     //Insert back here!
                     //Comment these out

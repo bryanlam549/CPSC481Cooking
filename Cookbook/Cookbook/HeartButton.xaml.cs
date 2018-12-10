@@ -61,6 +61,7 @@ namespace Cookbook
                 if (_recipe != null)
                 {
                     _recipe._isFavourite = true;
+                    GlobalData.Instance.faveList.Add(_recipe);
                 }
                 else
                 {
@@ -74,6 +75,7 @@ namespace Cookbook
                 if (_recipe != null)
                 {
                     _recipe._isFavourite = false;
+                    GlobalData.Instance.faveList.Remove(_recipe);
                 }
                 else
                 {

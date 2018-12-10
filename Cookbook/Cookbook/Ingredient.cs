@@ -324,9 +324,16 @@ namespace Cookbook
         public void updateMeasurementStr()
         {
 
+            /*
             if (_unitType == UnitType.NONE)
             {
                 _measurementStr = "";
+                return;
+            }
+            */
+
+            if (_measurementStr.Equals(""))
+            {
                 return;
             }
 
@@ -338,9 +345,14 @@ namespace Cookbook
 
             double highThreshold = 100.0;
 
-            // maybe also have a super high thresold (where it dont fit on screen) and you just say like > 100000
+            double superHighThreshold = 10000.0;
 
-            if (_measurement >= highThreshold)
+
+            if (_measurement >= superHighThreshold)
+            {
+                _measurementStr = ">10000";
+            }
+            else if (_measurement >= highThreshold)
             {
                 _measurementStr = Math.Round(_measurement).ToString();
             }
